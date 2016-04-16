@@ -1,0 +1,21 @@
+// TYPOGRAPHY
+// -----------------
+
+a
+  text-decoration: none
+
+.copy
+  +font(null, $sansSerif, null, 300)
+
+// Headings
+.title
+  +font(null, $sansSerif, null, 900)
+  text-transform: uppercase
+
+.lead
+  +font(null, $serif, null, 500, italic, 1.4)
+
+// SVGs
+svg
+  +square(100%)
+  fill: currentColor

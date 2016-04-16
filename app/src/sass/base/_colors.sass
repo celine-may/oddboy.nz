@@ -1,0 +1,15 @@
+// COLORS
+// -----------------
+
+@each $name, $color in $colorMap
+  .bg-color.#{$name}
+    background-color: $color
+
+  .border-color.#{$name}
+    border-color: $color
+
+  .fill-color.#{$name}
+    fill: $color
+
+  .text-color.#{$name}
+    color: $color
