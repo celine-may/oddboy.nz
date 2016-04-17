@@ -20,10 +20,10 @@
     background-color: $white
     vertical-align: middle
 
-  .ui[data-state="home"] &
+  .main[data-view="home"] &
     display: none
 
-  .ui[data-state="what-we-do"] &
+  .main[data-view="what-we-do"] &
     left: $extGap
     padding-left: 36px
 
@@ -31,7 +31,7 @@
       display: block
       left: 0
 
-  .ui[data-state="talk-to-us"] &
+  .main[data-view="talk-to-us"] &
     right: $extGap
     padding-right: 36px
 
@@ -51,13 +51,13 @@
   +position(absolute, $extGap)
   +size(46px, 13px)
 
-  .ui[data-state="home"] &
+  .main[data-view="home"] &
     display: none
 
-  .ui[data-state="what-we-do"] &
+  .main[data-view="what-we-do"] &
     right: $extGap
 
-  .ui[data-state="talk-to-us"] &
+  .main[data-view="talk-to-us"] &
     left: $extGap
     transform: rotate(180deg)
 
@@ -88,8 +88,8 @@
     transform-origin: top left
     transform: translateX(100%) rotate(90deg) translateX(-50%)
 
-  .ui[data-state="what-we-do"] &.lhs
+  .main[data-view="what-we-do"] &.lhs
     display: none
 
-  .ui[data-state="talk-to-us"] &.rhs
+  .main[data-view="talk-to-us"] &.rhs
     display: none

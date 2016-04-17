@@ -2,6 +2,12 @@
 
 include('config.php');
 
+/* Request */
+$q = isset($_GET['q']) ? explode('/', $_GET['q']) : array();
+$controller = isset($q[0]) ? $q[0] : 'home';
+
+include("controllers/$controller.php");
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +53,12 @@ include('config.php');
   <?php include_once('assets/svgs/svg-defs.svg'); ?>
 
   <?php include('layouts/grid.php'); ?>
-  <?php include('layouts/ui.php'); ?>
+
+  <main class="main" data-view="<?php echo $controller; ?>">
+    <?php include('layouts/ui.php'); ?>
+    <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
+  </main>
+
   <?php include('layouts/loader.php'); ?>
 
   <?php foreach ($assets['javascripts'] as $file_path) : ?>

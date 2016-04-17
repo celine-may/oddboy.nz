@@ -1,4 +1,4 @@
-<div class="ui" data-state="what-we-do">
+<div class="ui">
   <h1 class="logo">
     <span class="hidden">Oddboy</span>
     <svg class="shape-logo">
