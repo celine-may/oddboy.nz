@@ -46,6 +46,7 @@ include('config.php');
 <body>
   <?php include_once('assets/svgs/svg-defs.svg'); ?>
 
+  <?php include('layouts/grid.php'); ?>
   <?php include('layouts/ui.php'); ?>
   <?php include('layouts/loader.php'); ?>
 
