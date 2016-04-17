@@ -1,0 +1,95 @@
+// UI
+// -----------------
+
+.ui
+  +position(fixed, 0, null, null, 0)
+  +square(100%)
+  padding: $extGap
+  pointer-events: none
+  z-index: $zTop
+
+// Logo
+.logo
+  +position(absolute, $extGap)
+
+  &::before, &::after
+    content: ""
+    display: none
+    +position(absolute, 6px)
+    +size(20px, 1px)
+    background-color: $white
+    vertical-align: middle
+
+  .ui[data-state="home"] &
+    display: none
+
+  .ui[data-state="what-we-do"] &
+    left: $extGap
+    padding-left: 36px
+
+    &::before
+      display: block
+      left: 0
+
+  .ui[data-state="talk-to-us"] &
+    right: $extGap
+    padding-right: 36px
+
+    &::after
+      display: block
+      right: 0
+
+  .shape-logo
+    +size(80px, 14px)
+
+
+// Back link
+.back-link
+  pointer-events: auto
+
+.shape-arrow
+  +position(absolute, $extGap)
+  +size(46px, 13px)
+
+  .ui[data-state="home"] &
+    display: none
+
+  .ui[data-state="what-we-do"] &
+    right: $extGap
+
+  .ui[data-state="talk-to-us"] &
+    left: $extGap
+    transform: rotate(180deg)
+
+// Nav link
+.nav-link
+  +position(absolute, 50%)
+  display: inline-block
+  padding-top: 38px
+  +font(null, null, .875rem, 900)
+  letter-spacing: 2px
+  pointer-events: auto
+  text-align: center
+  text-transform: uppercase
+
+  &::before
+    content: ""
+    +position(absolute, 0, null, null, 50%)
+    +size(1px, 20px)
+    background-color: $white
+
+  &.lhs
+    left: 32px
+    transform-origin: top right
+    transform: translateX(-100%) rotate(-90deg) translateX(50%)
+
+  &.rhs
+    right: 32px
+    transform-origin: top left
+    transform: translateX(100%) rotate(90deg) translateX(-50%)
+
+  .ui[data-state="what-we-do"] &.lhs
+    display: none
+
+  .ui[data-state="talk-to-us"] &.rhs
+    display: none

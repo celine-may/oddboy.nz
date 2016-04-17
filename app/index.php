@@ -44,8 +44,10 @@ include('config.php');
 </head>
 
 <body>
+  <?php include_once('assets/svgs/svg-defs.svg'); ?>
 
-  <?php include('sections/loader.php'); ?>
+  <?php include('layouts/ui.php'); ?>
+  <?php include('layouts/loader.php'); ?>
 
   <?php foreach ($assets['javascripts'] as $file_path) : ?>
     <script src="<?php echo $file_path; ?>"></script>
