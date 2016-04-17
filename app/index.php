@@ -39,11 +39,13 @@ include('config.php');
   <script>
     window.App = {};
     App.path = "<?php echo PATH; ?>";
+    App.FXs = [];
   </script>
 </head>
 
 <body>
-  <h1>Hello world</h1>
+
+  <?php include('sections/loader.php'); ?>
 
   <?php foreach ($assets['javascripts'] as $file_path) : ?>
     <script src="<?php echo $file_path; ?>"></script>

@@ -1,0 +1,66 @@
+// LOADER
+// -----------------
+
+// Wrappers
+.loader-wrapper
+  +position(fixed, 0, null, null, null)
+  display: table
+  +square(100%)
+
+.loader-panel
+  +position(absolute, 0)
+  +size(50%, 100%)
+  background-color: $secondary
+
+  &.left
+    left: 0
+
+  &.right
+    right: 0
+
+// Device
+.loader-path
+  +position(absolute, 0, null, null, 50%)
+  +size(1px, 100%)
+  background-color: $secondaryDark
+
+.loader-device
+  margin-left: -2px
+  +size(5px, 60px)
+  background-color: $secondaryDark
+
+// Circle
+.loader-circle-wrapper
+  position: relative
+  display: table-cell
+  text-align: center
+  vertical-align: middle
+
+.loader-circle
+  position: relative
+  display: inline-block
+  +square(170px)
+  background-color: $secondaryLight
+  border-radius: 50%
+  box-shadow: 0 0 12px 1px rgba($black, .15)
+  color: $secondaryLight
+  overflow: hidden
+  perspective: 1000
+
+.loader-bg
+  display: inline-block
+  +position(absolute, 45px, null, null, 55px)
+  +size(0, 80px)
+  background-color: $white
+
+.loader-letter
+  +position(absolute, 56px, null, null, 61px)
+  +size(49px, 58px)
+  background: url(#{$imagePath}loader/letter.png) no-repeat center center
+  opacity: 0
+  transform-style: preserve-3d
+
+.loader-mask
+  position: relative
+  +square(100%)
+  background: url(#{$imagePath}loader/mask.png) no-repeat center center
