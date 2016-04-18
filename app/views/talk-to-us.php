@@ -1,4 +1,5 @@
 <header class="header">
+  <?php include('layouts/grid.php'); ?>
   <article class="header-content character lhs" data-character="ben">
     <div class="character-content">
       <div class="character-img"></div>
@@ -23,7 +24,8 @@
 </header>
 
 <section class="section contact-wrapper bg-color accent">
-  <div class="contact">
+  <?php include('layouts/grid.php'); ?>
+  <div class="section-content contact">
     <h1 class="title">
       Holla at an <br><span class="text-color primary">odd<span class="flipped">b</span>oy</span>. Let's make sweet, sweet ????.
     </h1>

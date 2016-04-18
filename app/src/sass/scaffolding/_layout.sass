@@ -25,11 +25,17 @@ body
   padding: 0 $column
 
 .header-content
+  position: relative
   display: table-cell
   vertical-align: middle
+  z-index: $zTop
 
 // Section
 .section
   position: relative
   margin-top: 100vh
+  z-index: $zTop
 
+.section-content
+  position: relative
+  z-index: $zTop
