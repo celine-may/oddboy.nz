@@ -153,12 +153,20 @@
 
 // Work
 .work-wrapper
+  position: relative
   padding: 0 $column
+
+.floating-letter
+  +position(absolute, 84px, $column * 1/2)
+  display: inline-block
+  font-size: 80vw
+  transform: rotate(180deg) translateY(.45em)
 
 .work-wrapper-title
   margin-bottom: 75px
 
 .work
+  position: relative
   +size(100%, 235px)
   margin-bottom: 25px
   padding: 110px 0 100px

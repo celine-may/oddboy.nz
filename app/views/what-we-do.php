@@ -112,6 +112,8 @@
   </article>
 
   <div class="work-wrapper">
+    <span class="floating-letter title text-color accent">B</span>
+
     <h2 class="work-wrapper-title title">Some of our work<span class="text-color primary">.</span></h2>
 
     <article class="work" data-work="camp-hope-falls">
