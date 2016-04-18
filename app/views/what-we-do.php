@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header-content">
     <h1 class="title with-complement">
-      <span class="text-color primary">Oddboy</span> is an experience design studio<button class="text-color primary do-show-complement">*</button>
+      <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<button class="text-color primary do-show-complement">*</button>
     </h1>
     <span class="title-separator do-complement-push"></span>
     <p class="title-complement copy">
