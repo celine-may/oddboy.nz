@@ -22,6 +22,7 @@
   text-align: center
 
 .character-img
+  position: relative
   +size(366px, 530px)
   background-position: center top
   background-repeat: no-repeat
@@ -35,11 +36,12 @@
 
 .character-email
   display: block
-  margin-top: -40px
+  margin-top: -80px
   margin-bottom: 15px
   +font(null, $sansSerif, 1.1875rem, 900)
 
 .character-link
+  display: inline-block
   padding-bottom: 6px
   border-bottom: 1px solid currentColor
   +font(null, $serif, .875rem, 500, italic)
@@ -49,9 +51,9 @@
   transform: translateY(-100%)
   transition: all $transitionDuration $transitionFunction
 
-.character:hover
+.character-content:hover
   .character-img
-    margin-top: -40px
+    top: -40px
     background-position: center -530px
 
   .character-anim
