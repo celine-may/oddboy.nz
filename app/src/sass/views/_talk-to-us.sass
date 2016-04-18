@@ -1,0 +1,54 @@
+// TALK TO US
+// -----------------
+
+.character
+  width: 50%
+
+  &.lhs
+    padding-right: $column * 1/2
+    text-align: right
+
+  &.rhs
+    padding-left: $column * 1/2
+    text-align: left
+
+.character-content
+  display: inline-block
+  text-align: center
+
+.character-img
+  +size(366px, 530px)
+  background-position: center top
+  background-repeat: no-repeat
+  transition: margin-top $transitionDuration $transitionFunction
+
+  .character[data-character="ben"] &
+    background-image: url(#{$imagePath}characters/ben.png)
+
+  .character[data-character="tom"] &
+    background-image: url(#{$imagePath}characters/tom.png)
+
+.character-email
+  display: block
+  margin-top: -40px
+  margin-bottom: 15px
+  +font(null, $sansSerif, 1.1875rem, 900)
+
+.character-link
+  padding-bottom: 6px
+  border-bottom: 1px solid currentColor
+  +font(null, $serif, .875rem, 500, italic)
+
+.character-anim
+  opacity: 0
+  transform: translateY(-100%)
+  transition: all $transitionDuration $transitionFunction
+
+.character:hover
+  .character-img
+    margin-top: -40px
+    background-position: center -530px
+
+  .character-anim
+    opacity: 1
+    transform: translateY(0)
