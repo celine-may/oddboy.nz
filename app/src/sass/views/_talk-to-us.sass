@@ -52,3 +52,21 @@
   .character-anim
     opacity: 1
     transform: translateY(0)
+
+// Contact
+.contact-wrapper
+  display: table
+  +size(100vw, 100vh)
+
+.contact
+  display: table-cell
+  padding: 0 $column 0 $column * 1.5
+  text-align: right
+  vertical-align: middle
+
+.contact-link
+  &:first-child
+    margin-right: $column / 2
+
+  &:hover
+    color: $primary

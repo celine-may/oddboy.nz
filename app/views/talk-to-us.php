@@ -15,3 +15,16 @@
     </div>
   </article>
 </header>
+
+<section class="section contact-wrapper bg-color accent">
+  <div class="contact">
+    <h1 class="title">
+      Holla at an <br><span class="text-color primary">odd<span class="flipped">b</span>oy</span>. Let's make sweet, sweet ????.
+    </h1>
+    <span class="title-separator bg-color primary"></span>
+    <p class="lead vcard">
+      <a href="mailto:holla@oddboy.nz" class="contact-link email">holla@oddboy.nz</a>
+      <a href="tel:+64273463287" class="contact-link tel">+64 273463287</a>
+    </p>
+  </div>
+</section>
