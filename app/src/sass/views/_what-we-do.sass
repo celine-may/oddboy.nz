@@ -1,6 +1,7 @@
 // WHAT WE DO
 // -----------------
 
+// Header
 .main[data-view="what-we-do"]
   .title-separator
     background-color: $accent
@@ -9,3 +10,143 @@
   +position(relative, -120px)
   opacity: 0
   transform: translateY(-30px)
+
+// Services
+.services-wrapper
+  padding-top: 190px
+
+.service
+  position: relative
+  width: $column * 6
+  margin: 0 0 550px $column
+
+// Higlights (vertical)
+.service-highlights
+  +position(absolute, 40%, null, null, $column / -2)
+  transform-origin: top right
+  transform: translateX(-100%) rotate(-90deg) translateX(50%)
+
+.highlights-separator
+  display: inline-block
+  margin: 0 20px
+  +size(40px, 1px)
+  background-color: $white
+  vertical-align: middle
+
+// Image block
+.service-image
+  +position(absolute, -52px, null, null, 0)
+  width: $column * 3
+  text-align: center
+  z-index: $zBase
+
+  .lhs &
+    left: $column * 2.5
+    width: $column * 3.5
+
+  img
+    position: relative
+    +size(100%, auto)
+    max-width: 100%
+
+  .service[data-service="game-design"] & img
+    box-shadow: 0 0 34px 4px rgba($black, .35)
+
+  .service[data-service="virtual-reality"] &
+    max-width: 604px
+
+  .service[data-service="digital-products"] &
+    top: -150px
+
+.circle
+  +position(absolute, -50px, null, null, 40px)
+  width: calc(100% - 80px)
+  +aspect-ratio(1, 1)
+
+  &::before
+    background-color: $accent
+    border-radius: 50%
+
+  .service[data-service="game-design"] &
+    +position(absolute, -50px, null, null, 40px)
+
+  .service[data-service="virtual-reality"] &
+    +center('both')
+
+  .service[data-service="digital-products"] &
+    +center('both')
+    width: 100%
+
+// Description
+.service-description
+  position: relative
+  width: $column * 2
+  padding-top: 80px
+
+  .rhs &
+    margin-left: $column * 3.5
+
+// Title
+.service-title
+  +position(absolute, 0)
+  font-size: 5rem
+  letter-spacing: 2px
+  z-index: $zTop
+
+  .rhs &
+    right: 0
+
+  .lhs &
+    left: 0
+
+// Separator (with icon)
+.service-icon
+  position: relative
+  margin-bottom: 15px
+
+  &::before
+    content: ""
+    display: inline-block
+    +size($column, 2px)
+    margin: 8px 12px 0 0
+    background-color: $white
+    vertical-align: top
+
+.shape-gamepad
+  +size(41px, 19px)
+
+.shape-vr-gear
+  +size(35px, 21px)
+
+.shape-atom
+  +square(29px)
+
+// Lead
+.service-lead
+  margin-bottom: 15px
+  +font(null, null, 1.1875rem, null, null, 1.2)
+
+// List
+.service-list
+  margin-top: 20px
+  padding-top: 20px
+  border-top: 1px solid rgba($white, .5)
+  font-size: 0
+  list-style-type: none
+
+  li
+    display: inline-block
+    width: calc(50% - 1px)
+    margin-bottom: 10px
+    vertical-align: top
+
+    &:before
+      content: "\2013"
+      margin-right: 12px
+
+  .service[data-service="game-design"] &
+    li:nth-child(odd)
+      width: calc(45% - 1px)
+
+    li:nth-child(even)
+      width: calc(55% - 1px)

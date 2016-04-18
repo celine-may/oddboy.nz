@@ -19,6 +19,7 @@ body
 
 // Section header
 .header
+  +position(fixed, 0, null, null, 0)
   display: table
   +square(100%)
   padding-left: $column
@@ -27,3 +28,9 @@ body
   display: table-cell
   padding-right: $column * 3
   vertical-align: middle
+
+// Section
+.section
+  position: relative
+  margin-top: 100vh
+
