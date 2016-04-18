@@ -227,3 +227,30 @@
   .work-anim
     opacity: 1
     transform: translateY(0)
+
+// Footer
+.footer
+  margin-top: 100px
+  padding: 40px $column 160px
+  font-size: 0
+
+.footer-cell
+  display: inline-block
+  width: calc(50% - 1px)
+  vertical-align: top
+
+  &:last-child
+    text-align: right
+
+.footer-social
+  display: inline-block
+  margin-right: 20px
+
+.shape-behance
+  +size(25px, 16px)
+
+.shape-facebook
+  +size(10px, 18px)
+
+.copyright
+  +font(null, $sansSerif, .875rem, 400)
