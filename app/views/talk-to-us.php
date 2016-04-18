@@ -14,6 +14,12 @@
       <a href="#todo" target="_blank" class="character-link text-color primary character-anim">Portfolio</a>
     </div>
   </article>
+
+  <button class="scroll-cta do-scroll-down">
+    <svg class="shape-scroll-cta">
+      <use xlink:href="#shape-scroll-cta"></use>
+    </svg>
+  </button>
 </header>
 
 <section class="section contact-wrapper bg-color accent">
