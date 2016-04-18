@@ -110,4 +110,58 @@
       </ul>
     </div>
   </article>
+
+  <div class="work-wrapper">
+    <h2 class="work-wrapper-title title">Some of our work<span class="text-color primary">.</span></h2>
+
+    <article class="work" data-work="camp-hope-falls">
+      <div class="work-content">
+        <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="#todo" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="barkle">
+      <div class="work-content">
+        <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="#todo" target="_blank" class="btn">View site</a>
+          <a href="#todo" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="yanky-doodle">
+      <div class="work-content">
+        <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="#todo" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="celine">
+      <div class="work-content">
+        <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="http://celine.kiwi" target="_blank" class="btn">View site</a>
+          <a href="#todo" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>

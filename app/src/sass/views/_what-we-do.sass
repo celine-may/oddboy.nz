@@ -150,3 +150,80 @@
 
     li:nth-child(even)
       width: calc(55% - 1px)
+
+// Work
+.work-wrapper
+  padding: 0 $column
+
+.work-wrapper-title
+  margin-bottom: 75px
+
+.work
+  +size(100%, 235px)
+  margin-bottom: 25px
+  padding: 110px 0 100px
+  background-position: center top
+  background-repeat: no-repeat
+  box-shadow: 0 0 34px 4px rgba($black, .2)
+  text-align: center
+  transition: all $transitionDuration $transitionFunction
+
+  &[data-work="camp-hope-falls"]
+    background-image: url(#{$imagePath}work/camp-hope-falls.jpg)
+
+  &[data-work="barkle"]
+    background-image: url(#{$imagePath}work/barkle.jpg)
+
+  &[data-work="yanky-doodle"]
+    background-image: url(#{$imagePath}work/yanky-doodle.jpg)
+
+  &[data-work="celine"]
+    background-image: url(#{$imagePath}work/celine.jpg)
+
+.work-content
+  display: inline-block
+  overflow: hidden
+
+.work-title
+  font-size: 2.5rem
+  letter-spacing: 2px
+
+.work-lead
+  position: relative
+  display: inline-block
+  margin: 15px 0 20px
+  font-size: 1.125rem
+
+  &::before, &::after
+    content: ""
+    +position(absolute, 10px)
+    +size(100%, 1px)
+    background-color: $white
+
+  &::before
+    left: -15px
+    transform: translateX(-100%)
+
+  &::after
+    right: -15px
+    transform: translateX(100%)
+
+.work-ctas
+  font-size: 0
+
+  .btn + .btn
+    margin-left: 12px
+
+.work-anim
+  opacity: 0
+  transform: translateY(-60px)
+  transition: all $transitionDuration $transitionFunction
+
+// Work rollover animation
+.work:hover
+  height: 410px
+  padding: 140px 0
+
+  .work-anim
+    opacity: 1
+    transform: translateY(0)
