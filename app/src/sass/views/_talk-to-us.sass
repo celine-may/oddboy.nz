@@ -51,7 +51,7 @@
   transform: translateY(-100%)
   transition: all $transitionDuration $transitionFunction
 
-.character-content:hover
+.no-touchevents .character-content:hover
   .character-img
     top: -40px
     background-position: center -530px
@@ -75,5 +75,5 @@
   &:first-child
     margin-right: $column / 2
 
-  &:hover
+  .no-touchevents &:hover
     color: $primary
