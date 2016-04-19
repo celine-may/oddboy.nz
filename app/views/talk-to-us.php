@@ -5,7 +5,7 @@
       <div class="character-content">
         <div class="character-img"></div>
         <a href="mailto:ben@oddboy.nz" class="character-email character-anim">ben@oddboy.nz</a>
-        <a href="#todo" target="_blank" class="character-link lead text-color accent character-anim">Portfolio</a>
+        <a href="https://www.behance.net/barkle" target="_blank" class="character-link lead text-color accent character-anim">Portfolio</a>
       </div>
     </article>
 
@@ -13,7 +13,7 @@
       <div class="character-content">
         <div class="character-img"></div>
         <a href="mailto:tom@oddboy.nz" class="character-email character-anim">tom@oddboy.nz</a>
-        <a href="#todo" target="_blank" class="character-link lead text-color primary character-anim">Portfolio</a>
+        <a href="https://www.behance.net/Iimbo" target="_blank" class="character-link lead text-color primary character-anim">Portfolio</a>
       </div>
     </article>
   </div>
