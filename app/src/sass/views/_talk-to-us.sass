@@ -61,10 +61,25 @@
     margin-top: -80px
 
 .character-link
+  position: relative
   display: inline-block
-  padding-bottom: 6px
-  border-bottom: 1px solid currentColor
-  font-size: .875rem
+  font-size: .9375rem
+
+  &::after
+    content: ""
+    display: inline-block
+    +position(relative, -10px)
+    +size(100%, 1px)
+    background-color: currentColor
+
+  .no-touchevents &
+    &::after
+      transform: scale(0)
+      transform-origin: left center
+      transition: transform $transitionDuration $transitionFunction
+
+    &:hover::after
+      transform: scale(1)
 
 +min-screen(488px)
   .no-touchevents
@@ -103,6 +118,7 @@
 
 .contact-link
   margin-left: $column / 2
+  transition: color $transitionDuration $transitionFunction
 
   .no-touchevents &:hover
     color: $primary
