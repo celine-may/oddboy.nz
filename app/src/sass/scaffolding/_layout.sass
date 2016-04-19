@@ -24,6 +24,9 @@ body
   +square(100%)
   padding: 100px $column
 
+  +max-screen($small)
+    padding-top: 100px + $header
+
   +min-screen($medium + 1px)
     +position(fixed, 0, null, null, 0)
 

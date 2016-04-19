@@ -4,9 +4,19 @@
 .ui
   +position(fixed, 0, null, null, 0)
   +square(100%)
-  padding: $extGap
   pointer-events: none
   z-index: $zXTop
+
+  +min-screen($small + 1px)
+    padding: $extGap
+
+.ui-header
+  position: relative
+  +size(100%, $header)
+  padding: 0 $column
+
+  .main[data-view="home"]  &
+    display: none
 
 // Logo
 .logo
@@ -45,20 +55,31 @@
 
 // Back link
 .back-link
+  display: inline-block
+  +position(absolute, $extGap)
   pointer-events: auto
 
+  +max-screen($small)
+    top: 29px
+    opacity: .6
+
+  +min-screen($small + 1px)
+    .main[data-view="home"] &
+      display: none
+
+    .main[data-view="what-we-do"] &
+      right: $extGap
+
+    .main[data-view="talk-to-us"] &
+      left: $extGap
+
 .shape-arrow
-  +position(absolute, $extGap)
   +size(46px, 13px)
 
-  .main[data-view="home"] &
-    display: none
-
-  .main[data-view="what-we-do"] &
-    right: $extGap
-
   .main[data-view="talk-to-us"] &
-    left: $extGap
+    transform: rotate(180deg)
+
+  +max-screen($small)
     transform: rotate(180deg)
 
 // Nav link
@@ -92,4 +113,51 @@
     display: none
 
   .main[data-view="talk-to-us"] &.rhs
+    display: none
+
+.nav-link-small
+  +center('horizontal')
+  display: inline-block
+  padding: 18px 24px 16px
+  border: 1px solid $white
+  font-size: 1rem
+  letter-spacing: 3px
+  pointer-events: auto
+
+  &::before
+    content: ""
+    +center('horizontal')
+    +size(1px, 24px)
+    background-color: $white
+
+  &.top
+    top: 64px
+
+    &::before
+      top: -40px
+
+  &.bottom
+    bottom: 64px
+
+    &::before
+      bottom: -40px
+
+  .main[data-view="what-we-do"] &, .main[data-view="talk-to-us"] &
+    display: none
+
+  +max-screen($xSmall)
+    font-size: .875rem
+
+// Title
+.ui-title
+  +position(absolute, 30px, $column)
+  font-size: 1rem
+  letter-spacing: 4px
+  opacity: .6
+  text-align: right
+
+  .main[data-view="talk-to-us"] &.wwd
+    display: none
+
+  .main[data-view="what-we-do"] &.ttu
     display: none
