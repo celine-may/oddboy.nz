@@ -18,7 +18,10 @@
     </article>
   </div>
 
-  <button class="scroll-cta large-only do-scroll-down">
+  <button class="scroll-cta anim2 large-only do-scroll-down">
+    <span class="scroll-circle">
+      <span class="scroll-bg"></span>
+    </span>
     <svg class="shape-scroll-cta">
       <use xlink:href="#shape-scroll-cta"></use>
     </svg>

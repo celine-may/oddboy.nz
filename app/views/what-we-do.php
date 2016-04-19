@@ -11,7 +11,7 @@
     <p class="lead do-complement-push">
       We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
     </p>
-    <button class="scroll-cta do-scroll-down">
+    <button class="scroll-cta anim1 do-scroll-down">
       <svg class="shape-scroll-cta">
         <use xlink:href="#shape-scroll-cta"></use>
       </svg>
