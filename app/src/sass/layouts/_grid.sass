@@ -19,3 +19,7 @@
 @for $i from 1 through 7
   .grid-line:nth-child(#{$i})
     left: $i * $column
+
++max-screen($small)
+  .grid-line:nth-child(odd)
+    opacity: 0
