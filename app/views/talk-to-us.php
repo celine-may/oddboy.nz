@@ -1,22 +1,24 @@
 <header class="header">
   <?php include('layouts/grid.php'); ?>
-  <article class="header-content character lhs" data-character="ben">
-    <div class="character-content">
-      <div class="character-img"></div>
-      <a href="mailto:ben@oddboy.nz" class="character-email character-anim">ben@oddboy.nz</a>
-      <a href="#todo" target="_blank" class="character-link text-color accent character-anim">Portfolio</a>
-    </div>
-  </article>
+  <div class="header-content">
+    <article class="character lhs" data-character="ben">
+      <div class="character-content">
+        <div class="character-img"></div>
+        <a href="mailto:ben@oddboy.nz" class="character-email character-anim">ben@oddboy.nz</a>
+        <a href="#todo" target="_blank" class="character-link lead text-color accent character-anim">Portfolio</a>
+      </div>
+    </article>
 
-  <article class="header-content character rhs" data-character="tom">
-    <div class="character-content">
-      <div class="character-img"></div>
-      <a href="mailto:tom@oddboy.nz" class="character-email character-anim">tom@oddboy.nz</a>
-      <a href="#todo" target="_blank" class="character-link text-color primary character-anim">Portfolio</a>
-    </div>
-  </article>
+    <article class="character rhs" data-character="tom">
+      <div class="character-content">
+        <div class="character-img"></div>
+        <a href="mailto:tom@oddboy.nz" class="character-email character-anim">tom@oddboy.nz</a>
+        <a href="#todo" target="_blank" class="character-link lead text-color primary character-anim">Portfolio</a>
+      </div>
+    </article>
+  </div>
 
-  <button class="scroll-cta do-scroll-down">
+  <button class="scroll-cta large-only do-scroll-down">
     <svg class="shape-scroll-cta">
       <use xlink:href="#shape-scroll-cta"></use>
     </svg>

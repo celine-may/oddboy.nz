@@ -2,37 +2,54 @@
 // -----------------
 
 .main[data-view="talk-to-us"]
+  .header-content
+    font-size: 0
+
   .scroll-cta
     +center('horizontal')
     bottom: 60px
 
 .character
-  width: 50%
+  width: 100%
+  text-align: center
 
-  &.lhs
-    padding-right: $column * 1/2
-    text-align: right
+  +max-screen($medium)
+    margin-bottom: 100px
 
-  &.rhs
-    padding-left: $column * 1/2
-    text-align: left
+  +min-screen($medium + 1px)
+    display: inline-block
+    width: calc(50% - 1px)
+
+    &.lhs
+      padding-right: $column * 1/2
+      text-align: right
+
+    &.rhs
+      padding-left: $column * 1/2
+      text-align: left
 
 .character-content
   display: inline-block
   text-align: center
 
 .character-img
-  position: relative
+  +position(relative, 0)
   +size(366px, 530px)
   background-position: center top
   background-repeat: no-repeat
-  transition: margin-top $transitionDuration $transitionFunction
+  transition: top 1s $transitionFunction
 
   .character[data-character="ben"] &
     background-image: url(#{$imagePath}characters/ben.png)
 
   .character[data-character="tom"] &
     background-image: url(#{$imagePath}characters/tom.png)
+
+  +max-screen(487px)
+    top: -50px
+    +size(246px, 356px)
+    background-position: center bottom
+    background-size: 100% auto
 
 .character-email
   display: block
@@ -44,21 +61,28 @@
   display: inline-block
   padding-bottom: 6px
   border-bottom: 1px solid currentColor
-  +font(null, $serif, .875rem, 500, italic)
+  font-size: .875rem
 
-.character-anim
-  opacity: 0
-  transform: translateY(-100%)
-  transition: all $transitionDuration $transitionFunction
++min-screen(488px)
+  .no-touchevents
+    .character-anim
+      opacity: 0
+      transform: translateY(-100%)
+      transition: all $transitionDuration $transitionFunction
 
-.no-touchevents .character-content:hover
+    .character-content:hover
+      .character-img
+        top: -40px
+        background-position: center -530px
+
+      .character-anim
+        opacity: 1
+        transform: translateY(0)
+
+.touchevents
   .character-img
     top: -40px
-    background-position: center -530px
-
-  .character-anim
-    opacity: 1
-    transform: translateY(0)
+    background-position: center bottom
 
 // Contact
 .contact-wrapper
@@ -67,13 +91,20 @@
 
 .contact
   display: table-cell
-  padding: 0 $column 0 $column * 1.5
+  padding: 0 $column 0 $column
   text-align: right
   vertical-align: middle
 
+  +min-screen($small + 1px)
+    padding-left: $column * 1.5
+
 .contact-link
-  &:first-child
-    margin-right: $column / 2
+  margin-left: $column / 2
 
   .no-touchevents &:hover
     color: $primary
+
+  +max-screen($small)
+    display: block
+    margin-bottom: 10px
+    font-size: 1.375rem
