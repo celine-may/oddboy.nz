@@ -180,7 +180,7 @@
       </svg>
     </a>
 
-    <a href="#todo" target="_blank" class="footer-social">
+    <a href="https://www.facebook.com/oddboynz" target="_blank" class="footer-social">
       <svg class="shape-facebook">
         <use xlink:href="#shape-facebook"></use>
       </svg>
