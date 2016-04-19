@@ -14,7 +14,7 @@ a
   text-transform: uppercase
 
   +max-screen($small)
-    font-size: 3.125rem
+    font-size: 3rem
     letter-spacing: -1px
 
   +max-screen($xSmall)
@@ -33,9 +33,14 @@ a
 .btn
   display: inline-block
   width: calc(50% - 6px)
+  padding: 14px 0 12px
   background-color: $secondary
-  +font(null, $serif, .875rem, 500, italic, 40px)
+  +font(null, $serif, .875rem, 500, italic)
   text-transform: uppercase
+
+  +max-screen($small)
+    padding: 12px 0 8px
+    +font(null, null, .75rem, null, null)
 
 // CTAs
 .scroll-cta

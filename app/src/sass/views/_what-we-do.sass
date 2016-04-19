@@ -2,9 +2,10 @@
 // -----------------
 
 // Header
-.main[data-view="what-we-do"]
-  .header-content
-    padding-right: $column * 2
++min-screen($small + 1px)
+  .main[data-view="what-we-do"]
+    .header-content
+      padding-right: $column * -8
 
 .title-complement
   +position(relative, -120px)
@@ -13,12 +14,17 @@
 
 // Services
 .services-wrapper
-  padding-top: 190px
+  padding: 190px $extGapSmall 0
+
+  +min-screen($small + 1px)
+    padding: 190px $column 0
 
 .service
   position: relative
-  width: $column * 6
-  margin: 0 0 550px $column
+  margin-bottom: 300px
+
+  +min-screen($medium + 1px)
+    margin-bottom: 550px
 
 // Higlights (vertical)
 .service-highlights
@@ -35,14 +41,18 @@
 
 // Image block
 .service-image
-  +position(absolute, -52px, null, null, 0)
-  width: $column * 3
+  position: relative
+  width: 100%
   text-align: center
   z-index: $zBase
 
-  .lhs &
-    left: $column * 2.5
-    width: $column * 3.5
+  +min-screen($medium + 1px)
+    +position(absolute, -52px, null, null, 0)
+    width: $column * 3
+
+    .lhs &
+      left: $column * 2.5
+      width: $column * 3.5
 
   img
     position: relative
@@ -80,24 +90,33 @@
 // Description
 .service-description
   position: relative
-  width: $column * 2
-  padding-top: 80px
+  padding-top: 40px
 
-  .rhs &
-    margin-left: $column * 3.5
+  +min-screen($medium + 1px)
+    width: $column * 2
+    min-width: 310px
+    padding-top: 80px
+
+    .rhs &
+      margin-left: $column * 3.5
 
 // Title
 .service-title
-  +position(absolute, 0)
-  font-size: 5rem
-  letter-spacing: 2px
+  font-size: 3.5rem
   z-index: $zTop
 
-  .rhs &
-    right: 0
+  +min-screen($medium + 1px)
+    +position(absolute, 0)
+    width: $column * 6
+    font-size: 5rem
+    letter-spacing: 2px
 
-  .lhs &
-    left: 0
+    .rhs &
+      right: 0
+      text-align: right
+
+    .lhs &
+      left: 0
 
 // Separator (with icon)
 .service-icon
@@ -111,6 +130,10 @@
     margin: 8px 12px 0 0
     background-color: $white
     vertical-align: top
+
+  +max-screen($medium)
+    &::before
+      width: calc(100% - 65px)
 
 .shape-gamepad
   +size(41px, 19px)
@@ -135,26 +158,29 @@
   list-style-type: none
 
   li
-    display: inline-block
-    width: calc(50% - 1px)
     margin-bottom: 10px
-    vertical-align: top
 
     &:before
       content: "\2013"
       margin-right: 12px
 
-  .service[data-service="game-design"] &
-    li:nth-child(odd)
-      width: calc(45% - 1px)
+  +min-screen($small + 1px)
+    li
+      display: inline-block
+      width: calc(50% - 1px)
+      vertical-align: top
 
-    li:nth-child(even)
-      width: calc(55% - 1px)
+    .service[data-service="game-design"] &
+      li:nth-child(odd)
+        width: calc(45% - 1px)
+
+      li:nth-child(even)
+        width: calc(55% - 1px)
 
 // Work
 .work-wrapper
   position: relative
-  padding: 0 $column
+  padding-bottom: 100px
 
 .floating-letter
   +position(absolute, 84px, $column * 1/2)
@@ -193,8 +219,14 @@
   overflow: hidden
 
 .work-title
-  font-size: 2.5rem
+  font-size: 1.25rem
   letter-spacing: 2px
+
+  +min-screen($xSmall + 1px)
+    font-size: 1.5625rem
+
+  +min-screen($small + 1px)
+    font-size: 2.5rem
 
 .work-lead
   position: relative
@@ -222,30 +254,43 @@
   .btn + .btn
     margin-left: 12px
 
-.work-anim
-  opacity: 0
-  transform: translateY(-60px)
-  transition: all $transitionDuration $transitionFunction
-
 // Work rollover animation
-.no-touchevents .work:hover
-  height: 410px
-  padding: 140px 0
-
+.no-touchevents
   .work-anim
-    opacity: 1
-    transform: translateY(0)
+    opacity: 0
+    transform: translateY(-60px)
+    transition: all $transitionDuration $transitionFunction
+
+  .work:hover
+    height: 410px
+    padding: 140px 0
+
+    .work-anim
+      opacity: 1
+      transform: translateY(0)
+
+.touchevents
+  .work
+    height: 270px
+    padding: 70px 0
+    background-size: cover
+
+  +min-screen($small + 1px)
+    .work
+      height: 410px
+      padding: 140px 0
 
 // Footer
 .footer
-  margin-top: 100px
+  position: relative
   padding: 40px $column 160px
   font-size: 0
+  z-index: $zTop
 
 .footer-cell
   display: inline-block
   width: calc(50% - 1px)
-  vertical-align: top
+  vertical-align: middle
 
   &:last-child
     text-align: right
@@ -253,12 +298,22 @@
 .footer-social
   display: inline-block
   margin-right: 20px
+  vertical-align: middle
 
 .shape-behance
-  +size(25px, 16px)
+  +size(36px, 22px)
+
+  +min-screen($small + 1px)
+    +size(25px, 16px)
 
 .shape-facebook
-  +size(10px, 18px)
+  +size(13px, 27px)
+
+  +min-screen($small + 1px)
+    +size(10px, 18px)
 
 .copyright
-  +font(null, $sansSerif, .875rem, 400)
+  +font(null, $sansSerif, 1.1875rem, 400)
+
+  +min-screen($small + 1px)
+    font-size: .875rem

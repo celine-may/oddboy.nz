@@ -53,9 +53,12 @@
 
 .character-email
   display: block
-  margin-top: -80px
+  margin-top: -40px
   margin-bottom: 15px
   +font(null, $sansSerif, 1.1875rem, 900)
+
+  +min-screen($small + 1px)
+    margin-top: -80px
 
 .character-link
   display: inline-block
