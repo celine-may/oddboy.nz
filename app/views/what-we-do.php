@@ -123,7 +123,7 @@
         <div class="work-content">
           <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
-            Web experience
+            Game Design
           </p>
           <div class="work-ctas work-anim">
             <a href="https://www.behance.net/gallery/35511205/Camp-Hope-Falls" target="_blank" class="btn">Behance</a>
@@ -148,7 +148,7 @@
         <div class="work-content">
           <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
-            Web experience
+            Game Design
           </p>
           <div class="work-ctas work-anim">
             <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
@@ -164,7 +164,7 @@
           </p>
           <div class="work-ctas work-anim">
             <a href="http://celine.kiwi" target="_blank" class="btn">View site</a>
-            <a href="#todo" target="_blank" class="btn">Behance</a>
+            <!-- <a href="#todo" target="_blank" class="btn">Behance</a> -->
           </div>
         </div>
       </article>
