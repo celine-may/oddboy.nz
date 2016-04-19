@@ -5,12 +5,12 @@ a
   text-decoration: none
 
 .copy
-  +font(null, $sansSerif, .875rem, 300, normal, 1.6)
+  +font($sansSerif, .875rem, 300, normal, 1.6)
 
 // Headings
 .title
   position: relative
-  +font(null, $sansSerif, 7vw, 900, null, 1)
+  +font($sansSerif, 7vw, 900, null, 1)
   text-transform: uppercase
 
   +max-screen($small)
@@ -27,7 +27,7 @@ a
   margin: 50px 0
 
 .lead
-  +font(null, $serif, 1.1875rem, 500, italic, 1.3)
+  +font($serif, 1.1875rem, 500, italic, 1.3)
 
 // Buttons
 .btn
@@ -35,12 +35,12 @@ a
   width: calc(50% - 6px)
   padding: 14px 0 12px
   background-color: $secondary
-  +font(null, $serif, .875rem, 500, italic)
+  +font($serif, .875rem, 500, italic)
   text-transform: uppercase
 
   +max-screen($small)
     padding: 12px 0 8px
-    +font(null, null, .75rem, null, null)
+    +font(null, .75rem, null, null)
 
 // CTAs
 .scroll-cta
