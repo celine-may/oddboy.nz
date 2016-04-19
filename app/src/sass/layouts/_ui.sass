@@ -56,8 +56,14 @@
 // Back link
 .back-link
   display: inline-block
-  +position(absolute, $extGap)
+  +position(absolute, $extGap - 5px)
+  +size(43px, 23px)
+  overflow: hidden
   pointer-events: auto
+  transition: width $transitionDuration $transitionFunction
+
+  &:hover
+    width: 54px
 
   +max-screen($small)
     top: 29px
@@ -74,10 +80,13 @@
       left: $extGap
 
 .shape-arrow
-  +size(46px, 13px)
+  +position(absolute, 5px, 0)
+  +size(65px, 13px)
 
   .main[data-view="talk-to-us"] &
     transform: rotate(180deg)
+    right: auto
+    left: 0
 
   +max-screen($small)
     transform: rotate(180deg)
