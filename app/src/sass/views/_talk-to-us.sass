@@ -30,9 +30,15 @@
 
 .character-content
   display: inline-block
-  width: 366px
+  width: 100%
   text-align: center
   background: url(#{$imagePath}characters/shadow.png) no-repeat center bottom 30px
+
+  +max-screen($xSmall)
+    background-size: 100% auto
+
+  +min-screen(450px)
+    width: 366px
 
 .character-sprites
   display: inline-block
@@ -44,6 +50,12 @@
     +square(100%)
     background-position: 0 0
     background-repeat: no-repeat
+
+  +max-screen($xSmall)
+    +size(240px, 501px)
+
+    .sprite
+      background-size: 960px 2004px
 
 .character-rollover
   z-index: $zTop
@@ -63,12 +75,6 @@
 
   .character[data-character="tom"] &
     background-image: url(#{$imagePath}characters/tom-blink-sprite.png)
-
-  +max-screen(487px)
-    top: -50px
-    +size(246px, 356px)
-    background-position: center bottom
-    background-size: 100% auto
 
 .character-email
   display: block
@@ -119,6 +125,10 @@
 .touchevents
   .character-rollover
     background-position: -297px -1860px
+
+  +max-screen($xSmall)
+    .character-rollover
+      background-position: -240px -1503px
 
 // Contact
 .contact-wrapper
