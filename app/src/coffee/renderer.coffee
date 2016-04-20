@@ -16,6 +16,7 @@ class Renderer
       windowHeight: @$window.height()
       smallBreakpoint: 767
       mediumBreakpoint: 1023
+      isTouch: Modernizr.touchevents
       showLoader: false
       primaryColor: '#23dcd4'
       accentColor: '#f83656'

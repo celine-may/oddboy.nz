@@ -2,15 +2,25 @@
 // -----------------
 
 // Header
++max-screen($medium)
+  .main[data-view="what-we-do"]
+    .title-separator
+      margin-bottom: 30px
+
 +min-screen($small + 1px)
   .main[data-view="what-we-do"]
     .header-content
       padding-right: $column * 2
 
 .title-complement
-  +position(relative, -120px)
+  +position(relative, -90px)
+  line-height: 1.2
   opacity: 0
   transform: translateY(-30px)
+  z-index: $zBase
+
+  +min-screen($medium + 1px)
+    top: -110px
 
 // Services
 .services-wrapper

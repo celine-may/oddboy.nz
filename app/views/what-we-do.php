@@ -1,11 +1,11 @@
 <header class="header">
   <?php include('layouts/grid.php'); ?>
   <div class="header-content">
-    <h1 class="title with-complement">
+    <h1 class="title">
       <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<button class="text-color primary do-show-complement">*</button>
     </h1>
     <span class="title-separator bg-color accent do-complement-push"></span>
-    <p class="title-complement copy touch-hidden">
+    <p class="title-complement copy">
       <span class="text-color primary">*</span>That’s just a roundabout way of saying we create digital stuff that you’ll remember.
     </p>
     <p class="lead do-complement-push">

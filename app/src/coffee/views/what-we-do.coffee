@@ -16,8 +16,17 @@ class App.WhatWeDo
 
     @$showComplementBtn = $('.do-show-complement')
 
-    @$showComplementBtn.on 'mouseenter', @showComplement
-    @$showComplementBtn.on 'mouseleave', @hideComplement
+    unless exports.isTouch
+      @$showComplementBtn.on 'mouseenter', @showComplement
+      @$showComplementBtn.on 'mouseleave', @hideComplement
+    else
+      @$showComplementBtn.on 'click', (e) =>
+        if @$complement.hasClass 'visible'
+          @hideComplement()
+          @$complement.removeClass 'visible'
+        else
+          @showComplement()
+          @$complement.addClass 'visible'
 
   showComplement: =>
     @showComplementTL = new TimelineLite()
