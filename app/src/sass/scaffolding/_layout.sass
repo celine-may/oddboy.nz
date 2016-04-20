@@ -24,6 +24,9 @@ body
   +square(100%)
   padding: 100px $column
 
+  +max-screen($medium)
+    z-index: $zTop + 1
+
   +max-screen($small)
     padding: $header + $extGapSmall $extGapSmall 100px
 
@@ -35,6 +38,10 @@ body
   display: table-cell
   vertical-align: middle
   z-index: $zTop
+
+.header-link
+  width: 100%
+  margin-top: $extGapSmall
 
 // Section
 .section

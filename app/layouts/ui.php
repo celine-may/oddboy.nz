@@ -33,11 +33,11 @@
     <h2 class="ui-title title ttu">Talk to us</h2>
   </div>
 
-  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link-small top title">
+  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link-small btn-border top title">
     Talk to us
   </a>
 
-  <a href="<?php echo PATH; ?>what-we-do" class="nav-link-small bottom title">
+  <a href="<?php echo PATH; ?>what-we-do" class="nav-link-small btn-border bottom title">
     What we do
   </a>
 </div>

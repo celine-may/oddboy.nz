@@ -2,22 +2,35 @@
 // -----------------
 
 // Header
-+max-screen($medium)
-  .main[data-view="what-we-do"]
+.main[data-view="what-we-do"]
+  +max-screen($medium)
     .title-separator
-      margin-bottom: 30px
+      margin-bottom: 20px
 
-+min-screen($small + 1px)
-  .main[data-view="what-we-do"]
+  +max-screen($small)
+    .title-separator
+      margin-bottom: 10px
+
+  +min-screen($small + 1px)
     .header-content
       padding-right: $column * 2
 
+  +min-max-screen($xSmall + 1px, $medium)
+    .section
+      margin-top: -$extGap
+
 .title-complement
-  +position(relative, -90px)
+  +position(relative, -80px)
   line-height: 1.2
   opacity: 0
   transform: translateY(-30px)
   z-index: $zBase
+
+  +max-screen($small)
+    top: -60px
+
+  +max-screen($xSmall)
+    top: -50px
 
   +min-screen($medium + 1px)
     top: -110px
@@ -310,7 +323,7 @@
   position: relative
   padding: 40px $column 160px
   font-size: 0
-  z-index: $zTop
+  z-index: $zXTop
 
 .footer-cell
   display: inline-block

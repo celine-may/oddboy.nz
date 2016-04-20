@@ -11,11 +11,16 @@
     <p class="lead do-complement-push">
       We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
     </p>
-    <button class="scroll-cta anim1 do-scroll-down">
-      <svg class="shape-scroll-cta">
+    <button class="scroll-cta anim1 do-scroll-down do-complement-push xsmall-hidden">
+      <svg class="shape-scroll-cta large-only">
         <use xlink:href="#shape-scroll-cta"></use>
       </svg>
+      <svg class="shape-chevron large-hidden">
+        <use xlink:href="#shape-chevron"></use>
+      </svg>
     </button>
+
+    <a href="<?php echo PATH; ?>talk-to-us" class="header-link btn-border title small-only do-complement-push">Talk to us</a>
   </div>
 </header>
 
