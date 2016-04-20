@@ -130,6 +130,7 @@
     <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
 
     <article class="work" data-work="camp-hope-falls">
+      <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
         <p class="work-lead lead work-anim">
@@ -142,6 +143,7 @@
     </article>
 
     <article class="work" data-work="barkle">
+      <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
         <p class="work-lead lead work-anim">
@@ -155,6 +157,7 @@
     </article>
 
     <article class="work" data-work="yanky-doodle">
+      <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
         <p class="work-lead lead work-anim">
@@ -167,6 +170,7 @@
     </article>
 
     <article class="work" data-work="celine">
+      <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
         <p class="work-lead lead work-anim">

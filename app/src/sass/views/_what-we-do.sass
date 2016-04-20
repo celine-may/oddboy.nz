@@ -232,23 +232,27 @@
   +size(100%, 235px)
   margin-bottom: 25px
   padding: 110px 0 100px
-  background-position: center top
-  background-repeat: no-repeat
-  background-size: 100% 410px
   box-shadow: 0 0 34px 4px rgba($black, .2)
+  overflow: hidden
   text-align: center
   transition: all $transitionDuration $transitionFunction
 
-  &[data-work="camp-hope-falls"]
+.work-bg
+  +position(absolute, 0, null, null, 0)
+  +size(100%, 410px)
+  background-position: center top
+  background-repeat: no-repeat
+
+  .work[data-work="camp-hope-falls"] &
     background-image: url(#{$imagePath}work/camp-hope-falls.jpg)
 
-  &[data-work="barkle"]
+  .work[data-work="barkle"] &
     background-image: url(#{$imagePath}work/barkle.jpg)
 
-  &[data-work="yanky-doodle"]
+  .work[data-work="yanky-doodle"] &
     background-image: url(#{$imagePath}work/yanky-doodle.jpg)
 
-  &[data-work="celine"]
+  .work[data-work="celine"] &
     background-image: url(#{$imagePath}work/celine.jpg)
 
 .work-content
@@ -297,7 +301,7 @@
   .work-anim
     opacity: 0
     transform: translateY(-60px)
-    transition: all $transitionDuration $transitionFunction
+    transition: all $transitionDuration $transitionFunction .1s
 
   .work:hover
     height: 410px
