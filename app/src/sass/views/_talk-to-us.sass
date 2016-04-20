@@ -43,7 +43,7 @@
 .character-sprites
   display: inline-block
   +position(relative, 0)
-  +size(297px, 620px)
+  +size(297px, 490px)
 
   .sprite
     +position(absolute, 0, null, null, 0)
@@ -52,10 +52,10 @@
     background-repeat: no-repeat
 
   +max-screen($xSmall)
-    +size(240px, 501px)
+    +size(240px, 396px)
 
     .sprite
-      background-size: 960px 2004px
+      background-size: 960px 1584px
 
 .character-rollover
   z-index: $zTop
@@ -78,12 +78,8 @@
 
 .character-email
   display: block
-  margin-top: -40px
   margin-bottom: 10px
   +font($sansSerif, 1.1875rem, 900)
-
-  +min-screen($small + 1px)
-    margin-top: -40px
 
 .character-link
   position: relative
@@ -124,11 +120,11 @@
 
 .touchevents
   .character-rollover
-    background-position: -297px -1860px
+    background-position: -297px -1470px
 
   +max-screen($xSmall)
     .character-rollover
-      background-position: -240px -1503px
+      background-position: -240px -1188px
 
 // Contact
 .contact-wrapper

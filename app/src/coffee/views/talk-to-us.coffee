@@ -37,37 +37,37 @@ class App.TalkToUs
       backgroundPosition: '-891px 0'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '0 -620px'
+      backgroundPosition: '0 -490px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-297px -620px'
+      backgroundPosition: '-297px -490px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-594px -620px'
+      backgroundPosition: '-594px -490px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-891px -620px'
+      backgroundPosition: '-891px -490px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '0 -1240px'
+      backgroundPosition: '0 -980px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-297px -1240px'
+      backgroundPosition: '-297px -980px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-594px -1240px'
+      backgroundPosition: '-594px -980px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-891px -1240px'
+      backgroundPosition: '-891px -980px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '0 -1860px'
+      backgroundPosition: '0 -1470px'
       delay: .03
     .set @$rolloverSprite,
-      backgroundPosition: '-297px -1860px'
+      backgroundPosition: '-297px -1470px'
       delay: .03
-      onComplete: =>
-        @blink exports, character
+      # onComplete: =>
+        # @blink exports, character
 
   toSleep: (exports) ->
     if @blinkTL?
@@ -97,22 +97,22 @@ class App.TalkToUs
       backgroundPosition: '-891px 0'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '0 -620px'
+      backgroundPosition: '0 -490px'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '-297px -620px'
+      backgroundPosition: '-297px -490px'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '-594px -620px'
+      backgroundPosition: '-594px -490px'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '-891px -620px'
+      backgroundPosition: '-891px -490px'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '0 -1240px'
+      backgroundPosition: '0 -980px'
       delay: .05
     .set @$blinkSprite,
-      backgroundPosition: '-297px -1240px'
+      backgroundPosition: '-297px -980px'
       delay: .05
       onComplete: =>
         @blinkTL.restart()
