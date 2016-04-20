@@ -30,20 +30,39 @@
 
 .character-content
   display: inline-block
+  width: 366px
   text-align: center
+  background: url(#{$imagePath}characters/shadow.png) no-repeat center bottom 30px
 
-.character-img
+.character-sprites
+  display: inline-block
   +position(relative, 0)
-  +size(366px, 530px)
-  background-position: center top
-  background-repeat: no-repeat
-  transition: top 1s $transitionFunction
+  +size(297px, 620px)
+
+  .sprite
+    +position(absolute, 0, null, null, 0)
+    +square(100%)
+    background-position: 0 0
+    background-repeat: no-repeat
+
+.character-rollover
+  z-index: $zTop
 
   .character[data-character="ben"] &
-    background-image: url(#{$imagePath}characters/ben.png)
+    background-image: url(#{$imagePath}characters/ben-rollover-sprite.png)
 
   .character[data-character="tom"] &
-    background-image: url(#{$imagePath}characters/tom.png)
+    background-image: url(#{$imagePath}characters/tom-rollover-sprite.png)
+
+.character-blink
+  opacity: 0
+  z-index: $zBase
+
+  .character[data-character="ben"] &
+    background-image: url(#{$imagePath}characters/ben-blink-sprite.png)
+
+  .character[data-character="tom"] &
+    background-image: url(#{$imagePath}characters/tom-blink-sprite.png)
 
   +max-screen(487px)
     top: -50px
@@ -54,11 +73,11 @@
 .character-email
   display: block
   margin-top: -40px
-  margin-bottom: 15px
+  margin-bottom: 10px
   +font($sansSerif, 1.1875rem, 900)
 
   +min-screen($small + 1px)
-    margin-top: -80px
+    margin-top: -40px
 
 .character-link
   position: relative
@@ -81,6 +100,10 @@
     &:hover::after
       transform: scale(1)
 
+.character-anim
+  position: relative
+  z-index: $zTop
+
 +min-screen(488px)
   .no-touchevents
     .character-anim
@@ -89,18 +112,13 @@
       transition: all $transitionDuration $transitionFunction
 
     .character-content:hover
-      .character-img
-        top: -40px
-        background-position: center -530px
-
       .character-anim
         opacity: 1
         transform: translateY(0)
 
 .touchevents
-  .character-img
-    top: -40px
-    background-position: center bottom
+  .character-rollover
+    background-position: -297px -1860px
 
 // Contact
 .contact-wrapper

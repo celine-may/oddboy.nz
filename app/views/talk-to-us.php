@@ -3,7 +3,10 @@
   <div class="header-content">
     <article class="character lhs" data-character="ben">
       <div class="character-content">
-        <div class="character-img"></div>
+        <div class="character-sprites">
+          <div class="character-rollover sprite"></div>
+          <div class="character-blink sprite"></div>
+        </div>
         <a href="mailto:ben@oddboy.nz" class="character-email character-anim">ben@oddboy.nz</a>
         <a href="https://www.behance.net/barkle" target="_blank" class="character-link lead text-color accent character-anim">Portfolio</a>
       </div>
@@ -11,7 +14,10 @@
 
     <article class="character rhs" data-character="tom">
       <div class="character-content">
-        <div class="character-img"></div>
+        <div class="character-sprites">
+          <div class="character-rollover sprite"></div>
+          <div class="character-blink sprite"></div>
+        </div>
         <a href="mailto:tom@oddboy.nz" class="character-email character-anim">tom@oddboy.nz</a>
         <a href="https://www.behance.net/Iimbo" target="_blank" class="character-link lead text-color primary character-anim">Portfolio</a>
       </div>

@@ -28,6 +28,7 @@ $assets['javascripts'] = array(
   $js_path . 'build/layout/loader.js',
   $js_path . 'build/layout/typography.js',
   $js_path . 'build/views/what-we-do.js',
+  $js_path . 'build/views/talk-to-us.js',
 );
 $assets['stylesheets'] = array(
   $css_path . 'vendor/normalize.css',
