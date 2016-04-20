@@ -5,7 +5,7 @@
 +min-screen($small + 1px)
   .main[data-view="what-we-do"]
     .header-content
-      padding-right: $column * -8
+      padding-right: $column * 2
 
 .title-complement
   +position(relative, -120px)
@@ -54,19 +54,23 @@
       left: $column * 2.5
       width: $column * 3.5
 
+    .service[data-service="digital-products"] &
+      top: -150px
+
   img
     position: relative
     +size(100%, auto)
     max-width: 100%
 
   .service[data-service="game-design"] & img
+    max-width: 513px
     box-shadow: 0 0 34px 4px rgba($black, .35)
 
   .service[data-service="virtual-reality"] &
     max-width: 604px
 
   .service[data-service="digital-products"] &
-    top: -150px
+    max-width: 404px
 
 .circle
   +position(absolute, -50px, null, null, 40px)
@@ -85,7 +89,7 @@
 
   .service[data-service="digital-products"] &
     +center('both')
-    width: 100%
+    width: 120%
 
 // Description
 .service-description
@@ -180,13 +184,22 @@
 // Work
 .work-wrapper
   position: relative
-  padding-bottom: 100px
+  padding: 0 $extGapSmall 100px
+
+  +min-screen($small + 1px)
+    padding: 0 $column 100px
 
 .floating-letter
-  +position(absolute, 84px, $column * 1/2)
+  +position(absolute, -200px, $column * 3/4)
   display: inline-block
-  font-size: 80vw
-  transform: rotate(180deg) translateY(.45em)
+  +size(253px, 260px)
+
+  +max-screen($small)
+    top: -180px
+
+  +min-screen($medium + 1px)
+    top: -84px
+    +size(618px, 742px)
 
 .work-wrapper-title
   margin-bottom: 75px
@@ -221,6 +234,7 @@
 
 .work-title
   font-size: 1.25rem
+  line-height: 1
   letter-spacing: 2px
 
   +min-screen($xSmall + 1px)

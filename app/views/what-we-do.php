@@ -19,9 +19,9 @@
   </div>
 </header>
 
-<section class="section services-wrapper bg-color primary">
+<div class="section bg-color primary">
   <?php include('layouts/grid.php'); ?>
-  <div class="section-content">
+  <div class="section-content services-wrapper">
     <article class="service rhs" data-service="game-design">
       <p class="service-highlights large-only">
         Beautiful
@@ -113,64 +113,68 @@
         </ul>
       </div>
     </article>
-
-    <div class="work-wrapper">
-      <span class="floating-letter title text-color accent">B</span>
-
-      <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
-
-      <article class="work" data-work="camp-hope-falls">
-        <div class="work-content">
-          <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
-          <p class="work-lead lead work-anim">
-            Game Design
-          </p>
-          <div class="work-ctas work-anim">
-            <a href="https://www.behance.net/gallery/35511205/Camp-Hope-Falls" target="_blank" class="btn">Behance</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="work" data-work="barkle">
-        <div class="work-content">
-          <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
-          <p class="work-lead lead work-anim">
-            Web experience
-          </p>
-          <div class="work-ctas work-anim">
-            <a href="#todo" target="_blank" class="btn">View site</a>
-            <a href="#todo" target="_blank" class="btn">Behance</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="work" data-work="yanky-doodle">
-        <div class="work-content">
-          <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
-          <p class="work-lead lead work-anim">
-            Game Design
-          </p>
-          <div class="work-ctas work-anim">
-            <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="work" data-work="celine">
-        <div class="work-content">
-          <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
-          <p class="work-lead lead work-anim">
-            Web experience
-          </p>
-          <div class="work-ctas work-anim">
-            <a href="http://celine.kiwi" target="_blank" class="btn">View site</a>
-            <!-- <a href="#todo" target="_blank" class="btn">Behance</a> -->
-          </div>
-        </div>
-      </article>
-    </div>
   </div>
-</section>
+
+  <div class="section-content work-wrapper">
+    <span class="floating-letter text-color accent">
+      <svg class="shape-letter-b">
+        <use xlink:href="#shape-letter-b"></use>
+      </svg>
+    </span>
+
+    <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
+
+    <article class="work" data-work="camp-hope-falls">
+      <div class="work-content">
+        <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Game Design
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="https://www.behance.net/gallery/35511205/Camp-Hope-Falls" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="barkle">
+      <div class="work-content">
+        <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="#todo" target="_blank" class="btn">View site</a>
+          <a href="#todo" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="yanky-doodle">
+      <div class="work-content">
+        <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Game Design
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-work="celine">
+      <div class="work-content">
+        <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
+        <p class="work-lead lead work-anim">
+          Web experience
+        </p>
+        <div class="work-ctas work-anim">
+          <a href="http://celine.kiwi" target="_blank" class="btn">View site</a>
+          <!-- <a href="#todo" target="_blank" class="btn">Behance</a> -->
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
 
 <footer class="footer bg-color accent">
   <div class="footer-cell lhs">
