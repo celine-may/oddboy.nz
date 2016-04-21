@@ -21,9 +21,12 @@ class App.TalkToUs
       @toSleep exports
 
   wakeUp: (exports, character) ->
+    @$default = $(".character[data-character='#{character}'] .character-default")
     @$rolloverSprite = $(".character[data-character='#{character}'] .character-rollover")
 
     @sleepWakeTL = new TimelineLite()
+    .set @$default,
+      opacity: 0
     .set @$rolloverSprite,
       backgroundPosition: '0 0'
       delay: .03
@@ -66,8 +69,8 @@ class App.TalkToUs
     .set @$rolloverSprite,
       backgroundPosition: '-297px -1470px'
       delay: .03
-      # onComplete: =>
-        # @blink exports, character
+      onComplete: =>
+        @blink exports, character
 
   toSleep: (exports) ->
     if @blinkTL?

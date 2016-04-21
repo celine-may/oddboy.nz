@@ -4,6 +4,7 @@
     <article class="character lhs" data-character="ben">
       <div class="character-content">
         <div class="character-sprites">
+          <div class="character-default sprite"></div>
           <div class="character-rollover sprite"></div>
           <div class="character-blink sprite"></div>
         </div>
@@ -15,6 +16,7 @@
     <article class="character rhs" data-character="tom">
       <div class="character-content">
         <div class="character-sprites">
+          <div class="character-default sprite"></div>
           <div class="character-rollover sprite"></div>
           <div class="character-blink sprite"></div>
         </div>

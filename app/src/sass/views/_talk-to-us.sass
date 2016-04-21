@@ -57,8 +57,17 @@
     .sprite
       background-size: 960px 1584px
 
+.character-default
+  z-index: $zBase + 2
+
+  .character[data-character="ben"] &
+    background-image: url(#{$imagePath}characters/ben-default.png)
+
+  .character[data-character="tom"] &
+    background-image: url(#{$imagePath}characters/tom-default.png)
+
 .character-rollover
-  z-index: $zTop
+  z-index: $zBase + 1
 
   .character[data-character="ben"] &
     background-image: url(#{$imagePath}characters/ben-rollover-sprite.png)
