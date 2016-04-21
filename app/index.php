@@ -22,21 +22,21 @@ include("controllers/$controller.php");
   <meta property="og:url" content="http://oddboy.nz">
   <meta property="og:title" content="Oddboy">
   <meta property="og:description" content="">
-  <meta property="og:image" content="http://www.oddboy.nz/assets/images/oddboy-fb.png">
+  <meta property="og:image" content="http://www.oddboy.nz/assets/images/oddboy-fb.jpg">
   <meta property="fb:app_id" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <!-- TODO: Favicon & icon images
-  <link rel="icon" href="<?php echo IMAGES_PATH; ?>favicon.png" type="image/x-icon"/>
+  <link rel="icon" href="<?php echo IMAGES_PATH; ?>layout/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" href="<?php echo IMAGES_PATH; ?>layout/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="<?php echo IMAGES_PATH; ?>layout/favicon-48x48.png" sizes="48x48">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo IMAGES_PATH; ?>icons/touch-icon-ipad.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="<?php echo IMAGES_PATH; ?>icons/touch-icon-iphone@2x.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo IMAGES_PATH; ?>icons/touch-icon-ipad@2x.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="<?php echo IMAGES_PATH; ?>icons/touch-icon-ipad-pro@2x.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo IMAGES_PATH; ?>icons/touch-icon-iphone@3x.png">
-  -->
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-iphone@2x.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-ipad@2x.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-ipad-pro@2x.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-iphone@3x.png">
 
   <?php foreach ($assets['stylesheets'] as $file_path) : ?>
     <link rel="stylesheet" href="<?php echo $file_path ?>">
