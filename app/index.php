@@ -14,14 +14,14 @@ include("controllers/$controller.php");
   <meta charset="utf-8">
 
   <!-- TODO: Meta tags -->
-  <title>Oddboy</title>
-  <meta name="description" content="">
+  <title><?php echo $pageTitle; ?></title>
+  <meta name="description" content="<?php echo $pageDescription; ?>">
 
   <meta property="og:site_name" content="Oddboy.nz">
   <meta property="og:type" content="Website">
   <meta property="og:url" content="http://oddboy.nz">
-  <meta property="og:title" content="Oddboy">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="<?php echo $pageTitle; ?>">
+  <meta property="og:description" content="<?php echo $pageDescription; ?>">
   <meta property="og:image" content="http://www.oddboy.nz/assets/images/oddboy-fb.jpg">
   <meta property="fb:app_id" content="">
 
