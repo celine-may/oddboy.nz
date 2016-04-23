@@ -25,6 +25,7 @@ class App.TalkToUs
     @$rolloverSprite = $(".character[data-character='#{character}'] .character-rollover")
 
     @sleepWakeTL = new TimelineLite()
+    .call @resetDefault, null, null, 0
     .set @$default,
       opacity: 0
     .set @$rolloverSprite,
@@ -78,9 +79,10 @@ class App.TalkToUs
       @$rolloverSprite.css 'opacity', 1
       @$blinkSprite.css 'opacity', 0
     @sleepWakeTL.timeScale(1.2).reverse()
-    setTimeout =>
+
+  resetDefault: =>
+    if @sleepWakeTL.reversed()
       @$default.css 'opacity', 1
-    , 500
 
   blink: (exports, character) ->
     @$blinkSprite = $(".character[data-character='#{character}'] .character-blink")
