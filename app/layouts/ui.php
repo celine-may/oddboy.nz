@@ -6,7 +6,7 @@
     </svg>
   </h1>
 
-  <a href="<?php echo PATH; ?>" class="back-link do-slide-up">
+  <a href="<?php echo PATH; ?>" class="back-link do-slide-up" data-view="home">
     <svg class="shape-arrow">
       <use xlink:href="#shape-arrow"></use>
     </svg>
@@ -27,7 +27,7 @@
 
 <div class="ui small-only">
   <div class="ui-header bg-color secondary-dark">
-    <a href="<?php echo PATH; ?>" class="back-link">
+    <a href="<?php echo PATH; ?>" class="back-link" data-view="home">
       <svg class="shape-arrow">
         <use xlink:href="#shape-arrow"></use>
       </svg>
@@ -37,11 +37,11 @@
     <h2 class="ui-title title ttu">Talk to us</h2>
   </div>
 
-  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link-small btn-border top title">
+  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link-small btn-border top title" data-view="talk-to-us">
     Talk to us
   </a>
 
-  <a href="<?php echo PATH; ?>what-we-do" class="nav-link-small btn-border bottom title">
+  <a href="<?php echo PATH; ?>what-we-do" class="nav-link-small btn-border bottom title" data-view="what-we-do">
     What we do
   </a>
 </div>

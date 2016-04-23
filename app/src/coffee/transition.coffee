@@ -16,18 +16,23 @@ class Transition
       onBefore: ($currentTarget, $container) =>
         @newView = $currentTarget.attr 'data-view'
       onStart:
-        duration: 600
+        duration: 800
         render: ($container) =>
-          if @view is 'home' and @newView is 'what-we-do'
-            @showPanel 'lhs'
-          if @view is 'home' and @newView is 'talk-to-us'
-            @showPanel 'rhs'
+          if @view is 'home'
+            @leaveHome exports, @newView
+          else
+            @leaveView exports, @view
       onReady:
-        duration: 1200
+        duration: 600
         render: ($container, $newContent) =>
           $container.html $newContent
-          @transitionIn exports
+          currentView = @view
           @setView exports, smoothState.href
+
+          if @newView is 'home'
+            @showHome exports, currentView
+          else
+            @showView exports
       onAfter: ($container, $newContent) =>
         @initFX @exports
 
@@ -38,25 +43,66 @@ class Transition
   initialTransition: (exports) ->
     if @initiated
       return
+
     if exports.showLoader
       exports.LoaderController.playDevice exports
       exports.LoaderController.fillLoader exports
-    @transitionIn exports
+    else
+      @showView exports
+
     @initiated = true
 
-  showPanel: (panel) ->
+  leaveHome: (exports, newView) ->
+    $panel = @getPanel newView
+
     panelTL = new TimelineLite()
     .set $('.ui'),
       zIndex: 0
-    .to $(".panel.#{panel}"), .6,
+    .to $panel, .6,
       x: 0
       ease: Power3.easeIn
 
-  transitionIn: (exports) ->
+  leaveView: (exports, view) ->
+    $panel = @getPanel view
     $slideIn = $('.do-slide-in')
     $slideUp = $('.do-slide-up')
 
-    transitionInTL = new TimelineLite()
+    delta = @getDelta view
+
+    leaveViewTL = new TimelineLite()
+    .set $panel,
+      x: 0
+    .to $slideIn, .6,
+      opacity: 0
+      x: exports.windowWidth * .15 * delta
+      ease: Power3.easeInOut
+    .to $slideUp, .8,
+      opacity: 0
+      y: 20
+      ease: Power3.easeIn
+    , '-=.8'
+
+  showHome: (exports, view) ->
+    $panel = @getPanel view
+    $slideUp = $('.do-slide-up')
+    delta = @getDelta view
+
+    panelTL = new TimelineLite()
+    .fromTo $panel, .6,
+      x: 0
+    ,
+      x: (exports.windowWidth - 15) * delta
+      ease: Power3.easeIn
+    .to $slideUp, .8,
+      opacity: 1
+      y: 0
+      ease: Power3.easeIn
+
+  showView: (exports) ->
+    $slideIn = $('.do-slide-in')
+    $slideUp = $('.do-slide-up')
+
+    showViewTL = new TimelineLite()
     .to $slideIn, .6,
       opacity: 1
       x: 0
@@ -68,6 +114,18 @@ class Transition
       # onComplete: ->
       #   window.dispatchEvent exports.pageReadyEvent
     , '-=.8'
+
+  getPanel: (view) ->
+    if view is 'what-we-do'
+      $('.panel.lhs')
+    else
+      $('.panel.rhs')
+
+  getDelta: (view) ->
+    if view is 'what-we-do'
+      -1
+    else
+      1
 
   setView: (exports, href) ->
     uriArray = href.split('/')
