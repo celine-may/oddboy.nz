@@ -54,7 +54,10 @@
   +max-screen($xSmall)
     +size(240px, 396px)
 
-    .sprite
+    .character-default
+      background-size: 240px 792px
+
+    .character-rollover
       background-size: 960px 1584px
 
 .character-default
@@ -128,12 +131,15 @@
         transform: translateY(0)
 
 .touchevents
+  .character-default
+    background-position: 0 -490px
+
   .character-rollover
-    background-position: -297px -1470px
+    display: none
 
   +max-screen($xSmall)
-    .character-rollover
-      background-position: -240px -1188px
+    .character-default
+      background-position: 0 -396px
 
 // Contact
 .contact-wrapper

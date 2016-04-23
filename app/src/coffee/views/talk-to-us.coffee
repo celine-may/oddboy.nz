@@ -78,6 +78,9 @@ class App.TalkToUs
       @$rolloverSprite.css 'opacity', 1
       @$blinkSprite.css 'opacity', 0
     @sleepWakeTL.timeScale(1.2).reverse()
+    setTimeout =>
+      @$default.css 'opacity', 1
+    , 500
 
   blink: (exports, character) ->
     @$blinkSprite = $(".character[data-character='#{character}'] .character-blink")
