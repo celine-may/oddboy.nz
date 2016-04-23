@@ -52,8 +52,10 @@ include("controllers/$controller.php");
 <body>
   <?php include_once('assets/svgs/svg-defs.svg'); ?>
 
-  <main class="main" data-view="<?php echo $controller; ?>">
+  <main id="main" class="main" data-view="<?php echo $controller; ?>">
     <?php include('layouts/ui.php'); ?>
+    <div class="panel lhs"></div>
+    <div class="panel rhs"></div>
     <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
   </main>
 

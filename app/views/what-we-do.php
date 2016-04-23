@@ -1,17 +1,17 @@
 <header class="header">
   <?php include('layouts/grid.php'); ?>
   <div class="header-content">
-    <h1 class="title">
+    <h1 class="title do-slide-in lhs">
       <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<button class="text-color primary do-show-complement">*</button>
     </h1>
-    <span class="title-separator bg-color accent do-complement-push"></span>
+    <span class="title-separator bg-color accent do-complement-push do-slide-in lhs"></span>
     <p class="title-complement copy">
       <span class="text-color primary">*</span>That’s just a roundabout way of saying we create digital stuff that you’ll remember.
     </p>
-    <p class="lead do-complement-push">
+    <p class="lead do-complement-push do-slide-in lhs">
       We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
     </p>
-    <button class="scroll-cta anim1 do-scroll-down do-complement-push xsmall-hidden">
+    <button class="scroll-cta anim1 xsmall-hidden do-scroll-down do-complement-push do-slide-up">
       <svg class="shape-scroll-cta large-only">
         <use xlink:href="#shape-scroll-cta"></use>
       </svg>

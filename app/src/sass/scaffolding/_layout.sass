@@ -17,6 +17,18 @@ body
 .main
   +square(100%)
 
+// Panel
+.panel
+  +position(fixed, 0, null, null, 0)
+  +square(100%)
+  background-color: $secondary
+
+  &.lhs
+    transform: translateX(calc(-100% + 15px))
+
+  &.rhs
+    transform: translateX(calc(100% - 15px))
+
 // Section header
 .header
   position: relative

@@ -21,11 +21,12 @@ class App.Loader
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
-    if exports.showLoader
-      @playDevice exports
-      @fillLoader exports
-    else
+    unless exports.showLoader
       @$wrapper.remove()
+
+  startLoader: (exports) ->
+    @playDevice exports
+    @fillLoader exports
 
   playDevice: (exports) ->
     deviceTL = new TimelineLite()

@@ -2,7 +2,7 @@
   <?php include('layouts/grid.php'); ?>
   <div class="header-content">
     <article class="character lhs" data-character="ben">
-      <div class="character-content">
+      <div class="character-content do-slide-in rhs">
         <div class="character-sprites">
           <div class="character-default sprite"></div>
           <div class="character-rollover sprite"></div>
@@ -14,7 +14,7 @@
     </article>
 
     <article class="character rhs" data-character="tom">
-      <div class="character-content">
+      <div class="character-content do-slide-in rhs">
         <div class="character-sprites">
           <div class="character-default sprite"></div>
           <div class="character-rollover sprite"></div>
@@ -26,7 +26,7 @@
     </article>
   </div>
 
-  <button class="scroll-cta anim2 large-only do-scroll-down">
+  <button class="scroll-cta anim2 large-only do-scroll-down do-slide-up">
     <span class="scroll-circle">
       <span class="scroll-bg"></span>
     </span>
