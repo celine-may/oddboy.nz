@@ -96,34 +96,51 @@
 .nav-link
   +position(absolute, 50%)
   display: inline-block
-  padding-top: 38px
-  +font(null, .875rem, 900)
-  letter-spacing: 2px
+  +size(65px, 130px)
+  margin-top: -65px
   pointer-events: auto
-  text-align: center
-  text-transform: uppercase
 
   &::before
     content: ""
-    +position(absolute, 0, null, null, 50%)
-    +size(1px, 20px)
+    +position(absolute, 50%)
+    +size(20px, 1px)
     background-color: $white
 
   &.lhs
     left: 32px
-    transform-origin: top right
-    transform: translateX(-100%) rotate(-90deg) translateX(50%)
+
+    &::before
+      left: 0
 
   &.rhs
     right: 32px
-    transform-origin: top left
-    transform: translateX(100%) rotate(90deg) translateX(-50%)
+
+    &::before
+      right: 0
 
   .main[data-view="what-we-do"] &.lhs
     display: none
 
   .main[data-view="talk-to-us"] &.rhs
     display: none
+
+.nav-link-copy
+  +position(absolute, null, null, 0, 50px)
+  display: block
+  width: 130px
+  +font(null, .875rem, 900)
+  letter-spacing: 2px
+  text-align: center
+  text-transform: uppercase
+
+  .lhs &
+    transform-origin: bottom left
+    transform: rotate(-90deg)
+
+  .rhs &
+    margin-left: -165px
+    transform-origin: bottom right
+    transform: rotate(90deg)
 
 .nav-link-small
   +center('horizontal')

@@ -12,12 +12,16 @@
     </svg>
   </a>
 
-  <a href="<?php echo PATH; ?>what-we-do" class="nav-link lhs">
-    What we do
+  <a href="<?php echo PATH; ?>what-we-do" class="nav-link lhs" data-view="what-we-do">
+    <span class="nav-link-copy">
+      What&nbsp;we&nbsp;do
+    </span>
   </a>
 
-  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link rhs">
-    Talk to us
+  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link rhs" data-view="talk-to-us">
+    <span class="nav-link-copy">
+      Talk&nbsp;to&nbsp;us
+    </span>
   </a>
 </div>
 
