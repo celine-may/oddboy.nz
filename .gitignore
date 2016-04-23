@@ -11,4 +11,7 @@ app/assets/css
 app/assets/js
 dist/helpers
 dist/index.php
-
+dist/assets
+dist/controllers
+dist/layouts
+dist/views
