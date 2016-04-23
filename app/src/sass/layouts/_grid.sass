@@ -2,14 +2,11 @@
 // -----------------
 
 .grid
-  +position(fixed, 0, null, null, 0)
+  +position(absolute, 0, null, null, 0)
   +square(100%)
   opacity: .1
   pointer-events: none
   z-index: $zBase
-
-  .section &
-    position: absolute
 
 .grid-line
   +position(absolute, 0)
