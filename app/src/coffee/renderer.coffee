@@ -31,8 +31,8 @@ class Renderer
     for fx in fxs
       fx.build exports
 
-    transition = new App.Transition
-    transition.init exports
+    # transition = new App.Transition
+    # transition.init exports
 
     @$window
       .on 'resize', @onResize.bind @

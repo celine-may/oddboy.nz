@@ -21,7 +21,10 @@ class App.Loader
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
-    unless exports.showLoader
+    if exports.showLoader
+      @playDevice exports
+      @fillLoader exports
+    else
       @$wrapper.remove()
 
   startLoader: (exports) ->
