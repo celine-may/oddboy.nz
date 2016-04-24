@@ -34,7 +34,7 @@ class App.Loader
   playDevice: (exports) ->
     deviceTL = new TimelineMax
       paused: true
-    .fromTo @$device, .6,
+    .fromTo @$device, 1.2,
       y: exports.windowHeight * .15
     ,
       y: exports.windowHeight * .85
