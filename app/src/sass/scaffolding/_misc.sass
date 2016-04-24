@@ -22,12 +22,18 @@
   .small-hidden
     display: none!important
 
+  .medium-only
+    display: none!important
+
 +min-screen($small + 1px)
   .small-only
     display: none!important
 
 +min-screen($medium + 1px)
   .large-hidden
+    display: none!important
+
+  .medium-only
     display: none!important
 
 +max-screen($medium)

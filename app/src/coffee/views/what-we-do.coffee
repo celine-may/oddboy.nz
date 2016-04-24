@@ -19,28 +19,35 @@ class App.WhatWeDo
     @$showWorkDetailsElement = $('.do-show-work-details')
 
     unless exports.isTouch
-      @$showComplementBtn.on 'mouseenter', @showComplement
+      @$showComplementBtn.on 'mouseenter', =>
+        @showComplement exports
       @$showComplementBtn.on 'mouseleave', @hideComplement
       @$showWorkDetailsElement.on 'mouseenter', @showWorkDetails
-      @$showWorkDetailsElement.on 'mouseleave', =>
-        @hideWorkDetails()
+      @$showWorkDetailsElement.on 'mouseleave', @hideWorkDetails
     else
       @$showComplementBtn.on 'click', (e) =>
         if @$complement.hasClass 'visible'
           @hideComplement()
           @$complement.removeClass 'visible'
         else
-          @showComplement()
+          @showComplement exports
           @$complement.addClass 'visible'
 
-  showComplement: =>
+  showComplement: (exports) ->
+    console.log exports
+    if exports.windowWidth <= exports.smallBreakpoint
+      pushDelta = 60
+    else if exports.smallBreakpoint < exports.windowWidth <= exports.mediumBreakpoint
+      pushDelta = 40
+    else
+      pushDelta = 20
     @showComplementTL = new TimelineLite()
     .to @$complementPushElements, .2,
-      y: 20
+      y: pushDelta
       ease: Power2.easeOut
     .to @$complement, .2,
       opacity: 1
-      y: 0
+      y: '+=35'
       ease: Back.easeOut.config(1)
     , '-=.1'
 

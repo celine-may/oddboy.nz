@@ -80,7 +80,7 @@ a
   transition: color $transitionDuration $transitionFunction
   z-index: $zTop
 
-  +max-screen($medium)
+  +min-max-screen($small + 1px, $medium)
     +center('horizontal')
     bottom: -68px
     +square(44px)

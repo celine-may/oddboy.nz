@@ -3,17 +3,6 @@
 
 // Header
 .main[data-view="what-we-do"]
-  .title-separator
-    margin-bottom: 30px
-
-  +max-screen($medium)
-    .title-separator
-      margin-bottom: 0
-
-  +max-screen($small)
-    .title-separator
-      margin: 30px 0 0
-
   +min-screen($small + 1px)
     .header-content
       padding-right: $column * 2
@@ -26,20 +15,20 @@
       height: calc(100% - #{$extGap})
 
 .title-complement
-  +position(relative, -80px)
+  position: absolute
   line-height: 1.2
   opacity: 0
-  transform: translateY(-30px)
+  transform: translateY(-140px)
   z-index: $zBase
 
   +max-screen($small)
-    top: -60px
+    transform: translateY(-50px)
 
   +max-screen($xSmall)
-    top: -50px
+    transform: translateY(-70px)
 
-  +min-screen($medium + 1px)
-    top: -110px
+  +max-screen($medium)
+    transform: translateY(-90px)
 
 // Services
 .services-wrapper
