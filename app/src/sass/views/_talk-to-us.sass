@@ -118,22 +118,13 @@
   position: relative
   z-index: $zTop
 
-+min-screen(488px)
-  .no-touchevents
-    .character-anim
-      opacity: 0
-      transform: translateY(-100%)
+  .no-touchevents &
+    opacity: 0
+    transform: translateY(-100%)
 
 .touchevents
-  .character-default
-    background-position: 0 -490px
-
-  .character-rollover
+  .character-default, .character-rollover
     display: none
-
-  +max-screen($xSmall)
-    .character-default
-      background-position: 0 -396px
 
 // Contact
 .contact-wrapper
