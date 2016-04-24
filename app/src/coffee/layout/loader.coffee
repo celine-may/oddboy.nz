@@ -32,19 +32,15 @@ class App.Loader
     @fillLoader exports
 
   playDevice: (exports) ->
-    deviceTL = new TimelineLite()
+    deviceTL = new TimelineMax
+      paused: true
     .fromTo @$device, .6,
-      y: exports.windowHeight * .25
+      y: exports.windowHeight * .15
     ,
-      y: exports.windowHeight * .75
-      delay: .3
-      ease: Power2.easeInOut
-    .to @$device, .6,
-      y: exports.windowHeight * .25
-      delay: .3
-      ease: Power2.easeInOut
-      onComplete: ->
-        deviceTL.restart()
+      y: exports.windowHeight * .85
+      ease: Expo.easeInOut
+
+    deviceTL.yoyo(true).repeat(-1).play()
 
   fillLoader: (exports) ->
     loaderTL = new TimelineLite()
