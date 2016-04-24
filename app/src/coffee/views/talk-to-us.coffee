@@ -12,6 +12,9 @@ class App.TalkToUs
     @init exports
 
   init: (exports) ->
+    if exports.isTouch
+      return
+
     $character = $('.character-content')
 
     $character.on 'mouseenter', (e) =>
