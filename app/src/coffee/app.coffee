@@ -4,3 +4,6 @@ $ ->
 
   renderer.init()
   App.renderer = renderer
+
+  for element in $('.do-replace-email')
+    App.replaceEmail $(element)

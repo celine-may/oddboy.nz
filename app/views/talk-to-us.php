@@ -8,7 +8,7 @@
           <div class="character-rollover sprite"></div>
           <div class="character-blink sprite"></div>
         </div>
-        <a href="mailto:ben@oddboy.nz" class="character-email character-anim">ben@oddboy.nz</a>
+        <span class="do-replace-email" data-class="character-email character-anim">ben[at]oddboy[dot]nz</span>
         <a href="https://www.behance.net/barkle" target="_blank" class="character-link lead text-color accent character-anim">Portfolio</a>
       </div>
     </article>
@@ -20,7 +20,7 @@
           <div class="character-rollover sprite"></div>
           <div class="character-blink sprite"></div>
         </div>
-        <a href="mailto:tom@oddboy.nz" class="character-email character-anim">tom@oddboy.nz</a>
+        <span class="do-replace-email" data-class="character-email character-anim">tom[at]oddboy[dot]nz</span>
         <a href="https://www.behance.net/Iimbo" target="_blank" class="character-link lead text-color primary character-anim">Portfolio</a>
       </div>
     </article>
@@ -44,7 +44,7 @@
     </h1>
     <span class="title-separator bg-color primary"></span>
     <p class="lead vcard">
-      <a href="mailto:holla@oddboy.nz" class="contact-link email">holla@oddboy.nz</a>
+      <span class="do-replace-email" data-class="contact-link email">holla@oddboy.nz</span>
       <a href="tel:+64273463287" class="contact-link tel">+64 273463287</a>
     </p>
   </div>
