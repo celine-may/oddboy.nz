@@ -11,11 +11,11 @@
     <p class="lead do-complement-push do-slide-in lhs">
       We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
     </p>
-    <button class="scroll-cta anim1 xsmall-hidden do-scroll-down do-complement-push do-slide-up">
+    <button class="scroll-cta anim1 ssmall-hidden do-scroll-down do-complement-push do-slide-up">
       <svg class="shape-scroll-cta large-only">
         <use xlink:href="#shape-scroll-cta"></use>
       </svg>
-      <svg class="shape-chevron large-hidden">
+      <svg class="shape-chevron medium-only">
         <use xlink:href="#shape-chevron"></use>
       </svg>
     </button>

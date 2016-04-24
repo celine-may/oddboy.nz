@@ -3,13 +3,16 @@
 
 // Header
 .main[data-view="what-we-do"]
+  .title-separator
+    margin-bottom: 30px
+
   +max-screen($medium)
     .title-separator
-      margin-bottom: 20px
+      margin-bottom: 0
 
   +max-screen($small)
     .title-separator
-      margin-bottom: 10px
+      margin: 30px 0 0
 
   +min-screen($small + 1px)
     .header-content
@@ -232,16 +235,20 @@
 
 .work
   position: relative
-  +size(100%, 235px)
+  +size(100%, 270px)
   margin-bottom: 25px
-  padding: 110px 0 100px
+  padding-top: 80px
   box-shadow: 0 0 34px 4px rgba($black, .2)
   overflow: hidden
   text-align: center
 
+  +min-screen($small + 1px)
+    height: 235px
+    padding-top: 110px
+
 .work-bg
   +position(absolute, 0, null, null, 0)
-  +size(100%, 410px)
+  +size(100%, 270px)
   background-position: center top
   background-repeat: no-repeat
   background-size: cover
@@ -258,8 +265,13 @@
   .work[data-work="celine"] &
     background-image: url(#{$imagePath}work/celine.jpg)
 
+  +min-screen($small + 1px)
+    height: 410px
+
 .work-content
   display: inline-block
+  padding-bottom: 30px
+  overflow: hidden
 
 .work-title
   font-size: 1.25rem
@@ -307,13 +319,18 @@
 .touchevents
   .work
     height: 270px
-    padding: 70px 0
-    background-size: cover
+    padding-top: 80px
+
+  .work-bg
+    height: 270px
 
   +min-screen($small + 1px)
     .work
       height: 410px
-      padding: 140px 0
+      padding-top: 140px
+
+    .work-bg
+      height: 410px
 
 // Footer
 .footer

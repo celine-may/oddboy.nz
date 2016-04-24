@@ -10,6 +10,9 @@ a
   .is-mac &
     -webkit-font-smoothing: subpixel-antialiased
 
+  +max-screen($small)
+    font-size: 1rem
+
 // Headings
 .title
   position: relative
@@ -32,10 +35,10 @@ a
   margin: 40px 0 50px
 
   +max-screen($medium)
-    margin: $extGapSmall 0 30px
+    margin: 24px 0 25px
 
   +max-screen($xSmall)
-    margin: 30px 0 20px
+    margin: 20px 0
 
 .lead
   +font($serif, 1.1875rem, 500, italic, 1.3)
