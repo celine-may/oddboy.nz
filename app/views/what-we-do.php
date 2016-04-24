@@ -129,7 +129,7 @@
 
     <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
 
-    <article class="work" data-work="camp-hope-falls">
+    <article class="work do-show-work-details" data-work="camp-hope-falls">
       <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
@@ -142,7 +142,7 @@
       </div>
     </article>
 
-    <article class="work" data-work="barkle">
+    <article class="work do-show-work-details" data-work="barkle">
       <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
@@ -156,20 +156,21 @@
       </div>
     </article>
 
-    <article class="work" data-work="yanky-doodle">
+    <article class="work do-show-work-details" data-work="yanky-doodle">
       <div class="work-bg"></div>
       <div class="work-content">
-        <h2 class="work-title title">Yanki Doodle<span class="text-color accent">.</span></h2>
+        <h2 class="work-title title">Yanky Doodle<span class="text-color accent">.</span></h2>
         <p class="work-lead lead work-anim">
           Game Design
         </p>
         <div class="work-ctas work-anim">
           <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
+          <a href="http://yanky-doodle.com/" target="_blank" class="btn">View site</a>
         </div>
       </div>
     </article>
 
-    <article class="work" data-work="celine">
+    <article class="work do-show-work-details" data-work="celine">
       <div class="work-bg"></div>
       <div class="work-content">
         <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>

@@ -238,13 +238,13 @@
   box-shadow: 0 0 34px 4px rgba($black, .2)
   overflow: hidden
   text-align: center
-  transition: all $transitionDuration $transitionFunction
 
 .work-bg
   +position(absolute, 0, null, null, 0)
   +size(100%, 410px)
   background-position: center top
   background-repeat: no-repeat
+  background-size: cover
 
   .work[data-work="camp-hope-falls"] &
     background-image: url(#{$imagePath}work/camp-hope-falls.jpg)
@@ -260,7 +260,6 @@
 
 .work-content
   display: inline-block
-  overflow: hidden
 
 .work-title
   font-size: 1.25rem
@@ -304,15 +303,6 @@
   .work-anim
     opacity: 0
     transform: translateY(-60px)
-    transition: all $transitionDuration $transitionFunction
-
-  .work:hover
-    height: 410px
-    padding: 140px 0
-
-    .work-anim
-      opacity: 1
-      transform: translateY(0)
 
 .touchevents
   .work
