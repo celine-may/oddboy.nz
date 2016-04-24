@@ -1,8 +1,8 @@
 <header class="header">
   <?php include('layouts/grid.php'); ?>
   <div class="header-content">
-    <h1 class="title do-slide-in lhs">
-      <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<button class="text-color primary do-show-complement">*</button>
+    <h1 class="title do-slide-in lhs do-show-complement">
+      <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<span class="text-color primary">*</span>
     </h1>
     <span class="title-separator bg-color accent do-complement-push do-slide-in lhs"></span>
     <p class="title-complement copy">
