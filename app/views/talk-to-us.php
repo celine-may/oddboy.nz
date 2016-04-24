@@ -26,7 +26,7 @@
     </article>
   </div>
 
-  <button class="scroll-cta anim2 large-only do-scroll-down do-slide-up">
+  <button class="scroll-cta large-only do-scroll-down do-slide-up">
     <span class="scroll-circle">
       <span class="scroll-bg"></span>
     </span>

@@ -80,6 +80,25 @@ a
   transition: color $transitionDuration $transitionFunction
   z-index: $zTop
 
+  &::before
+    content: ""
+    +position(absolute, null, null, 0, 0)
+    +square(43px)
+    background-color: $white
+    border-radius: 50%
+    transform: scale(0)
+    transition: transform $transitionDuration $transitionFunction
+
+  .no-touchevents &:hover
+    color: $accent
+
+    &::before
+      transform: scale(1)
+
+.shape-scroll-cta
+  position: relative
+  z-index: $zTop + 1
+
   +min-max-screen($small + 1px, $medium)
     +center('horizontal')
     bottom: -68px
@@ -91,55 +110,6 @@ a
     .shape-chevron
       +size(11px, 7px)
       margin-top: 8px
-
-// Rollover animation V1
-.scroll-cta.anim1
-  &::before
-    content: ""
-    +position(absolute, null, null, 0, 0)
-    +square(43px)
-    background-color: $white
-    border-radius: 50%
-    transform: scale(0)
-    transition: transform $transitionDuration $transitionFunction
-
-  svg
-    position: relative
-    z-index: $zTop + 1
-
-  .no-touchevents &:hover
-    color: $accent
-
-    &::before
-      transform: scale(1)
-
-// Rollover animation V2
-.scroll-circle
-  display: inline-block
-  +position(absolute, null, null, 0, 0)
-  +square(43px)
-  border-radius: 50%
-  overflow: hidden
-  z-index: 0
-
-.scroll-bg
-  +position(absolute, null, null, 0, 0)
-  display: inline-block
-  +square(43px)
-  background-color: $white
-  transform: translateY(-100%)
-  transition: transform $transitionDuration $transitionFunction
-
-.scroll-cta.anim2
-  svg
-    position: relative
-    z-index: $zTop + 1
-
-  .no-touchevents &:hover
-    color: $accent
-
-    .scroll-bg
-      transform: translateY(0)
 
 // SVGs
 svg
