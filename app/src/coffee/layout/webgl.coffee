@@ -7,6 +7,7 @@ class App.Assets
     @gl = undefined
     @frontTexture = undefined
     @backTexture = undefined
+    @copyTexture = undefined
     @composer = undefined
     @copyPass = undefined
     @msaaRenderPass = undefined
@@ -30,7 +31,7 @@ class App.Assets
     @createGL exports
     @createCamera exports
     @createGrid exports
-    @createLogo exports
+    @addObjects exports
     @createLights exports
     @postProcessing exports
     @createStars exports
@@ -54,7 +55,10 @@ class App.Assets
 
   createCamera: (exports) ->
     @camera = new THREE.PerspectiveCamera 60, exports.windowWidth / exports.windowHeight, 0.1, 1000
-    @camera.position.set 2, 4.5, 0
+    @camera.position.set 2, 70, 500
+    TweenMax.to @camera.position, 3,
+      y: 4.5
+      z: 0
 
   createGrid: (exports) ->
     grid = new THREE.GridHelper 500, 4
@@ -68,9 +72,15 @@ class App.Assets
       onComplete: ->
         gridTL.restart()
 
-  createLogo: (exports) ->
-    frontMaterial = new THREE.MeshPhongMaterial color: exports.primaryColor
-    backMaterial = new THREE.MeshPhongMaterial color: exports.accentColor
+  addObjects: (exports) ->
+    frontMaterial = new THREE.MeshPhongMaterial
+      color: exports.primaryColor
+    backMaterial = new THREE.MeshPhongMaterial
+      color: exports.accentColor
+    copyMaterial = new THREE.MeshPhongMaterial
+      color: 0xf53555
+      transparent: true
+      opacity: 1
 
     loader = new THREE.ObjectLoader
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (frontTexture) =>
@@ -95,20 +105,30 @@ class App.Assets
       @scene.add backTexture
       @animateLogoIn exports
 
+    loader.load "#{exports.path}assets/json/oddboy-copy.json", (copyTexture) =>
+      @copyTexture = copyTexture
+      copyTexture.traverse (child) ->
+        if child instanceof THREE.Mesh
+          child.material = copyMaterial
+      copyTexture.position.set -.4, 4.3, -7
+      copyTexture.rotation.y = App.π
+      copyTexture.scale.set .2, .2, .2
+      copyMaterial.opacity = 0
+      @scene.add copyTexture
+
   animateLogoIn: (exports) ->
     logoTL = new TimelineLite()
     .to @frontTexture.position, 10,
       y: 4.2
       z: -8
       ease: Quart.easeOut
+      delay: 1.5
     .to @backTexture.position, 10.3,
       y: 4.1
       z: -8.3
       ease: Quart.easeOut
       onComplete: =>
         @logoIn = true
-        console.log @frontTexture.position
-        console.log @backTexture.position
     , '-=10'
 
   createLights: (exports) ->
