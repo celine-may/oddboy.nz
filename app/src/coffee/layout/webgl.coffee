@@ -2,24 +2,28 @@ class App.Assets
   constructor: ->
     @order = 1
 
-    @camera = undefined
-    @scene = undefined
-    @gl = undefined
-    @frontTexture = undefined
-    @backTexture = undefined
-    @copyTexture = undefined
-    @composer = undefined
-    @copyPass = undefined
-    @msaaRenderPass = undefined
-    @param = MSAASampleLevel: 2
-    @logoIn = false
-
-    @mouseX = 0
-    @mouseY = 0
-
   build: (exports) ->
     exports.AssetsController = @
     exports.instances.push @
+
+    @camera = undefined
+    @scene = undefined
+    @gl = undefined
+    @frontLogo = undefined
+    @backLogo = undefined
+    @copy = undefined
+    @composer = undefined
+    @copyPass = undefined
+    @msaaRenderPass = undefined
+    @parentObject = new THREE.Object3D()
+    @param = MSAASampleLevel: 2
+    @animatedIn = false
+    @intersected = null
+
+    @ride = false
+
+    @mouseX = 0
+    @mouseY = 0
 
     @init exports
 
@@ -35,6 +39,9 @@ class App.Assets
     @createLights exports
     @postProcessing exports
     @createStars exports
+
+    @mouse = new THREE.Vector2()
+    @raycaster = new THREE.Raycaster()
 
     $window.on 'mousemove', (e) =>
       @onMouseMove e, exports
@@ -56,9 +63,6 @@ class App.Assets
   createCamera: (exports) ->
     @camera = new THREE.PerspectiveCamera 60, exports.windowWidth / exports.windowHeight, 0.1, 1000
     @camera.position.set 2, 70, 500
-    TweenMax.to @camera.position, 3,
-      y: 4.5
-      z: 0
 
   createGrid: (exports) ->
     grid = new THREE.GridHelper 500, 4
@@ -77,59 +81,51 @@ class App.Assets
       color: exports.primaryColor
     backMaterial = new THREE.MeshPhongMaterial
       color: exports.accentColor
-    copyMaterial = new THREE.MeshPhongMaterial
+    copyMaterial = @copyMaterial = new THREE.MeshPhongMaterial
       color: 0xf53555
       transparent: true
       opacity: 1
 
     loader = new THREE.ObjectLoader
-    loader.load "#{exports.path}assets/json/oddboy-logo.json", (frontTexture) =>
-      @frontTexture = frontTexture
-      frontTexture.traverse (child) ->
+    loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
+      @frontLogo = object
+      object.name = 'Front Logo'
+      object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = frontMaterial
-      frontTexture.position.set 2, 3, -100
-      frontTexture.rotation.y = App.π
-      frontTexture.scale.set .3, .3, .3
-      @scene.add frontTexture
+      object.position.set 2, 3, -100
+      object.rotation.y = App.π
+      object.scale.set .3, .3, .3
+      @parentObject.add object
+      # @scene.add object
 
 
-    loader.load "#{exports.path}assets/json/oddboy-logo.json", (backTexture) =>
-      @backTexture = backTexture
-      backTexture.traverse (child) ->
+    loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
+      @backLogo = object
+      object.name = 'Back Logo'
+      object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = backMaterial
-      backTexture.position.set 2, 3, -100
-      backTexture.rotation.y = App.π
-      backTexture.scale.set .3, .3, .3
-      @scene.add backTexture
-      @animateLogoIn exports
+      object.position.set 2, 3, -100
+      object.rotation.y = App.π
+      object.scale.set .3, .3, .3
+      @parentObject.add object
+      # @scene.add object
+      @animateIn exports
 
-    loader.load "#{exports.path}assets/json/oddboy-copy.json", (copyTexture) =>
-      @copyTexture = copyTexture
-      copyTexture.traverse (child) ->
+    loader.load "#{exports.path}assets/json/oddboy-copy.json", (object) =>
+      @copy = object
+      object.name = 'Copy'
+      object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = copyMaterial
-      copyTexture.position.set -.4, 4.3, -7
-      copyTexture.rotation.y = App.π
-      copyTexture.scale.set .2, .2, .2
+      object.position.set -.4, 4.3, -7
+      object.rotation.y = App.π
+      object.scale.set .2, .2, .2
       copyMaterial.opacity = 0
-      @scene.add copyTexture
-
-  animateLogoIn: (exports) ->
-    logoTL = new TimelineLite()
-    .to @frontTexture.position, 10,
-      y: 4.2
-      z: -8
-      ease: Quart.easeOut
-      delay: 1.5
-    .to @backTexture.position, 10.3,
-      y: 4.1
-      z: -8.3
-      ease: Quart.easeOut
-      onComplete: =>
-        @logoIn = true
-    , '-=10'
+      @parentObject.add object
+      # @scene.add object
+      @scene.add @parentObject
 
   createLights: (exports) ->
     light = new THREE.DirectionalLight 0xffffff
@@ -177,6 +173,55 @@ class App.Assets
     particles = new THREE.Points geometry, material
     @scene.add particles
 
+  animateIn: (exports) ->
+    logoTL = new TimelineLite()
+    .to @camera.position, 1,
+      y: 4.5
+      z: 0
+    .to @frontLogo.position, 1,
+      y: 4.2
+      z: -8
+      ease: Quart.easeOut
+    , '-=1'
+    .to @backLogo.position, 1.2,
+      y: 4.1
+      z: -8.3
+      ease: Quart.easeOut
+      onComplete: =>
+        @animatedIn = true
+    , '-=10'
+
+  animateCopyIn: (exports) ->
+    showCopyTL = new TimelineLite()
+    .to @copyMaterial, .3,
+      opacity: 1
+    .to @frontLogo.position, .3,
+      y: 4.88
+    , '-=.3'
+    .to @backLogo.position, .3,
+      y: 4.77
+    , '-=.3'
+
+  animateCopyOut: (exports) ->
+    showCopyTL = new TimelineLite()
+    .to @copyMaterial, .3,
+      opacity: 0
+    .to @frontLogo.position, .3,
+      y: 4.18
+    , '-=.3'
+    .to @backLogo.position, .3,
+      y: 4.07
+      onComplete: =>
+        @ride = true
+    , '-=.3'
+
+  intersector: (e, exports) ->
+    @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
+    @raycaster.setFromCamera @mouse, @camera
+
+    objects = @parentObject.children
+    intersects = @raycaster.intersectObjects objects, true
+
   onUpdate: (exports) ->
     @composer.render()
     # @camera.rotation.x = (-@mouseY - (@camera.rotation.x)) * .0002
@@ -208,12 +253,23 @@ class App.Assets
     @mouseX = (e.clientX - windowHalfX) / 2
     @mouseY = (e.clientY - windowHalfY) / 2
 
-    unless @logoIn
-      return
-    deltaX = @mouseX / exports.windowWidth
-    deltaY = @mouseY / exports.windowHeight
-    @frontTexture.position.set 2 + 2 * deltaX * 0.05, 4.2 + 4.2 * deltaY * 0.05, -8
-    @backTexture.position.set 2 + 2 * deltaX * 0.08, 4.1 + 4.1 * deltaY * 0.08, -8.3
+    if @animatedIn
+      intersects = @intersector e, exports
+      if intersects.length > 0
+        if @intersected != intersects[0].object.parent
+          @intersected = intersects[0].object.parent
+          @ride = false
+          @animateCopyIn exports
+      else
+        @intersected = null
+        @animateCopyOut exports
+
+    if @ride
+      deltaX = @mouseX / exports.windowWidth
+      deltaY = @mouseY / exports.windowHeight
+
+      @frontLogo.position.set 2 + 2 * deltaX * 0.05, 4.2 + 4.2 * deltaY * 0.05, -8
+      @backLogo.position.set 2 + 2 * deltaX * 0.08, 4.1 + 4.1 * deltaY * 0.08, -8.3
 
   onScroll: ->
 
