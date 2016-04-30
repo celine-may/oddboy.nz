@@ -5,12 +5,13 @@ class App.Assets
     @camera = undefined
     @scene = undefined
     @gl = undefined
-    @mat = undefined
-    @geom = undefined
+    @frontTexture = undefined
+    @backTexture = undefined
     @composer = undefined
     @copyPass = undefined
     @msaaRenderPass = undefined
     @param = MSAASampleLevel: 2
+    @logoIn = false
 
     @mouseX = 0
     @mouseY = 0
@@ -73,6 +74,7 @@ class App.Assets
 
     loader = new THREE.ObjectLoader
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (frontTexture) =>
+      @frontTexture = frontTexture
       frontTexture.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = frontMaterial
@@ -80,12 +82,10 @@ class App.Assets
       frontTexture.rotation.y = App.π
       frontTexture.scale.set .3, .3, .3
       @scene.add frontTexture
-      TweenMax.to frontTexture.position, 10,
-        z: -8
-        y: 4.2
-        ease: Quart.easeOut
+
 
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (backTexture) =>
+      @backTexture = backTexture
       backTexture.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = backMaterial
@@ -93,10 +93,23 @@ class App.Assets
       backTexture.rotation.y = App.π
       backTexture.scale.set .3, .3, .3
       @scene.add backTexture
-      TweenMax.to backTexture.position, 10.3,
-        z: -8.3
-        y: 4.1
-        ease: Quart.easeOut
+      @animateLogoIn exports
+
+  animateLogoIn: (exports) ->
+    logoTL = new TimelineLite()
+    .to @frontTexture.position, 10,
+      y: 4.2
+      z: -8
+      ease: Quart.easeOut
+    .to @backTexture.position, 10.3,
+      y: 4.1
+      z: -8.3
+      ease: Quart.easeOut
+      onComplete: =>
+        @logoIn = true
+        console.log @frontTexture.position
+        console.log @backTexture.position
+    , '-=10'
 
   createLights: (exports) ->
     light = new THREE.DirectionalLight 0xffffff
@@ -146,8 +159,8 @@ class App.Assets
 
   onUpdate: (exports) ->
     @composer.render()
-    @camera.rotation.x = (-@mouseY - (@camera.rotation.x)) * .0002
-    @camera.rotation.y = (-@mouseX - (@camera.rotation.y)) * .0002
+    # @camera.rotation.x = (-@mouseY - (@camera.rotation.x)) * .0002
+    # @camera.rotation.y = (-@mouseX - (@camera.rotation.y)) * .0002
 
   onResize: (exports) ->
     vw = if @container then @container.offsetWidth else exports.windowWidth
@@ -174,6 +187,13 @@ class App.Assets
 
     @mouseX = (e.clientX - windowHalfX) / 2
     @mouseY = (e.clientY - windowHalfY) / 2
+
+    unless @logoIn
+      return
+    deltaX = @mouseX / exports.windowWidth
+    deltaY = @mouseY / exports.windowHeight
+    @frontTexture.position.set 2 + 2 * deltaX * 0.05, 4.2 + 4.2 * deltaY * 0.05, -8
+    @backTexture.position.set 2 + 2 * deltaX * 0.08, 4.1 + 4.1 * deltaY * 0.08, -8.3
 
   onScroll: ->
 
