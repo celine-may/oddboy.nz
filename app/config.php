@@ -34,6 +34,8 @@ $assets['javascripts'] = array(
   $js_path . 'vendor/webgl/OBJLoader.js',
   $js_path . 'vendor/webgl/RenderPass.js',
   $js_path . 'vendor/webgl/ShaderPass.js',
+  $js_path . 'vendor/webgl/DigitalGlitch.js',
+  $js_path . 'vendor/webgl/GlitchPass.js',
   $js_path . 'build/common.js',
   $js_path . 'build/app.js',
   $js_path . 'build/renderer.js',

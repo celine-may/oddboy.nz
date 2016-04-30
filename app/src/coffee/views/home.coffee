@@ -16,14 +16,15 @@ class App.Home
       @$panel = App.getPanel view
       @direction = App.getDirection view
       @slidePanel exports, 42
+      exports.glitch = true
     $navLink.on 'mouseleave', (e) =>
       @slidePanel exports, 15
+      exports.glitch = false
 
   slidePanel: (exports, delta) ->
     TweenLite.to @$panel, .3,
       x: (exports.windowWidth - delta) * @direction
       ease: Power2.easeOut
-
 
   onUpdate: ->
 

@@ -146,6 +146,8 @@ class App.Assets
     copyPass = new THREE.ShaderPass THREE.CopyShader
     copyPass.renderToScreen = true
     composer.addPass copyPass
+    glitchPass = @glitchPass = new THREE.GlitchPass()
+    composer.addPass glitchPass
 
   createStars: (exports) ->
     geometry = new THREE.Geometry
@@ -223,6 +225,11 @@ class App.Assets
     intersects = @raycaster.intersectObjects objects, true
 
   onUpdate: (exports) ->
+    if exports.glitch
+      @glitchPass.renderToScreen = true
+    else
+      @glitchPass.renderToScreen = false
+
     @composer.render()
     # @camera.rotation.x = (-@mouseY - (@camera.rotation.x)) * .0002
     # @camera.rotation.y = (-@mouseX - (@camera.rotation.y)) * .0002
