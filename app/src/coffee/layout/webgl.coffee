@@ -15,12 +15,14 @@ class App.Assets
     @composer = undefined
     @copyPass = undefined
     @msaaRenderPass = undefined
-    @parentObject = new THREE.Object3D()
+    @objectsWrapper = new THREE.Object3D()
+    @logo = new THREE.Object3D()
     @param = MSAASampleLevel: 2
     @animatedIn = false
     @intersected = null
 
-    @ride = false
+    @copyVisible = false
+    @ride = true
 
     @mouseX = 0
     @mouseY = 0
@@ -82,9 +84,9 @@ class App.Assets
     backMaterial = new THREE.MeshPhongMaterial
       color: exports.accentColor
     copyMaterial = @copyMaterial = new THREE.MeshPhongMaterial
-      color: 0xf53555
+      color: exports.accentColor
       transparent: true
-      opacity: 1
+      # opacity: 1
 
     loader = new THREE.ObjectLoader
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
@@ -96,7 +98,7 @@ class App.Assets
       object.position.set 2, 3, -100
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
-      @parentObject.add object
+      @logo.add object
       # @scene.add object
 
 
@@ -109,7 +111,7 @@ class App.Assets
       object.position.set 2, 3, -100
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
-      @parentObject.add object
+      @logo.add object
       # @scene.add object
       @animateIn exports
 
@@ -123,9 +125,10 @@ class App.Assets
       object.rotation.y = App.π
       object.scale.set .2, .2, .2
       copyMaterial.opacity = 0
-      @parentObject.add object
+      @objectsWrapper.add object
+      @objectsWrapper.add @logo
       # @scene.add object
-      @scene.add @parentObject
+      @scene.add @objectsWrapper
 
   createLights: (exports) ->
     light = new THREE.DirectionalLight 0xffffff
@@ -194,34 +197,47 @@ class App.Assets
     , '-=10'
 
   animateCopyIn: (exports) ->
-    showCopyTL = new TimelineLite()
-    .to @copyMaterial, .3,
+    @copyVisible = true
+    @ride = false
+
+    TweenLite.to @copyMaterial, .8,
       opacity: 1
-    .to @frontLogo.position, .3,
+      ease: Expo.easeOut
+    TweenLite.to @copy.position, .8,
+      y: 4.1
+      ease: Expo.easeOut
+    TweenLite.to @frontLogo.position, .8,
       y: 4.88
-    , '-=.3'
-    .to @backLogo.position, .3,
+      ease: Expo.easeInOut
+    TweenLite.to @backLogo.position, .8,
       y: 4.77
-    , '-=.3'
+      ease: Expo.easeInOut
 
   animateCopyOut: (exports) ->
-    showCopyTL = new TimelineLite()
-    .to @copyMaterial, .3,
+    unless @copyVisible
+      return
+
+    TweenLite.to @copyMaterial, .8,
       opacity: 0
-    .to @frontLogo.position, .3,
+      ease: Expo.easeOut
+    TweenLite.to @copy.position, .8,
+      y: 4.3
+      ease: Expo.easeOut
+    TweenLite.to @frontLogo.position, .8,
       y: 4.18
-    , '-=.3'
-    .to @backLogo.position, .3,
+      ease: Expo.easeInOut
+    TweenLite.to @backLogo.position, .8,
       y: 4.07
+      ease: Expo.easeInOut
       onComplete: =>
         @ride = true
-    , '-=.3'
+        @copyVisible = false
 
   intersector: (e, exports) ->
     @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
     @raycaster.setFromCamera @mouse, @camera
 
-    objects = @parentObject.children
+    objects = @objectsWrapper.children
     intersects = @raycaster.intersectObjects objects, true
 
   onUpdate: (exports) ->
@@ -265,7 +281,6 @@ class App.Assets
       if intersects.length > 0
         if @intersected != intersects[0].object.parent
           @intersected = intersects[0].object.parent
-          @ride = false
           @animateCopyIn exports
       else
         @intersected = null
