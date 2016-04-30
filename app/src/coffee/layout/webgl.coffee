@@ -15,14 +15,14 @@ class App.Assets
     @composer = undefined
     @copyPass = undefined
     @msaaRenderPass = undefined
-    @objectsWrapper = new THREE.Object3D()
     @logo = new THREE.Object3D()
+    @logoHelper = undefined
     @param = MSAASampleLevel: 2
     @animatedIn = false
     @intersected = null
 
     @copyVisible = false
-    @ride = true
+    @ride = false
 
     @mouseX = 0
     @mouseY = 0
@@ -33,14 +33,20 @@ class App.Assets
     $window = $(window)
     @$body = $('body')
 
+    THREE.DefaultLoadingManager.onProgress = (item, loaded, total) =>
+      if loaded is total
+        @scene.add @logo
+
+        @animateIn exports
+
     @createScene exports
     @createGL exports
     @createCamera exports
     @createGrid exports
-    @addObjects exports
     @createLights exports
-    @postProcessing exports
     @createStars exports
+    @addObjects exports
+    @postProcessing exports
 
     @mouse = new THREE.Vector2()
     @raycaster = new THREE.Raycaster()
@@ -66,18 +72,6 @@ class App.Assets
     @camera = new THREE.PerspectiveCamera 60, exports.windowWidth / exports.windowHeight, 0.1, 1000
     @camera.position.set 2, 70, 500
 
-  createGrid: (exports) ->
-    grid = new THREE.GridHelper 500, 4
-    grid.setColors exports.accentColor, exports.accentColor
-    @scene.add grid
-
-    gridTL = new TimelineLite()
-    .to grid.position, 20,
-      z: 300
-      ease: Power0.easeNone
-      onComplete: ->
-        gridTL.restart()
-
   addObjects: (exports) ->
     frontMaterial = new THREE.MeshPhongMaterial
       color: exports.primaryColor
@@ -99,8 +93,6 @@ class App.Assets
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
-      # @scene.add object
-
 
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
       @backLogo = object
@@ -112,8 +104,6 @@ class App.Assets
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
-      # @scene.add object
-      @animateIn exports
 
     loader.load "#{exports.path}assets/json/oddboy-copy.json", (object) =>
       @copy = object
@@ -125,10 +115,19 @@ class App.Assets
       object.rotation.y = App.π
       object.scale.set .2, .2, .2
       copyMaterial.opacity = 0
-      @objectsWrapper.add object
-      @objectsWrapper.add @logo
-      # @scene.add object
-      @scene.add @objectsWrapper
+      @scene.add object
+
+  createGrid: (exports) ->
+    grid = new THREE.GridHelper 500, 4
+    grid.setColors exports.accentColor, exports.accentColor
+    @scene.add grid
+
+    gridTL = new TimelineLite()
+    .to grid.position, 20,
+      z: 300
+      ease: Power0.easeNone
+      onComplete: ->
+        gridTL.restart()
 
   createLights: (exports) ->
     light = new THREE.DirectionalLight 0xffffff
@@ -139,18 +138,6 @@ class App.Assets
     @scene.add light
     light = new THREE.AmbientLight 0x222222
     @scene.add light
-
-  postProcessing: (exports) ->
-    composer = @composer = new THREE.EffectComposer @gl
-    composer.addPass new THREE.RenderPass @scene, @camera
-    msaaRenderPass = @msaaRenderPass = new THREE.ManualMSAARenderPass @scene, @camera
-    msaaRenderPass.sampleLevel = @param.MSAASampleLevel
-    composer.addPass msaaRenderPass
-    copyPass = new THREE.ShaderPass THREE.CopyShader
-    copyPass.renderToScreen = true
-    composer.addPass copyPass
-    glitchPass = @glitchPass = new THREE.GlitchPass()
-    composer.addPass glitchPass
 
   createStars: (exports) ->
     geometry = new THREE.Geometry
@@ -178,6 +165,18 @@ class App.Assets
     particles = new THREE.Points geometry, material
     @scene.add particles
 
+  postProcessing: (exports) ->
+    composer = @composer = new THREE.EffectComposer @gl
+    composer.addPass new THREE.RenderPass @scene, @camera
+    msaaRenderPass = @msaaRenderPass = new THREE.ManualMSAARenderPass @scene, @camera
+    msaaRenderPass.sampleLevel = @param.MSAASampleLevel
+    composer.addPass msaaRenderPass
+    copyPass = new THREE.ShaderPass THREE.CopyShader
+    copyPass.renderToScreen = true
+    composer.addPass copyPass
+    glitchPass = @glitchPass = new THREE.GlitchPass()
+    composer.addPass glitchPass
+
   animateIn: (exports) ->
     logoTL = new TimelineLite()
     .to @camera.position, 1,
@@ -194,6 +193,7 @@ class App.Assets
       ease: Quart.easeOut
       onComplete: =>
         @animatedIn = true
+        @ride = true
     , '-=10'
 
   animateCopyIn: (exports) ->
@@ -237,8 +237,7 @@ class App.Assets
     @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
     @raycaster.setFromCamera @mouse, @camera
 
-    objects = @objectsWrapper.children
-    intersects = @raycaster.intersectObjects objects, true
+    intersects = @raycaster.intersectObjects @logo.children, true
 
   onUpdate: (exports) ->
     if exports.glitch
