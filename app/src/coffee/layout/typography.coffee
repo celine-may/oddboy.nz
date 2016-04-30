@@ -1,6 +1,6 @@
 class App.Typography
   constructor: ->
-    @order = 2
+    @order = 3
 
   build: (exports) ->
     exports.TypographyController = @

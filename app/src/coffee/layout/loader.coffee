@@ -1,6 +1,6 @@
 class App.Loader
   constructor: ->
-    @order = 1
+    @order = 2
 
   build: (exports) ->
     exports.LoaderController = @

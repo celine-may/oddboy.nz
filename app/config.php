@@ -38,7 +38,7 @@ $assets['javascripts'] = array(
   $js_path . 'build/app.js',
   $js_path . 'build/renderer.js',
   $js_path . 'build/transition.js',
-  $js_path . 'build/fxs/assets.js',
+  $js_path . 'build/layout/webgl.js',
   $js_path . 'build/layout/loader.js',
   $js_path . 'build/layout/typography.js',
   $js_path . 'build/views/home.js',
