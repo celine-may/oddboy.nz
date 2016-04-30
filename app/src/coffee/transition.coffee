@@ -34,7 +34,7 @@ class Transition
           else
             @showView exports
       onAfter: ($container, $newContent) =>
-        @initFX @exports
+        @initInstances @exports
 
     smoothState = @$main.smoothState(options).data 'smoothState'
 
@@ -44,7 +44,7 @@ class Transition
     if @initiated
       return
 
-    if exports.showLoader
+    unless exports.skipLoader
       exports.LoaderController.playDevice exports
       exports.LoaderController.fillLoader exports
     else
@@ -123,8 +123,8 @@ class Transition
     @view = exports.view = view
     @$main.attr 'data-view', view
 
-  initFX: (exports) ->
-    for controller in exports.controllers
-      controller.init exports
+  initInstances: (exports) ->
+    for instance in exports.instances
+      instance.init exports
 
 App.Transition = Transition

@@ -1,3 +1,1 @@
-<div class="temp">
-  <h1>Home</h1>
-</div>
+<div class="webgl-wrapper"></div>

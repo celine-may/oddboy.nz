@@ -4,7 +4,7 @@ class App.TalkToUs
 
   build: (exports) ->
     exports.TalkToUsController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @sleepWakeTL = undefined
     @blinkTL = undefined
@@ -193,11 +193,13 @@ class App.TalkToUs
     .set $blinkSprite,
       backgroundPosition: '-297px -980px'
       delay: .05
-      onComplete: =>
+      onComplete: ->
         blinkTL.restart()
+
+  onUpdate: ->
 
   onResize: (exports) ->
 
   onScroll: (exports, scrollY) ->
 
-App.FXs.push new App.TalkToUs
+App.Controllers.push new App.TalkToUs

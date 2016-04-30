@@ -45,7 +45,7 @@ include("controllers/$controller.php");
   <script>
     window.App = {};
     App.path = "<?php echo PATH; ?>";
-    App.FXs = [];
+    App.Controllers = [];
   </script>
 </head>
 

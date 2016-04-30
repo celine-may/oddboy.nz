@@ -4,7 +4,7 @@ class App.Home
 
   build: (exports) ->
     exports.HomeController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @init exports
 
@@ -24,8 +24,11 @@ class App.Home
       x: (exports.windowWidth - delta) * @direction
       ease: Power2.easeOut
 
+
+  onUpdate: ->
+
   onResize: (exports) ->
 
   onScroll: (exports, scrollY) ->
 
-App.FXs.push new App.Home
+App.Controllers.push new App.Home

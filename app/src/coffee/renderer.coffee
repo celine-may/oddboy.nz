@@ -2,42 +2,59 @@ class Renderer
   constructor: (options) ->
     @$window = $(window)
 
+    @path = options.path
+    @instances = options.instances || []
+
+    @windowHeight = options.windowHeight
+    @windowWidth = options.windowWidth
+    @smallBreakpoint = options.smallBreakpoint
+    @mediumBreakpoint = options.mediumBreakpoint
+    @isTouch = options.isTouch || false
+    @skipLoader = options.skipLoader || false
+    @primaryColor = options.primaryColor
+    @accentColor = options.accentColor
+    @secondaryColor = options.secondaryColor
+
     @exports = {}
-    @fxs = options.fxs || []
+    @controllers = options.controllers || []
 
     @lastScrollY = 0
     @ticking = false
 
   init: ->
+    @exports.RendererController = @
+
     exports = @exports =
-      path: App.path
-      controllers: []
-      windowWidth: @$window.width()
-      windowHeight: @$window.height()
-      smallBreakpoint: 767
-      mediumBreakpoint: 1023
-      isTouch: Modernizr.touchevents
-      showLoader: false
-      primaryColor: '#23dcd4'
-      accentColor: '#f83656'
-      secondaryColor: '#0c1b33'
+      parent: @
+      path: @path
+      instances: @instances
+      windowWidth: @windowHeight
+      windowHeight: @windowWidth
+      smallBreakpoint: @smallBreakpoint
+      mediumBreakpoint: @mediumBreakpoint
+      isTouch: @isTouch
+      skipLoader: @skipLoader
+      primaryColor: @primaryColor
+      accentColor: @accentColor
+      secondaryColor: @secondaryColor
 
-    exports.RendererController = @
-
-    fxs = @fxs
-    fxs.sort (a, b) ->
+    controllers = @controllers
+    controllers.sort (a, b) ->
       a.order - b.order
 
-    for fx in fxs
-      fx.build exports
-
-    # transition = new App.Transition
-    # transition.init exports
+    for controller in controllers
+      controller.build exports
 
     @$window
       .on 'resize', @onResize.bind @
       .trigger 'resize'
       .on 'scroll', @onScroll.bind @
+
+  onUpdate: ->
+    exports = @exports
+
+    for controller in @controllers
+      controller.onUpdate exports
 
   onResize: (e) ->
     exports = @exports
@@ -47,16 +64,16 @@ class Renderer
     exports.isSmall = windowWidth <= exports.smallBreakpoint
     exports.isMedium = exports.smallBreakpoint < windowWidth <= exports.mediumBreakpoint
 
-    for fx in @fxs
-      fx.onResize exports
+    for controller in @controllers
+      controller.onResize exports
 
   onScroll: (e) ->
     exports = @exports
     @lastScrollY = window.pageYOffset
     if not @ticking
       window.requestAnimationFrame =>
-        for fx in @fxs
-          fx.onScroll exports, @lastScrollY
+        for controller in @controllers
+          controller.onScroll exports, @lastScrollY
         @ticking = false
     @ticking = true
 

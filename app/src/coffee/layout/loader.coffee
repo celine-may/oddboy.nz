@@ -1,10 +1,10 @@
 class App.Loader
   constructor: ->
-    @order = 0
+    @order = 1
 
   build: (exports) ->
     exports.LoaderController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @init exports
 
@@ -21,7 +21,7 @@ class App.Loader
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
-    if exports.showLoader
+    unless exports.skipLoader
       @playDevice exports
       @fillLoader exports
     else
@@ -69,8 +69,10 @@ class App.Loader
         @$wrapper.remove()
     , '-=.5'
 
+  onUpdate: ->
+
   onResize: (exports) ->
 
   onScroll: (exports, scrollY) ->
 
-App.FXs.push new App.Loader
+App.Controllers.push new App.Loader
