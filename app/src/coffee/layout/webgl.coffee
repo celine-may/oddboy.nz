@@ -229,9 +229,11 @@ class App.Assets
     TweenLite.to @backLogo.position, .8,
       y: 4.07
       ease: Expo.easeInOut
-      onComplete: =>
-        @ride = true
-        @copyVisible = false
+
+    setTimeout =>
+      @copyVisible = false
+      @ride = true
+    , 800
 
   intersector: (e, exports) ->
     @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
@@ -289,8 +291,8 @@ class App.Assets
       deltaX = @mouseX / exports.windowWidth
       deltaY = @mouseY / exports.windowHeight
 
-      @frontLogo.position.set 2 + 2 * deltaX * 0.05, 4.2 + 4.2 * deltaY * 0.05, -8
-      @backLogo.position.set 2 + 2 * deltaX * 0.08, 4.1 + 4.1 * deltaY * 0.08, -8.3
+      @frontLogo.position.set 2 + 2 * deltaX * .2, 4.2 + 4.2 * deltaY * .2, -8
+      @backLogo.position.set 2 + 2 * deltaX * .3, 4.1 + 4.1 * deltaY * .3, -8.3
 
   onScroll: ->
 
