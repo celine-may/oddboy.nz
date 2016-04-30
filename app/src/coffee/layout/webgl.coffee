@@ -59,7 +59,13 @@ class App.Assets
     grid = new THREE.GridHelper 500, 4
     grid.setColors exports.accentColor, exports.accentColor
     @scene.add grid
-    TweenMax.to grid.position, 20, z: 300
+
+    gridTL = new TimelineLite()
+    .to grid.position, 20,
+      z: 300
+      ease: Power0.easeNone
+      onComplete: ->
+        gridTL.restart()
 
   createLogo: (exports) ->
     frontMaterial = new THREE.MeshPhongMaterial color: exports.primaryColor
