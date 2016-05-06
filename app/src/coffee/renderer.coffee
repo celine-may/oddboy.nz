@@ -28,8 +28,8 @@ class Renderer
       parent: @
       path: @path
       instances: @instances
-      windowWidth: @windowHeight
-      windowHeight: @windowWidth
+      windowWidth: @windowWidth
+      windowHeight: @windowHeight
       smallBreakpoint: @smallBreakpoint
       mediumBreakpoint: @mediumBreakpoint
       isTouch: @isTouch
