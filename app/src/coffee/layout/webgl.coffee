@@ -16,11 +16,10 @@ class App.Webgl
     @logo = new THREE.Object3D()
     @logoHelper = undefined
     @param = MSAASampleLevel: 2
-    @animatedIn = false
+    @ride = false
     @intersected = null
 
     @copyVisible = false
-    @ride = false
 
     @mouseX = 0
     @mouseY = 0
@@ -192,26 +191,24 @@ class App.Webgl
       z: -8.3
       ease: Quart.easeOut
       onComplete: =>
-        @animatedIn = true
         @ride = true
     , '-=10'
 
   animateCopyIn: (exports) ->
     @copyVisible = true
-    @ride = false
 
     TweenLite.to @copyMaterial, .8,
       opacity: 1
       ease: Expo.easeOut
     TweenLite.to @copy.position, .8,
-      y: 4.1
+      y: 3.7
       ease: Expo.easeOut
-    TweenLite.to @frontLogo.position, .8,
-      y: 4.88
-      ease: Expo.easeInOut
-    TweenLite.to @backLogo.position, .8,
-      y: 4.77
-      ease: Expo.easeInOut
+    # TweenLite.to @frontLogo.position, .8,
+    #   y: 4.88
+    #   ease: Expo.easeInOut
+    # TweenLite.to @backLogo.position, .8,
+    #   y: 4.77
+    #   ease: Expo.easeInOut
 
   animateCopyOut: (exports) ->
     unless @copyVisible
@@ -223,17 +220,14 @@ class App.Webgl
     TweenLite.to @copy.position, .8,
       y: 4.3
       ease: Expo.easeOut
-    TweenLite.to @frontLogo.position, .8,
-      y: 4.18
-      ease: Expo.easeInOut
-    TweenLite.to @backLogo.position, .8,
-      y: 4.07
-      ease: Expo.easeInOut
-
-    setTimeout =>
-      @copyVisible = false
-      @ride = true
-    , 800
+    # TweenLite.to @frontLogo.position, .8,
+    #   y: 4.18
+    #   ease: Expo.easeInOut
+    # TweenLite.to @backLogo.position, .8,
+    #   y: 4.07
+    #   ease: Expo.easeInOut
+      onComplete: =>
+        @copyVisible = false
 
   intersector: (e, exports) ->
     @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
@@ -241,8 +235,30 @@ class App.Webgl
 
     intersects = @raycaster.intersectObjects @logo.children, true
 
+  moveLogo: (exports, e) ->
+    windowHalfX = exports.windowWidth / 2
+    windowHalfY = exports.windowHeight / 2
+
+    console.log @mouseX = (e.clientX - exports.windowWidth) / 2
+    @mouseY = (e.clientY - windowHalfY) / 2
+    frontRatio = .4
+    backRatio = .6
+    frontX = backX = 2
+    frontY = 4.2
+    frontZ = -8
+    backY = 4.1
+    backZ = -8.3
+    newFrontX = frontX + (@mouseX / exports.windowWidth) * frontX * frontRatio
+    newFrontY = frontY + (@mouseY / exports.windowHeight) * frontY * frontRatio
+    newBackX = backX + (@mouseX / exports.windowWidth) * backX * backRatio
+    newBackY = backY + (@mouseY / exports.windowHeight) * backY * backRatio
+
+    @frontLogo.position.set newFrontX, newFrontY, frontZ
+    @backLogo.position.set newBackX, newBackY, backZ
+
   onUpdate: (exports) ->
     if exports.glitch
+      # @glitchPass.goWild = true
       @glitchPass.renderToScreen = true
     else
       @glitchPass.renderToScreen = false
@@ -270,13 +286,7 @@ class App.Webgl
       @composer.setSize newWidth, newHeight
 
   onMouseMove: (e, exports) ->
-    windowHalfX = exports.windowWidth / 2
-    windowHalfY = exports.windowHeight / 2
-
-    @mouseX = (e.clientX - windowHalfX) / 2
-    @mouseY = (e.clientY - windowHalfY) / 2
-
-    if @animatedIn
+    if @ride
       intersects = @intersector e, exports
       if intersects.length > 0
         if @intersected != intersects[0].object.parent
@@ -286,9 +296,8 @@ class App.Webgl
         @intersected = null
         @animateCopyOut exports
 
-    if @ride
-      deltaX = @mouseX / exports.windowWidth
-      deltaY = @mouseY / exports.windowHeight
+      @moveLogo exports, e
 
-      @frontLogo.position.set 2 + 2 * deltaX * .2, 4.2 + 4.2 * deltaY * .2, -8
-      @backLogo.position.set 2 + 2 * deltaX * .3, 4.1 + 4.1 * deltaY * .3, -8.3
+# NOTES
+# Commented the logo animation as it's quite buggy
+# with the mouse movement animatoin
