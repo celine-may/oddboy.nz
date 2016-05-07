@@ -1,6 +1,6 @@
-class App.Home
+class Home
   constructor: ->
-    @order = 13
+    @order = 10
 
   build: (exports) ->
     exports.HomeController = @
@@ -36,10 +36,8 @@ class App.Home
       x: (exports.windowWidth - delta) * @direction
       ease: Power2.easeOut
 
-  onUpdate: ->
-
   onResize: (exports) ->
 
   onScroll: (exports, scrollY) ->
 
-App.Controllers.push new App.Home
+App.Controllers.push new Home

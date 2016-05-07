@@ -46,8 +46,8 @@ class Renderer
       zTop: @zTop
       zXTop: @zXTop
 
-    transition = new App.Transition
-    transition.build exports
+    @webgl = new App.Webgl
+    @webgl.build exports
 
     controllers = @controllers
     controllers.sort (a, b) ->
@@ -62,10 +62,7 @@ class Renderer
       .on 'scroll', @onScroll.bind @
 
   onUpdate: ->
-    exports = @exports
-
-    for controller in @controllers
-      controller.onUpdate exports
+    @webgl.onUpdate @exports
 
   onResize: (e) ->
     exports = @exports

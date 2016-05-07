@@ -1,6 +1,6 @@
-class App.Typography
+class Typography
   constructor: ->
-    @order = 3
+    @order = 2
 
   build: (exports) ->
     exports.TypographyController = @
@@ -11,11 +11,9 @@ class App.Typography
   init: (exports) ->
     @$repaintElement = $('.do-repaint')
 
-  onUpdate: ->
-
   onResize: (exports) ->
     @$repaintElement.css 'z-index', 1
 
   onScroll: (exports, scrollY) ->
 
-App.Controllers.push new App.Typography
+App.Controllers.push new Typography

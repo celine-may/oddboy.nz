@@ -1,6 +1,6 @@
-class App.WhatWeDo
+class WhatWeDo
   constructor: ->
-    @order = 10
+    @order = 11
 
   build: (exports) ->
     exports.WhatWeDoController = @
@@ -74,10 +74,8 @@ class App.WhatWeDo
   hideWorkDetails: =>
     @workDetailsTL.reverse()
 
-  onUpdate: ->
-
   onResize: (exports) ->
 
   onScroll: (exports, scrollY) ->
 
-App.Controllers.push new App.WhatWeDo
+App.Controllers.push new WhatWeDo

@@ -36,7 +36,6 @@
         </p>
         <div class="service-image">
           <div class="circle"></div>
-          <img src="<?php echo IMAGES_PATH; ?>services/game-design.jpg" alt="Game Design">
         </div>
         <div class="service-description">
           <h2 class="service-title title">Game Design<span class="text-color accent">.</span></h2>
@@ -70,7 +69,6 @@
         </p>
         <div class="service-image">
           <div class="circle"></div>
-          <img src="<?php echo IMAGES_PATH; ?>services/virtual-reality.png" alt="Virtual Reality">
         </div>
         <div class="service-description">
           <h2 class="service-title title">Virtual Reality<span class="text-color accent">.</span></h2>
@@ -96,7 +94,6 @@
         </p>
         <div class="service-image">
           <div class="circle"></div>
-          <img src="<?php echo IMAGES_PATH; ?>services/digital-products.png" alt="Digital Products">
         </div>
         <div class="service-description">
           <h2 class="service-title title">Digital Products<span class="text-color accent">.</span></h2>
@@ -130,8 +127,8 @@
 
       <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
 
-      <article class="work do-show-work-details" data-work="camp-hope-falls">
-        <div class="work-bg"></div>
+      <article class="work do-show-work-details">
+        <div class="work-bg" data-work="camp-hope-falls"></div>
         <div class="work-content">
           <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
@@ -143,8 +140,8 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details" data-work="barkle">
-        <div class="work-bg"></div>
+      <article class="work do-show-work-details">
+        <div class="work-bg" data-work="barkle"></div>
         <div class="work-content">
           <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
@@ -157,8 +154,8 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details" data-work="yanky-doodle">
-        <div class="work-bg"></div>
+      <article class="work do-show-work-details">
+        <div class="work-bg" data-work="yanky-doodle"></div>
         <div class="work-content">
           <h2 class="work-title title">Yanky Doodle<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
@@ -171,8 +168,8 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details" data-work="celine">
-        <div class="work-bg"></div>
+      <article class="work do-show-work-details">
+        <div class="work-bg" data-work="celine"></div>
         <div class="work-content">
           <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">

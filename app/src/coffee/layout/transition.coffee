@@ -1,5 +1,6 @@
 class Transition
-  constructor: (options) ->
+  constructor: ->
+    @order = 0
 
   build: (exports) ->
     exports.TransitionController = @
@@ -139,4 +140,8 @@ class Transition
     @newView = undefined
     @$main.attr 'data-view', @view
 
-App.Transition = Transition
+  onResize: (exports) ->
+
+  onScroll: (exports, scrollY) ->
+
+App.Controllers.push new Transition

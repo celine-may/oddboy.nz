@@ -1,3 +1,1 @@
-<section class="view" data-view="home">
-  <div class="webgl-wrapper"></div>
-</section>
+<section class="view" data-view="home"></section>

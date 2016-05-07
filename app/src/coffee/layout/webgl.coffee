@@ -1,11 +1,9 @@
-class App.Assets
-  constructor: ->
-    @order = 1
-
+class App.Webgl
   build: (exports) ->
-    exports.AssetsController = @
+    exports.WebglController = @
     exports.instances.push @
 
+    @isLoaded = false
     @camera = undefined
     @scene = undefined
     @gl = undefined
@@ -36,8 +34,7 @@ class App.Assets
     THREE.DefaultLoadingManager.onProgress = (item, loaded, total) =>
       if loaded is total
         @scene.add @logo
-
-        @animateIn exports
+        @isLoaded = true
 
     @createScene exports
     @createGL exports
@@ -178,6 +175,9 @@ class App.Assets
     composer.addPass glitchPass
 
   animateIn: (exports) ->
+    unless @isLoaded
+      return
+
     logoTL = new TimelineLite()
     .to @camera.position, 1,
       y: 4.5
@@ -268,7 +268,6 @@ class App.Assets
       newWidth = Math.floor(renderW / pixelRatio) or 1
       newHeight = Math.floor(renderH / pixelRatio) or 1
       @composer.setSize newWidth, newHeight
-      # @msaaRenderPass.setSize newWidth, newHeight
 
   onMouseMove: (e, exports) ->
     windowHalfX = exports.windowWidth / 2
@@ -293,8 +292,3 @@ class App.Assets
 
       @frontLogo.position.set 2 + 2 * deltaX * .2, 4.2 + 4.2 * deltaY * .2, -8
       @backLogo.position.set 2 + 2 * deltaX * .3, 4.1 + 4.1 * deltaY * .3, -8.3
-
-  onScroll: ->
-
-
-App.Controllers.push new App.Assets
