@@ -239,7 +239,7 @@ class App.Webgl
     windowHalfX = exports.windowWidth / 2
     windowHalfY = exports.windowHeight / 2
 
-    console.log @mouseX = (e.clientX - exports.windowWidth) / 2
+    @mouseX = (e.clientX - exports.windowWidth) / 2
     @mouseY = (e.clientY - windowHalfY) / 2
     frontRatio = .4
     backRatio = .6
