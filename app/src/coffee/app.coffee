@@ -45,5 +45,3 @@ $ ->
   mainLoop = ->
     renderer.exports.frame = requestAnimationFrame mainLoop
     renderer.onUpdate()
-
-  startMainLoop()
