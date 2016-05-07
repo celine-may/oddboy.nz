@@ -14,6 +14,10 @@ class Renderer
     @primaryColor = options.primaryColor
     @accentColor = options.accentColor
     @secondaryColor = options.secondaryColor
+    @zHidden = options.zHidden
+    @zBase = options.zBase
+    @zTop = options.zTop
+    @zXTop = options.zXTop
 
     @exports = {}
     @controllers = options.controllers || []
@@ -37,6 +41,13 @@ class Renderer
       primaryColor: @primaryColor
       accentColor: @accentColor
       secondaryColor: @secondaryColor
+      zHidden: @zHidden
+      zBase: @zBase
+      zTop: @zTop
+      zXTop: @zXTop
+
+    transition = new App.Transition
+    transition.build exports
 
     controllers = @controllers
     controllers.sort (a, b) ->

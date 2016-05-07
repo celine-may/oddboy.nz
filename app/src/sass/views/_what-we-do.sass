@@ -2,7 +2,7 @@
 // -----------------
 
 // Header
-.main[data-view="what-we-do"]
+.view[data-view="what-we-do"]
   +min-screen($small + 1px)
     .header-content
       padding-right: $column * 2
@@ -68,7 +68,7 @@
     +position(absolute, -52px, null, null, 0)
     width: $column * 3
 
-    .lhs &
+    .service.lhs &
       left: $column * 2.5
       width: $column * 3.5
 
@@ -119,7 +119,7 @@
     min-width: 310px
     padding-top: 80px
 
-    .rhs &
+    .service.rhs &
       margin-left: $column * 3.5
 
 // Title
@@ -133,11 +133,11 @@
     font-size: 5rem
     letter-spacing: 2px
 
-    .rhs &
+    .service.rhs &
       right: 0
       text-align: right
 
-    .lhs &
+    .service.lhs &
       left: 0
 
 // Separator (with icon)

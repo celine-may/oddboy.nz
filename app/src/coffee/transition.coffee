@@ -1,130 +1,142 @@
 class Transition
   constructor: (options) ->
-    @initiated = false
+
+  build: (exports) ->
+    exports.TransitionController = @
+    exports.instances.push @
+
+    @view = undefined
+    @newView = undefined
+
+    @init exports
 
   init: (exports) ->
     @$window = $(window)
-    @$main = $('#main')
+    @$main = $('.main')
+    @$ui = $('.ui')
+
+    @$showViewBtn = $('.do-show-view')
+    @$slideUpElements = $('.do-slide-up')
 
     @exports = exports
 
-    @setView exports, window.location.href
+    @setView exports
 
-    options =
-      prefetch: true
-      cacheLength: 2
-      onBefore: ($currentTarget, $container) =>
-        @newView = $currentTarget.attr 'data-view'
-      onStart:
-        duration: 800
-        render: ($container) =>
-          if @view is 'home'
-            @leaveHome exports, @newView
-          else
-            @leaveView exports, @view
-      onReady:
-        duration: 600
-        render: ($container, $newContent) =>
-          $container.html $newContent
-          currentView = @view
-          @setView exports, smoothState.href
+    @setInitialView exports
 
-          if @newView is 'home'
-            @showHome exports, currentView
-          else
-            @showView exports
-      onAfter: ($container, $newContent) =>
-        @initInstances @exports
+    @$showViewBtn.on 'click', (e) =>
+      $btn = $(e.target)
+      unless $btn.hasClass 'do-show-view'
+        $btn = $btn.parents '.do-show-view'
+      @newView = $btn.attr 'data-view'
+      @switchViewHandler exports
 
-    smoothState = @$main.smoothState(options).data 'smoothState'
-
-    @initialTransition exports
-
-  initialTransition: (exports) ->
-    if @initiated
-      return
-
-    unless exports.skipLoader
-      exports.LoaderController.playDevice exports
-      exports.LoaderController.fillLoader exports
+  setInitialView: (exports) ->
+    if @view is 'home'
+      @$ui
+        .find '.do-slide-up'
+        .css
+          opacity: 1
+          y: 0
     else
-      @showView exports
+      TweenLite.set $(".view[data-view='#{@view}']"),
+        x: 0
+      TweenLite.set @$slideUpElements,
+        opacity: 1
+        y: 0
 
-    @initiated = true
+  switchViewHandler: (exports) ->
+    exports.isAnimating = true
+    history.replaceState null, '', @newView
+    if @view is 'home'
+      @homeToView exports
+    else if @newView is 'home'
+      @viewToHome exports
+    else
+      @viewToView exports
 
-  leaveHome: (exports, newView) ->
-    $panel = App.getPanel newView
+  homeToView: (exports) ->
+    $view = $(".view[data-view='#{@newView}']")
 
-    panelTL = new TimelineLite()
-    .set $('.ui'),
-      zIndex: 0
-    .to $panel, .6,
+    transitionTL = new TimelineLite()
+    .to $view, .6,
       x: 0
       ease: Power3.easeIn
-
-  leaveView: (exports, view) ->
-    $panel = App.getPanel view
-    $slideIn = $('.do-slide-in')
-    $slideUp = $('.do-slide-up')
-
-    direction = App.getDirection view
-
-    leaveViewTL = new TimelineLite()
-    .set $panel,
-      x: 0
-    .to $slideIn, .6,
-      opacity: 0
-      x: exports.windowWidth * .15 * direction
-      ease: Power3.easeInOut
-    .to $slideUp, .8,
+    .to @$slideUpElements, .2,
       opacity: 0
       y: 20
+      ease: Power3.easeOut
+    , '-=.4'
+    .to @$slideUpElements, .4,
+      opacity: 1
+      y: 0
       ease: Power3.easeIn
-    , '-=.8'
+    , '-=.2'
+    .call =>
+      App.stopMainLoop()
+      @setView exports, @newView
+    , null, null, .3
+    .call ->
+      exports.isAnimating = false
+    , null, null, '+=.2'
 
-  showHome: (exports, view) ->
-    $panel = App.getPanel view
-    $slideUp = $('.do-slide-up')
-    direction = App.getDirection view
+  viewToHome: (exports) ->
+    $view = $(".view[data-view='#{@view}']")
 
-    panelTL = new TimelineLite()
-    .fromTo $panel, .6,
-      x: 0
-    ,
+    direction = App.getDirection @view
+
+    # App.startMainLoop()
+
+    transitionTL = new TimelineLite()
+    .to $view, .6,
       x: (exports.windowWidth - 15) * direction
       ease: Power3.easeIn
-    .to $slideUp, .8,
+    .set @$ui,
+      zIndex: exports.zTop + 1
+    .to @$slideUpElements, .4,
       opacity: 1
       y: 0
       ease: Power3.easeIn
+    , '-=.2'
+    .set @$ui,
+      zIndex: exports.zXTop
+    .call =>
+      @setView exports, @newView
+    , null, null, .3
+    .call ->
+      exports.isAnimating = false
+    , null, null, '+=.2'
 
-  showView: (exports) ->
-    $slideIn = $('.do-slide-in')
-    $slideUp = $('.do-slide-up')
+  viewToView: (exports) ->
+    $view = $(".view[data-view='#{@view}']")
+    $newView  = $(".view[data-view='#{@newView}']")
 
-    showViewTL = new TimelineLite()
-    .to $slideIn, .6,
-      opacity: 1
+    direction = App.getDirection @view
+
+    transitionTL = new TimelineLite()
+    .to $view, .6,
+      x: (exports.windowWidth - 15) * direction
+      ease: Power3.easeIn
+    .to $newView, .6,
       x: 0
-      ease: Power3.easeInOut
-    .to $slideUp, .8,
-      opacity: 1
-      y: 0
       ease: Power3.easeIn
-      # onComplete: ->
-      #   window.dispatchEvent exports.pageReadyEvent
-    , '-=.8'
+    , '-=.6'
+    .call =>
+      @setView exports, @newView
+    , null, null, .3
+    .call ->
+      exports.isAnimating = false
+    , null, null, '+=.2'
 
-  setView: (exports, href) ->
-    uriArray = href.split('/')
-    view = uriArray[uriArray.length-1]
-    if view is ''
-      view = 'home'
-    @view = exports.view = view
-    @$main.attr 'data-view', view
+  setView: (exports, newView = null) ->
+    unless newView?
+      uriArray = window.location.href.split('/')
+      newView = uriArray[uriArray.length-1]
+      if newView is ''
+        newView = 'home'
 
-  initInstances: (exports) ->
-    for instance in exports.instances
-      instance.init exports
+    @view = exports.view = newView
+    @newView = undefined
+    @$main.attr 'data-view', @view
 
 App.Transition = Transition

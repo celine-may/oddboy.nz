@@ -20,7 +20,6 @@ $css_path = PATH.'assets/css/';
 $assets['javascripts'] = array(
   $js_path . 'vendor/jquery-2.2.3.min.js',
   $js_path . 'vendor/modernizr-3.3.1.min.js',
-  $js_path . 'vendor/jquery.smoothState.min.js',
   $js_path . 'vendor/TweenMax.min.js',
   $js_path . 'vendor/TimelineMax.min.js',
   $js_path . 'vendor/CSSPlugin.js',

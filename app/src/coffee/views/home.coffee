@@ -11,18 +11,28 @@ class App.Home
   init: (exports) ->
     $navLink = $('.nav-link')
 
+    unless exports.view is 'home'
+      return
+
     $navLink.on 'mouseenter', (e) =>
+      if exports.isAnimating
+        return
+
       view = $(e.target).attr 'data-view'
-      @$panel = App.getPanel view
+      @$view = $(".view[data-view='#{view}'")
       @direction = App.getDirection view
-      @slidePanel exports, 42
+      @viewSneakPeek exports, 42
       exports.glitch = true
+
     $navLink.on 'mouseleave', (e) =>
-      @slidePanel exports, 15
+      if exports.isAnimating
+        return
+
+      @viewSneakPeek exports, 15
       exports.glitch = false
 
-  slidePanel: (exports, delta) ->
-    TweenLite.to @$panel, .3,
+  viewSneakPeek: (exports, delta) ->
+    TweenLite.to @$view, .3,
       x: (exports.windowWidth - delta) * @direction
       ease: Power2.easeOut
 

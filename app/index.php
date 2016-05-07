@@ -52,11 +52,11 @@ include("controllers/$controller.php");
 <body>
   <?php include_once('assets/svgs/svg-defs.svg'); ?>
 
-  <main id="main" class="main" data-view="<?php echo $controller; ?>">
+  <main class="main" data-view="home">
     <?php include('layouts/ui.php'); ?>
-    <div class="panel lhs"></div>
-    <div class="panel rhs"></div>
-    <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
+    <?php include('views/home.php') ?>
+    <?php include('views/talk-to-us.php') ?>
+    <?php include('views/what-we-do.php') ?>
   </main>
 
   <?php include('layouts/loader.php'); ?>

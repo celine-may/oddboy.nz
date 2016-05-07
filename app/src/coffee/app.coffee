@@ -23,6 +23,10 @@ $ ->
     primaryColor: '#23dcd4'
     accentColor: '#f83656'
     secondaryColor: '#0c1b33'
+    zHidden: -1
+    zBase: 10
+    zTop: 20
+    zXTop: 30
 
   renderer.init()
   App.renderer = renderer
@@ -42,4 +46,4 @@ $ ->
     renderer.exports.frame = requestAnimationFrame mainLoop
     renderer.onUpdate()
 
-  startMainLoop()
+  # startMainLoop()

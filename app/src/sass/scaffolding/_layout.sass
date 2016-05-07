@@ -15,13 +15,17 @@ body
   -moz-osx-font-smoothing: grayscale
 
 .main
+  position: relative
   +square(100%)
+  overflow: hidden
 
-// Panel
-.panel
-  +position(fixed, 0, null, null, 0)
-  +square(100%)
+.view
+  +position(absolute, 0, null, null, 0)
+  width: 100vw
+  height: 100vh
   background-color: $secondary
+  overflow: auto
+  z-index: $zTop
 
   &.lhs
     transform: translateX(calc(-100% + 15px))
@@ -33,7 +37,7 @@ body
 .header
   position: relative
   display: table
-  +square(100%)
+  +size(100vw, 100vh)
   padding: 100px $column
 
   +max-screen($medium)

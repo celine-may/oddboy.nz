@@ -31,7 +31,7 @@ class App.Assets
 
   init: (exports) ->
     $window = $(window)
-    @$body = $('body')
+    @$home = $('.view[data-view="home"]')
 
     THREE.DefaultLoadingManager.onProgress = (item, loaded, total) =>
       if loaded is total
@@ -60,7 +60,7 @@ class App.Assets
 
   createGL: (exports) ->
     $webglFrame = $('<div class="webgl-frame"></div>')
-    @$body.prepend $webglFrame
+    @$home.prepend $webglFrame
 
     @gl = new THREE.WebGLRenderer antialias: false
     @gl.setClearColor @scene.fog.color
