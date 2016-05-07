@@ -34,6 +34,7 @@ class Transition
 
   setInitialView: (exports) ->
     if @view is 'home'
+      App.startMainLoop()
       @$ui
         .find '.do-slide-up'
         .css
@@ -86,7 +87,7 @@ class Transition
 
     direction = App.getDirection @view
 
-    # App.startMainLoop()
+    App.startMainLoop()
 
     transitionTL = new TimelineLite()
     .to $view, .6,
