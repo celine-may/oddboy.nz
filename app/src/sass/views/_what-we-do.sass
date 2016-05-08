@@ -41,9 +41,6 @@
   position: relative
   margin-bottom: 300px
 
-  +min-screen($medium + 1px)
-    margin-bottom: 550px
-
 // Higlights (vertical)
 .service-highlights
   +position(absolute, 40%, null, null, $column / -2)
@@ -103,10 +100,12 @@
     +position(absolute, -50px, null, null, 40px)
 
   .service[data-service="virtual-reality"] &
-    +center('both')
+    +center('horizontal')
+    top: -50px
 
   .service[data-service="digital-products"] &
-    +center('both')
+    +center('horizontal')
+    top: 20px
     width: 120%
 
 // Description
@@ -346,3 +345,8 @@
 
   +min-screen($small + 1px)
     font-size: .875rem
+
+// Scrolling animation
+@for $i from 1 through 6
+  .y-push#{$i}
+    transform: translateY($i * 60px)

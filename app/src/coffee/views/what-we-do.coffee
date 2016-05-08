@@ -1,6 +1,7 @@
 class WhatWeDo
   constructor: ->
     @order = 11
+    @initBuild = false
 
   build: (exports) ->
     exports.WhatWeDoController = @
@@ -75,7 +76,5 @@ class WhatWeDo
     @workDetailsTL.reverse()
 
   onResize: (exports) ->
-
-  onScroll: (exports, scrollY) ->
 
 App.Controllers.push new WhatWeDo

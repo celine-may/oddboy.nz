@@ -2,7 +2,7 @@
   <header class="header">
     <?php include('layouts/grid.php'); ?>
     <div class="header-content">
-      <h1 class="title do-show-complement">
+      <h1 class="title do-repaint do-show-complement">
         <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<span class="text-color primary">*</span>
       </h1>
       <span class="title-separator bg-color accent do-complement-push"></span>
@@ -35,22 +35,22 @@
           Engaging
         </p>
         <div class="service-image">
-          <div class="circle"></div>
+          <div class="circle y-push1 do-anim-scroll"></div>
         </div>
         <div class="service-description">
-          <h2 class="service-title title">Game Design<span class="text-color accent">.</span></h2>
-          <div class="service-icon">
+          <h2 class="service-title title y-push3 do-anim-scroll">Game Design<span class="text-color accent">.</span></h2>
+          <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-gamepad">
               <use xlink:href="#shape-gamepad"></use>
             </svg>
           </div>
-          <p class="service-lead lead">
+          <p class="service-lead lead y-push5 do-anim-scroll">
             The fun of shooting someone in the face, without any of the&nbsp;consequences.
           </p>
-          <p class="service-copy copy">
+          <p class="service-copy copy y-push6 do-anim-scroll">
             Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquley connected to games. Our passion is understanding this connection and using it to create beautifully immersive games. Or an FPS.
           </p>
-          <ul class="service-list">
+          <ul class="service-list y-push6 do-anim-scroll">
             <li class="copy">Console, PC &amp; Mac</li>
             <li class="copy">Startegy &amp; Design</li>
             <li class="copy">iOS &amp; Android</li>
@@ -68,19 +68,19 @@
           Magical
         </p>
         <div class="service-image">
-          <div class="circle"></div>
+          <div class="circle y-push1 do-anim-scroll"></div>
         </div>
         <div class="service-description">
-          <h2 class="service-title title">Virtual Reality<span class="text-color accent">.</span></h2>
-          <div class="service-icon">
+          <h2 class="service-title title y-push3 do-anim-scroll">Virtual Reality<span class="text-color accent">.</span></h2>
+          <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-vr-gear">
               <use xlink:href="#shape-vr-gear"></use>
             </svg>
           </div>
-          <p class="service-lead lead">
+          <p class="service-lead lead y-push5 do-anim-scroll">
             Sort of like the matrix, but less real. It’s still pretty real though.
           </p>
-          <p class="service-copy copy">
+          <p class="service-copy copy y-push6 do-anim-scroll">
             Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of solutions.
           </p>
         </div>
@@ -93,22 +93,22 @@
           Intuitive
         </p>
         <div class="service-image">
-          <div class="circle"></div>
+          <div class="circle y-push1 do-anim-scroll"></div>
         </div>
         <div class="service-description">
-          <h2 class="service-title title">Digital Products<span class="text-color accent">.</span></h2>
-          <div class="service-icon">
+          <h2 class="service-title title y-push3 do-anim-scroll">Digital Products<span class="text-color accent">.</span></h2>
+          <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-atom">
               <use xlink:href="#shape-atom"></use>
             </svg>
           </div>
-          <p class="service-lead lead">
+          <p class="service-lead lead y-push5 do-anim-scroll">
             If it seems confusing or complex it’s because it is... But it shouldn’t&nbsp;be.
           </p>
-          <p class="service-copy copy">
+          <p class="service-copy copy y-push6 do-anim-scroll">
             The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are becoming one in the same. We want to  craft intuitive solutions that make life that little easier and create moments of joy.
           </p>
-          <ul class="service-list">
+          <ul class="service-list y-push6 do-anim-scroll">
             <li class="copy">App Design</li>
             <li class="copy">Websites &amp; Services</li>
             <li class="copy">App Development</li>
@@ -119,15 +119,15 @@
     </div>
 
     <div class="section-content work-wrapper">
-      <span class="floating-letter text-color accent">
+      <span class="floating-letter y-push1 do-anim-scroll text-color accent">
         <svg class="shape-letter-b">
           <use xlink:href="#shape-letter-b"></use>
         </svg>
       </span>
 
-      <h2 class="work-wrapper-title title">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
+      <h2 class="work-wrapper-title title y-push2 do-anim-scroll">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
 
-      <article class="work do-show-work-details">
+      <article class="work y-push3 do-anim-scroll do-show-work-details">
         <div class="work-bg" data-work="camp-hope-falls"></div>
         <div class="work-content">
           <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
@@ -140,7 +140,7 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details">
+      <article class="work y-push4 do-anim-scroll do-show-work-details">
         <div class="work-bg" data-work="barkle"></div>
         <div class="work-content">
           <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
@@ -154,7 +154,7 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details">
+      <article class="work y-push5 do-anim-scroll do-show-work-details">
         <div class="work-bg" data-work="yanky-doodle"></div>
         <div class="work-content">
           <h2 class="work-title title">Yanky Doodle<span class="text-color accent">.</span></h2>
@@ -168,7 +168,7 @@
         </div>
       </article>
 
-      <article class="work do-show-work-details">
+      <article class="work y-push6 do-anim-scroll do-show-work-details">
         <div class="work-bg" data-work="celine"></div>
         <div class="work-content">
           <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>

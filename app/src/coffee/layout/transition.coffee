@@ -1,6 +1,7 @@
 class Transition
   constructor: ->
     @order = 0
+    @initBuild = true
 
   build: (exports) ->
     exports.TransitionController = @
@@ -34,7 +35,6 @@ class Transition
 
   setInitialView: (exports) ->
     if @view is 'home'
-      App.startMainLoop()
       @$ui
         .find '.do-slide-up'
         .css
@@ -142,7 +142,5 @@ class Transition
     @$main.attr 'data-view', @view
 
   onResize: (exports) ->
-
-  onScroll: (exports, scrollY) ->
 
 App.Controllers.push new Transition

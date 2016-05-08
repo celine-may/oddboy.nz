@@ -1,6 +1,7 @@
 class TalkToUs
   constructor: ->
     @order = 12
+    @initBuild = false
 
   build: (exports) ->
     exports.TalkToUsController = @
@@ -197,7 +198,5 @@ class TalkToUs
         blinkTL.restart()
 
   onResize: (exports) ->
-
-  onScroll: (exports, scrollY) ->
 
 App.Controllers.push new TalkToUs

@@ -22,14 +22,9 @@ class Renderer
     @exports = {}
     @controllers = options.controllers || []
 
-    @lastScrollY = 0
-    @ticking = false
-
   init: ->
-    @exports.RendererController = @
-
     exports = @exports =
-      parent: @
+      RendererController: @
       path: @path
       instances: @instances
       windowWidth: @windowWidth
@@ -54,12 +49,17 @@ class Renderer
       a.order - b.order
 
     for controller in controllers
-      controller.build exports
+      if controller.initBuild
+        controller.build exports
 
     @$window
       .on 'resize', @onResize.bind @
       .trigger 'resize'
-      .on 'scroll', @onScroll.bind @
+
+  delayedBuild: (exports) ->
+    for controller in @controllers
+      unless controller.initBuild
+        controller.build exports
 
   onUpdate: ->
     @webgl.onUpdate @exports
@@ -74,15 +74,5 @@ class Renderer
 
     for controller in @controllers
       controller.onResize exports
-
-  onScroll: (e) ->
-    exports = @exports
-    @lastScrollY = window.pageYOffset
-    if not @ticking
-      window.requestAnimationFrame =>
-        for controller in @controllers
-          controller.onScroll exports, @lastScrollY
-        @ticking = false
-    @ticking = true
 
 App.Renderer = Renderer

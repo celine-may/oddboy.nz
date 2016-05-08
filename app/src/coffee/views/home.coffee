@@ -1,6 +1,7 @@
 class Home
   constructor: ->
     @order = 10
+    @initBuild = false
 
   build: (exports) ->
     exports.HomeController = @
@@ -37,7 +38,5 @@ class Home
       ease: Power2.easeOut
 
   onResize: (exports) ->
-
-  onScroll: (exports, scrollY) ->
 
 App.Controllers.push new Home
