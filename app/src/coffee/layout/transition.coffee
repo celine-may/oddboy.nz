@@ -7,6 +7,7 @@ class Transition
     exports.TransitionController = @
     exports.instances.push @
 
+    @views = [ 'what-we-do', 'talk-to-us' ]
     @view = undefined
     @newView = undefined
 
@@ -35,12 +36,20 @@ class Transition
 
   setInitialView: (exports) ->
     if @view is 'home'
+      for view in @views
+        direction = App.getDirection view
+        TweenLite.set $(".view[data-view='#{view}']"),
+          x: exports.windowWidth * direction
       @$ui
         .find '.do-slide-up'
         .css
           opacity: 1
           y: 0
     else
+      oppositeView = App.getOppositeView @view
+      direction = App.getDirection oppositeView
+      TweenLite.set $(".view[data-view='#{oppositeView}']"),
+        x: exports.windowWidth * direction
       TweenLite.set $(".view[data-view='#{@view}']"),
         x: 0
       TweenLite.set @$slideUpElements,
@@ -117,7 +126,7 @@ class Transition
 
     transitionTL = new TimelineLite()
     .to $view, .6,
-      x: (exports.windowWidth - 15) * direction
+      x: exports.windowWidth * direction
       ease: Power3.easeIn
     .to $newView, .6,
       x: 0

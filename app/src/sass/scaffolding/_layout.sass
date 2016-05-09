@@ -26,6 +26,7 @@ body
   background-color: $secondary
   overflow: auto
   z-index: $zTop
+  -webkit-overflow-scrolling: touch
 
   &.lhs
     transform: translateX(calc(-100% + 15px))
@@ -72,6 +73,7 @@ body
   z-index: $zTop
 
 // Scrolling animation
-@for $i from 1 through 6
-  .y-push#{$i}
-    transform: translateY($i * 60px)
+.no-touchevents
+  @for $i from 1 through 6
+    .y-push#{$i}
+      transform: translateY($i * 60px)

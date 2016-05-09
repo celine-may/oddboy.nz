@@ -10,7 +10,7 @@
         <span class="text-color primary">*</span>That’s just a roundabout way of saying we create digital stuff that you’ll remember.
       </p>
       <p class="lead do-complement-push">
-        We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
+        We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital&nbsp;experiences.
       </p>
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">
         <svg class="shape-scroll-cta large-only">
@@ -48,7 +48,7 @@
             The fun of shooting someone in the face, without any of the&nbsp;consequences.
           </p>
           <p class="service-copy copy y-push6 do-anim-scroll">
-            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquley connected to games. Our passion is understanding this connection and using it to create beautifully immersive games. Or an FPS.
+            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquley connected to games. Our passion is understanding this connection and using it to create beautifully immersive games. Or&nbsp;an&nbsp;FPS.
           </p>
           <ul class="service-list y-push6 do-anim-scroll">
             <li class="copy">Console, PC &amp; Mac</li>
@@ -78,10 +78,10 @@
             </svg>
           </div>
           <p class="service-lead lead y-push5 do-anim-scroll">
-            Sort of like the matrix, but less real. It’s still pretty real though.
+            Sort of like the matrix, but less real. It’s still pretty real&nbsp;though.
           </p>
           <p class="service-copy copy y-push6 do-anim-scroll">
-            Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of solutions.
+            Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of&nbsp;solutions.
           </p>
         </div>
       </article>
@@ -106,7 +106,7 @@
             If it seems confusing or complex it’s because it is... But it shouldn’t&nbsp;be.
           </p>
           <p class="service-copy copy y-push6 do-anim-scroll">
-            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are becoming one in the same. We want to  craft intuitive solutions that make life that little easier and create moments of joy.
+            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are becoming one in the same. We want to  craft intuitive solutions that make life that little easier and create moments of&nbsp;joy.
           </p>
           <ul class="service-list y-push6 do-anim-scroll">
             <li class="copy">App Design</li>

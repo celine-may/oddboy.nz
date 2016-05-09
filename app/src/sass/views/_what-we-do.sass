@@ -32,14 +32,23 @@
 
 // Services
 .services-wrapper
-  padding: 190px $extGapSmall 0
+  padding: 120px $extGapSmall 0
+
+  +min-screen($xSmall + 1px)
+    padding-top: 190px
 
   +min-screen($small + 1px)
     padding: 190px $column 0
 
 .service
   position: relative
-  margin-bottom: 300px
+  margin-bottom: 100px
+
+  +min-screen($small + 1px)
+    margin-bottom: 300px
+
+    .touchevents &[data-service="game-design"]
+      margin-bottom: 150px
 
 // Higlights (vertical)
 .service-highlights
@@ -123,8 +132,11 @@
 
 // Title
 .service-title
-  font-size: 3.5rem
+  font-size: 3rem
   z-index: $zTop
+
+  +min-screen($xSmall + 1px)
+    font-size: 3.5rem
 
   +min-screen($medium + 1px)
     +position(absolute, 0)
@@ -152,9 +164,15 @@
     background-color: $white
     vertical-align: top
 
+  .service[data-service="digital-products"] &::before
+    margin-top: 14px
+
   +max-screen($medium)
     &::before
       width: calc(100% - 65px)
+
+  +max-screen($small)
+    margin-top: 15px
 
 .shape-gamepad
   +size(41px, 19px)
@@ -203,16 +221,20 @@
   position: relative
   padding: 0 $extGapSmall 100px
 
+  +max-screen($xSmall)
+    margin-top: 120px
+
   +min-screen($small + 1px)
     padding: 0 $column 100px
 
 .floating-letter
-  +position(absolute, -200px, $column * 3/4)
+  +position(absolute, -90px, $column * 3/4)
   display: inline-block
-  +size(253px, 260px)
+  +size(135px, 160px)
 
-  +max-screen($small)
-    top: -180px
+  +min-screen($small + 1px)
+    top: -200px
+    +size(253px, 260px)
 
   +min-screen($medium + 1px)
     top: -84px

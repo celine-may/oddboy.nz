@@ -9,12 +9,12 @@ toRGB = (hexColor) ->
   }
 App.toRGB = toRGB
 
-getPanel = (view) ->
+getOppositeView = (view) ->
   if view is 'what-we-do'
-    $('.panel.lhs')
+    'talk-to-us'
   else
-    $('.panel.rhs')
-App.getPanel = getPanel
+    'what-we-do'
+App.getOppositeView = getOppositeView
 
 getDirection = (view) ->
   if view is 'what-we-do'

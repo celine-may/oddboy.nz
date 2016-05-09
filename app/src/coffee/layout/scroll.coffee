@@ -19,8 +19,9 @@ class Scroll
       @$view = $('.view[data-view="talk-to-us"]')
       @initTTU exports
 
-    @$view.on 'scroll', =>
-      @onScroll exports
+    if @$view? and not exports.isTouch
+      @$view.on 'scroll', =>
+        @onScroll exports
 
   initWWD: (exports) ->
     @$header = @$view.find '.header'
@@ -116,21 +117,20 @@ class Scroll
       tweenName.progress 1
 
   onScroll: (exports) ->
-    console.log scrollY = @$view.scrollTop()
+    scrollY = @$view.scrollTop()
 
     @$header.css
       transform: "translateY(#{scrollY}px)"
 
-    unless exports.isTouch
-      # What we do Timelines
-      @scrollTween exports, 0, exports.windowHeight * 1.3, @headerTL, scrollY
-      @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
-      @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
-      @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
-      @scrollTween exports, @workStart, @workStop, @workTL, scrollY
+    # What we do Timelines
+    @scrollTween exports, 0, exports.windowHeight * 1.3, @headerTL, scrollY
+    @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
+    @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
+    @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
+    @scrollTween exports, @workStart, @workStop, @workTL, scrollY
 
-      # Talk to us Timelines
-      @scrollTween exports, 0, exports.windowHeight, @headerTL, scrollY
-      @scrollTween exports, @contactStart, @contactStop, @contactTL, scrollY
+    # Talk to us Timelines
+    @scrollTween exports, 0, exports.windowHeight, @headerTL, scrollY
+    @scrollTween exports, @contactStart, @contactStop, @contactTL, scrollY
 
 App.Controllers.push new Scroll

@@ -72,6 +72,8 @@ class Renderer
     exports.isSmall = windowWidth <= exports.smallBreakpoint
     exports.isMedium = exports.smallBreakpoint < windowWidth <= exports.mediumBreakpoint
 
+    @webgl.onResize exports
+
     for controller in @controllers
       controller.onResize exports
 
