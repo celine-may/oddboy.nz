@@ -141,6 +141,9 @@ class Transition
     @newView = undefined
     @$main.attr 'data-view', @view
 
+    if exports.ScrollController?
+      exports.ScrollController.init exports
+
   onResize: (exports) ->
 
 App.Controllers.push new Transition

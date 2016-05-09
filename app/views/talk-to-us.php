@@ -40,11 +40,11 @@
   <section class="section contact-wrapper bg-color accent">
     <?php include('layouts/grid.php'); ?>
     <div class="section-content contact">
-      <h1 class="title">
+      <h1 class="title y-push1 do-anim-scroll">
         Holla at an <br class="xsmall-hidden"><span class="text-color primary">odd<span class="flipped">b</span>oy</span>. Let's make sweet, sweet ????.
       </h1>
-      <span class="title-separator bg-color primary"></span>
-      <p class="lead vcard">
+      <span class="title-separator bg-color primary y-push3 do-anim-scroll"></span>
+      <p class="lead vcard y-push4 do-anim-scroll">
         <span class="do-replace-email" data-class="contact-link email">holla@oddboy.nz</span>
         <a href="tel:+64273463287" class="contact-link tel">+64 273463287</a>
       </p>

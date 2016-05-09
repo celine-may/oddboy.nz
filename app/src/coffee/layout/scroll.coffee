@@ -7,17 +7,22 @@ class Scroll
     exports.ScrollController = @
     exports.instances.push @
 
-    @headerTL = undefined
-    @gameDesignTL = undefined
-    @virtualRealityTL = undefined
-    @workTL = undefined
-
-    @delta = 150
-
     @init exports
 
   init: (exports) ->
-    @$view = $('.view.lhs')
+    @delta = 150
+
+    if exports.view is 'what-we-do'
+      @$view = $('.view[data-view="what-we-do"]')
+      @initWWD exports
+    else if exports.view is 'talk-to-us'
+      @$view = $('.view[data-view="talk-to-us"]')
+      @initTTU exports
+
+    @$view.on 'scroll', =>
+      @onScroll exports
+
+  initWWD: (exports) ->
     @$header = @$view.find '.header'
     @$gameDesign = @$view.find '.service[data-service="game-design"]'
     @$virtualReality = @$view.find '.service[data-service="virtual-reality"]'
@@ -38,12 +43,26 @@ class Scroll
     @workStart = @$work.offset().top - exports.windowHeight + 700
     @workStop = @workStart + @$work.outerHeight() + 260 + @delta
 
-    @initTL exports
+    @headerTL = undefined
+    @gameDesignTL = undefined
+    @virtualRealityTL = undefined
+    @workTL = undefined
 
-    @$view.on 'scroll', =>
-      @onScroll exports
+    @initWWDTL exports
 
-  initTL: (exports) ->
+  initTTU: (exports) ->
+    @$header = @$view.find '.header'
+
+    @$contactElements = @$view.find '.do-anim-scroll'
+
+    @contactStart = exports.windowHeight * 3/4
+    @contactStop = exports.windowHeight
+
+    @contactTL = undefined
+
+    @initTTUTL exports
+
+  initWWDTL: (exports) ->
     @headerTL = new TimelineLite
       paused: true
     .to @$header.find('.header-content'), 1,
@@ -70,6 +89,18 @@ class Scroll
       y: 0
       ease: Power2.easeOut
 
+  initTTUTL: (exports) ->
+    @headerTL = new TimelineLite
+      paused: true
+    .to @$header.find('.header-content'), 1,
+      y: exports.windowHeight / -3
+      ease: Power2.easeOut
+    @contactTL = new TimelineMax
+      paused: true
+    .to @$contactElements, 1,
+      y: 0
+      ease: Power2.easeOut
+
   onResize: (exports) ->
 
   scrollTween: (exports, startPoint, endPoint, tweenName, scrollY) ->
@@ -85,16 +116,21 @@ class Scroll
       tweenName.progress 1
 
   onScroll: (exports) ->
-    scrollY = @$view.scrollTop()
+    console.log scrollY = @$view.scrollTop()
 
     @$header.css
       transform: "translateY(#{scrollY}px)"
 
     unless exports.isTouch
+      # What we do Timelines
       @scrollTween exports, 0, exports.windowHeight * 1.3, @headerTL, scrollY
       @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
       @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
       @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
       @scrollTween exports, @workStart, @workStop, @workTL, scrollY
+
+      # Talk to us Timelines
+      @scrollTween exports, 0, exports.windowHeight, @headerTL, scrollY
+      @scrollTween exports, @contactStart, @contactStop, @contactTL, scrollY
 
 App.Controllers.push new Scroll

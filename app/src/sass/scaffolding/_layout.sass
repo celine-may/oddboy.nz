@@ -70,3 +70,8 @@ body
 .section-content
   position: relative
   z-index: $zTop
+
+// Scrolling animation
+@for $i from 1 through 6
+  .y-push#{$i}
+    transform: translateY($i * 60px)
