@@ -1,19 +1,22 @@
-class App.Typography
+class Typography
   constructor: ->
-    @order = 1
+    @order = 2
+    @initBuild = false
+    @initiated = false
 
   build: (exports) ->
     exports.TypographyController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @init exports
 
   init: (exports) ->
+    @initiated = true
     @$repaintElement = $('.do-repaint')
 
   onResize: (exports) ->
+    unless @initiated
+      return
     @$repaintElement.css 'z-index', 1
 
-  onScroll: (exports, scrollY) ->
-
-App.FXs.push new App.Typography
+App.Controllers.push new Typography

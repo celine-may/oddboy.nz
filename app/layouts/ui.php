@@ -6,42 +6,43 @@
     </svg>
   </h1>
 
-  <a href="<?php echo PATH; ?>" class="back-link do-slide-up" data-view="home">
+  <button class="back-link do-slide-up do-show-view" data-view="home">
     <svg class="shape-arrow">
       <use xlink:href="#shape-arrow"></use>
     </svg>
-  </a>
+  </button>
 
-  <a href="<?php echo PATH; ?>what-we-do" class="nav-link lhs do-slide-up" data-view="what-we-do">
+  <button class="nav-link lhs do-slide-up do-show-view" data-view="what-we-do">
     <span class="nav-link-copy">
       What&nbsp;we&nbsp;do
     </span>
-  </a>
+  </button>
 
-  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link rhs do-slide-up" data-view="talk-to-us">
+  <button class="nav-link rhs do-slide-up do-show-view" data-view="talk-to-us">
     <span class="nav-link-copy">
       Talk&nbsp;to&nbsp;us
     </span>
-  </a>
+  </button>
 </div>
 
 <div class="ui small-only">
   <div class="ui-header bg-color secondary-dark">
-    <a href="<?php echo PATH; ?>" class="back-link" data-view="home">
+    <button class="back-link do-show-view" data-view="home">
       <svg class="shape-arrow">
         <use xlink:href="#shape-arrow"></use>
       </svg>
-    </a>
+    </button>
 
     <h2 class="ui-title title wwd">What we do</h2>
     <h2 class="ui-title title ttu">Talk to us</h2>
   </div>
 
-  <a href="<?php echo PATH; ?>talk-to-us" class="nav-link-small btn-border top title" data-view="talk-to-us">
+  <button class="nav-link-small btn-border top title do-show-view" data-view="talk-to-us">
     Talk to us
-  </a>
+  </button>
 
-  <a href="<?php echo PATH; ?>what-we-do" class="nav-link-small btn-border bottom title" data-view="what-we-do">
+  <button class="nav-link-small btn-border bottom title do-show-view" data-view="what-we-do">
     What we do
-  </a>
+  </button>
 </div>
+

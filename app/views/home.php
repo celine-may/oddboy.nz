@@ -1,3 +1,1 @@
-<div class="temp">
-  <h1>Home</h1>
-</div>
+<section class="view" data-view="home"></section>

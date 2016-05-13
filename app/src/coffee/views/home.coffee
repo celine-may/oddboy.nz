@@ -1,31 +1,42 @@
-class App.Home
+class Home
   constructor: ->
-    @order = 13
+    @order = 10
+    @initBuild = false
 
   build: (exports) ->
     exports.HomeController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @init exports
 
   init: (exports) ->
     $navLink = $('.nav-link')
 
-    $navLink.on 'mouseenter', (e) =>
-      view = $(e.target).attr 'data-view'
-      @$panel = App.getPanel view
-      @direction = App.getDirection view
-      @slidePanel exports, 42
-    $navLink.on 'mouseleave', (e) =>
-      @slidePanel exports, 15
+    unless exports.view is 'home'
+      return
 
-  slidePanel: (exports, delta) ->
-    TweenLite.to @$panel, .3,
+    $navLink.on 'mouseenter', (e) =>
+      if exports.isAnimating
+        return
+
+      view = $(e.target).attr 'data-view'
+      @$view = $(".view[data-view='#{view}'")
+      @direction = App.getDirection view
+      @viewSneakPeek exports, 42
+      exports.glitch = true
+
+    $navLink.on 'mouseleave', (e) =>
+      if exports.isAnimating
+        return
+
+      @viewSneakPeek exports, 15
+      exports.glitch = false
+
+  viewSneakPeek: (exports, delta) ->
+    TweenLite.to @$view, .3,
       x: (exports.windowWidth - delta) * @direction
       ease: Power2.easeOut
 
   onResize: (exports) ->
 
-  onScroll: (exports, scrollY) ->
-
-App.FXs.push new App.Home
+App.Controllers.push new Home

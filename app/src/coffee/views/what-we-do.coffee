@@ -1,10 +1,11 @@
-class App.WhatWeDo
+class WhatWeDo
   constructor: ->
-    @order = 10
+    @order = 11
+    @initBuild = false
 
   build: (exports) ->
     exports.WhatWeDoController = @
-    exports.controllers.push @
+    exports.instances.push @
 
     @showComplementTL = undefined
     @workDetailsTL = undefined
@@ -34,7 +35,6 @@ class App.WhatWeDo
           @$complement.addClass 'visible'
 
   showComplement: (exports) ->
-    console.log exports
     if exports.windowWidth <= exports.smallBreakpoint
       pushDelta = 60
     else if exports.smallBreakpoint < exports.windowWidth <= exports.mediumBreakpoint
@@ -77,6 +77,4 @@ class App.WhatWeDo
 
   onResize: (exports) ->
 
-  onScroll: (exports, scrollY) ->
-
-App.FXs.push new App.WhatWeDo
+App.Controllers.push new WhatWeDo

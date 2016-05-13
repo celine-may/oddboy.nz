@@ -2,18 +2,14 @@
 
 include('config.php');
 
-/* Request */
-$q = isset($_GET['q']) ? explode('/', $_GET['q']) : array();
-$controller = isset($q[0]) ? $q[0] : 'home';
-
-include("controllers/$controller.php");
+$pageTitle = 'Oddboy | Experience Design Studio | Auckland, NZ';
+$pageDescription = 'Oddboy is an experience design studio with a focus on game design, digital products and virtual reality applications.';
 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
 
-  <!-- TODO: Meta tags -->
   <title><?php echo $pageTitle; ?></title>
   <meta name="description" content="<?php echo $pageDescription; ?>">
 
@@ -23,7 +19,7 @@ include("controllers/$controller.php");
   <meta property="og:title" content="<?php echo $pageTitle; ?>">
   <meta property="og:description" content="<?php echo $pageDescription; ?>">
   <meta property="og:image" content="http://www.oddboy.nz/assets/images/oddboy-fb.jpg">
-  <meta property="fb:app_id" content="">
+  <meta property="fb:app_id" content=""> <!-- todo: Facebook AppID -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -45,18 +41,16 @@ include("controllers/$controller.php");
   <script>
     window.App = {};
     App.path = "<?php echo PATH; ?>";
-    App.FXs = [];
+    App.Controllers = [];
   </script>
 </head>
 
 <body>
-  <?php include_once('assets/svgs/svg-defs.svg'); ?>
-
-  <main id="main" class="main" data-view="<?php echo $controller; ?>">
+  <main class="main" data-view="home">
     <?php include('layouts/ui.php'); ?>
-    <div class="panel lhs"></div>
-    <div class="panel rhs"></div>
-    <?php if (is_file("views/$controller.php")) include("views/$controller.php"); ?>
+    <?php include('views/home.php') ?>
+    <?php include('views/talk-to-us.php') ?>
+    <?php include('views/what-we-do.php') ?>
   </main>
 
   <?php include('layouts/loader.php'); ?>

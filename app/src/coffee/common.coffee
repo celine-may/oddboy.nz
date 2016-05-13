@@ -1,9 +1,20 @@
-getPanel = (view) ->
+π = App.π = Math.PI
+
+toRGB = (hexColor) ->
+  result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec hexColor
+  rgb = {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  }
+App.toRGB = toRGB
+
+getOppositeView = (view) ->
   if view is 'what-we-do'
-    $('.panel.lhs')
+    'talk-to-us'
   else
-    $('.panel.rhs')
-App.getPanel = getPanel
+    'what-we-do'
+App.getOppositeView = getOppositeView
 
 getDirection = (view) ->
   if view is 'what-we-do'

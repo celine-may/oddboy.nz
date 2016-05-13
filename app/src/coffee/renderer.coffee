@@ -2,42 +2,67 @@ class Renderer
   constructor: (options) ->
     @$window = $(window)
 
-    @exports = {}
-    @fxs = options.fxs || []
+    @path = options.path
+    @instances = options.instances || []
 
-    @lastScrollY = 0
-    @ticking = false
+    @windowHeight = options.windowHeight
+    @windowWidth = options.windowWidth
+    @smallBreakpoint = options.smallBreakpoint
+    @mediumBreakpoint = options.mediumBreakpoint
+    @isTouch = options.isTouch || false
+    @skipLoader = options.skipLoader || false
+    @primaryColor = options.primaryColor
+    @accentColor = options.accentColor
+    @secondaryColor = options.secondaryColor
+    @zHidden = options.zHidden
+    @zBase = options.zBase
+    @zTop = options.zTop
+    @zXTop = options.zXTop
+
+    @exports = {}
+    @controllers = options.controllers || []
 
   init: ->
     exports = @exports =
-      path: App.path
-      controllers: []
-      windowWidth: @$window.width()
-      windowHeight: @$window.height()
-      smallBreakpoint: 767
-      mediumBreakpoint: 1023
-      isTouch: Modernizr.touchevents
-      showLoader: false
-      primaryColor: '#23dcd4'
-      accentColor: '#f83656'
-      secondaryColor: '#0c1b33'
+      RendererController: @
+      path: @path
+      instances: @instances
+      windowWidth: @windowWidth
+      windowHeight: @windowHeight
+      smallBreakpoint: @smallBreakpoint
+      mediumBreakpoint: @mediumBreakpoint
+      isTouch: @isTouch
+      skipLoader: @skipLoader
+      primaryColor: @primaryColor
+      accentColor: @accentColor
+      secondaryColor: @secondaryColor
+      zHidden: @zHidden
+      zBase: @zBase
+      zTop: @zTop
+      zXTop: @zXTop
 
-    exports.RendererController = @
+    @webgl = new App.Webgl
+    @webgl.build exports
 
-    fxs = @fxs
-    fxs.sort (a, b) ->
+    controllers = @controllers
+    controllers.sort (a, b) ->
       a.order - b.order
 
-    for fx in fxs
-      fx.build exports
-
-    # transition = new App.Transition
-    # transition.init exports
+    for controller in controllers
+      if controller.initBuild
+        controller.build exports
 
     @$window
       .on 'resize', @onResize.bind @
       .trigger 'resize'
-      .on 'scroll', @onScroll.bind @
+
+  delayedBuild: (exports) ->
+    for controller in @controllers
+      unless controller.initBuild
+        controller.build exports
+
+  onUpdate: ->
+    @webgl.onUpdate @exports
 
   onResize: (e) ->
     exports = @exports
@@ -47,17 +72,9 @@ class Renderer
     exports.isSmall = windowWidth <= exports.smallBreakpoint
     exports.isMedium = exports.smallBreakpoint < windowWidth <= exports.mediumBreakpoint
 
-    for fx in @fxs
-      fx.onResize exports
+    @webgl.onResize exports
 
-  onScroll: (e) ->
-    exports = @exports
-    @lastScrollY = window.pageYOffset
-    if not @ticking
-      window.requestAnimationFrame =>
-        for fx in @fxs
-          fx.onScroll exports, @lastScrollY
-        @ticking = false
-    @ticking = true
+    for controller in @controllers
+      controller.onResize exports
 
 App.Renderer = Renderer

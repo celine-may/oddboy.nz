@@ -16,7 +16,7 @@
   padding: 0 $extGapSmall
 
   .main[data-view="home"]  &
-    display: none
+    opacity: 0
 
 // Logo
 .logo
@@ -29,6 +29,9 @@
     +size(20px, 1px)
     background-color: $white
     vertical-align: middle
+
+  .shape-logo
+    +size(80px, 14px)
 
   .main[data-view="home"] &
     display: none
@@ -48,10 +51,6 @@
     &::after
       display: block
       right: 0
-
-  .shape-logo
-    +size(80px, 14px)
-
 
 // Back link
 .back-link

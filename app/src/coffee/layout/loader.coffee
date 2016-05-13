@@ -1,10 +1,96 @@
-class App.Loader
+class Loader
   constructor: ->
-    @order = 0
+    @order = 1
+    @initBuild = true
 
   build: (exports) ->
     exports.LoaderController = @
-    exports.controllers.push @
+    exports.instances.push @
+
+    @manifest = [
+      id: 'benRolloverSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
+    ,
+      id: 'benBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-blink'
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
+    ,
+      id: 'benDefaultSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-default'
+      src: "#{exports.path}assets/images/characters/ben-default-sprite.png"
+    ,
+      id: 'tomRolloverSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/tom-rollover-sprite.png"
+    ,
+      id: 'tomBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-blink'
+      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
+    ,
+      id: 'tomDefaultSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-default'
+      src: "#{exports.path}assets/images/characters/tom-default-sprite.png"
+    ,
+      id: 'spriteShadow'
+      itemType: 'bg'
+      element: '.character-content'
+      src: "#{exports.path}assets/images/characters/shadow.png"
+    ,
+      id: 'digitalProducts'
+      itemType: 'img'
+      element: '.service[data-service="digital-products"] .service-image'
+      src: "#{exports.path}assets/images/services/digital-products.png"
+    ,
+      id: 'gameDesign'
+      itemType: 'img'
+      element: '.service[data-service="game-design"] .service-image'
+      src: "#{exports.path}assets/images/services/game-design.jpg"
+    ,
+      id: 'virtualReality'
+      itemType: 'img'
+      element: '.service[data-service="virtual-reality"] .service-image'
+      src: "#{exports.path}assets/images/services/virtual-reality.png"
+    ,
+      id: 'barkle'
+      itemType: 'bg'
+      element: '.work-bg[data-work="barkle"]'
+      src: "#{exports.path}assets/images/work/barkle.jpg"
+    ,
+      id: 'campHopeFalls'
+      itemType: 'bg'
+      element: '.work-bg[data-work="camp-hope-falls"]'
+      src: "#{exports.path}assets/images/work/camp-hope-falls.jpg"
+    ,
+      id: 'celine'
+      itemType: 'bg'
+      element: '.work-bg[data-work="celine"]'
+      src: "#{exports.path}assets/images/work/celine.jpg"
+    ,
+      id: 'yankyDoodle'
+      itemType: 'bg'
+      element: '.work-bg[data-work="yanky-doodle"]'
+      src: "#{exports.path}assets/images/work/yanky-doodle.jpg"
+    ,
+      id: 'oddboyCopy'
+      itemType: 'object'
+      src: "#{exports.path}assets/json/oddboy-copy.json"
+    ,
+      id: 'oddboyLogo'
+      itemType: 'object'
+      src: "#{exports.path}assets/json/oddboy-logo.json"
+    ,
+      id: 'svgDefs'
+      itemType: 'svg'
+      element: 'body'
+      src: "#{exports.path}assets/svgs/svg-defs.svg"
+    ]
 
     @init exports
 
@@ -21,17 +107,54 @@ class App.Loader
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
-    if exports.showLoader
-      @playDevice exports
-      @fillLoader exports
-    else
-      @$wrapper.remove()
+    @queue = undefined
+    @startTime = undefined
+    @duration = 1
 
-  startLoader: (exports) ->
-    @playDevice exports
-    @fillLoader exports
+    @loadAssets exports
 
-  playDevice: (exports) ->
+  loadAssets: (exports) ->
+    @queue = new createjs.LoadQueue()
+
+    @queue.on 'loadstart', (e) =>
+      @onLoadStart e, exports
+    @queue.on 'fileload', (e) =>
+      @onFileLoad e, exports
+    @queue.on 'complete', (e) =>
+      @onLoadComplete e, exports
+    @queue.on 'error', (e) =>
+      @onLoadError e, exports
+
+    @queue.loadManifest @manifest
+
+  onLoadStart: (e, exports) ->
+    @startTime = Date.now()
+    @deviceAnimation exports
+    @letterAnimation exports
+
+  onFileLoad: (e, exports) ->
+    if e.item.itemType is 'bg'
+      $(e.item.element).css 'background-image', "url(#{e.item.src})"
+    else if e.item.itemType is 'img'
+      $(e.item.element).append $(e.result).addClass 'y-push2 do-anim-scroll'
+    else if e.item.itemType is 'svg'
+      $(e.item.element).prepend $(e.result).hide()
+
+  onLoadComplete: (e, exports) ->
+    endTime = Date.now()
+    currentDuration = endTime - @startTime
+    delta = @duration * 1000 - currentDuration
+    exports.RendererController.delayedBuild exports
+    setTimeout =>
+      if exports.view is 'home'
+        App.startMainLoop()
+      @loaderAnimation exports
+    , delta
+
+  onLoadError: (e, exports) ->
+    console.log 'onError'
+
+  deviceAnimation: (exports) ->
     deviceTL = new TimelineMax
       paused: true
     .fromTo @$device, 1.2,
@@ -42,12 +165,13 @@ class App.Loader
 
     deviceTL.yoyo(true).repeat(-1).play()
 
-  fillLoader: (exports) ->
-    loaderTL = new TimelineLite()
-    .to @$letterBG, 4,
+  letterAnimation: (exports) ->
+    TweenLite.to @$letterBG, @duration,
       width: 60
-      delay: 1
       ease: Sine.easeOut
+
+  loaderAnimation: (exports) ->
+    loaderTL = new TimelineLite()
     .set @$letter,
       opacity: 1
     .set [ @$mask, @$letterBG ],
@@ -66,11 +190,10 @@ class App.Loader
     .to @$panelRight, .5,
       xPercent: 100
       onComplete: =>
+        exports.WebglController.animateIn exports
         @$wrapper.remove()
     , '-=.5'
 
   onResize: (exports) ->
 
-  onScroll: (exports, scrollY) ->
-
-App.FXs.push new App.Loader
+App.Controllers.push new Loader

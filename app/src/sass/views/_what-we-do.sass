@@ -2,7 +2,7 @@
 // -----------------
 
 // Header
-.main[data-view="what-we-do"]
+.view[data-view="what-we-do"]
   +min-screen($small + 1px)
     .header-content
       padding-right: $column * 2
@@ -32,17 +32,23 @@
 
 // Services
 .services-wrapper
-  padding: 190px $extGapSmall 0
+  padding: 120px $extGapSmall 0
+
+  +min-screen($xSmall + 1px)
+    padding-top: 190px
 
   +min-screen($small + 1px)
     padding: 190px $column 0
 
 .service
   position: relative
-  margin-bottom: 300px
+  margin-bottom: 100px
 
-  +min-screen($medium + 1px)
-    margin-bottom: 550px
+  +min-screen($small + 1px)
+    margin-bottom: 300px
+
+    .touchevents &[data-service="game-design"]
+      margin-bottom: 150px
 
 // Higlights (vertical)
 .service-highlights
@@ -68,7 +74,7 @@
     +position(absolute, -52px, null, null, 0)
     width: $column * 3
 
-    .lhs &
+    .service.lhs &
       left: $column * 2.5
       width: $column * 3.5
 
@@ -103,10 +109,12 @@
     +position(absolute, -50px, null, null, 40px)
 
   .service[data-service="virtual-reality"] &
-    +center('both')
+    +center('horizontal')
+    top: -50px
 
   .service[data-service="digital-products"] &
-    +center('both')
+    +center('horizontal')
+    top: 20px
     width: 120%
 
 // Description
@@ -119,13 +127,16 @@
     min-width: 310px
     padding-top: 80px
 
-    .rhs &
+    .service.rhs &
       margin-left: $column * 3.5
 
 // Title
 .service-title
-  font-size: 3.5rem
+  font-size: 3rem
   z-index: $zTop
+
+  +min-screen($xSmall + 1px)
+    font-size: 3.5rem
 
   +min-screen($medium + 1px)
     +position(absolute, 0)
@@ -133,11 +144,11 @@
     font-size: 5rem
     letter-spacing: 2px
 
-    .rhs &
+    .service.rhs &
       right: 0
       text-align: right
 
-    .lhs &
+    .service.lhs &
       left: 0
 
 // Separator (with icon)
@@ -153,9 +164,15 @@
     background-color: $white
     vertical-align: top
 
+  .service[data-service="digital-products"] &::before
+    margin-top: 14px
+
   +max-screen($medium)
     &::before
       width: calc(100% - 65px)
+
+  +max-screen($small)
+    margin-top: 15px
 
 .shape-gamepad
   +size(41px, 19px)
@@ -204,23 +221,27 @@
   position: relative
   padding: 0 $extGapSmall 100px
 
+  +max-screen($xSmall)
+    margin-top: 120px
+
   +min-screen($small + 1px)
     padding: 0 $column 100px
 
 .floating-letter
-  +position(absolute, -200px, $column * 3/4)
+  +position(absolute, -90px, $column * 3/4)
   display: inline-block
-  +size(253px, 260px)
+  +size(135px, 160px)
 
-  +max-screen($small)
-    top: -180px
+  +min-screen($small + 1px)
+    top: -200px
+    +size(253px, 260px)
 
   +min-screen($medium + 1px)
     top: -84px
     +size(618px, 742px)
 
 .work-wrapper-title
-  margin-bottom: 75px
+  margin-bottom: 50px
 
 .work
   position: relative
@@ -241,18 +262,6 @@
   background-position: center top
   background-repeat: no-repeat
   background-size: cover
-
-  .work[data-work="camp-hope-falls"] &
-    background-image: url(#{$imagePath}work/camp-hope-falls.jpg)
-
-  .work[data-work="barkle"] &
-    background-image: url(#{$imagePath}work/barkle.jpg)
-
-  .work[data-work="yanky-doodle"] &
-    background-image: url(#{$imagePath}work/yanky-doodle.jpg)
-
-  .work[data-work="celine"] &
-    background-image: url(#{$imagePath}work/celine.jpg)
 
   +min-screen($small + 1px)
     height: 410px
