@@ -259,7 +259,7 @@ class App.Webgl
 
   onUpdate: (exports) ->
     if exports.glitch
-      # @glitchPass.goWild = true
+      @glitchPass.goWild = true
       @glitchPass.renderToScreen = true
     else
       @glitchPass.renderToScreen = false
