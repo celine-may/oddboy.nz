@@ -62,6 +62,7 @@ class Transition
     exports.isAnimating = true
     history.replaceState null, '', @newView
     if @view is 'home'
+      exports.glitch = false
       @homeToView exports
     else if @newView is 'home'
       @viewToHome exports
