@@ -13,7 +13,7 @@
       <p class="lead do-complement-push">
         We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital&nbsp;experiences.
       </p>
-      
+
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">
         <svg class="shape-scroll-cta large-only">
           <use xlink:href="#shape-scroll-cta"></use>
@@ -69,9 +69,6 @@
           <span class="highlights-separator"></span>
           Magical
         </p>
-        <div class="service-image">
-          <div class="circle y-push1 do-anim-scroll"></div>
-        </div>
         <div class="service-description">
           <h2 class="service-title title y-push3 do-anim-scroll">Virtual Reality<span class="text-color accent">.</span></h2>
           <div class="service-icon y-push4 do-anim-scroll">
@@ -85,6 +82,9 @@
           <p class="service-copy copy y-push6 do-anim-scroll">
             Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of&nbsp;solutions.
           </p>
+        </div>
+        <div class="service-image">
+          <div class="circle y-push1 do-anim-scroll"></div>
         </div>
       </article>
 
