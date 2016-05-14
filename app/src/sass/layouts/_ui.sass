@@ -131,6 +131,7 @@
   letter-spacing: 2px
   text-align: center
   text-transform: uppercase
+  transition: letter-spacing $transitionDuration $transitionFunction
 
   .lhs &
     transform-origin: bottom left
@@ -140,6 +141,9 @@
     margin-left: -165px
     transform-origin: bottom right
     transform: rotate(90deg)
+
+  .no-touchevents .nav-link:hover &
+    letter-spacing: 3px
 
 .nav-link-small
   +center('horizontal')
