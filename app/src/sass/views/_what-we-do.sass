@@ -121,16 +121,6 @@
 .service-description
   position: relative
 
-  +max-screen($medium)
-    .service[data-service="game-design"] &
-      padding-top: 570px
-
-    .service[data-service="virtual-reality"] &
-      padding-top: 400px
-
-    .service[data-service="digital-products"] &
-      padding-top: 590px
-
   +min-screen($medium + 1px)
     display: inline-block
     width: 410px
@@ -177,6 +167,10 @@
     margin-right: 10px
     background-color: $white
     vertical-align: middle
+
+  +max-screen($small)
+    &::before
+      width: $column * 2
 
 .shape-gamepad
   +size(41px, 19px)

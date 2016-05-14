@@ -39,7 +39,7 @@
         <div class="service-image">
           <div class="circle y-push1 do-anim-scroll"></div>
         </div>
-        <div class="service-description">
+        <div class="service-description do-set-padding">
           <h2 class="service-title title y-push3 do-anim-scroll">Game Design<span class="text-color accent">.</span></h2>
           <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-gamepad">
@@ -69,7 +69,7 @@
           <span class="highlights-separator"></span>
           Magical
         </p>
-        <div class="service-description">
+        <div class="service-description do-set-padding">
           <h2 class="service-title title y-push3 do-anim-scroll">Virtual Reality<span class="text-color accent">.</span></h2>
           <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-vr-gear">
@@ -97,7 +97,7 @@
         <div class="service-image">
           <div class="circle y-push1 do-anim-scroll"></div>
         </div>
-        <div class="service-description">
+        <div class="service-description do-set-padding">
           <h2 class="service-title title y-push3 do-anim-scroll">Digital Products<span class="text-color accent">.</span></h2>
           <div class="service-icon y-push4 do-anim-scroll">
             <svg class="shape-atom">

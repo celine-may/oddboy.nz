@@ -18,6 +18,7 @@ class WhatWeDo
 
     @$showComplementBtn = $('.do-show-complement')
     @$showWorkDetailsElement = $('.do-show-work-details')
+    @$setPaddingElement = $('.do-set-padding')
 
     unless exports.isTouch
       @$showComplementBtn.on 'mouseenter', =>
@@ -39,6 +40,8 @@ class WhatWeDo
         else
           @showComplement exports
           @$complement.addClass 'visible'
+
+    @onResize exports
 
   showComplement: (exports) ->
     if exports.windowWidth <= exports.smallBreakpoint
@@ -82,5 +85,14 @@ class WhatWeDo
     @workDetailsTL.reverse()
 
   onResize: (exports) ->
+    unless @$setPaddingElement?
+      return
+    for element in @$setPaddingElement
+      $element = $(element)
+      if exports.windowWidth > exports.mediumBreakpoint
+        elementPadding = 160
+      else
+        elementPadding = $element.parents('.service').find('.service-image').outerHeight() + 50
+      $element.css 'padding-top', elementPadding
 
 App.Controllers.push new WhatWeDo
