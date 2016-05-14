@@ -52,6 +52,8 @@ class Transition
         x: exports.windowWidth * direction
       TweenLite.set $(".view[data-view='#{@view}']"),
         x: 0
+      TweenLite.set $(".view[data-view='#{@view}'] .header-content"),
+        left: 0
       TweenLite.set @$slideUpElements,
         opacity: 1
         y: 0
@@ -68,11 +70,16 @@ class Transition
 
   homeToView: (exports) ->
     $view = $(".view[data-view='#{@newView}']")
+    $header = $view.find '.header-content'
 
     transitionTL = new TimelineLite()
     .to $view, .6,
       x: 0
       ease: Power3.easeIn
+    .to $header, .6,
+      left: 0
+      ease: Power3.easeIn
+    , '-=.5'
     .to @$slideUpElements, .2,
       opacity: 0
       y: 20
@@ -93,15 +100,20 @@ class Transition
 
   viewToHome: (exports) ->
     $view = $(".view[data-view='#{@view}']")
+    $header = $view.find '.header-content'
 
     direction = App.getDirection @view
 
     App.startMainLoop()
 
     transitionTL = new TimelineLite()
+    .to $header, .6,
+      left: 100 * direction
+      ease: Power3.easeIn
     .to $view, .6,
       x: (exports.windowWidth - 15) * direction
       ease: Power3.easeIn
+    , '-=.5'
     .set @$ui,
       zIndex: exports.zTop + 1
     .to @$slideUpElements, .4,
@@ -121,18 +133,28 @@ class Transition
 
   viewToView: (exports) ->
     $view = $(".view[data-view='#{@view}']")
+    $header = $view.find '.header-content'
     $newView  = $(".view[data-view='#{@newView}']")
+    $newHeader = $newView.find '.header-content'
 
     direction = App.getDirection @view
 
     transitionTL = new TimelineLite()
+    .to $header, .6,
+      left: 100 * direction
+      ease: Power3.easeIn
     .to $view, .6,
       x: exports.windowWidth * direction
       ease: Power3.easeIn
+    , '-=.5'
     .to $newView, .6,
       x: 0
       ease: Power3.easeIn
     , '-=.6'
+    .to $newHeader, .6,
+      left: 0
+      ease: Power3.easeIn
+    , '-=.5'
     .call =>
       @setView exports, @newView
     , null, null, .3
