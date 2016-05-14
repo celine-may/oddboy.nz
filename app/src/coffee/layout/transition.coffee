@@ -39,7 +39,7 @@ class Transition
       for view in @views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
-          x: exports.windowWidth * direction
+          x: (exports.windowWidth - 15) * direction
       @$ui
         .find '.do-slide-up'
         .css
@@ -180,5 +180,11 @@ class Transition
       exports.ScrollController.init exports
 
   onResize: (exports) ->
+    if @view is 'home'
+      for view in @views
+        direction = App.getDirection view
+        TweenLite.set $(".view[data-view='#{view}']"),
+          x: (exports.windowWidth - 15) * direction
+
 
 App.Controllers.push new Transition
