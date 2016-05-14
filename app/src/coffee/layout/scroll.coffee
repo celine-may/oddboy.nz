@@ -14,16 +14,17 @@ class Scroll
 
     @delta = 150
 
-    if exports.view is 'what-we-do'
+    if exports.view is 'home'
+      return
+    else if exports.view is 'what-we-do'
       @$view = $('.view[data-view="what-we-do"]')
       @initWWD exports
     else if exports.view is 'talk-to-us'
       @$view = $('.view[data-view="talk-to-us"]')
       @initTTU exports
 
-    if @$view? and not exports.isTouch
-      @$view.on 'scroll', =>
-        @onScroll exports
+    @$view.on 'scroll', =>
+      @onScroll exports
 
     @$scrollDownBtn.on 'click', =>
       @scrollDown exports
@@ -39,7 +40,7 @@ class Scroll
     @$virtualRealityElements = @$virtualReality.find '.do-anim-scroll'
     @$digitalProductsElements = @$digitalProducts.find '.do-anim-scroll'
     @$workElements = @$work.find '.do-anim-scroll'
-    
+
     @gameDesignStart = @$gameDesign.offset().top - exports.windowHeight
     @gameDesignStop = @gameDesignStart + exports.windowHeight + @delta
     @virtualRealityStart = @$virtualReality.offset().top - exports.windowHeight
@@ -57,8 +58,8 @@ class Scroll
     TweenLite.set [@$header, @$header.find('.header-content')],
       y: 0
 
-    @initWWDTL exports  
-    
+    @initWWDTL exports
+
   initTTU: (exports) ->
     @$header = @$view.find '.header'
 
@@ -111,8 +112,8 @@ class Scroll
       ease: Power2.easeOut
 
   scrollDown: (exports) ->
-    TweenLite.to @$view, 1, 
-      scrollTo: 
+    TweenLite.to @$view, 1,
+      scrollTo:
         y: exports.windowHeight
         ease: Power2.easeOut
 
