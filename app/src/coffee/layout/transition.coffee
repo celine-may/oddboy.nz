@@ -57,6 +57,7 @@ class Transition
       TweenLite.set @$slideUpElements,
         opacity: 1
         y: 0
+      exports.isAnimating = false
 
   switchViewHandler: (exports) ->
     exports.isAnimating = true

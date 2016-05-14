@@ -9,6 +9,7 @@ class Renderer
     @windowWidth = options.windowWidth
     @smallBreakpoint = options.smallBreakpoint
     @mediumBreakpoint = options.mediumBreakpoint
+    @isAnimating = options.isAnimating
     @isTouch = options.isTouch || false
     @skipLoader = options.skipLoader || false
     @primaryColor = options.primaryColor
@@ -31,6 +32,7 @@ class Renderer
       windowHeight: @windowHeight
       smallBreakpoint: @smallBreakpoint
       mediumBreakpoint: @mediumBreakpoint
+      isAnimating: @isAnimating
       isTouch: @isTouch
       skipLoader: @skipLoader
       primaryColor: @primaryColor

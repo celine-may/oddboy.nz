@@ -76,7 +76,6 @@ class App.Webgl
     copyMaterial = @copyMaterial = new THREE.MeshPhongMaterial
       color: exports.accentColor
       transparent: true
-      # opacity: 1
 
     loader = new THREE.ObjectLoader
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
@@ -192,6 +191,8 @@ class App.Webgl
       ease: Quart.easeOut
       onComplete: =>
         @ride = true
+        if exports.view is 'home'
+          exports.isAnimating = false
     , '-=10'
 
   animateCopyIn: (exports) ->

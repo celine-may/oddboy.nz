@@ -21,9 +21,15 @@ class WhatWeDo
 
     unless exports.isTouch
       @$showComplementBtn.on 'mouseenter', =>
+        if exports.isAnimating
+          return
         @showComplement exports
       @$showComplementBtn.on 'mouseleave', @hideComplement
-      @$showWorkDetailsElement.on 'mouseenter', @showWorkDetails
+
+      @$showWorkDetailsElement.on 'mouseenter', (e) =>
+        if exports.isAnimating
+          return
+        @showWorkDetails e
       @$showWorkDetailsElement.on 'mouseleave', @hideWorkDetails
     else
       @$showComplementBtn.on 'click', (e) =>

@@ -17,6 +17,8 @@ class TalkToUs
 
     unless exports.isTouch
       $character.on 'mouseenter', (e) =>
+        if exports.isAnimating
+          return
         character = $(e.target).parents('.character').attr 'data-character'
         @wakeUp exports, character
       $character.on 'mouseleave', (e) =>

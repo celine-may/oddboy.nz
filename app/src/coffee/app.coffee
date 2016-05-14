@@ -18,6 +18,7 @@ $ ->
     windowHeight: $window.height()
     mediumBreakpoint: 1023
     smallBreakpoint: 767
+    isAnimating: true
     isTouch: Modernizr.touchevents
     skipLoader: true
     primaryColor: '#23dcd4'
