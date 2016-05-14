@@ -24,6 +24,7 @@ $assets['javascripts'] = array(
   $js_path . 'vendor/TweenMax.min.js',
   $js_path . 'vendor/TimelineMax.min.js',
   $js_path . 'vendor/CSSPlugin.js',
+  $js_path . 'vendor/ScrollToPlugin.min.js',
   $js_path . 'vendor/webgl/three.min.js',
   $js_path . 'vendor/webgl/ManualMSAARenderPass.js',
   $js_path . 'vendor/webgl/CompositeShader.js',

@@ -10,6 +10,8 @@ class Scroll
     @init exports
 
   init: (exports) ->
+    @$scrollDownBtn = $('.do-scroll-down')
+
     @delta = 150
 
     if exports.view is 'what-we-do'
@@ -22,6 +24,9 @@ class Scroll
     if @$view? and not exports.isTouch
       @$view.on 'scroll', =>
         @onScroll exports
+
+    @$scrollDownBtn.on 'click', =>
+      @scrollDown exports
 
   initWWD: (exports) ->
     @$header = @$view.find '.header'
@@ -101,6 +106,12 @@ class Scroll
     .to @$contactElements, 1,
       y: 0
       ease: Power2.easeOut
+
+  scrollDown: (exports) ->
+    TweenLite.to @$view, 1, 
+      scrollTo: 
+        y: exports.windowHeight
+        ease: Power2.easeOut
 
   onResize: (exports) ->
 
