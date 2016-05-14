@@ -102,12 +102,12 @@ class TalkToUs
         backgroundPosition: '0 0'
       TweenLite.set @$defaultSprite,
         opacity: 1
+      TweenLite.set @$rolloverSprite,
+        opacity: 1
+      TweenLite.set @$blinkSprite,
+        opacity: 0
       if @blinkTL?
         @blinkTL.pause().kill()
-        TweenLite.set @$rolloverSprite,
-          opacity: 1
-        TweenLite.set @$blinkSprite,
-          opacity: 0
 
   blink: (exports, character) ->
     @$blinkSprite = $(".character[data-character='#{character}'] .character-blink")
