@@ -80,7 +80,7 @@ class Transition
       left: 0
       ease: Power3.easeIn
     , '-=.5'
-    .to @$slideUpElements, .2,
+    .to @$slideUpElements, .1,
       opacity: 0
       y: 20
       ease: Power3.easeOut
@@ -93,7 +93,7 @@ class Transition
     .call =>
       App.stopMainLoop()
       @setView exports, @newView
-    , null, null, .3
+    , null, null, .4
     .call ->
       exports.isAnimating = false
     , null, null, '+=.2'
