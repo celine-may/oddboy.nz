@@ -36,10 +36,13 @@ class Scroll
     @$digitalProducts = @$view.find '.service[data-service="digital-products"]'
     @$work = @$view.find '.work-wrapper'
 
-    @$gameDesignElements = @$gameDesign.find '.do-anim-scroll'
-    @$virtualRealityElements = @$virtualReality.find '.do-anim-scroll'
-    @$digitalProductsElements = @$digitalProducts.find '.do-anim-scroll'
-    @$workElements = @$work.find '.do-anim-scroll'
+    @$gameDesignYElements = @$gameDesign.find '.do-anim-y'
+    @$gameDesignMElements = @$gameDesign.find '.do-anim-m'
+    @$virtualRealityYElements = @$virtualReality.find '.do-anim-y'
+    @$virtualRealityMElements = @$virtualReality.find '.do-anim-m'
+    @$digitalProductsYElements = @$digitalProducts.find '.do-anim-y'
+    @$digitalProductsMElements = @$digitalProducts.find '.do-anim-m'
+    @$workElements = @$work.find '.do-anim-y'
 
     @gameDesignStart = @$gameDesign.offset().top - exports.windowHeight
     @gameDesignStop = @gameDesignStart + exports.windowHeight + @delta
@@ -63,7 +66,7 @@ class Scroll
   initTTU: (exports) ->
     @$header = @$view.find '.header'
 
-    @$contactElements = @$view.find '.do-anim-scroll'
+    @$contactElements = @$view.find '.do-anim-y'
 
     @contactStart = exports.windowHeight * 3/4
     @contactStop = exports.windowHeight
@@ -78,21 +81,37 @@ class Scroll
     .to @$header.find('.header-content'), 1,
       y: exports.windowHeight / -3
       ease: Power2.easeOut
+
     @gameDesignTL = new TimelineMax
       paused: true
-    .to @$gameDesignElements, 1,
+    .to @$gameDesignYElements, 1,
       y: 0
       ease: Power2.easeOut
+    .to @$gameDesignMElements, 1,
+      marginTop: 0
+      ease: Power2.easeOut
+    , '-=1'
+
     @virtualRealityTL = new TimelineMax
       paused: true
-    .to @$virtualRealityElements, 1,
+    .to @$virtualRealityYElements, 1,
       y: 0
       ease: Power2.easeOut
+    .to @$virtualRealityMElements, 1,
+      marginTop: 0
+      ease: Power2.easeOut
+    , '-=1'
+
     @digitalProductsTL = new TimelineMax
       paused: true
-    .to @$digitalProductsElements, 1,
+    .to @$digitalProductsYElements, 1,
       y: 0
       ease: Power2.easeOut
+    .to @$digitalProductsMElements, 1,
+      marginTop: 0
+      ease: Power2.easeOut
+    , '-=1'
+
     @workTL = new TimelineMax
       paused: true
     .to @$workElements, 1,
