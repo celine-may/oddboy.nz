@@ -20,7 +20,7 @@ class Home
         return
 
       view = $(e.target).attr 'data-view'
-      @$view = $(".view[data-view='#{view}'")
+      @$view = $(".view[data-view='#{view}']")
       @direction = App.getDirection view
       @viewSneakPeek exports, 42
       exports.glitch = true
