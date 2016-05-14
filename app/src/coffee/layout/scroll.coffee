@@ -39,7 +39,7 @@ class Scroll
     @$virtualRealityElements = @$virtualReality.find '.do-anim-scroll'
     @$digitalProductsElements = @$digitalProducts.find '.do-anim-scroll'
     @$workElements = @$work.find '.do-anim-scroll'
-
+    
     @gameDesignStart = @$gameDesign.offset().top - exports.windowHeight
     @gameDesignStop = @gameDesignStart + exports.windowHeight + @delta
     @virtualRealityStart = @$virtualReality.offset().top - exports.windowHeight
@@ -54,8 +54,11 @@ class Scroll
     @virtualRealityTL = undefined
     @workTL = undefined
 
-    @initWWDTL exports
+    TweenLite.set [@$header, @$header.find('.header-content')],
+      y: 0
 
+    @initWWDTL exports  
+    
   initTTU: (exports) ->
     @$header = @$view.find '.header'
 

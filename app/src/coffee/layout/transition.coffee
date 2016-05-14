@@ -115,6 +115,7 @@ class Transition
       @setView exports, @newView
     , null, null, .3
     .call ->
+      $view.scrollTop 0
       exports.isAnimating = false
     , null, null, '+=.2'
 
@@ -136,6 +137,7 @@ class Transition
       @setView exports, @newView
     , null, null, .3
     .call ->
+      $view.scrollTop 0
       exports.isAnimating = false
     , null, null, '+=.2'
 

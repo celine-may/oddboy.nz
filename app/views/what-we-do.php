@@ -1,6 +1,7 @@
 <section class="view lhs" data-view="what-we-do">
   <header class="header">
     <?php include('layouts/grid.php'); ?>
+
     <div class="header-content">
       <h1 class="title do-repaint do-show-complement">
         <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<span class="text-color primary">*</span>
@@ -12,6 +13,7 @@
       <p class="lead do-complement-push">
         We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital&nbsp;experiences.
       </p>
+      
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">
         <svg class="shape-scroll-cta large-only">
           <use xlink:href="#shape-scroll-cta"></use>
