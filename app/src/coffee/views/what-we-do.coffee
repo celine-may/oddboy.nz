@@ -68,17 +68,17 @@ class WhatWeDo
     $details = $element.find '.work-anim'
 
     @workDetailsTL = new TimelineLite()
-    .to $element, .3,
+    .to $element, .4,
       height: 410
-      ease: Power2.easeOut
+      ease: Power2.easeInOut
     .to $element.find('.work-title'), .5,
       y: 30
-      ease: Back.easeOut.config(.5)
+      ease: Power2.easeInOut
     , '-=.4'
     .to $details, .5,
       opacity: 1
       y: 30
-      ease: Back.easeOut.config(.5)
+      ease: Power2.easeInOut
     , '-=.5'
 
   hideWorkDetails: =>
