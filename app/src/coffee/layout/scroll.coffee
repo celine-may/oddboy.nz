@@ -10,6 +10,8 @@ class Scroll
     @init exports
 
   init: (exports) ->
+    if exports.isTouch
+      return
     @$scrollDownBtn = $('.do-scroll-down')
 
     @delta = 150
