@@ -24,6 +24,9 @@ class Home
       @direction = App.getDirection view
       @viewSneakPeek exports, 42
       exports.glitch = true
+      setTimeout ->
+        exports.glitch = false
+      , 350
 
     $navLink.on 'mouseleave', (e) =>
       if exports.isAnimating
