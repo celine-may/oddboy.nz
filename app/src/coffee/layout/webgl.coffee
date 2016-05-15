@@ -14,7 +14,6 @@ class App.Webgl
     @copyPass = undefined
     @msaaRenderPass = undefined
     @logo = new THREE.Object3D()
-    @logoHelper = undefined
     @param = MSAASampleLevel: 2
     @ride = false
     @intersected = null
@@ -177,15 +176,15 @@ class App.Webgl
       return
 
     logoTL = new TimelineLite()
-    .to @camera.position, 1,
+    .to @camera.position, 2.7,
       y: 4.5
       z: 0
-    .to @frontLogo.position, 1,
+    .to @frontLogo.position, 4.3,
       y: 4.2
       z: -8
       ease: Quart.easeOut
-    , '-=1'
-    .to @backLogo.position, 1.2,
+    , .7
+    .to @backLogo.position, 4.5,
       y: 4.1
       z: -8.3
       ease: Quart.easeOut
@@ -193,7 +192,7 @@ class App.Webgl
         @ride = true
         if exports.view is 'home'
           exports.isAnimating = false
-    , '-=10'
+    , .8
 
   animateCopyIn: (exports) ->
     @copyVisible = true
@@ -204,12 +203,6 @@ class App.Webgl
     TweenLite.to @copy.position, .8,
       y: 3.7
       ease: Expo.easeOut
-    # TweenLite.to @frontLogo.position, .8,
-    #   y: 4.88
-    #   ease: Expo.easeInOut
-    # TweenLite.to @backLogo.position, .8,
-    #   y: 4.77
-    #   ease: Expo.easeInOut
 
   animateCopyOut: (exports) ->
     unless @copyVisible
@@ -221,12 +214,6 @@ class App.Webgl
     TweenLite.to @copy.position, .8,
       y: 4.3
       ease: Expo.easeOut
-    # TweenLite.to @frontLogo.position, .8,
-    #   y: 4.18
-    #   ease: Expo.easeInOut
-    # TweenLite.to @backLogo.position, .8,
-    #   y: 4.07
-    #   ease: Expo.easeInOut
       onComplete: =>
         @copyVisible = false
 
@@ -273,13 +260,14 @@ class App.Webgl
     vh = if @container then @container.offsetHeight else exports.windowHeight
     renderW = Math.round vw
     renderH = Math.round vh
+    renderAspect = renderW / renderH
     if exports.width != renderW or exports.height != renderH
       exports.width = renderW
       exports.height = renderH
+      exports.aspect = renderAspect
 
-      @camera.aspect = renderW / renderH
+      @camera.aspect = renderAspect
       @camera.updateProjectionMatrix()
-
       @gl.setSize renderW, renderH
       pixelRatio = @gl.getPixelRatio()
       newWidth = Math.floor(renderW / pixelRatio) or 1
