@@ -182,5 +182,16 @@ class Transition
       exports.ScrollController.init exports
 
   onResize: (exports) ->
+    if exports.view is 'home'
+      for view in exports.views
+        direction = App.getDirection view
+        TweenLite.set $(".view[data-view='#{view}']"),
+          x: (exports.windowWidth - 20) * direction
+    else
+      view = App.getOppositeView exports.view
+      direction = App.getDirection view
+      TweenLite.set $(".view[data-view='#{view}']"),
+        x: (exports.windowWidth - 20) * direction
+
 
 App.Controllers.push new Transition
