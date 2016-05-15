@@ -55,14 +55,8 @@
   +max-screen($xSmall)
     +size(240px, 396px)
 
-    .character-default
-      background-size: 240px 792px
-
     .character-rollover
       background-size: 960px 1584px
-
-.character-default
-  z-index: $zBase + 2
 
 .character-rollover
   z-index: $zBase + 1
@@ -106,7 +100,7 @@
     transform: translateY(-100%)
 
 .touchevents
-  .character-default, .character-rollover
+  .character-rollover
     display: none
 
 // Contact

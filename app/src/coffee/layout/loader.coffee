@@ -11,17 +11,12 @@ class Loader
       id: 'benRolloverSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
+      src: "#{exports.path}assets/images/characters/ben-rollover-sprite2.png"
     ,
       id: 'benBlinkSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-blink'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
-    ,
-      id: 'benDefaultSprite'
-      itemType: 'bg'
-      element: '.character[data-character="ben"] .character-default'
-      src: "#{exports.path}assets/images/characters/ben-default-sprite.png"
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite2.png"
     ,
       id: 'tomRolloverSprite'
       itemType: 'bg'
@@ -32,11 +27,6 @@ class Loader
       itemType: 'bg'
       element: '.character[data-character="tom"] .character-blink'
       src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
-    ,
-      id: 'tomDefaultSprite'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-default'
-      src: "#{exports.path}assets/images/characters/tom-default-sprite.png"
     ,
       id: 'spriteShadow'
       itemType: 'bg'
