@@ -79,7 +79,8 @@ class Scroll
     @headerTL = new TimelineLite
       paused: true
     .to @$header.find('.header-content'), 1,
-      y: exports.windowHeight / -3
+      y: exports.windowHeight / -2.7
+      opacity: 0
       ease: Power2.easeOut
 
     @gameDesignTL = new TimelineMax
