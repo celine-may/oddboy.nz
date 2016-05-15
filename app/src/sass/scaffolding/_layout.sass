@@ -33,6 +33,12 @@ body
   &.rhs
     transform: translateX(calc(100% - 20px))
 
+  .main[data-view="what-we-do"] &.lhs
+    z-index: $zTop + 1
+
+  .main[data-view="talk-to-us"] &.rhs
+    z-index: $zTop + 1
+
 // Section header
 .header
   position: relative

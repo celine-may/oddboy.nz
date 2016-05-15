@@ -73,7 +73,11 @@ class Scroll
     @contactStart = exports.windowHeight * 3/4
     @contactStop = exports.windowHeight
 
+    @headerTL = undefined
     @contactTL = undefined
+
+    TweenLite.set [@$header, @$header.find('.header-content'), @$header.find('.scroll-cta')],
+      y: 0
 
     @initTTUTL exports
 
