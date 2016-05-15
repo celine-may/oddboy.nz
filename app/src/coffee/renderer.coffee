@@ -9,6 +9,7 @@ class Renderer
     @windowWidth = options.windowWidth
     @smallBreakpoint = options.smallBreakpoint
     @mediumBreakpoint = options.mediumBreakpoint
+    @views = options.views
     @isAnimating = options.isAnimating
     @isTouch = options.isTouch || false
     @skipLoader = options.skipLoader || false
@@ -32,6 +33,7 @@ class Renderer
       windowHeight: @windowHeight
       smallBreakpoint: @smallBreakpoint
       mediumBreakpoint: @mediumBreakpoint
+      views: @views
       isAnimating: @isAnimating
       isTouch: @isTouch
       skipLoader: @skipLoader

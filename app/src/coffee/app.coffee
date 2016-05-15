@@ -16,6 +16,7 @@ $ ->
     instances: []
     windowWidth: $window.width()
     windowHeight: $window.height()
+    views: [ 'what-we-do', 'talk-to-us' ]
     mediumBreakpoint: 1023
     smallBreakpoint: 767
     isAnimating: true

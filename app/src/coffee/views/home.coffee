@@ -38,5 +38,10 @@ class Home
       ease: Power2.easeOut
 
   onResize: (exports) ->
+    if exports.view is 'home'
+      for view in exports.views
+        direction = App.getDirection view
+        TweenLite.set $(".view[data-view='#{view}']"),
+          x: (exports.windowWidth - 15) * direction
 
 App.Controllers.push new Home
