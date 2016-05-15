@@ -234,9 +234,6 @@ class App.Webgl
     frontRotationY = (e.clientX / exports.windowWidth) * -13
     backRotationY = (e.clientX / exports.windowWidth) * -13.1
 
-    # console.log e.clientY / exports.windowHeight
-    # console.log @frontLogo.rotation
-
     @frontLogo.position.set frontX, frontY, -8
     @backLogo.position.set backX, backY, -8.3
 
