@@ -259,7 +259,6 @@ class App.Webgl
       newHeight = Math.floor(renderH / pixelRatio) or 1
 
   onMouseMove: (e, exports) ->
-    console.log 'mousemove'
     if @ride
       intersects = @intersector e, exports
       if intersects.length > 0
