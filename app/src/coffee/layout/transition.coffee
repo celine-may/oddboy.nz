@@ -38,7 +38,7 @@ class Transition
       for view in exports.views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
-          x: (exports.windowWidth - 15) * direction
+          x: (exports.windowWidth - 20) * direction
       @$ui
         .find '.nav-link'
         .css
@@ -51,6 +51,7 @@ class Transition
         x: exports.windowWidth * direction
       TweenLite.set $(".view[data-view='#{@view}']"),
         x: 0
+        overflowY: 'auto'
       TweenLite.set $(".view[data-view='#{@view}'] .header-content"),
         top: 0
         opacity: 1
@@ -94,6 +95,7 @@ class Transition
     , null, null, .4
     .call ->
       exports.isAnimating = false
+      $view.css 'overflow-y', 'auto'
     , null, null, '+=.2'
 
   viewToHome: (exports) ->
@@ -106,7 +108,7 @@ class Transition
 
     transitionTL = new TimelineLite()
     .to $view, .8,
-      x: (exports.windowWidth - 15) * direction
+      x: (exports.windowWidth - 20) * direction
       ease: Power3.easeInOut
     .to $header, 1.3,
       top: 100
@@ -121,6 +123,8 @@ class Transition
     , '-=.2'
     .set @$ui,
       zIndex: exports.zXTop
+    .set $view,
+      overflowY: 'hidden'
     .call =>
       @setView exports, @newView
     , null, null, .3
@@ -158,7 +162,8 @@ class Transition
       @setView exports, @newView
     , null, null, .3
     .call ->
-      $view.scrollTop 0
+      $newView.scrollTop 0
+      $newView.css 'overflow-y', 'auto'
       exports.isAnimating = false
     , null, null, '+=.2'
 

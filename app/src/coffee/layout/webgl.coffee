@@ -252,8 +252,8 @@ class App.Webgl
   onResize: (exports) ->
     vw = if @container then @container.offsetWidth else exports.windowWidth
     vh = if @container then @container.offsetHeight else exports.windowHeight
-    renderW = Math.round vw
-    renderH = Math.round vh
+    renderW = Math.round(vw) - 20
+    renderH = Math.round(vh)
     renderAspect = renderW / renderH
     if exports.width != renderW or exports.height != renderH
       exports.width = renderW

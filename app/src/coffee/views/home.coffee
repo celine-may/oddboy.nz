@@ -45,6 +45,6 @@ class Home
       for view in exports.views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
-          x: (exports.windowWidth - 15) * direction
+          x: (exports.windowWidth - 20) * direction
 
 App.Controllers.push new Home

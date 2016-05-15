@@ -21,18 +21,17 @@ body
 
 .view
   +position(absolute, 0, null, null, 0)
-  width: 100vw
-  height: 100vh
+  +square(100%)
   background-color: $secondary
-  overflow: auto
+  overflow: hidden
   z-index: $zTop
   -webkit-overflow-scrolling: touch
 
   &.lhs
-    transform: translateX(calc(-100% + 15px))
+    transform: translateX(calc(-100% + 20px))
 
   &.rhs
-    transform: translateX(calc(100% - 15px))
+    transform: translateX(calc(100% - 20px))
 
 // Section header
 .header
