@@ -10,11 +10,7 @@ class App.Webgl
     @frontLogo = undefined
     @backLogo = undefined
     @copy = undefined
-    @composer = undefined
-    @copyPass = undefined
-    @msaaRenderPass = undefined
     @logo = new THREE.Object3D()
-    @param = MSAASampleLevel: 2
     @ride = false
     @intersected = null
 
@@ -25,6 +21,10 @@ class App.Webgl
   init: (exports) ->
     $window = $(window)
     @$home = $('.view[data-view="home"]')
+    if exports.windowWidth > exports.smallBreakpoint
+      @z = -8
+    else
+      @z = -17
 
     THREE.DefaultLoadingManager.onProgress = (item, loaded, total) =>
       if loaded is total
@@ -38,23 +38,25 @@ class App.Webgl
     @createLights exports
     @createStars exports
     @addObjects exports
-    @postProcessing exports
 
     @mouse = new THREE.Vector2()
     @raycaster = new THREE.Raycaster()
 
     $window.on 'mousemove', (e) =>
+      if exports.isTouch
+        return
+
       @onMouseMove e, exports
 
   createScene: (exports) ->
     @scene = new THREE.Scene
-    @scene.fog = new THREE.FogExp2 0x020711, 0.03
+    @scene.fog = new THREE.FogExp2 0x0a1527, 0.03
 
   createGL: (exports) ->
     $webglFrame = $('<div class="webgl-frame"></div>')
     @$home.prepend $webglFrame
 
-    @gl = new THREE.WebGLRenderer antialias: false
+    @gl = new THREE.WebGLRenderer antialias: true
     @gl.setClearColor @scene.fog.color
     @gl.setPixelRatio window.devicePixelRatio
     @gl.setSize exports.windowWidth, exports.windowHeight
@@ -156,18 +158,6 @@ class App.Webgl
     particles = new THREE.Points geometry, material
     @scene.add particles
 
-  postProcessing: (exports) ->
-    composer = @composer = new THREE.EffectComposer @gl
-    composer.addPass new THREE.RenderPass @scene, @camera
-    msaaRenderPass = @msaaRenderPass = new THREE.ManualMSAARenderPass @scene, @camera
-    msaaRenderPass.sampleLevel = @param.MSAASampleLevel
-    composer.addPass msaaRenderPass
-    copyPass = new THREE.ShaderPass THREE.CopyShader
-    copyPass.renderToScreen = true
-    composer.addPass copyPass
-    glitchPass = @glitchPass = new THREE.GlitchPass()
-    composer.addPass glitchPass
-
   animateIn: (exports) ->
     unless @isLoaded
       return
@@ -178,12 +168,12 @@ class App.Webgl
       z: 0
     .to @frontLogo.position, 4.3,
       y: 3.7
-      z: -8
+      z: @z
       ease: Quart.easeOut
     , .7
     .to @backLogo.position, 4.5,
       y: 3.6
-      z: -8.3
+      z: @z - .3
       ease: Quart.easeOut
       onComplete: =>
         @ride = true
@@ -241,19 +231,15 @@ class App.Webgl
     @backLogo.rotation.set App.toRadians(backRotationX), App.π + App.toRadians(backRotationY), 0
 
   onUpdate: (exports) ->
-    if exports.glitch
-      @glitchPass.goWild = true
-      @glitchPass.renderToScreen = true
-    else
-      @glitchPass.renderToScreen = false
-
-    @composer.render()
+    @gl.render @scene, @camera
 
   onResize: (exports) ->
     if exports.windowWidth > exports.smallBreakpoint
       delta = 20
+      @z = -8
     else
       delta = 0
+      @z = -17
 
     vw = if @container then @container.offsetWidth else exports.windowWidth
     vh = if @container then @container.offsetHeight else exports.windowHeight
@@ -271,9 +257,9 @@ class App.Webgl
       pixelRatio = @gl.getPixelRatio()
       newWidth = Math.floor(renderW / pixelRatio) or 1
       newHeight = Math.floor(renderH / pixelRatio) or 1
-      @composer.setSize newWidth, newHeight
 
   onMouseMove: (e, exports) ->
+    console.log 'mousemove'
     if @ride
       intersects = @intersector e, exports
       if intersects.length > 0
@@ -285,7 +271,3 @@ class App.Webgl
         @animateCopyOut exports
 
       @moveLogo exports, e
-
-# NOTES
-# Commented the logo animation as it's quite buggy
-# with the mouse movement animatoin

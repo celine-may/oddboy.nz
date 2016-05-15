@@ -69,7 +69,6 @@ class Transition
   switchViewHandler: (exports) ->
     exports.isAnimating = true
     history.replaceState null, '', @newView
-    exports.glitch = false
     if @view is 'home'
       @homeToView exports
     else if @newView is 'home'
