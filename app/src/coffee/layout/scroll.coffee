@@ -122,9 +122,11 @@ class Scroll
   initTTUTL: (exports) ->
     @headerTL = new TimelineLite
       paused: true
-    .to @$header.find('.header-content'), 1,
+    .to @$header.find('.header-content, .scroll-cta'), 1,
       y: exports.windowHeight / -3
+      opacity: 0
       ease: Power2.easeOut
+
     @contactTL = new TimelineMax
       paused: true
     .to @$contactElements, 1,
