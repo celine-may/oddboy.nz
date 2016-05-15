@@ -9,6 +9,16 @@ toRGB = (hexColor) ->
   }
 App.toRGB = toRGB
 
+# Convert from radians to degrees
+toDegrees = (radians) ->
+  degrees = radians * 180 / π
+App.toDegrees = toDegrees
+
+# Convert from degrees to radians
+toRadians = (degrees) ->
+  radians = degrees * π / 180
+App.toRadians = toRadians
+
 getOppositeView = (view) ->
   if view is 'what-we-do'
     'talk-to-us'

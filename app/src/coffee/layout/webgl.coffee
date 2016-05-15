@@ -20,9 +20,6 @@ class App.Webgl
 
     @copyVisible = false
 
-    @mouseX = 0
-    @mouseY = 0
-
     @init exports
 
   init: (exports) ->
@@ -105,7 +102,7 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = copyMaterial
-      object.position.set -.4, 4.3, -7
+      object.position.set -.4, 4.3, -9
       object.rotation.y = App.π
       object.scale.set .2, .2, .2
       copyMaterial.opacity = 0
@@ -180,12 +177,12 @@ class App.Webgl
       y: 4.5
       z: 0
     .to @frontLogo.position, 4.3,
-      y: 4.2
+      y: 3.7
       z: -8
       ease: Quart.easeOut
     , .7
     .to @backLogo.position, 4.5,
-      y: 4.1
+      y: 3.6
       z: -8.3
       ease: Quart.easeOut
       onComplete: =>
@@ -201,7 +198,7 @@ class App.Webgl
       opacity: 1
       ease: Expo.easeOut
     TweenLite.to @copy.position, .8,
-      y: 3.7
+      y: 3.5
       ease: Expo.easeOut
 
   animateCopyOut: (exports) ->
@@ -224,25 +221,27 @@ class App.Webgl
     intersects = @raycaster.intersectObjects @logo.children, true
 
   moveLogo: (exports, e) ->
-    windowHalfX = exports.windowWidth / 2
-    windowHalfY = exports.windowHeight / 2
+    mouseX = (e.clientX - exports.windowWidth) / 2
+    mouseY = (exports.windowHeight - e.clientY) / 2
 
-    @mouseX = (e.clientX - exports.windowWidth) / 2
-    @mouseY = (e.clientY - windowHalfY) / 2
-    frontRatio = .4
-    backRatio = .6
-    frontX = backX = 2
-    frontY = 4.2
-    frontZ = -8
-    backY = 4.1
-    backZ = -8.3
-    newFrontX = frontX + (@mouseX / exports.windowWidth) * frontX * frontRatio
-    newFrontY = frontY + (@mouseY / exports.windowHeight) * frontY * frontRatio
-    newBackX = backX + (@mouseX / exports.windowWidth) * backX * backRatio
-    newBackY = backY + (@mouseY / exports.windowHeight) * backY * backRatio
+    frontX = 2 + (mouseX / exports.windowWidth) * 2 * .4
+    frontY = 3.7 + (mouseY / exports.windowHeight) * 3.7 * .4
+    backX = 2 + (mouseX / exports.windowWidth) * 2 * .5
+    backY = 3.6 + (mouseY / exports.windowHeight) * 3.6 * .5
 
-    @frontLogo.position.set newFrontX, newFrontY, frontZ
-    @backLogo.position.set newBackX, newBackY, backZ
+    frontRotationX = (e.clientY / exports.windowHeight) * -13
+    backRotationX = (e.clientY / exports.windowHeight) * -13.1
+    frontRotationY = (e.clientX / exports.windowWidth) * -13
+    backRotationY = (e.clientX / exports.windowWidth) * -13.1
+
+    # console.log e.clientY / exports.windowHeight
+    # console.log @frontLogo.rotation
+
+    @frontLogo.position.set frontX, frontY, -8
+    @backLogo.position.set backX, backY, -8.3
+
+    @frontLogo.rotation.set App.toRadians(frontRotationX), App.π + App.toRadians(frontRotationY), 0
+    @backLogo.rotation.set App.toRadians(backRotationX), App.π + App.toRadians(backRotationY), 0
 
   onUpdate: (exports) ->
     if exports.glitch
@@ -252,8 +251,6 @@ class App.Webgl
       @glitchPass.renderToScreen = false
 
     @composer.render()
-    # @camera.rotation.x = (-@mouseY - (@camera.rotation.x)) * .0002
-    # @camera.rotation.y = (-@mouseX - (@camera.rotation.y)) * .0002
 
   onResize: (exports) ->
     vw = if @container then @container.offsetWidth else exports.windowWidth
