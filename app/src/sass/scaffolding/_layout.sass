@@ -52,15 +52,11 @@ body
 
 .header-content
   position: relative
+  top: 100px
   display: table-cell
+  opacity: 0
   vertical-align: middle
   z-index: $zTop
-
-  .lhs &
-    left: -100px
-
-  .rhs &
-    left: 100px
 
 .header-link
   width: 100%
@@ -85,4 +81,4 @@ body
       transform: translateY($i * 90px)
 
     .m-push#{$i}
-      margin-top: $i * 30px
+      margin-top: $i * 300px

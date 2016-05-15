@@ -7,7 +7,6 @@ class Transition
     exports.TransitionController = @
     exports.instances.push @
 
-    @views = [ 'what-we-do', 'talk-to-us' ]
     @view = undefined
     @newView = undefined
 
@@ -36,12 +35,12 @@ class Transition
 
   setInitialView: (exports) ->
     if @view is 'home'
-      for view in @views
+      for view in exports.views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
           x: (exports.windowWidth - 15) * direction
       @$ui
-        .find '.do-slide-up'
+        .find '.nav-link'
         .css
           opacity: 1
           y: 0
@@ -53,7 +52,8 @@ class Transition
       TweenLite.set $(".view[data-view='#{@view}']"),
         x: 0
       TweenLite.set $(".view[data-view='#{@view}'] .header-content"),
-        left: 0
+        top: 0
+        opacity: 1
       TweenLite.set @$slideUpElements,
         opacity: 1
         y: 0
@@ -75,22 +75,18 @@ class Transition
     $header = $view.find '.header-content'
 
     transitionTL = new TimelineLite()
-    .to $view, .6,
+    .to $view, .8,
       x: 0
-      ease: Power3.easeIn
-    .to $header, .6,
-      left: 0
-      ease: Power3.easeIn
-    , '-=.5'
-    .to @$slideUpElements, .1,
-      opacity: 0
-      y: 20
-      ease: Power3.easeOut
-    , '-=.4'
-    .to @$slideUpElements, .4,
+      ease: Power3.easeInOut
+    .to $header, 1.3,
+      top: 0
+      opacity: 1
+      ease: Power3.easeInOut
+    , '-=.7'
+    .to @$slideUpElements, .8,
       opacity: 1
       y: 0
-      ease: Power3.easeIn
+      ease: Power3.easeInOut
     , '-=.2'
     .call =>
       App.stopMainLoop()
@@ -109,19 +105,19 @@ class Transition
     App.startMainLoop()
 
     transitionTL = new TimelineLite()
-    .to $header, .6,
-      left: 100 * direction
-      ease: Power3.easeIn
-    .to $view, .6,
+    .to $view, .8,
       x: (exports.windowWidth - 15) * direction
-      ease: Power3.easeIn
-    , '-=.5'
+      ease: Power3.easeInOut
+    .to $header, 1.3,
+      top: 100
+      ease: Power3.easeInOut
+    , '-=.8'
     .set @$ui,
       zIndex: exports.zTop + 1
     .to @$slideUpElements, .4,
       opacity: 1
       y: 0
-      ease: Power3.easeIn
+      ease: Power3.easeInOut
     , '-=.2'
     .set @$ui,
       zIndex: exports.zXTop
@@ -142,21 +138,22 @@ class Transition
     direction = App.getDirection @view
 
     transitionTL = new TimelineLite()
-    .to $header, .6,
-      left: 100 * direction
-      ease: Power3.easeIn
-    .to $view, .6,
+    .to $view, .8,
       x: exports.windowWidth * direction
-      ease: Power3.easeIn
-    , '-=.5'
-    .to $newView, .6,
+      ease: Power3.easeInOut
+    .to $header, 1.3,
+      top: 100
+      ease: Power3.easeInOut
+    , '-=.8'
+    .to $newView, .8,
       x: 0
-      ease: Power3.easeIn
-    , '-=.6'
-    .to $newHeader, .6,
-      left: 0
-      ease: Power3.easeIn
-    , '-=.5'
+      ease: Power3.easeInOut
+    , '-=1.3'
+    .to $newHeader, 1.3,
+      top: 0
+      opacity: 1
+      ease: Power3.easeInOut
+    , '-=1.3'
     .call =>
       @setView exports, @newView
     , null, null, .3
@@ -180,11 +177,5 @@ class Transition
       exports.ScrollController.init exports
 
   onResize: (exports) ->
-    if @view is 'home'
-      for view in @views
-        direction = App.getDirection view
-        TweenLite.set $(".view[data-view='#{view}']"),
-          x: (exports.windowWidth - 15) * direction
-
 
 App.Controllers.push new Transition
