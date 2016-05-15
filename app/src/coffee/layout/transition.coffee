@@ -142,6 +142,8 @@ class Transition
     direction = App.getDirection @view
 
     transitionTL = new TimelineLite()
+    .set $view,
+      overflow: 'hidden'
     .to $view, .8,
       x: exports.windowWidth * direction
       ease: Power3.easeInOut
@@ -162,6 +164,7 @@ class Transition
       @setView exports, @newView
     , null, null, .3
     .call ->
+      $view.scrollTop 0
       $newView.scrollTop 0
       $newView.css 'overflow-y', 'auto'
       exports.isAnimating = false
