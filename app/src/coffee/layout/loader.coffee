@@ -11,12 +11,12 @@ class Loader
       id: 'benRolloverSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/ben-rollover-sprite2.png"
+      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
     ,
       id: 'benBlinkSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-blink'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite2.png"
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
     ,
       id: 'tomRolloverSprite'
       itemType: 'bg'
