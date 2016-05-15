@@ -180,9 +180,12 @@ class Loader
     .to @$panelRight, .5,
       xPercent: 100
       onComplete: =>
-        exports.WebglController.animateIn exports
         @$wrapper.remove()
     , '-=.5'
+    .call ->
+      exports.WebglController.animateIn exports
+    , null, null, 1.6
+
 
   onResize: (exports) ->
 
