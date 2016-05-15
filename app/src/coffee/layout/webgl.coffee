@@ -104,7 +104,7 @@ class App.Webgl
           child.material = copyMaterial
       object.position.set -1.2, 4.3, -9
       object.rotation.y = App.π
-      object.scale.set .3, .3, .3
+      object.scale.set .26, .26, .26
       copyMaterial.opacity = 0
       @scene.add object
 
