@@ -9,6 +9,7 @@ class Transition
 
     @view = undefined
     @newView = undefined
+    @delta = 20
 
     @init exports
 
@@ -34,11 +35,16 @@ class Transition
       @switchViewHandler exports
 
   setInitialView: (exports) ->
+    if exports.windowWidth > exports.smallBreakpoint
+      @delta = 20
+    else
+      @delta = 0
+
     if @view is 'home'
       for view in exports.views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
-          x: (exports.windowWidth - 20) * direction
+          x: (exports.windowWidth - @delta) * direction
       @$ui
         .find '.nav-link'
         .css
@@ -108,7 +114,7 @@ class Transition
 
     transitionTL = new TimelineLite()
     .to $view, .8,
-      x: (exports.windowWidth - 20) * direction
+      x: (exports.windowWidth - @delta) * direction
       ease: Power3.easeInOut
     .to $header, 1.3,
       top: 100
@@ -185,16 +191,21 @@ class Transition
       exports.ScrollController.init exports
 
   onResize: (exports) ->
+    if exports.windowWidth > exports.smallBreakpoint
+      @delta = 20
+    else
+      @delta = 0
+
     if exports.view is 'home'
       for view in exports.views
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
-          x: (exports.windowWidth - 20) * direction
+          x: (exports.windowWidth - @delta) * direction
     else
       view = App.getOppositeView exports.view
       direction = App.getDirection view
       TweenLite.set $(".view[data-view='#{view}']"),
-        x: (exports.windowWidth - 20) * direction
+        x: (exports.windowWidth - @delta) * direction
 
 
 App.Controllers.push new Transition

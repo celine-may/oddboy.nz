@@ -27,11 +27,12 @@ body
   z-index: $zTop
   -webkit-overflow-scrolling: touch
 
-  &.lhs
-    transform: translateX(calc(-100% + 20px))
+  +min-screen($small)
+    &.lhs
+      transform: translateX(calc(-100% + 20px))
 
-  &.rhs
-    transform: translateX(calc(100% - 20px))
+    &.rhs
+      transform: translateX(calc(100% - 20px))
 
   .main[data-view="what-we-do"] &.lhs
     z-index: $zTop + 1

@@ -250,9 +250,14 @@ class App.Webgl
     @composer.render()
 
   onResize: (exports) ->
+    if exports.windowWidth > exports.smallBreakpoint
+      delta = 20
+    else
+      delta = 0
+
     vw = if @container then @container.offsetWidth else exports.windowWidth
     vh = if @container then @container.offsetHeight else exports.windowHeight
-    renderW = Math.round(vw) - 20
+    renderW = Math.round(vw) - delta
     renderH = Math.round(vh)
     renderAspect = renderW / renderH
     if exports.width != renderW or exports.height != renderH
