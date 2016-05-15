@@ -102,9 +102,9 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = copyMaterial
-      object.position.set -.4, 4.3, -9
+      object.position.set -1.2, 4.3, -9
       object.rotation.y = App.π
-      object.scale.set .2, .2, .2
+      object.scale.set .3, .3, .3
       copyMaterial.opacity = 0
       @scene.add object
 
@@ -198,7 +198,7 @@ class App.Webgl
       opacity: 1
       ease: Expo.easeOut
     TweenLite.to @copy.position, .8,
-      y: 3.5
+      y: 3
       ease: Expo.easeOut
 
   animateCopyOut: (exports) ->
@@ -225,9 +225,9 @@ class App.Webgl
     mouseY = (exports.windowHeight - e.clientY) / 2
 
     frontX = 2 + (mouseX / exports.windowWidth) * 2 * .4
-    frontY = 3.7 + (mouseY / exports.windowHeight) * 3.7 * .4
+    frontY = 3.7 + (mouseY / exports.windowHeight) * 3.7 * .2
     backX = 2 + (mouseX / exports.windowWidth) * 2 * .5
-    backY = 3.6 + (mouseY / exports.windowHeight) * 3.6 * .5
+    backY = 3.6 + (mouseY / exports.windowHeight) * 3.6 * .3
 
     frontRotationX = (e.clientY / exports.windowHeight) * -13
     backRotationX = (e.clientY / exports.windowHeight) * -13.1
