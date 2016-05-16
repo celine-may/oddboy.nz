@@ -16,6 +16,10 @@
   +max-screen($medium)
     margin-bottom: 100px
 
+  +max-screen($small)
+    max-width: calc(100vw - 80px)
+    margin-bottom: 20px
+
   +min-screen($medium + 1px)
     display: inline-block
     width: calc(50% - 1px)
@@ -35,8 +39,9 @@
   background-repeat: no-repeat
   background-position: center bottom 30px
 
-  +max-screen($xSmall)
+  +max-screen($small)
     background-size: 100% auto
+    background-position: center bottom 90px
 
   +min-screen(450px)
     width: 366px
@@ -52,11 +57,12 @@
     background-position: 0 0
     background-repeat: no-repeat
 
-  +max-screen($xSmall)
-    +size(240px, 396px)
+  +max-screen($small)
+    transform: scale(.8)
+    transform-origin: center top
 
-    .character-rollover
-      background-size: 960px 1584px
+  +max-screen($xSmall)
+    transform-origin: left top
 
 .character-rollover
   z-index: $zBase + 1
@@ -69,6 +75,9 @@
   display: block
   margin-bottom: 10px
   +font($sansSerif, 1.1875rem, 700)
+
+  +max-screen($small)
+    margin-top: -90px
 
 .character-link
   position: relative
