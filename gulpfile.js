@@ -125,6 +125,13 @@ gulp.task( 'svgs', function() {
     .pipe( gulp.dest( distAssets + 'svgs' ) )
 });
 
+// Move JSON to dist/assets
+gulp.task( 'svgs', function() {
+  return gulp
+    .src( appAssets + 'json/**' )
+    .pipe( gulp.dest( distAssets + 'json' ) )
+});
+
 // SASS
 gulp.task( 'sass', function() {
   return gulp
@@ -188,7 +195,7 @@ gulp.task( 'coffee', function() {
 // JS Concat
 gulp.task( 'jsconcat', function() {
   return gulp
-    .src( [ appAssets + 'js/vendor/*.js', '!' + appAssets + 'js/build/lte-ie9.js', appAssets + 'js/build/**/*.js' ] )
+    .src( [ appAssets + 'js/vendor/**/*.js', '!' + appAssets + 'js/build/lte-ie9.js', appAssets + 'js/build/**/*.js' ] )
     .pipe( concat( 'application.js' ) )
     .pipe( gulp.dest( appAssets + 'js' ) )
 });
