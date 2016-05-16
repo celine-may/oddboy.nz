@@ -150,8 +150,9 @@
             Web experience
           </p>
           <div class="work-ctas work-anim">
-            <a href="#todo" target="_blank" class="btn">View site</a>
-            <a href="#todo" target="_blank" class="btn">Behance</a>
+            <!-- <a href="#todo" target="_blank" class="btn">View site</a>
+            <a href="#todo" target="_blank" class="btn">Behance</a> -->
+            <span class="btn">Coming soon</span>
           </div>
         </div>
       </article>
@@ -164,8 +165,8 @@
             Game Design
           </p>
           <div class="work-ctas work-anim">
-            <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
             <a href="http://yanky-doodle.com/" target="_blank" class="btn">View site</a>
+            <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
           </div>
         </div>
       </article>
