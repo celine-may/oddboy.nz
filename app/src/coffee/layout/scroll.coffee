@@ -55,7 +55,7 @@ class Scroll
     @workStart = @$work.offset().top - exports.windowHeight + 700
     @workStop = @workStart + @$work.outerHeight() + 260 + @delta
 
-    @headerTL = undefined
+    @wwdHeaderTL = undefined
     @gameDesignTL = undefined
     @virtualRealityTL = undefined
     @workTL = undefined
@@ -68,13 +68,7 @@ class Scroll
   initTTU: (exports) ->
     @$header = @$view.find '.header'
 
-    @$contactElements = @$view.find '.do-anim-y'
-
-    @contactStart = exports.windowHeight * 3/4
-    @contactStop = exports.windowHeight
-
-    @headerTL = undefined
-    @contactTL = undefined
+    @ttuHeaderTL = undefined
 
     TweenLite.set [@$header, @$header.find('.header-content'), @$header.find('.scroll-cta')],
       y: 0
@@ -82,7 +76,7 @@ class Scroll
     @initTTUTL exports
 
   initWWDTL: (exports) ->
-    @headerTL = new TimelineLite
+    @wwdHeaderTL = new TimelineLite
       paused: true
     .to @$header.find('.header-content'), 1,
       y: exports.windowHeight / -2.7
@@ -126,17 +120,11 @@ class Scroll
       ease: Power2.easeOut
 
   initTTUTL: (exports) ->
-    @headerTL = new TimelineLite
+    @ttuHeaderTL = new TimelineLite
       paused: true
     .to @$header.find('.header-content, .scroll-cta'), 1,
       y: exports.windowHeight / -3
       opacity: 0
-      ease: Power2.easeOut
-
-    @contactTL = new TimelineMax
-      paused: true
-    .to @$contactElements, 1,
-      y: 0
       ease: Power2.easeOut
 
   scrollDown: (exports) ->
@@ -166,14 +154,13 @@ class Scroll
       transform: "translateY(#{scrollY}px)"
 
     # What we do Timelines
-    @scrollTween exports, 0, exports.windowHeight * 1.3, @headerTL, scrollY
+    @scrollTween exports, 0, exports.windowHeight * 1.3, @wwdHeaderTL, scrollY
     @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
     @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
     @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
     @scrollTween exports, @workStart, @workStop, @workTL, scrollY
 
     # Talk to us Timelines
-    @scrollTween exports, 0, exports.windowHeight, @headerTL, scrollY
-    @scrollTween exports, @contactStart, @contactStop, @contactTL, scrollY
+    @scrollTween exports, 0, exports.windowHeight, @ttuHeaderTL, scrollY
 
 App.Controllers.push new Scroll
