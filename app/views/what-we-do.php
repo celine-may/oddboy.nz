@@ -47,10 +47,10 @@
             </svg>
           </div>
           <p class="service-lead lead y-push5 do-anim-y">
-            The fun of shooting someone in the face, without any of the&nbsp;consequences.
+            All the terror of a zombie apocalypse, without any of the consequences.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquley connected to games. Our passion is understanding this connection and using it to create beautifully immersive games. Or&nbsp;an&nbsp;FPS.
+            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquely connected to games. Our passion is understanding this connection and using it to create beautifully immersive games.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">Console, PC &amp; Mac</li>
