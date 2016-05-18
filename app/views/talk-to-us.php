@@ -39,7 +39,8 @@
     <?php include('layouts/grid.php'); ?>
     <div class="section-content contact">
       <h1 class="title y-push1 do-anim-y">
-        Holla at an <br class="xsmall-hidden"><span class="text-color primary">odd<span class="flipped">b</span>oy</span>. Let's make sweet, sweet ????.
+        Holla at <span class="title-unbreakable text-color primary">odd<span class="flipped">b</span>oy.</span>
+        <div>Let's do some epic&nbsp;stuff.</div>
       </h1>
       <span class="title-separator bg-color primary y-push3 do-anim-y"></span>
       <p class="lead vcard y-push4 do-anim-y">
