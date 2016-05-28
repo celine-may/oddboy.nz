@@ -132,6 +132,7 @@ class Transition
       overflowY: 'hidden'
     .call =>
       @setView exports, @newView
+      exports.HomeController.init exports
     , null, null, .3
     .call ->
       $view.scrollTop 0

@@ -3,6 +3,8 @@ class Home
     @order = 10
     @initBuild = false
 
+    @initiated = false
+
   build: (exports) ->
     exports.HomeController = @
     exports.instances.push @
@@ -12,8 +14,10 @@ class Home
   init: (exports) ->
     $navLink = $('.nav-link')
 
-    unless exports.view is 'home'
+    unless exports.view is 'home' or @initiated
       return
+
+    @initiated = true
 
     $navLink.on 'mouseenter', (e) =>
       if exports.isAnimating
@@ -24,16 +28,12 @@ class Home
       @direction = App.getDirection view
       @viewSneakPeek exports, 42
       exports.glitch = true
-      setTimeout ->
-        exports.glitch = false
-      , 350
 
     $navLink.on 'mouseleave', (e) =>
       if exports.isAnimating
         return
 
       @viewSneakPeek exports, 15
-      exports.glitch = false
 
   viewSneakPeek: (exports, delta) ->
     TweenLite.to @$view, .3,
