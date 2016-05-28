@@ -8,7 +8,7 @@
       </h1>
       <span class="title-separator bg-color accent do-complement-push"></span>
       <p class="title-complement copy">
-        <span class="text-color primary">*</span>That’s just a roundabout way of saying we create digital stuff that you’ll remember.
+        <span class="text-color primary">*</span>That’s just a fancy way of saying we create digital stuff that you’ll remember.
       </p>
       <p class="lead do-complement-push">
         We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital&nbsp;experiences.
@@ -80,7 +80,7 @@
             Sort of like the matrix, but less real. It’s still pretty real&nbsp;though.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of&nbsp;solutions.
+            Both Virtual and Augmented reality is an emerging medium like no other. With the potential to merge the familiar with the surreal, the applications are limitless. As VR and AR are in their infancy, we are fluid and flexible to cater for a range of&nbsp;solutions.
           </p>
         </div>
         <div class="service-image">
@@ -112,9 +112,9 @@
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">App Design</li>
-            <li class="copy">Websites &amp; Services</li>
+            <li class="copy">Web Experiences</li>
             <li class="copy">App Development</li>
-            <li class="copy">Interactive Environments</li>
+            <li class="copy">UX/UI Design</li>
           </ul>
         </div>
       </article>
