@@ -8,6 +8,11 @@ class Loader
     exports.instances.push @
 
     @manifest = [
+      id: 'talkToUs'
+      itemType: 'bg'
+      element: '.contact-wrapper'
+      src: "#{exports.path}assets/images/talk-to-us/computer-holla.gif"
+    ,
       id: 'benRolloverSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-rollover'
