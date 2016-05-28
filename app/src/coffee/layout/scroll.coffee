@@ -10,8 +10,6 @@ class Scroll
     @init exports
 
   init: (exports) ->
-    if exports.isTouch
-      return
     @$scrollDownBtn = $('.do-scroll-down')
 
     @delta = 150
@@ -32,6 +30,9 @@ class Scroll
       @scrollDown exports
 
   initWWD: (exports) ->
+    if exports.isTouch
+      return
+
     @$header = @$view.find '.header'
     @$gameDesign = @$view.find '.service[data-service="game-design"]'
     @$virtualReality = @$view.find '.service[data-service="virtual-reality"]'
@@ -66,6 +67,9 @@ class Scroll
     @initWWDTL exports
 
   initTTU: (exports) ->
+    if exports.isTouch
+      return
+
     @$header = @$view.find '.header'
 
     @ttuHeaderTL = undefined
@@ -148,6 +152,9 @@ class Scroll
       tweenName.progress 1
 
   onScroll: (exports) ->
+    if exports.isTouch
+      return
+
     scrollY = @$view.scrollTop()
 
     @$header.css
