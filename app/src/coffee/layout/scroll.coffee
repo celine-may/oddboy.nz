@@ -53,7 +53,7 @@ class Scroll
     @digitalProductsStart = @$digitalProducts.offset().top - exports.windowHeight
     @digitalProductsStop = @digitalProductsStart + exports.windowHeight + @delta
     @workStart = @$work.offset().top - exports.windowHeight + 700
-    @workStop = @workStart + @$work.outerHeight() + 260 + @delta
+    @workStop = @workStart + @$work.outerHeight()
 
     @wwdHeaderTL = undefined
     @gameDesignTL = undefined

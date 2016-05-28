@@ -157,20 +157,6 @@
         </div>
       </article>
 
-      <article class="work y-push5 do-anim-y do-show-work-details">
-        <div class="work-bg" data-work="yanky-doodle"></div>
-        <div class="work-content">
-          <h2 class="work-title title">Yanky Doodle<span class="text-color accent">.</span></h2>
-          <p class="work-lead lead work-anim">
-            Game Design
-          </p>
-          <div class="work-ctas work-anim">
-            <a href="http://yanky-doodle.com/" target="_blank" class="btn">View site</a>
-            <a href="https://www.behance.net/gallery/35551197/Yanky-Doodle" target="_blank" class="btn">Behance</a>
-          </div>
-        </div>
-      </article>
-
       <article class="work y-push6 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="celine"></div>
         <div class="work-content">

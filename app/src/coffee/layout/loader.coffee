@@ -63,11 +63,6 @@ class Loader
       element: '.work-bg[data-work="celine"]'
       src: "#{exports.path}assets/images/work/celine.jpg"
     ,
-      id: 'yankyDoodle'
-      itemType: 'bg'
-      element: '.work-bg[data-work="yanky-doodle"]'
-      src: "#{exports.path}assets/images/work/yanky-doodle.jpg"
-    ,
       id: 'oddboyCopy'
       itemType: 'object'
       src: "#{exports.path}assets/json/oddboy-copy.json"
@@ -99,7 +94,7 @@ class Loader
 
     @queue = undefined
     @startTime = undefined
-    @duration = 1
+    @duration = 4
 
     @loadAssets exports
 
