@@ -40,7 +40,7 @@
     <div class="section-content contact">
       <h1 class="title">
         Holla at <span class="title-unbreakable text-color primary">odd<span class="flipped">b</span>oy.</span>
-        <div>Let's do some epic&nbsp;stuff.</div>
+        <div>Let's do stuff.</div>
       </h1>
       <span class="title-separator bg-color primary"></span>
       <p class="lead vcard">
