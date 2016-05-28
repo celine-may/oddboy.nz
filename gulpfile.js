@@ -126,7 +126,7 @@ gulp.task( 'svgs', function() {
 });
 
 // Move JSON to dist/assets
-gulp.task( 'svgs', function() {
+gulp.task( 'json', function() {
   return gulp
     .src( appAssets + 'json/**' )
     .pipe( gulp.dest( distAssets + 'json' ) )
@@ -234,7 +234,7 @@ gulp.task( 'default', function(callback) {
 // Production
 gulp.task( 'prod', function(callback) {
   runSequence( 'clean:dist',
-    [ 'php', 'fonts', 'images', 'videos', 'svgs', 'cssconcat', 'lte-ie9-css', 'jsconcat', 'lte-ie9-js' ],
+    [ 'php', 'fonts', 'images', 'videos', 'svgs', 'json', 'cssconcat', 'lte-ie9-css', 'jsconcat', 'lte-ie9-js' ],
     [ 'cssnano', 'uglify' ],
     callback
   )
