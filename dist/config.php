@@ -1,7 +1,7 @@
 <?php
 
 // Global variables + SMTP init
-define('PATH', '/staging/');
+define('PATH', '/');
 define('EMAIL', 'ben@oddboy.nz');
 define('IMAGES_PATH', PATH . 'assets/images/');
 define('VIDEOS_PATH', PATH . 'assets/videos/');
@@ -18,7 +18,7 @@ $assets = array();
 $js_path = PATH.'assets/javascripts/';
 $css_path = PATH.'assets/stylesheets/';
 $assets['javascripts'] = array(
-  $js_path . 'application.min.js'
+  $js_path . 'application.min.js',
 );
 $assets['stylesheets'] = array(
   $css_path . 'application.min.css',
