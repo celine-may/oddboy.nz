@@ -35,7 +35,7 @@ $pageDescription = 'Oddboy is an experience design studio with a focus on game d
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo IMAGES_PATH; ?>layout/touch-icon-iphone@3x.png">
 
   <?php foreach ($assets['stylesheets'] as $file_path) : ?>
-    <link rel="stylesheet" href="<?php echo $file_path ?>">
+    <link rel="stylesheet" href="<?php echo $file_path . '?v' . time() ?>">
   <?php endforeach ?>
 
   <script>
@@ -56,7 +56,7 @@ $pageDescription = 'Oddboy is an experience design studio with a focus on game d
   <?php include('layouts/loader.php'); ?>
 
   <?php foreach ($assets['javascripts'] as $file_path) : ?>
-    <script src="<?php echo $file_path; ?>"></script>
+    <script src="<?php echo $file_path . '?v' . time()  ?>"></script>
   <?php endforeach; ?>
 </body>
 </html>
