@@ -33,6 +33,11 @@ class Loader
       element: '.character-content'
       src: "#{exports.path}assets/images/characters/shadow.png"
     ,
+      id: 'whatWeDo'
+      itemType: 'bg'
+      element: '.view[data-view="what-we-do"] .header'
+      src: "#{exports.path}assets/images/what-we-do/bg.jpg"
+    ,
       id: 'digitalProducts'
       itemType: 'img'
       element: '.service[data-service="digital-products"] .service-image'
