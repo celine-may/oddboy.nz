@@ -7,31 +7,11 @@ class Loader
     exports.LoaderController = @
     exports.instances.push @
 
-    @manifest = [
+    commonManifest = [
       id: 'talkToUs'
       itemType: 'bg'
       element: '.contact-wrapper'
       src: "#{exports.path}assets/images/talk-to-us/computer-holla.gif"
-    ,
-      id: 'benRolloverSprite'
-      itemType: 'bg'
-      element: '.character[data-character="ben"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
-    ,
-      id: 'benBlinkSprite'
-      itemType: 'bg'
-      element: '.character[data-character="ben"] .character-blink'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
-    ,
-      id: 'tomRolloverSprite'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/tom-rollover-sprite.png"
-    ,
-      id: 'tomBlinkSprite'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-blink'
-      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
     ,
       id: 'spriteShadow'
       itemType: 'bg'
@@ -86,6 +66,72 @@ class Loader
       element: 'body'
       src: "#{exports.path}assets/svgs/svg-defs.svg"
     ]
+
+    desktopManifest = [
+      id: 'benRolloverSpriteHD'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/ben-rollover-sprite-hd.png"
+    ,
+      id: 'benBlinkSpriteHD'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-blink'
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite-hd.png"
+    ,
+      id: 'tomRolloverSpriteHD'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/tom-rollover-sprite-hd.png"
+    ,
+      id: 'tomBlinkSpriteHD'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-blink'
+      src: "#{exports.path}assets/images/characters/tom-blink-sprite-hd.png"
+    ]
+
+    touchManifest = [
+      id: 'benBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-blink'
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
+    ,
+      id: 'tomBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-blink'
+      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
+    ]
+
+    mobileManifest = [
+      id: 'benRolloverSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
+    ,
+      id: 'benBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="ben"] .character-blink'
+      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
+    ,
+      id: 'tomRolloverSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-rollover'
+      src: "#{exports.path}assets/images/characters/tom-rollover-sprite.png"
+    ,
+      id: 'tomBlinkSprite'
+      itemType: 'bg'
+      element: '.character[data-character="tom"] .character-blink'
+      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
+    ]
+
+    if exports.isTouch
+      @manifest = commonManifest.concat touchManifest
+    else if exports.windowWidth <= exports.mediumBreakpoint and not exports.touch
+      @manifest = commonManifest.concat mobileManifest
+    else
+      @manifest = commonManifest.concat desktopManifest
+    # @manifest = commonManifest
+
+    console.log @manifest
 
     @init exports
 
@@ -147,7 +193,7 @@ class Loader
     , delta
 
   onLoadError: (e, exports) ->
-    console.log 'onError'
+    console.log e
 
   deviceAnimation: (exports) ->
     deviceTL = new TimelineMax
