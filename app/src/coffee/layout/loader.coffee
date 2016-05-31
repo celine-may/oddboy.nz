@@ -129,9 +129,6 @@ class Loader
       @manifest = commonManifest.concat mobileManifest
     else
       @manifest = commonManifest.concat desktopManifest
-    # @manifest = commonManifest
-
-    console.log @manifest
 
     @init exports
 
