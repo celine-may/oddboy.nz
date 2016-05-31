@@ -50,7 +50,7 @@
             All the terror of a zombie apocalypse, without any of the consequences.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquely connected to games. Our passion is understanding this connection and using it to create beautifully immersive games.
+            Video games engage, teach and inspire us in ways that the real world cannot. We feel uniquly connected to their emotionally driven stories and rewarding problem solving. Our passion is understanding this connection and using it to create beautifully immersive&nbsp;experiences.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">Console, PC &amp; Mac</li>
@@ -108,7 +108,7 @@
             If it seems confusing or complex it’s because it is... But it shouldn’t&nbsp;be.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are becoming one in the same. We want to  craft intuitive solutions that make life that little easier and create moments of&nbsp;joy.
+            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are now one in the same. We craft intuitive solutions that simplify tasks, enhance communication and even provide a little&nbsp;joy.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">App Design</li>
