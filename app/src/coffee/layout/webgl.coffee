@@ -11,6 +11,7 @@ class App.Webgl
     @backLogo = undefined
     @copy = undefined
     @logo = new THREE.Object3D()
+    @hitTest = new THREE.Object3D()
     @ride = false
     @intersected = null
 
@@ -29,6 +30,7 @@ class App.Webgl
     THREE.DefaultLoadingManager.onProgress = (item, loaded, total) =>
       if loaded is total
         @scene.add @logo
+        @scene.add @hitTest
         @isLoaded = true
 
     @createScene exports
@@ -74,6 +76,9 @@ class App.Webgl
     copyMaterial = @copyMaterial = new THREE.MeshPhongMaterial
       color: exports.accentColor
       transparent: true
+    planeMaterial = new THREE.MeshBasicMaterial
+      color: 0x0a1527
+      transparent: true
 
     loader = new THREE.ObjectLoader
     loader.load "#{exports.path}assets/json/oddboy-logo.json", (object) =>
@@ -82,7 +87,7 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = frontMaterial
-      object.position.set 2, 3, -100
+      object.position.set 2, 3.7, -8
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
@@ -93,7 +98,7 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = backMaterial
-      object.position.set 2, 3, -100
+      object.position.set 2, 3.62, -8.3
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
@@ -104,11 +109,19 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = copyMaterial
-      object.position.set -1.2, 4.3, -9
+      object.position.set -2, 3.6, -9
       object.rotation.y = App.π
-      object.scale.set .26, .26, .26
+      object.scale.set .33, .33, .33
       copyMaterial.opacity = 0
       @scene.add object
+
+    geometry = new THREE.PlaneGeometry( 9, 2, 2 )
+    plane = new THREE.Mesh( geometry, planeMaterial )
+    plane.position.set 1.8, 4.5, -7
+    planeMaterial.opacity = 0
+    @hitTest.add plane
+
+    @ride = true
 
   createGrid: (exports) ->
     grid = new THREE.GridHelper 500, 4
@@ -163,44 +176,32 @@ class App.Webgl
       return
 
     logoTL = new TimelineLite()
-    .to @camera.position, 2.7,
+    .to @camera.position, 4.5,
       y: 4.5
       z: 0
-    .to @frontLogo.position, 4.3,
-      y: 3.7
-      z: @z
-      ease: Quart.easeOut
-    , .7
-    .to @backLogo.position, 4.5,
-      y: 3.6
-      z: @z - .3
       ease: Quart.easeOut
       onComplete: =>
-        @ride = true
         if exports.view is 'home'
           exports.isAnimating = false
-    , .8
 
   animateCopyIn: (exports) ->
     @copyVisible = true
 
-    TweenLite.to @copyMaterial, .8,
+    TweenLite.to @copyMaterial, .7,
       opacity: 1
-      ease: Expo.easeOut
-    TweenLite.to @copy.position, .8,
+      ease: Expo.easeInOut
+    TweenLite.to @copy.position, .7,
       y: 3
-      ease: Expo.easeOut
+      ease: Expo.easeInOut
 
   animateCopyOut: (exports) ->
     unless @copyVisible
       return
 
-    TweenLite.to @copyMaterial, .8,
+    TweenLite.to @copyMaterial, .4,
       opacity: 0
-      ease: Expo.easeOut
     TweenLite.to @copy.position, .8,
-      y: 4.3
-      ease: Expo.easeOut
+      y: 3.6
       onComplete: =>
         @copyVisible = false
 
@@ -208,27 +209,22 @@ class App.Webgl
     @mouse.set( (e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 )
     @raycaster.setFromCamera @mouse, @camera
 
-    intersects = @raycaster.intersectObjects @logo.children, true
+    intersects = @raycaster.intersectObjects @hitTest.children, true
 
   moveLogo: (exports, e) ->
-    mouseX = (e.clientX - exports.windowWidth) / 2
-    mouseY = (exports.windowHeight - e.clientY) / 2
+    mouseX = (e.clientX - exports.windowWidth*0.5) / 2
+    mouseY = (e.clientY - exports.windowHeight*0.5) / 2
 
-    frontX = 2 + (mouseX / exports.windowWidth) * 2 * .4
-    frontY = 3.7 + (mouseY / exports.windowHeight) * 3.7 * .2
-    backX = 2 + (mouseX / exports.windowWidth) * 2 * .5
-    backY = 3.6 + (mouseY / exports.windowHeight) * 3.6 * .3
+    @camera.rotation.x = (mouseY - @camera.rotation.x ) * -.0001
+    @camera.rotation.y = (mouseX - @camera.rotation.y ) * -.00015
 
-    frontRotationX = (e.clientY / exports.windowHeight) * -13
-    backRotationX = (e.clientY / exports.windowHeight) * -13.1
-    frontRotationY = (e.clientX / exports.windowWidth) * -13
-    backRotationY = (e.clientX / exports.windowWidth) * -13.1
+    frontX = 2 + (mouseX / exports.windowWidth) * 2 * .9
+    frontY = 3.7 + (- mouseY / exports.windowHeight) * 3.7 * .33
+    backX = 2 + (mouseX / exports.windowWidth) * 2 * .8
+    backY = 3.6 + (- mouseY / exports.windowHeight) * 3.6 * .3
 
     @frontLogo.position.set frontX, frontY, -8
     @backLogo.position.set backX, backY, -8.3
-
-    @frontLogo.rotation.set App.toRadians(frontRotationX), App.π + App.toRadians(frontRotationY), 0
-    @backLogo.rotation.set App.toRadians(backRotationX), App.π + App.toRadians(backRotationY), 0
 
   onUpdate: (exports) ->
     @gl.render @scene, @camera
