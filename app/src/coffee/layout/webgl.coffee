@@ -87,7 +87,7 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = frontMaterial
-      object.position.set 2, 3.7, -8
+      object.position.set 2, 3.7, @z
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
@@ -98,7 +98,7 @@ class App.Webgl
       object.traverse (child) ->
         if child instanceof THREE.Mesh
           child.material = backMaterial
-      object.position.set 2, 3.62, -8.3
+      object.position.set 2, 3.62, @z - .3
       object.rotation.y = App.π
       object.scale.set .3, .3, .3
       @logo.add object
