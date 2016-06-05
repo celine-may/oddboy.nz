@@ -180,7 +180,7 @@ class App.Webgl
       y: 4.5
       z: 0
       ease: Quart.easeOut
-      onComplete: =>
+      onComplete: ->
         if exports.view is 'home'
           exports.isAnimating = false
 
