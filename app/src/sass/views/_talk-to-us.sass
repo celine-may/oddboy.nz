@@ -47,16 +47,10 @@
   +min-screen(450px)
     width: 366px
 
-.character-sprites
+.character-sprite
   display: inline-block
   +position(relative, 0)
   +size(297px, 490px)
-
-  .sprite
-    +position(absolute, 0, null, null, 0)
-    +square(100%)
-    background-position: 0 0
-    background-repeat: no-repeat
 
   +max-screen($small)
     transform: scale(.8)
@@ -64,13 +58,6 @@
 
   +max-screen($xSmall)
     transform-origin: left top
-
-.character-rollover
-  z-index: $zBase + 1
-
-.character-blink
-  opacity: 0
-  z-index: $zBase
 
 .character-email
   display: block

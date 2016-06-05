@@ -68,59 +68,39 @@ class Loader
     ]
 
     desktopManifest = [
-      id: 'benRolloverSpriteHD'
+      id: 'benSpriteHD'
       itemType: 'bg'
-      element: '.character[data-character="ben"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/ben-rollover-sprite-hd.png"
+      element: '.character[data-character="ben"] .character-sprite'
+      src: "#{exports.path}assets/images/characters/ben-sprite-hd.png"
     ,
-      id: 'benBlinkSpriteHD'
+      id: 'tomSpriteHD'
       itemType: 'bg'
-      element: '.character[data-character="ben"] .character-blink'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite-hd.png"
-    ,
-      id: 'tomRolloverSpriteHD'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/tom-rollover-sprite-hd.png"
-    ,
-      id: 'tomBlinkSpriteHD'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-blink'
-      src: "#{exports.path}assets/images/characters/tom-blink-sprite-hd.png"
+      element: '.character[data-character="tom"] .character-sprite'
+      src: "#{exports.path}assets/images/characters/tom-sprite-hd.png"
     ]
 
     touchManifest = [
       id: 'benBlinkSprite'
       itemType: 'bg'
-      element: '.character[data-character="ben"] .character-blink'
+      element: '.character[data-character="ben"] .character-sprite'
       src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
     ,
       id: 'tomBlinkSprite'
       itemType: 'bg'
-      element: '.character[data-character="tom"] .character-blink'
+      element: '.character[data-character="tom"] .character-sprite'
       src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
     ]
 
     mobileManifest = [
-      id: 'benRolloverSprite'
+      id: 'benSpriteLD'
       itemType: 'bg'
-      element: '.character[data-character="ben"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/ben-rollover-sprite.png"
+      element: '.character[data-character="ben"] .character-sprite'
+      src: "#{exports.path}assets/images/characters/ben-sprite-ld.png"
     ,
-      id: 'benBlinkSprite'
+      id: 'tomSpriteLD'
       itemType: 'bg'
-      element: '.character[data-character="ben"] .character-blink'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
-    ,
-      id: 'tomRolloverSprite'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-rollover'
-      src: "#{exports.path}assets/images/characters/tom-rollover-sprite.png"
-    ,
-      id: 'tomBlinkSprite'
-      itemType: 'bg'
-      element: '.character[data-character="tom"] .character-blink'
-      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
+      element: '.character[data-character="tom"] .character-sprite'
+      src: "#{exports.path}assets/images/characters/tom-sprite-ld.png"
     ]
 
     if exports.isTouch

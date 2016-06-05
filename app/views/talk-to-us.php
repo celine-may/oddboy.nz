@@ -4,10 +4,7 @@
     <div class="header-content">
       <article class="character lhs" data-character="ben">
         <div class="character-content rhs">
-          <div class="character-sprites">
-            <div class="character-rollover sprite"></div>
-            <div class="character-blink sprite"></div>
-          </div>
+          <div class="character-sprite"></div>
           <span class="do-replace-email" data-class="character-email character-anim">ben[at]oddboy[dot]nz</span>
           <a href="https://www.behance.net/barkle" target="_blank" class="character-link lead text-color accent character-anim">View Portfolio</a>
         </div>
@@ -15,10 +12,7 @@
 
       <article class="character rhs" data-character="tom">
         <div class="character-content rhs">
-          <div class="character-sprites">
-            <div class="character-rollover sprite"></div>
-            <div class="character-blink sprite"></div>
-          </div>
+          <div class="character-sprite"></div>
           <span class="do-replace-email" data-class="character-email character-anim">tom[at]oddboy[dot]nz</span>
           <a href="https://www.behance.net/Iimbo" target="_blank" class="character-link lead text-color primary character-anim">View Portfolio</a>
         </div>
