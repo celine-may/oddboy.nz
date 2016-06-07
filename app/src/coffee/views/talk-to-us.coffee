@@ -98,20 +98,8 @@ class TalkToUs
       backgroundPosition: '-297px -1470px'
       delay: .03
     .set $benSprite,
-      backgroundPosition: '-594px -980px'
-      delay: 1.5
-    .set $benSprite,
-      backgroundPosition: '-891px -980px'
-      delay: .05
-    .set $benSprite,
-      backgroundPosition: '0 -1470px'
-      delay: .05
-    .set $benSprite,
-      backgroundPosition: '-297px -1470px'
-      delay: .05
-    .set $benSprite,
       backgroundPosition: '-594px -1470px'
-      delay: .05
+      delay: 1.5
     .set $benSprite,
       backgroundPosition: '-891px -1470px'
       delay: .05
@@ -126,6 +114,18 @@ class TalkToUs
       delay: .05
     .set $benSprite,
       backgroundPosition: '-891px -1960px'
+      delay: .05
+    .set $benSprite,
+      backgroundPosition: '0 -2450px'
+      delay: .05
+    .set $benSprite,
+      backgroundPosition: '-297px -2450px'
+      delay: .05
+    .set $benSprite,
+      backgroundPosition: '-594px -2450px'
+      delay: .05
+    .set $benSprite,
+      backgroundPosition: '-891px -2450px'
       delay: .05
       onComplete: =>
         @benTL.time(0.42)
