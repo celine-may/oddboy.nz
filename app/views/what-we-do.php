@@ -130,6 +130,19 @@
       <h2 class="work-wrapper-title title y-push2 do-anim-y">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
 
       <article class="work y-push3 do-anim-y do-show-work-details">
+        <div class="work-bg" data-work="jrump"></div>
+        <div class="work-content">
+          <h2 class="work-title title">Jrump<span class="text-color accent">.</span></h2>
+          <p class="work-lead lead work-anim">
+            Game Design
+          </p>
+          <div class="work-ctas work-anim">
+            <a href="http://jrump.com/" target="_blank" class="btn">View site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work y-push4 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="camp-hope-falls"></div>
         <div class="work-content">
           <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
@@ -142,7 +155,7 @@
         </div>
       </article>
 
-      <article class="work y-push4 do-anim-y do-show-work-details">
+      <article class="work y-push5 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="barkle"></div>
         <div class="work-content">
           <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
