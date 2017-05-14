@@ -132,12 +132,25 @@
       <article class="work y-push3 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="jrump"></div>
         <div class="work-content">
-          <h2 class="work-title title">Jrump2<span class="text-color accent">.</span></h2>
+          <h2 class="work-title title">Jrump<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
             Game Design
           </p>
           <div class="work-ctas work-anim">
             <a href="http://jrump.com/" target="_blank" class="btn">View site</a>
+          </div>
+        </div>
+      </article>
+
+            <article class="work y-push3 do-anim-y do-show-work-details">
+        <div class="work-bg" data-work="kabashians"></div>
+        <div class="work-content">
+          <h2 class="work-title title">Kabashians<span class="text-color accent">.</span></h2>
+          <p class="work-lead lead work-anim">
+            Game Design
+          </p>
+          <div class="work-ctas work-anim">
+            <a href="http://kabashians.com/" target="_blank" class="btn">View site</a>
           </div>
         </div>
       </article>
