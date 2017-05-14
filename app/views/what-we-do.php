@@ -132,7 +132,7 @@
       <article class="work y-push3 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="jrump"></div>
         <div class="work-content">
-          <h2 class="work-title title">Jrump<span class="text-color accent">.</span></h2>
+          <h2 class="work-title title">Jrump2<span class="text-color accent">.</span></h2>
           <p class="work-lead lead work-anim">
             Game Design
           </p>
