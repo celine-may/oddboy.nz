@@ -81,12 +81,12 @@ class Loader
       id: 'benSpriteHD'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/ben-sprite-hd.png"
+      src: "#{exports.path}assets/images/characters/ben-sprite-ld.png"
     ,
       id: 'tomSpriteHD'
       itemType: 'bg'
       element: '.character[data-character="tom"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/tom-sprite-hd.png"
+      src: "#{exports.path}assets/images/characters/tom-sprite-ld.png"
     ]
 
     touchManifest = [
