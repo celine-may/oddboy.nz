@@ -142,7 +142,7 @@
         </div>
       </article>
 
-      <article class="work y-push3 do-anim-y do-show-work-details">
+      <article class="work y-push4 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="kabashians"></div>
         <div class="work-content">
           <h2 class="work-title title">Kabashians<span class="text-color accent">.</span></h2>
@@ -170,7 +170,7 @@
         </div>
       </article>
 
-      <article class="work y-push4 do-anim-y do-show-work-details">
+      <article class="work y-push6 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="camp-hope-falls"></div>
         <div class="work-content">
           <h2 class="work-title title">Camp Hope Falls<span class="text-color accent">.</span></h2>
@@ -183,7 +183,7 @@
         </div>
       </article>
 
-      <article class="work y-push5 do-anim-y do-show-work-details">
+      <article class="work y-push7 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="barkle"></div>
         <div class="work-content">
           <h2 class="work-title title">Barkle Portfolio<span class="text-color accent">.</span></h2>
@@ -198,7 +198,7 @@
         </div>
       </article>
 
-      <article class="work y-push6 do-anim-y do-show-work-details">
+      <article class="work y-push8 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="celine"></div>
         <div class="work-content">
           <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
