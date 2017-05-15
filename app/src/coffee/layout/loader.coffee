@@ -58,6 +58,11 @@ class Loader
       element: '.work-bg[data-work="jrump"]'
       src: "#{exports.path}assets/images/work/jrump.jpg"
     ,
+      id: 'wanderer'
+      itemType: 'bg'
+      element: '.work-bg[data-work="wanderer"]'
+      src: "#{exports.path}assets/images/work/wanderer.jpg"
+    ,
       id: 'kabashians'
       itemType: 'bg'
       element: '.work-bg[data-work="kabashians"]'

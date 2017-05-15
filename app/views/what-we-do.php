@@ -8,7 +8,7 @@
       </h1>
       <span class="title-separator bg-color accent do-complement-push"></span>
       <p class="title-complement copy">
-        <span class="text-color primary">*</span>That’s just a fancy way of saying we create digital stuff that you’ll remember.
+        <span class="text-color primary">*</span>That’s just a fancy way of saying we create good digital stuff that you’ll remember.
       </p>
       <p class="lead do-complement-push">
         We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital&nbsp;experiences.
@@ -127,7 +127,7 @@
         </svg>
       </span>
 
-      <h2 class="work-wrapper-title title y-push2 do-anim-y">Some of our&nbsp;work<span class="text-color primary">.</span></h2>
+      <h2 class="work-wrapper-title title y-push2 do-anim-y">Our&nbsp;work<span class="text-color primary">.</span></h2>
 
       <article class="work y-push3 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="jrump"></div>
@@ -151,6 +151,21 @@
           </p>
           <div class="work-ctas work-anim">
             <a href="http://kabashians.com/" target="_blank" class="btn">View site</a>
+          </div>
+        </div>
+      </article>
+
+            <article class="work y-push5 do-anim-y do-show-work-details">
+        <div class="work-bg" data-work="wanderer"></div>
+        <div class="work-content">
+          <h2 class="work-title title">Wanderer<span class="text-color accent">.</span></h2>
+          <p class="work-lead lead work-anim">
+            VR Experience
+          </p>
+          <div class="work-ctas work-anim">
+            <!-- <a href="#todo" target="_blank" class="btn">View site</a>
+            <a href="#todo" target="_blank" class="btn">Behance</a> -->
+            <span class="btn">Coming soon</span>
           </div>
         </div>
       </article>
