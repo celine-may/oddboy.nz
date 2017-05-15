@@ -117,17 +117,20 @@
   +min-screen($small + 1px)
     padding-left: $column * 1.5
 
-.contact-link
+.contact-element
   margin-left: $column / 2
   transition: color $transitionDuration $transitionFunction
-
-  .no-touchevents &:hover
-    color: $primary
 
   +max-screen($small)
     display: block
     margin-bottom: 10px
     font-size: 1.375rem
+
+.contact-link
+  @extend .contact-element
+
+  .no-touchevents &:hover
+    color: $primary
 
 +max-screen(520px)
   .title-unbreakable

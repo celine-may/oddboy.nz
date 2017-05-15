@@ -40,7 +40,7 @@
       <p class="lead vcard">
         <span class="do-replace-email" data-class="contact-link email">holla@oddboy.nz</span>
         <a href="tel:+64273463287" class="contact-link tel">+64 273463287</a>
-        <a href="tel:+64273463287" class="contact-link tel">36 Douglas St, Auckland, NZ</a>
+        <span class="contact-element">36 Douglas St, Auckland, NZ</span>
       </p>
     </div>
   </section>
