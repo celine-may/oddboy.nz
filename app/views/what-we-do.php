@@ -142,7 +142,7 @@
         </div>
       </article>
 
-            <article class="work y-push3 do-anim-y do-show-work-details">
+      <article class="work y-push3 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="kabashians"></div>
         <div class="work-content">
           <h2 class="work-title title">Kabashians<span class="text-color accent">.</span></h2>
@@ -155,7 +155,7 @@
         </div>
       </article>
 
-            <article class="work y-push5 do-anim-y do-show-work-details">
+      <article class="work y-push5 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="wanderer"></div>
         <div class="work-content">
           <h2 class="work-title title">Wanderer<span class="text-color accent">.</span></h2>
