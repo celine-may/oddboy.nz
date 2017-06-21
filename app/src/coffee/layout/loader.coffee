@@ -38,15 +38,20 @@ class Loader
       element: '.service[data-service="virtual-reality"] .service-image'
       src: "#{exports.path}assets/images/services/virtual-reality.png"
     ,
-      id: 'barkle'
+      id: 'bftf'
       itemType: 'bg'
-      element: '.work-bg[data-work="barkle"]'
-      src: "#{exports.path}assets/images/work/barkle.jpg"
+      element: '.work-bg[data-work="bftf"]'
+      src: "#{exports.path}assets/images/work/bftf.jpg"
     ,
       id: 'campHopeFalls'
       itemType: 'bg'
       element: '.work-bg[data-work="camp-hope-falls"]'
       src: "#{exports.path}assets/images/work/camp-hope-falls.jpg"
+    ,
+      id: 'arbook'
+      itemType: 'bg'
+      element: '.work-bg[data-work="arbook"]'
+      src: "#{exports.path}assets/images/work/arbook.jpg"
     ,
       id: 'celine'
       itemType: 'bg'

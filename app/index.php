@@ -2,8 +2,8 @@
 
 include('config.php');
 
-$pageTitle = 'Oddboy | Experience Design Studio | Auckland, NZ';
-$pageDescription = 'Oddboy is an experience design studio with a focus on game design, digital products and virtual reality applications.';
+$pageTitle = 'Oddboy. Interactive Studio | We make games and stuff';
+$pageDescription = 'Oddboy is an interactive studio with a focus on game design, digital products, augmented reality and virtual reality applications.';
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -12,13 +12,14 @@ $pageDescription = 'Oddboy is an experience design studio with a focus on game d
 
   <title><?php echo $pageTitle; ?></title>
   <meta name="description" content="<?php echo $pageDescription; ?>">
+  <meta name="keywords" content="Virtual reality, digital, Augmented reality, design studio, AR, VR, New Zealand, Auckland, Jrump, gamification, game design, game development, Innovation, Kabashians, Storytelling, Interactive, VR, Applications, VR Training, VR experiential marketing, VR tradeshow exhibit, mobile VR, App development, VR strategy, AR strategy, 360 video, Motion capture, animation, production, VR Development, AR Development, VR Exhibition, AR app"/>
 
   <meta property="og:site_name" content="Oddboy.nz">
   <meta property="og:type" content="Website">
   <meta property="og:url" content="http://oddboy.nz">
   <meta property="og:title" content="<?php echo $pageTitle; ?>">
   <meta property="og:description" content="<?php echo $pageDescription; ?>">
-  <meta property="og:image" content="http://www.oddboy.nz/assets/images/oddboy-fb.jpg">
+  <meta property="og:image" content="http://i65.tinypic.com/npf3wl.jpg">
   <meta property="fb:app_id" content=""> <!-- todo: Facebook AppID -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
