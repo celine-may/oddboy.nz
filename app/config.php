@@ -3,6 +3,7 @@
 // Global variables + SMTP init
 define('PATH', '/oddboy.nz/app/');
 define('EMAIL', 'celine.may@gmail.com');
+define('CDN_PATH', PATH);
 define('IMAGES_PATH', PATH . 'assets/images/');
 define('VIDEOS_PATH', PATH . 'assets/videos/');
 
@@ -15,8 +16,8 @@ ini_set('display_errors', 'on');
 // Assets
 $assets = array();
 
-$js_path = PATH.'assets/js/';
-$css_path = PATH.'assets/css/';
+$js_path = CDN_PATH.'assets/js/';
+$css_path = CDN_PATH.'assets/css/';
 $assets['javascripts'] = array(
   $js_path . 'vendor/jquery-2.2.3.min.js',
   $js_path . 'vendor/modernizr-3.3.1.min.js',

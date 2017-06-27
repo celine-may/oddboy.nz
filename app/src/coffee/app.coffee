@@ -13,6 +13,7 @@ $ ->
   renderer = new App.Renderer
     controllers: App.Controllers
     path: App.path
+    cdnPath: App.cdnPath
     instances: []
     windowWidth: $window.width()
     windowHeight: $window.height()

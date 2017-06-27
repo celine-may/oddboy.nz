@@ -42,6 +42,7 @@ $pageDescription = 'Oddboy is an interactive studio specializing in games, virtu
   <script>
     window.App = {};
     App.path = "<?php echo PATH; ?>";
+    App.cdnPath = "<?php echo CDN_PATH; ?>";
     App.Controllers = [];
   </script>
 </head>

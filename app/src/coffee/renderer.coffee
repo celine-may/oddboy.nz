@@ -3,6 +3,7 @@ class Renderer
     @$window = $(window)
 
     @path = options.path
+    @cdnPath = options.cdnPath
     @instances = options.instances || []
 
     @windowHeight = options.windowHeight
@@ -28,6 +29,7 @@ class Renderer
     exports = @exports =
       RendererController: @
       path: @path
+      cdnPath: @cdnPath
       instances: @instances
       windowWidth: @windowWidth
       windowHeight: @windowHeight

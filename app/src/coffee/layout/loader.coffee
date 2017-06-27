@@ -11,67 +11,67 @@ class Loader
       id: 'talkToUs'
       itemType: 'bg'
       element: '.contact-wrapper'
-      src: "#{exports.path}assets/images/talk-to-us/computer-holla.gif"
+      src: "#{exports.cdnPath}assets/images/talk-to-us/computer-holla.gif"
     ,
       id: 'spriteShadow'
       itemType: 'bg'
       element: '.character-content'
-      src: "#{exports.path}assets/images/characters/shadow.png"
+      src: "#{exports.cdnPath}assets/images/characters/shadow.png"
     ,
       id: 'whatWeDo'
       itemType: 'bg'
       element: '.view[data-view="what-we-do"] .header'
-      src: "#{exports.path}assets/images/what-we-do/bg.jpg"
+      src: "#{exports.cdnPath}assets/images/what-we-do/bg.jpg"
     ,
       id: 'digitalProducts'
       itemType: 'img'
       element: '.service[data-service="digital-products"] .service-image'
-      src: "#{exports.path}assets/images/services/digital-products.png"
+      src: "#{exports.cdnPath}assets/images/services/digital-products.png"
     ,
       id: 'gameDesign'
       itemType: 'img'
       element: '.service[data-service="game-design"] .service-image'
-      src: "#{exports.path}assets/images/services/game-design.jpg"
+      src: "#{exports.cdnPath}assets/images/services/game-design.jpg"
     ,
       id: 'virtualReality'
       itemType: 'img'
       element: '.service[data-service="virtual-reality"] .service-image'
-      src: "#{exports.path}assets/images/services/virtual-reality.png"
+      src: "#{exports.cdnPath}assets/images/services/virtual-reality.png"
     ,
       id: 'bftf'
       itemType: 'bg'
       element: '.work-bg[data-work="bftf"]'
-      src: "#{exports.path}assets/images/work/bftf.jpg"
+      src: "#{exports.cdnPath}assets/images/work/bftf.jpg"
     ,
       id: 'campHopeFalls'
       itemType: 'bg'
       element: '.work-bg[data-work="camp-hope-falls"]'
-      src: "#{exports.path}assets/images/work/camp-hope-falls.jpg"
+      src: "#{exports.cdnPath}assets/images/work/camp-hope-falls.jpg"
     ,
       id: 'arbook'
       itemType: 'bg'
       element: '.work-bg[data-work="arbook"]'
-      src: "#{exports.path}assets/images/work/arbook.jpg"
+      src: "#{exports.cdnPath}assets/images/work/arbook.jpg"
     ,
       id: 'celine'
       itemType: 'bg'
       element: '.work-bg[data-work="celine"]'
-      src: "#{exports.path}assets/images/work/celine.jpg"
+      src: "#{exports.cdnPath}assets/images/work/celine.jpg"
     ,
       id: 'jrump'
       itemType: 'bg'
       element: '.work-bg[data-work="jrump"]'
-      src: "#{exports.path}assets/images/work/jrump.jpg"
+      src: "#{exports.cdnPath}assets/images/work/jrump.jpg"
     ,
       id: 'wanderer'
       itemType: 'bg'
       element: '.work-bg[data-work="wanderer"]'
-      src: "#{exports.path}assets/images/work/wanderer.jpg"
+      src: "#{exports.cdnPath}assets/images/work/wanderer.jpg"
     ,
       id: 'kabashians'
       itemType: 'bg'
       element: '.work-bg[data-work="kabashians"]'
-      src: "#{exports.path}assets/images/work/kabashians.jpg"
+      src: "#{exports.cdnPath}assets/images/work/kabashians.jpg"
     ,
       id: 'oddboyCopy'
       itemType: 'object'
@@ -91,36 +91,36 @@ class Loader
       id: 'benSpriteHD'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/ben-sprite-ld.png"
+      src: "#{exports.cdnPath}assets/images/characters/ben-sprite-ld.png"
     ,
       id: 'tomSpriteHD'
       itemType: 'bg'
       element: '.character[data-character="tom"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/tom-sprite-ld.png"
+      src: "#{exports.cdnPath}assets/images/characters/tom-sprite-ld.png"
     ]
 
     touchManifest = [
       id: 'benBlinkSprite'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/ben-blink-sprite.png"
+      src: "#{exports.cdnPath}assets/images/characters/ben-blink-sprite.png"
     ,
       id: 'tomBlinkSprite'
       itemType: 'bg'
       element: '.character[data-character="tom"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/tom-blink-sprite.png"
+      src: "#{exports.cdnPath}assets/images/characters/tom-blink-sprite.png"
     ]
 
     mobileManifest = [
       id: 'benSpriteLD'
       itemType: 'bg'
       element: '.character[data-character="ben"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/ben-sprite-ld.png"
+      src: "#{exports.cdnPath}assets/images/characters/ben-sprite-ld.png"
     ,
       id: 'tomSpriteLD'
       itemType: 'bg'
       element: '.character[data-character="tom"] .character-sprite'
-      src: "#{exports.path}assets/images/characters/tom-sprite-ld.png"
+      src: "#{exports.cdnPath}assets/images/characters/tom-sprite-ld.png"
     ]
 
     if exports.isTouch
