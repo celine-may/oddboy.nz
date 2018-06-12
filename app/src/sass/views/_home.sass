@@ -15,4 +15,22 @@
   +position(fixed, 0, null, null, 0)
 
 .projects-wrapper
-  +size(100vw, 100vh)
+  min-height: 100vh
+  padding: 120px $extGapSmall 0
+
+  +min-screen($xSmall + 1px)
+    padding-top: 190px
+
+  +min-screen($small + 1px)
+    padding: 190px $column 0
+
+.title-wrapper
+  display: flex
+  align-items: flex-end
+
+.title-icons
+  flex-grow: 1
+  text-align: right
+
+  .shape
+    margin-left: 12px
