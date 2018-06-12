@@ -27,6 +27,19 @@
       </div>
     </div>
 
+    <a href="http://celine.kiwi" target="_blank">
+      <article class="project do-show-project-details">
+        <div class="project-bg" data-project="celine"></div>
+        <div class="project-content">
+          <h2 class="title project-title">Celine Portfolio<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">Web design</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </article>
+    </a>
+
     <div class="title-wrapper">
       <h2 class="title">Projects<br/>for clients<span class="text-color accent">.</span></h2>
       <div class="title-icons">
