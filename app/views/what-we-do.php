@@ -50,7 +50,7 @@
             Preparing for the zombie apocalypse from the comfort of your couch.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Gamers have spent countless hours saving princesses, dodging bullets, and dismembering Grecian monsters. The desire to play games is hard coded into our DNA. Video games engage, teach and inspire us in ways that the real world cannot. We feel uniquly connected to their emotionally driven stories and rewarding problem solving. Our passion is understanding these ideas and using them to create beautiful and engaging&nbsp;experiences. 
+            Gamers have spent countless hours saving princesses, dodging bullets, and dismembering Grecian monsters. The desire to play games is hard coded into our DNA. Video games engage, teach and inspire us in ways that the real world cannot. We feel uniquly connected to their emotionally driven stories and rewarding problem solving. Our passion is understanding these ideas and using them to create beautiful and engaging&nbsp;experiences.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">Console, PC &amp; Mac</li>
@@ -185,7 +185,7 @@
         </div>
       </article>
 
-            <article class="work y-push7 do-anim-y do-show-work-details">
+      <article class="work y-push7 do-anim-y do-show-work-details">
         <div class="work-bg" data-work="celine"></div>
         <div class="work-content">
           <h2 class="work-title title">Celine Portfolio<span class="text-color accent">.</span></h2>
