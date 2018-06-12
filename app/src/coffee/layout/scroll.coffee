@@ -15,7 +15,8 @@ class Scroll
     @delta = 150
 
     if exports.view is 'home'
-      return
+      @$view = $('.view[data-view="home"]')
+      @initHome exports
     else if exports.view is 'what-we-do'
       @$view = $('.view[data-view="what-we-do"]')
       @initWWD exports
@@ -79,6 +80,19 @@ class Scroll
 
     @initTTUTL exports
 
+  initHome: (exports) ->
+    if exports.isTouch
+      return
+
+    @$header = @$view.find '.header'
+
+    @homeHeaderTL = undefined
+
+    TweenLite.set @$header,
+      y: 0
+
+    @initHomeTL exports
+
   initWWDTL: (exports) ->
     @wwdHeaderTL = new TimelineLite
       paused: true
@@ -131,6 +145,14 @@ class Scroll
       opacity: 0
       ease: Power2.easeOut
 
+  initHomeTL: (exports) ->
+    @homeHeaderTL = new TimelineLite
+      paused: true
+    .to @$header.find('.scroll-cta'), 1,
+      y: exports.windowHeight / -3
+      opacity: 0
+      ease: Power2.easeOut
+
   scrollDown: (exports) ->
     TweenLite.to @$view, 1,
       scrollTo:
@@ -169,5 +191,8 @@ class Scroll
 
     # Talk to us Timelines
     @scrollTween exports, 0, exports.windowHeight, @ttuHeaderTL, scrollY
+
+    # Home Timeline
+    @scrollTween exports, 0, exports.windowHeight, @homeHeaderTL, scrollY
 
 App.Controllers.push new Scroll

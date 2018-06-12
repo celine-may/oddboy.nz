@@ -48,6 +48,11 @@ class Transition
       @$slideUpElements.css
         opacity: 1
         y: 0
+
+      TweenLite.set $(".view[data-view='home']"),
+        x: 0
+        overflowY: 'auto'
+      exports.isAnimating = false
     else
       oppositeView = App.getOppositeView @view
       direction = App.getDirection oppositeView

@@ -56,7 +56,7 @@ class App.Webgl
 
   createGL: (exports) ->
     $webglFrame = $('<div class="webgl-frame"></div>')
-    @$home.prepend $webglFrame
+    $webglFrame.insertBefore @$home
 
     @gl = new THREE.WebGLRenderer antialias: true
     @gl.setClearColor @scene.fog.color
