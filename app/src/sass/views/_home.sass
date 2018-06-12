@@ -2,7 +2,17 @@
 // -----------------
 
 .view[data-view="home"]
+  background-color: transparent
   z-index: $zBase
 
+  .scroll-cta
+    +center('horizontal')
+    top: calc(100vh - 135px)
+    margin-top: 0
+    pointer-events: auto
+
 .webgl-frame
-  +position(absolute, 0, null, null, 0)
+  +position(fixed, 0, null, null, 0)
+
+.projects-wrapper
+  +size(100vw, 100vh)
