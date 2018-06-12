@@ -23,6 +23,15 @@
       Talk&nbsp;to&nbsp;us
     </span>
   </button>
+
+  <button class="scroll-cta do-slide-up do-scroll-down" data-view="projects">
+    <span class="scroll-circle">
+      <span class="scroll-bg"></span>
+    </span>
+    <svg class="shape-scroll-cta">
+      <use xlink:href="#shape-scroll-cta"></use>
+    </svg>
+  </button>
 </div>
 
 <div class="ui small-only">

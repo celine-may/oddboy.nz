@@ -45,11 +45,9 @@ class Transition
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
           x: (exports.windowWidth - @delta) * direction
-      @$ui
-        .find '.nav-link'
-        .css
-          opacity: 1
-          y: 0
+      @$slideUpElements.css
+        opacity: 1
+        y: 0
     else
       oppositeView = App.getOppositeView @view
       direction = App.getDirection oppositeView
