@@ -73,6 +73,63 @@ class Loader
       element: '.work-bg[data-work="kabashians"]'
       src: "#{exports.cdnPath}assets/images/work/kabashians.jpg"
     ,
+
+      id: 'jrump'
+      itemType: 'bg'
+      element: '.project[data-project="jrump"]'
+      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
+    ,
+      id: 'wanderer'
+      itemType: 'bg'
+      element: '.project[data-project="wanderer"]'
+      src: "#{exports.cdnPath}assets/images/projects/wanderer.jpg"
+    ,
+      id: 'catty-crush'
+      itemType: 'bg'
+      element: '.project[data-project="catty-crush"]'
+      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
+    ,
+      id: 'kabashians'
+      itemType: 'bg'
+      element: '.project[data-project="kabashians"]'
+      src: "#{exports.cdnPath}assets/images/projects/kabashians.jpg"
+    ,
+      id: 'camp-hope-falls'
+      itemType: 'bg'
+      element: '.project[data-project="camp-hope-falls"]'
+      src: "#{exports.cdnPath}assets/images/projects/camp-hope-falls.jpg"
+    ,
+      id: 'ar-book'
+      itemType: 'bg'
+      element: '.project[data-project="ar-book"]'
+      src: "#{exports.cdnPath}assets/images/projects/ar-book.jpg"
+    ,
+      id: 'orpheus-ar'
+      itemType: 'bg'
+      element: '.project[data-project="orpheus-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
+    ,
+      id: 'rubberkid'
+      itemType: 'bg'
+      element: '.project[data-project="rubberkid"]'
+      src: "#{exports.cdnPath}assets/images/projects/rubberkid.jpg"
+    ,
+      id: 'meili'
+      itemType: 'bg'
+      element: '.project[data-project="meili"]'
+      src: "#{exports.cdnPath}assets/images/projects/meili.jpg"
+    ,
+      id: 'dan-murphys-ar'
+      itemType: 'bg'
+      element: '.project[data-project="dan-murphys-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/dan-murphys-ar.jpg"
+    ,
+      id: 'tradee'
+      itemType: 'bg'
+      element: '.project[data-project="tradee"]'
+      src: "#{exports.cdnPath}assets/images/projects/tradee.jpg"
+    ,
+
       id: 'oddboyCopy'
       itemType: 'object'
       src: "#{exports.path}assets/json/oddboy-copy.json"
