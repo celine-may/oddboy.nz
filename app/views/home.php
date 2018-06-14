@@ -109,60 +109,62 @@
       </div>
     </div>
 
-    <a href="#" target="_blank" class="project do-show-project-details" data-project="orpheus-ar">
-      <div class="project-overlay"></div>
-      <div class="project-content">
-        <h2 class="title project-title">Orpheus AR<span class="text-color accent">.</span></h2>
-        <p class="lead project-lead project-anim">AR Design + Development</p>
-      </div>
-      <svg class="project-arrow project-anim shape-arrow">
-        <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
-      </svg>
-    </a>
+    <div class="projects-wrapper">
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="orpheus-ar">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <h2 class="title project-title">Orpheus AR<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">AR Design + Development</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </a>
 
-    <a href="#" target="_blank" class="project do-show-project-details" data-project="rubberkid">
-      <div class="project-overlay"></div>
-      <div class="project-content">
-        <h2 class="title project-title">Rubberkid<span class="text-color accent">.</span></h2>
-        <p class="lead project-lead project-anim">VR Design + Development</p>
-      </div>
-      <svg class="project-arrow project-anim shape-arrow">
-        <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
-      </svg>
-    </a>
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="rubberkid">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <h2 class="title project-title">Rubberkid<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">VR Design + Development</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </a>
 
-    <a href="#" target="_blank" class="project do-show-project-details" data-project="meili">
-      <div class="project-overlay"></div>
-      <div class="project-content">
-        <h2 class="title project-title">Meili<span class="text-color accent">.</span></h2>
-        <p class="lead project-lead project-anim">UX + AR Design</p>
-      </div>
-      <svg class="project-arrow project-anim shape-arrow">
-        <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
-      </svg>
-    </a>
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="meili">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <h2 class="title project-title">Meili<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">UX + AR Design</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </a>
 
-    <a href="#" target="_blank" class="project do-show-project-details" data-project="dan-murphys-ar">
-      <div class="project-overlay"></div>
-      <div class="project-content">
-        <h2 class="title project-title">dan-murphys-ar<span class="text-color accent">.</span></h2>
-        <p class="lead project-lead project-anim">AR Design</p>
-      </div>
-      <svg class="project-arrow project-anim shape-arrow">
-        <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
-      </svg>
-    </a>
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="dan-murphys-ar">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <h2 class="title project-title">dan-murphys-ar<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">AR Design</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </a>
 
-    <a href="#" target="_blank" class="project do-show-project-details" data-project="tradee">
-      <div class="project-overlay"></div>
-      <div class="project-content">
-        <h2 class="title project-title">tradee<span class="text-color accent">.</span></h2>
-        <p class="lead project-lead project-anim">UX Design + Animation</p>
-      </div>
-      <svg class="project-arrow project-anim shape-arrow">
-        <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
-      </svg>
-    </a>
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="tradee">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <h2 class="title project-title">tradee<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead project-anim">UX Design + Animation</p>
+        </div>
+        <svg class="project-arrow project-anim shape-arrow">
+          <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+        </svg>
+      </a>
+    </div>
 
     <?php include('layouts/grid.php'); ?>
   </section>
