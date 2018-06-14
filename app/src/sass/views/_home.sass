@@ -16,7 +16,7 @@
   +position(fixed, 0, null, null, 0)
 
 // Projects section
-.projects-wrapper
+.projects-container
   min-height: 100vh
   padding: 120px $extGapSmall 0
 
@@ -40,21 +40,27 @@
   .shape
     margin-left: 12px
 
+// Projects grid
+.projects-wrapper
+  display: flex
+  flex-wrap: wrap
+
 // Project card
 .project
   display: table
   position: relative
+  flex: 0 0 330px
   +size(330px, 410px)
   margin-bottom: $extGapSmall
   padding: $extGapSmall
-  background-color: white // TODO: remove color
-  border-radius: 20px // TODO: check radius
-  // TODO: add background image
+  border-radius: 25px
+  box-shadow: 0 0 38px rgba($black, .18)
+  overflow: hidden
 
-.project-bg
+.project-overlay
   +position(absolute, 0, 0)
   +square(100%)
-  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)) // TODO: change gradient
+  background: linear-gradient(to bottom, rgba($black, .25) 0%, rgba($black, 1) 75%, rgba($black, 1) 100%)
 
 .project-content
   display: table-cell
@@ -62,10 +68,26 @@
   vertical-align: bottom
 
 .project-title
-  font-size: 2rem // TODO: check size
+  font-size: 1.75rem
 
 .project-lead
-  margin-top: 12px
+  margin-top: 8px
 
 .project-arrow
   +position(absolute, $extGapSmall, $extGapSmall)
+
+// Project rollover animation
+.no-touchevents
+  .project-overlay
+    opacity: 0
+
+  .project-title
+    transform: translateY(40px)
+
+  .project-lead
+    opacity: 0
+    transform: translateY(60px)
+
+  .project-arrow
+    opacity: 0
+    transform: translateY(10px)

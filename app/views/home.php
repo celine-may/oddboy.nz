@@ -10,7 +10,7 @@
     </button>
   </header>
 
-  <section class="section projects-wrapper bg-color secondary">
+  <section class="section projects-container bg-color secondary">
     <?php include('layouts/grid.php'); ?>
     <div class="title-wrapper">
       <h2 class="title">Oddboy<br/>projects<span class="text-color accent">.</span></h2>
@@ -27,18 +27,18 @@
       </div>
     </div>
 
-    <a href="http://celine.kiwi" target="_blank">
-      <article class="project do-show-project-details">
-        <div class="project-bg" data-project="celine"></div>
+    <div class="projects-wrapper">
+      <a href="#" target="_blank" class="project do-show-project-details" data-project="jrump">
+        <div class="project-overlay"></div>
         <div class="project-content">
-          <h2 class="title project-title">Celine Portfolio<span class="text-color accent">.</span></h2>
-          <p class="lead project-lead project-anim">Web design</p>
+          <h2 class="title project-title do-anim-y">Jrump<span class="text-color accent">.</span></h2>
+          <p class="lead project-lead do-anim-show-y">Game Design + Development</p>
         </div>
-        <svg class="project-arrow project-anim shape-arrow">
+        <svg class="project-arrow shape-arrow do-anim-show-y">
           <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
         </svg>
-      </article>
-    </a>
+      </a>
+    </div>
 
     <div class="title-wrapper">
       <h2 class="title">Projects<br/>for clients<span class="text-color accent">.</span></h2>
