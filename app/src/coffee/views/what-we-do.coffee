@@ -8,7 +8,6 @@ class WhatWeDo
     exports.instances.push @
 
     @showComplementTL = undefined
-    @workDetailsTL = undefined
 
     @init exports
 
@@ -17,7 +16,6 @@ class WhatWeDo
     @$complement = $('.title-complement')
 
     @$showComplementBtn = $('.do-show-complement')
-    @$showWorkDetailsElement = $('.do-show-work-details')
     @$setPaddingElement = $('.do-set-padding')
 
     unless exports.isTouch
@@ -26,12 +24,6 @@ class WhatWeDo
           return
         @showComplement exports
       @$showComplementBtn.on 'mouseleave', @hideComplement
-
-      @$showWorkDetailsElement.on 'mouseenter', (e) =>
-        if exports.isAnimating
-          return
-        @showWorkDetails e
-      @$showWorkDetailsElement.on 'mouseleave', @hideWorkDetails
     else
       @$showComplementBtn.on 'click', (e) =>
         if @$complement.hasClass 'visible'
@@ -62,27 +54,6 @@ class WhatWeDo
 
   hideComplement: =>
     @showComplementTL.reverse()
-
-  showWorkDetails: (e) =>
-    $element = $(e.target).parents '.work'
-    $details = $element.find '.work-anim'
-
-    @workDetailsTL = new TimelineLite()
-    .to $element, .4,
-      height: 410
-      ease: Power2.easeInOut
-    .to $element.find('.work-title'), .5,
-      y: 30
-      ease: Power2.easeInOut
-    , '-=.4'
-    .to $details, .5,
-      opacity: 1
-      y: 30
-      ease: Power2.easeInOut
-    , '-=.5'
-
-  hideWorkDetails: =>
-    @workDetailsTL.reverse()
 
   onResize: (exports) ->
     unless @$setPaddingElement?

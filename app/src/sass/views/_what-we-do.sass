@@ -43,7 +43,7 @@
     padding-top: 190px
 
   +min-screen($small + 1px)
-    padding: 80px $column 0
+    padding: 80px $column 20px
 
 .service
   position: relative
@@ -53,7 +53,7 @@
   font-size: 0
 
   +min-screen($small + 1px)
-    margin-bottom: 200px
+    margin-bottom: 100px
 
     .touchevents &[data-service="game-design"]
       margin-bottom: 150px
@@ -224,122 +224,3 @@
 
       li:nth-child(even)
         width: calc(55% - 1px)
-
-// Work
-.work-wrapper
-  position: relative
-  width: calc(100% - #{$column * 2})
-  max-width: 1280px
-  margin: 0 auto
-  padding-bottom: 100px
-
-  +max-screen($small)
-    width: 100%
-    padding-bottom: 0
-
-.floating-letter
-  +position(absolute, -90px, $column * 3/4)
-  display: inline-block
-  +size(135px, 160px)
-
-  +min-screen($small + 1px)
-    top: -200px
-    +size(253px, 260px)
-
-  +min-screen($medium + 1px)
-    top: -84px
-    +size(618px, 742px)
-
-.work-wrapper-title
-  margin-bottom: 50px
-
-  +max-screen($small)
-    padding: 0 $column
-
-.work
-  position: relative
-  +size(100%, 270px)
-  padding-top: 80px
-  box-shadow: 0 0 34px 4px rgba($black, .2)
-  overflow: hidden
-  text-align: center
-
-  +min-screen($small + 1px)
-    height: 235px
-    margin-bottom: 25px
-    padding-top: 110px
-
-.work-bg
-  +position(absolute, 0, null, null, 0)
-  +size(100%, 270px)
-  background-position: center top
-  background-repeat: no-repeat
-  background-size: cover
-
-  +min-screen($small + 1px)
-    height: 410px
-
-.work-content
-  display: inline-block
-  min-width: 380px
-  padding-bottom: 30px
-  overflow: hidden
-
-.work-title
-  font-size: 1.25rem
-  line-height: 1
-  letter-spacing: 2px
-
-  +min-screen($xSmall + 1px)
-    font-size: 1.5625rem
-
-  +min-screen($small + 1px)
-    font-size: 2.5rem
-
-.work-lead
-  position: relative
-  display: inline-block
-  margin: 15px 0 20px
-  font-size: 1.125rem
-
-  &::before, &::after
-    content: ""
-    +position(absolute, 10px)
-    +size(100%, 1px)
-    background-color: $white
-
-  &::before
-    left: -15px
-    transform: translateX(-100%)
-
-  &::after
-    right: -15px
-    transform: translateX(100%)
-
-.work-ctas
-  font-size: 0
-
-  .btn + .btn
-    margin-left: 12px
-
-// Work rollover animation
-.no-touchevents
-  .work-anim
-    opacity: 0
-    transform: translateY(-60px)
-
-.touchevents
-  .work
-    height: 270px
-    padding-top: 80px
-
-  .work-bg
-    height: 270px
-
-  +min-screen($small + 1px)
-    .work
-      height: 410px
-      padding-top: 140px
-
-    .work-bg
-      height: 410px

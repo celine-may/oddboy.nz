@@ -38,42 +38,6 @@ class Loader
       element: '.service[data-service="virtual-reality"] .service-image'
       src: "#{exports.cdnPath}assets/images/services/virtual-reality.png"
     ,
-      id: 'bftf'
-      itemType: 'bg'
-      element: '.work-bg[data-work="bftf"]'
-      src: "#{exports.cdnPath}assets/images/work/bftf.jpg"
-    ,
-      id: 'campHopeFalls'
-      itemType: 'bg'
-      element: '.work-bg[data-work="camp-hope-falls"]'
-      src: "#{exports.cdnPath}assets/images/work/camp-hope-falls.jpg"
-    ,
-      id: 'arbook'
-      itemType: 'bg'
-      element: '.work-bg[data-work="arbook"]'
-      src: "#{exports.cdnPath}assets/images/work/arbook.jpg"
-    ,
-      id: 'celine'
-      itemType: 'bg'
-      element: '.work-bg[data-work="celine"]'
-      src: "#{exports.cdnPath}assets/images/work/celine.jpg"
-    ,
-      id: 'jrump'
-      itemType: 'bg'
-      element: '.work-bg[data-work="jrump"]'
-      src: "#{exports.cdnPath}assets/images/work/jrump.jpg"
-    ,
-      id: 'wanderer'
-      itemType: 'bg'
-      element: '.work-bg[data-work="wanderer"]'
-      src: "#{exports.cdnPath}assets/images/work/wanderer.jpg"
-    ,
-      id: 'kabashians'
-      itemType: 'bg'
-      element: '.work-bg[data-work="kabashians"]'
-      src: "#{exports.cdnPath}assets/images/work/kabashians.jpg"
-    ,
-
       id: 'jrump'
       itemType: 'bg'
       element: '.project[data-project="jrump"]'

@@ -38,7 +38,6 @@ class Scroll
     @$gameDesign = @$view.find '.service[data-service="game-design"]'
     @$virtualReality = @$view.find '.service[data-service="virtual-reality"]'
     @$digitalProducts = @$view.find '.service[data-service="digital-products"]'
-    @$work = @$view.find '.work-wrapper'
 
     @$gameDesignYElements = @$gameDesign.find '.do-anim-y'
     @$gameDesignMElements = @$gameDesign.find '.do-anim-m'
@@ -46,7 +45,6 @@ class Scroll
     @$virtualRealityMElements = @$virtualReality.find '.do-anim-m'
     @$digitalProductsYElements = @$digitalProducts.find '.do-anim-y'
     @$digitalProductsMElements = @$digitalProducts.find '.do-anim-m'
-    @$workElements = @$work.find '.do-anim-y'
 
     @gameDesignStart = @$gameDesign.offset().top - exports.windowHeight
     @gameDesignStop = @gameDesignStart + exports.windowHeight + @delta
@@ -54,13 +52,10 @@ class Scroll
     @virtualRealityStop = @virtualRealityStart + exports.windowHeight + @delta
     @digitalProductsStart = @$digitalProducts.offset().top - exports.windowHeight
     @digitalProductsStop = @digitalProductsStart + exports.windowHeight + @delta
-    @workStart = @$work.offset().top - exports.windowHeight + 700
-    @workStop = @workStart + @$work.outerHeight()
 
     @wwdHeaderTL = undefined
     @gameDesignTL = undefined
     @virtualRealityTL = undefined
-    @workTL = undefined
 
     TweenLite.set [@$header, @$header.find('.header-content')],
       y: 0
@@ -131,12 +126,6 @@ class Scroll
       ease: Power2.easeOut
     , '-=1'
 
-    @workTL = new TimelineMax
-      paused: true
-    .to @$workElements, 1,
-      y: 0
-      ease: Power2.easeOut
-
   initTTUTL: (exports) ->
     @ttuHeaderTL = new TimelineLite
       paused: true
@@ -187,7 +176,6 @@ class Scroll
     @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
     @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
     @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
-    @scrollTween exports, @workStart, @workStop, @workTL, scrollY
 
     # Talk to us Timelines
     @scrollTween exports, 0, exports.windowHeight, @ttuHeaderTL, scrollY
