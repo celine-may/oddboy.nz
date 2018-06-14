@@ -31,7 +31,7 @@ class Loader
       id: 'gameDesign'
       itemType: 'img'
       element: '.service[data-service="game-design"] .service-image'
-      src: "#{exports.cdnPath}assets/images/services/game-design.jpg"
+      src: "#{exports.cdnPath}assets/images/services/game-design.png"
     ,
       id: 'virtualReality'
       itemType: 'img'

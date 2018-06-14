@@ -90,7 +90,7 @@ class WhatWeDo
     for element in @$setPaddingElement
       $element = $(element)
       if exports.windowWidth > exports.mediumBreakpoint
-        elementPadding = 160
+        elementPadding = 100
       else
         elementPadding = $element.parents('.service').find('.service-image').outerHeight() + 50
       $element.css 'padding-top', elementPadding

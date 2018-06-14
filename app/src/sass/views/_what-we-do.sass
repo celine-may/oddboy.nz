@@ -43,7 +43,7 @@
     padding-top: 190px
 
   +min-screen($small + 1px)
-    padding: 190px $column 0
+    padding: 80px $column 0
 
 .service
   position: relative
@@ -80,8 +80,8 @@
     position: relative
     max-width: 100%
 
-  .service[data-service="game-design"] & img
-    box-shadow: 0 0 34px 4px rgba($black, .2)
+  .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+    left: -40px
 
   +max-screen($medium)
     +center('horizontal')
@@ -109,12 +109,12 @@
   +aspect-ratio(1, 1)
 
   &::before
-    background-color: $accent
+    background-color: #30efe7
     border-radius: 50%
 
   .service[data-service="game-design"] &
     +center('horizontal')
-    top: -50px
+    top: 120px
 
   .service[data-service="virtual-reality"] &
     +center('both')
@@ -129,7 +129,7 @@
   +min-screen($medium + 1px)
     display: inline-block
     width: 410px
-    padding-top: 160px
+    padding-top: 100px
     vertical-align: middle
 
     .service.lhs &
@@ -150,7 +150,7 @@
     font-size: 3.5rem
 
   +min-screen($medium + 1px)
-    +position(absolute, 80px)
+    +position(absolute, 20px)
     width: $column * 6
     font-size: 5rem
     letter-spacing: 2px
