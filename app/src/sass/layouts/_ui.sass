@@ -54,15 +54,14 @@
 
 // Back link
 .back-link
-  display: inline-block
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
   +position(absolute, $extGap - 10px)
-  +size(43px, 23px)
-  overflow: hidden
+  +size(82px, 19px)
+  font-size: 0
   pointer-events: auto
-  transition: width $transitionDuration $transitionFunction
-
-  .no-touchevents &:hover
-    width: 54px
+  text-align: left
 
   +max-screen($small)
     top: 29px
@@ -78,14 +77,25 @@
     .main[data-view="talk-to-us"] &
       left: $extGap
 
-.shape-arrow
-  +position(absolute, 5px, 0)
-  +size(65px, 23px)
+.shape-home
+  +size(17px, 20px)
 
   .main[data-view="talk-to-us"] &
-    transform: rotate(180deg)
-    right: auto
-    left: 0
+    order: 2
+
+.shape-arrow
+  +size(47px, 14px)
+  transition: transform $transitionDuration $transitionFunction
+
+  .no-touchevents .back-link:hover &
+    transform: translateX(6px)
+
+  .main[data-view="talk-to-us"] &
+    order: 1
+    transform: scaleX(-1)
+
+  .no-touchevents .main[data-view="talk-to-us"] .back-link:hover &
+    transform: scaleX(-1) translateX(6px)
 
   +max-screen($small)
     +position(absolute, 4px, auto, null, 0)

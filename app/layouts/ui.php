@@ -7,6 +7,9 @@
   </h1>
 
   <button class="back-link do-slide-up do-show-view" data-view="home">
+    <svg class="shape-home">
+      <use xlink:href="#shape-home"></use>
+    </svg>
     <svg class="shape-arrow">
       <use xlink:href="#shape-arrow"></use>
     </svg>
