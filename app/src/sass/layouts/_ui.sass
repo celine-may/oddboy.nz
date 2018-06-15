@@ -77,29 +77,27 @@
     .main[data-view="talk-to-us"] &
       left: $extGap
 
-.shape-home
-  +size(17px, 20px)
-
-  .main[data-view="talk-to-us"] &
-    order: 2
-
 .shape-arrow
   +size(47px, 14px)
+  transform: scaleX(-1)
   transition: transform $transitionDuration $transitionFunction
 
   .no-touchevents .back-link:hover &
-    transform: translateX(6px)
-
-  .main[data-view="talk-to-us"] &
-    order: 1
-    transform: scaleX(-1)
-
-  .no-touchevents .main[data-view="talk-to-us"] .back-link:hover &
     transform: scaleX(-1) translateX(6px)
 
-  +max-screen($small)
-    +position(absolute, 4px, auto, null, 0)
-    transform: rotate(180deg)
+  +min-screen($small + 1)
+    .main[data-view="what-we-do"] &
+      order: 2
+      transform: scaleX(1)
+
+    .no-touchevents .main[data-view="what-we-do"] .back-link:hover &
+      transform: scaleX(1) translateX(6px)
+
+.shape-home
+  +size(17px, 20px)
+
+  .main[data-view="what-we-do"] &
+    order: 1
 
 // Nav link
 .nav-link
