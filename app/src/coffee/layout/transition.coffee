@@ -17,6 +17,8 @@ class Transition
     @$window = $(window)
     @$main = $('.main')
     @$ui = $('.ui')
+    @$navLinkSmall = @$ui.find '.nav-link-small'
+    @$uiHeader = @$ui.find '.ui-header'
 
     @$showViewBtn = $('.do-show-view')
     @$slideUpElements = $('.do-slide-up')
@@ -45,7 +47,7 @@ class Transition
         direction = App.getDirection view
         TweenLite.set $(".view[data-view='#{view}']"),
           x: (exports.windowWidth - @delta) * direction
-      @$slideUpElements.css
+      TweenLite.set [@$slideUpElements, @$navLinkSmall],
         opacity: 1
         y: 0
 
@@ -61,6 +63,11 @@ class Transition
       TweenLite.set $(".view[data-view='#{@view}']"),
         x: 0
         overflowY: 'auto'
+      TweenLite.set @$uiHeader,
+        y: 0
+      TweenLite.set [@$navLinkSmall, @$slideUpElements],
+        opacity: 0
+        y: 20
       TweenLite.set $(".view[data-view='#{@view}'] .header-content"),
         top: 0
         opacity: 1
@@ -84,9 +91,17 @@ class Transition
     $header = $view.find '.header-content'
 
     transitionTL = new TimelineLite()
+    .set $view,
+      zIndex: exports.zXTop
     .to $view, .8,
       x: 0
       ease: Power3.easeInOut
+    .set $view,
+      zIndex: exports.zTop
+    .to @$uiHeader, .4,
+      y: 0
+      ease: Power3.easeInOut
+    , '-=.4'
     .to $header, 1.3,
       top: 0
       opacity: 1
@@ -97,6 +112,10 @@ class Transition
       y: 0
       ease: Power3.easeInOut
     , '-=.2'
+    .set @$navLinkSmall,
+      opacity: 0
+      y: 20
+      ease: Power3.easeInOut
     .call =>
       App.stopMainLoop()
       @setView exports, @newView
@@ -111,20 +130,23 @@ class Transition
     $header = $view.find '.header-content'
 
     direction = App.getDirection @view
-
+    console.log(exports)
     App.startMainLoop()
 
     transitionTL = new TimelineLite()
+    .to @$uiHeader, .4,
+      y: -74
     .to $view, .8,
       x: (exports.windowWidth - @delta) * direction
       ease: Power3.easeInOut
+    , '-=.4'
     .to $header, 1.3,
       top: 100
       ease: Power3.easeInOut
     , '-=.8'
     .set @$ui,
       zIndex: exports.zTop + 1
-    .to @$slideUpElements, .4,
+    .to [@$slideUpElements, @$navLinkSmall], .4,
       opacity: 1
       y: 0
       ease: Power3.easeInOut

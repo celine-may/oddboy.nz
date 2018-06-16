@@ -29,7 +29,15 @@
 </div>
 
 <div class="ui small-only">
-  <div class="ui-header bg-color secondary-dark">
+  <button class="nav-link-small lhs do-show-view" data-view="what-we-do">
+    What&nbsp;we&nbsp;do
+  </button>
+
+  <button class="nav-link-small rhs do-show-view" data-view="talk-to-us">
+    Talk&nbsp;to&nbsp;us
+  </button>
+
+  <div class="ui-header bg-color secondary-dark small-only">
     <button class="back-link do-show-view" data-view="home">
       <svg class="shape-arrow">
         <use xlink:href="#shape-arrow"></use>
@@ -42,13 +50,5 @@
     <h2 class="ui-title title wwd">What we do</h2>
     <h2 class="ui-title title ttu">Talk to us</h2>
   </div>
-
-  <button class="nav-link-small btn-border top title do-show-view" data-view="talk-to-us">
-    Talk to us
-  </button>
-
-  <button class="nav-link-small btn-border bottom title do-show-view" data-view="what-we-do">
-    What we do
-  </button>
 </div>
 

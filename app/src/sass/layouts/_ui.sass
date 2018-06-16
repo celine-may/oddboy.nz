@@ -11,12 +11,11 @@
     padding: $extGap
 
 .ui-header
-  position: relative
+  position: fixed
   +size(100%, $header)
   padding: 0 $extGapSmall
-
-  .main[data-view="home"]  &
-    opacity: 0
+  transform: translateY(-$header)
+  z-index: $zTop
 
 // Logo
 .logo
@@ -154,29 +153,35 @@
     letter-spacing: 3px
 
 .nav-link-small
-  +center('horizontal')
+  +position(absolute, 33px)
+  +font($sansSerif, 1rem, 900, null, .9)
+  opacity: 0
   pointer-events: auto
+  text-transform: uppercase
+  transform: translateY(20px)
 
   &::before
     content: ""
-    +center('horizontal')
-    +size(1px, 24px)
+    +position(absolute, 3px)
+    +size(25px, 1px)
     background-color: $white
 
-  &.top
-    top: 64px
+  &.rhs
+    right: 0
+    padding-right: 47px
 
     &::before
-      top: -40px
+      right: 0
 
-  &.bottom
-    bottom: 64px
+  &.lhs
+    left: 0
+    padding-left: 47px
 
     &::before
-      bottom: -40px
+      left: 0
 
   .main[data-view="what-we-do"] &, .main[data-view="talk-to-us"] &
-    display: none
+    opacity: 0
 
 // Title
 .ui-title
