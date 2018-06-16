@@ -1,12 +1,15 @@
 <section class="view" data-view="home">
   <header class="header">
-    <button class="scroll-cta do-slide-up do-scroll-down" data-view="projects">
-      <span class="scroll-circle">
-        <span class="scroll-bg"></span>
+    <button class="scroll-cta-wrapper do-slide-up do-scroll-down" data-view="projects">
+      projects
+      <span class="scroll-cta">
+        <span class="scroll-circle">
+          <span class="scroll-bg"></span>
+        </span>
+        <svg class="shape-scroll-cta">
+          <use xlink:href="#shape-scroll-cta"></use>
+        </svg>
       </span>
-      <svg class="shape-scroll-cta">
-        <use xlink:href="#shape-scroll-cta"></use>
-      </svg>
     </button>
   </header>
 

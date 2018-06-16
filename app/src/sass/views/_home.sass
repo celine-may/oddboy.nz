@@ -5,11 +5,17 @@
   background-color: transparent
   z-index: $zBase
 
+.scroll-cta-wrapper
+  +position(absolute, null, null, 40px, 50%)
+  width: 80px
+  margin-left: -40px
+  +font($sansSerif, 1rem, 900, null, .9)
+  pointer-events: auto
+  text-align: center
+  text-transform: uppercase
+
   .scroll-cta
-    +center('horizontal')
-    top: calc(100vh - 135px)
-    margin-top: 0
-    pointer-events: auto
+    margin-top: 8px
 
 // WebGL animation
 .webgl-frame
