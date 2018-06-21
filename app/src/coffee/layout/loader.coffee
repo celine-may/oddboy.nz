@@ -40,57 +40,57 @@ class Loader
     ,
       id: 'jrump'
       itemType: 'bg'
-      element: '.project[data-project="jrump"]'
+      element: '.project-card[data-project="jrump"]'
       src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
     ,
       id: 'wanderer'
       itemType: 'bg'
-      element: '.project[data-project="wanderer"]'
+      element: '.project-card[data-project="wanderer"]'
       src: "#{exports.cdnPath}assets/images/projects/wanderer.jpg"
     ,
       id: 'catty-crush'
       itemType: 'bg'
-      element: '.project[data-project="catty-crush"]'
+      element: '.project-card[data-project="catty-crush"]'
       src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
     ,
       id: 'kabashians'
       itemType: 'bg'
-      element: '.project[data-project="kabashians"]'
+      element: '.project-card[data-project="kabashians"]'
       src: "#{exports.cdnPath}assets/images/projects/kabashians.jpg"
     ,
       id: 'camp-hope-falls'
       itemType: 'bg'
-      element: '.project[data-project="camp-hope-falls"]'
+      element: '.project-card[data-project="camp-hope-falls"]'
       src: "#{exports.cdnPath}assets/images/projects/camp-hope-falls.jpg"
     ,
       id: 'ar-book'
       itemType: 'bg'
-      element: '.project[data-project="ar-book"]'
+      element: '.project-card[data-project="ar-book"]'
       src: "#{exports.cdnPath}assets/images/projects/ar-book.jpg"
     ,
       id: 'orpheus-ar'
       itemType: 'bg'
-      element: '.project[data-project="orpheus-ar"]'
+      element: '.project-card[data-project="orpheus-ar"]'
       src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
     ,
       id: 'rubberkid'
       itemType: 'bg'
-      element: '.project[data-project="rubberkid"]'
+      element: '.project-card[data-project="rubberkid"]'
       src: "#{exports.cdnPath}assets/images/projects/rubberkid.jpg"
     ,
       id: 'meili'
       itemType: 'bg'
-      element: '.project[data-project="meili"]'
+      element: '.project-card[data-project="meili"]'
       src: "#{exports.cdnPath}assets/images/projects/meili.jpg"
     ,
       id: 'dan-murphys-ar'
       itemType: 'bg'
-      element: '.project[data-project="dan-murphys-ar"]'
+      element: '.project-card[data-project="dan-murphys-ar"]'
       src: "#{exports.cdnPath}assets/images/projects/dan-murphys-ar.jpg"
     ,
       id: 'tradee'
       itemType: 'bg'
-      element: '.project[data-project="tradee"]'
+      element: '.project-card[data-project="tradee"]'
       src: "#{exports.cdnPath}assets/images/projects/tradee.jpg"
     ,
 

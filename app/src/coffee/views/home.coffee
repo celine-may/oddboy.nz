@@ -49,7 +49,7 @@ class Home
       ease: Power2.easeOut
 
   showProjectDetails: (e) =>
-    $element = $(e.target).parents '.project'
+    $element = $(e.target).parents '.project-card'
     $overlay = $element.find '.project-overlay'
     $title = $element.find '.project-title'
     $lead = $element.find '.project-lead'

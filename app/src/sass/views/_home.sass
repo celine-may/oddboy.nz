@@ -25,44 +25,63 @@
 .projects-container
   min-height: 100vh
   padding: 120px $extGapSmall 0
+  text-align: center
 
   +min-screen($xSmall + 1px)
     padding-top: $extGapSmall
 
   +min-screen($small + 1px)
-    padding: $extGapSmall $column 0
+    padding: $extGapSmall 115px 0
 
 // Title
 .title-wrapper
-  display: flex
-  align-items: flex-end
-  margin-top: 150px
-  margin-bottom: $extGapSmall
+  margin: 150px 0 $extGapSmall
+  padding: 0 $extGapSmall / 2
+  text-align: left
 
-.title-icons
+  +min-screen($small + 1)
+    display: flex
+    align-items: flex-end
+
+.title
   flex-grow: 1
-  text-align: right
 
-  .shape
-    margin-left: 12px
+.shape
+  margin: 8px 12px 16px 0
+
+.shape:last-child
+  margin-right: 0
 
 // Projects grid
 .projects-wrapper
   position: relative
-  display: flex
-  flex-wrap: wrap
+  font-size: 0
+  text-align: left
   z-index: 20
 
 // Project card
-.project
-  display: table
+.project-card
+  display: inline-block
   position: relative
-  flex: 0 0 330px
-  +size(330px, 410px)
-  margin-bottom: $extGapSmall
-  padding: $extGapSmall
+  width: calc(100% - #{$extGapSmall})
+  min-width: 330px
+  max-width: 440px
+  background-size: cover
   border-radius: 25px
   box-shadow: 0 0 38px rgba($black, .18)
+  text-align: left
+
+  +min-screen(1010px)
+    width: calc(50% - #{$extGapSmall})
+    margin: $extGapSmall / 2
+
+  +min-screen(1340px)
+    width: calc(33.33% - #{$extGapSmall})
+
+.project-aspect-ratio
+  position: relative
+  height: 0
+  padding-top: 133%
   overflow: hidden
 
 .project-overlay
@@ -71,9 +90,8 @@
   background: linear-gradient(to bottom, rgba($black, .25) 0%, rgba($black, 1) 75%, rgba($black, 1) 100%)
 
 .project-content
-  display: table-cell
-  position: relative
-  vertical-align: bottom
+  +position(absolute, null, null, 0, 0)
+  padding: $extGapSmall
 
 .project-title
   font-size: 1.75rem
