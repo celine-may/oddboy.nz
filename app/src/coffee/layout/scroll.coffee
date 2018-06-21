@@ -135,9 +135,11 @@ class Scroll
       ease: Power2.easeOut
 
   initHomeTL: (exports) ->
+    $scrollCTA = @$header.find('.scroll-cta-wrapper')
+
     @homeHeaderTL = new TimelineLite
       paused: true
-    .to @$header.find('.scroll-cta'), 1,
+    .to $scrollCTA, 1,
       y: exports.windowHeight / -3
       opacity: 0
       ease: Power2.easeOut
