@@ -140,7 +140,7 @@ class Scroll
     @homeHeaderTL = new TimelineLite
       paused: true
     .to $scrollCTA, 1,
-      y: exports.windowHeight / -3
+      y: exports.windowHeight / -5
       opacity: 0
       ease: Power2.easeOut
 
