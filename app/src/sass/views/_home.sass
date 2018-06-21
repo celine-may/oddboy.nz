@@ -3,7 +3,7 @@
 
 .view[data-view="home"]
   background-color: transparent
-  z-index: $zBase
+  z-index: $zTop + 1
 
 .scroll-cta-wrapper
   +position(absolute, null, null, 40px, 50%)
@@ -19,7 +19,7 @@
 
 // WebGL animation
 .webgl-frame
-  +position(fixed, 0, null, null, 0)
+  +position(fixed, 0, 0, null, 0)
 
 // Projects section
 .projects-container

@@ -189,4 +189,5 @@
 
     <?php include('layouts/grid.php'); ?>
   </section>
+  <?php include('layouts/footer.php') ?>
 </section>
