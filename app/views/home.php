@@ -107,20 +107,20 @@
       </a>
     </div>
 
-    <div class="projects-wrapper">
-      <div class="title-wrapper">
-        <h2 class="title">Projects<br/>for clients<span class="text-color accent">.</span></h2>
-        <svg class="shape shape-gamepad">
-          <use xlink:href="#shape-gamepad"></use>
-        </svg>
-        <svg class="shape shape-vr-gear">
-          <use xlink:href="#shape-vr-gear"></use>
-        </svg>
-        <svg class="shape shape-atom">
-          <use xlink:href="#shape-atom"></use>
-        </svg>
-      </div>
+    <div class="title-wrapper">
+      <h2 class="title">Projects<br/>for clients<span class="text-color accent">.</span></h2>
+      <svg class="shape shape-gamepad">
+        <use xlink:href="#shape-gamepad"></use>
+      </svg>
+      <svg class="shape shape-vr-gear">
+        <use xlink:href="#shape-vr-gear"></use>
+      </svg>
+      <svg class="shape shape-atom">
+        <use xlink:href="#shape-atom"></use>
+      </svg>
+    </div>
 
+    <div class="projects-wrapper">
       <a href="#" target="_blank" class="project-card do-show-project-details" data-project="orpheus-ar">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
@@ -185,6 +185,8 @@
           </svg>
         </div>
       </a>
+
+      <div class="project-card"></div>
     </div>
 
     <?php include('layouts/grid.php'); ?>

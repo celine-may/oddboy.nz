@@ -55,28 +55,24 @@
 // Projects grid
 .projects-wrapper
   position: relative
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
   font-size: 0
-  text-align: left
   z-index: 20
 
 // Project card
 .project-card
   display: inline-block
   position: relative
-  width: calc(100% - #{$extGapSmall})
+  flex: 1 1 auto
   min-width: 330px
   max-width: 440px
+  margin: $extGapSmall / 2
   background-size: cover
   border-radius: 25px
   box-shadow: 0 0 38px rgba($black, .18)
   text-align: left
-
-  +min-screen(1010px)
-    width: calc(50% - #{$extGapSmall})
-    margin: $extGapSmall / 2
-
-  +min-screen(1340px)
-    width: calc(33.33% - #{$extGapSmall})
 
 .project-aspect-ratio
   position: relative
