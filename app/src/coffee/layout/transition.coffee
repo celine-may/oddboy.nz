@@ -130,7 +130,6 @@ class Transition
     $header = $view.find '.header-content'
 
     direction = App.getDirection @view
-    console.log(exports)
     App.startMainLoop()
 
     transitionTL = new TimelineLite()
