@@ -129,7 +129,7 @@
             <p class="lead project-lead project-anim">AR Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
-            <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+            <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
       </a>
@@ -142,7 +142,7 @@
             <p class="lead project-lead project-anim">VR Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
-            <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+            <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
       </a>
@@ -155,7 +155,7 @@
             <p class="lead project-lead project-anim">UX + AR Design</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
-            <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+            <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
       </a>
@@ -168,7 +168,7 @@
             <p class="lead project-lead project-anim">AR Design</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
-            <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+            <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
       </a>
@@ -181,7 +181,7 @@
             <p class="lead project-lead project-anim">UX Design + Animation</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
-            <use xlink:href="#shape-arrow"></use> <!-- TODO: use new arrow -->
+            <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
       </a>
@@ -191,5 +191,6 @@
 
     <?php include('layouts/grid.php'); ?>
   </section>
+
   <?php include('layouts/footer.php') ?>
 </section>
