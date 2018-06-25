@@ -30,6 +30,29 @@ class Scroll
     @$scrollDownBtn.on 'click', =>
       @scrollDown exports
 
+  initHome: (exports) ->
+    if exports.isTouch
+      return
+
+    @$header = @$view.find '.header'
+
+    @homeHeaderTL = undefined
+
+    TweenLite.set @$header,
+      y: 0
+
+    @initHomeTL exports
+
+  initHomeTL: (exports) ->
+    $scrollCTA = @$header.find('.scroll-cta-wrapper')
+
+    @homeHeaderTL = new TimelineLite
+      paused: true
+    .to $scrollCTA, 1,
+      y: exports.windowHeight / -5
+      opacity: 0
+      ease: Power2.easeOut
+
   initWWD: (exports) ->
     if exports.isTouch
       return
@@ -61,32 +84,6 @@ class Scroll
       y: 0
 
     @initWWDTL exports
-
-  initTTU: (exports) ->
-    if exports.isTouch
-      return
-
-    @$header = @$view.find '.header'
-
-    @ttuHeaderTL = undefined
-
-    TweenLite.set [@$header, @$header.find('.header-content'), @$header.find('.scroll-cta')],
-      y: 0
-
-    @initTTUTL exports
-
-  initHome: (exports) ->
-    if exports.isTouch
-      return
-
-    @$header = @$view.find '.header'
-
-    @homeHeaderTL = undefined
-
-    TweenLite.set @$header,
-      y: 0
-
-    @initHomeTL exports
 
   initWWDTL: (exports) ->
     @wwdHeaderTL = new TimelineLite
@@ -126,6 +123,19 @@ class Scroll
       ease: Power2.easeOut
     , '-=1'
 
+  initTTU: (exports) ->
+    if exports.isTouch
+      return
+
+    @$header = @$view.find '.header'
+
+    @ttuHeaderTL = undefined
+
+    TweenLite.set [@$header, @$header.find('.header-content'), @$header.find('.scroll-cta')],
+      y: 0
+
+    @initTTUTL exports
+
   initTTUTL: (exports) ->
     @ttuHeaderTL = new TimelineLite
       paused: true
@@ -134,23 +144,11 @@ class Scroll
       opacity: 0
       ease: Power2.easeOut
 
-  initHomeTL: (exports) ->
-    $scrollCTA = @$header.find('.scroll-cta-wrapper')
-
-    @homeHeaderTL = new TimelineLite
-      paused: true
-    .to $scrollCTA, 1,
-      y: exports.windowHeight / -5
-      opacity: 0
-      ease: Power2.easeOut
-
   scrollDown: (exports) ->
     TweenLite.to @$view, 1,
       scrollTo:
         y: exports.windowHeight
         ease: Power2.easeOut
-
-  onResize: (exports) ->
 
   scrollTween: (exports, startPoint, endPoint, tweenName, scrollY) ->
     unless tweenName?
@@ -184,5 +182,7 @@ class Scroll
 
     # Home Timeline
     @scrollTween exports, 0, exports.windowHeight, @homeHeaderTL, scrollY
+
+  onResize: (exports) ->
 
 App.Controllers.push new Scroll
