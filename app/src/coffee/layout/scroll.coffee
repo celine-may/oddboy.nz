@@ -57,7 +57,7 @@ class Scroll
       ease: Power2.easeOut
 
   initWWD: (exports) ->
-    if exports.isTouch
+    if exports.isTouch || exports.isSmall || exports.isMedium
       @preventScroll = true
       return
 
