@@ -13,6 +13,7 @@ class Scroll
     @$scrollDownBtn = $('.do-scroll-down')
 
     @preventScroll = false
+    @initBreakpoint = exports.currentBreakpoint
     @delta = 150
 
     if exports.view is 'home'
@@ -188,5 +189,7 @@ class Scroll
     @scrollTween exports, 0, exports.windowHeight, @homeHeaderTL, scrollY
 
   onResize: (exports) ->
+    if @initBreakpoint != exports.currentBreakpoint
+      @init exports
 
 App.Controllers.push new Scroll
