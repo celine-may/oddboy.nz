@@ -12,6 +12,7 @@ class Scroll
   init: (exports) ->
     @$scrollDownBtn = $('.do-scroll-down')
 
+    @preventScroll = false
     @delta = 150
 
     if exports.view is 'home'
@@ -32,6 +33,7 @@ class Scroll
 
   initHome: (exports) ->
     if exports.isTouch
+      @preventScroll = true
       return
 
     @$header = @$view.find '.header'
@@ -55,6 +57,7 @@ class Scroll
 
   initWWD: (exports) ->
     if exports.isTouch
+      @preventScroll = true
       return
 
     @$header = @$view.find '.header'
@@ -124,7 +127,8 @@ class Scroll
     , '-=1'
 
   initTTU: (exports) ->
-    if exports.isTouch
+    if exports.isTouch || exports.isSmall || exports.isMedium
+      @preventScroll = true
       return
 
     @$header = @$view.find '.header'
@@ -163,7 +167,7 @@ class Scroll
       tweenName.progress 1
 
   onScroll: (exports) ->
-    if exports.isTouch
+    if @preventScroll
       return
 
     scrollY = @$view.scrollTop()
