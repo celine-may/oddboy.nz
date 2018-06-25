@@ -7,8 +7,6 @@ class WhatWeDo
     exports.WhatWeDoController = @
     exports.instances.push @
 
-    @showComplementTL = undefined
-
     @init exports
 
   init: (exports) ->
@@ -17,6 +15,8 @@ class WhatWeDo
 
     @$showComplementBtn = $('.do-show-complement')
     @$setPaddingElement = $('.do-set-padding')
+
+    @showComplementTL = new TimelineLite()
 
     unless exports.isTouch
       @$showComplementBtn.on 'mouseenter', =>
@@ -42,7 +42,7 @@ class WhatWeDo
       pushDelta = 40
     else
       pushDelta = 20
-    @showComplementTL = new TimelineLite()
+    @showComplementTL
     .to @$complementPushElements, .2,
       y: pushDelta
       ease: Power2.easeOut
