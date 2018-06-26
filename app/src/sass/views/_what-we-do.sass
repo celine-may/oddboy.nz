@@ -9,7 +9,7 @@
     background-size: cover
 
   .scroll-cta
-      margin-top: $extGapSmall
+    margin-top: $extGapSmall
 
   +min-screen($small + 1px)
     .header-content
@@ -21,6 +21,9 @@
 
     .header .grid
       height: calc(100% - #{$extGap})
+
+    .scroll-cta:hover::before
+      transform: scale(0)
 
 .title-complement
   position: absolute
