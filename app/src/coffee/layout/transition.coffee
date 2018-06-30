@@ -211,7 +211,11 @@ class Transition
     unless newView?
       uriArray = window.location.href.split('/')
       newView = uriArray[uriArray.length-1]
-      if newView is ''
+
+      if newView.split('?').length > 1
+        newView = newView.split('?')[0]
+
+      if newView is '' or newView[0] == '?'
         newView = 'home'
 
     @view = exports.view = newView
