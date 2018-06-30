@@ -127,6 +127,7 @@ class Transition
 
   viewToHome: (exports) ->
     $view = $(".view[data-view='#{@view}']")
+    $newView = $(".view[data-view='#{@newView}']")
     $header = $view.find '.header-content'
 
     direction = App.getDirection @view
@@ -139,6 +140,9 @@ class Transition
       x: (exports.windowWidth - @delta) * direction
       ease: Power3.easeInOut
     , '-=.4'
+    .to $view, .5,
+      scrollTop: 0
+    , '-=.2'
     .to $header, 1.3,
       top: 100
       ease: Power3.easeInOut
@@ -159,7 +163,10 @@ class Transition
       exports.HomeController.init exports
     , null, null, .3
     .call ->
-      $view.scrollTop 0
+      $newView.scrollTop 0
+      TweenLite.set $newView,
+        x: 0
+        overflowY: 'auto'
       exports.isAnimating = false
     , null, null, '+=.2'
 

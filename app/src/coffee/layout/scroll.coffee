@@ -176,6 +176,9 @@ class Scroll
     @$header.css
       transform: "translateY(#{scrollY}px)"
 
+    # Home Timeline
+    @scrollTween exports, 0, exports.windowHeight, @homeHeaderTL, scrollY
+
     # What we do Timelines
     @scrollTween exports, 0, exports.windowHeight * 1.3, @wwdHeaderTL, scrollY
     @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
@@ -184,9 +187,6 @@ class Scroll
 
     # Talk to us Timelines
     @scrollTween exports, 0, exports.windowHeight, @ttuHeaderTL, scrollY
-
-    # Home Timeline
-    @scrollTween exports, 0, exports.windowHeight, @homeHeaderTL, scrollY
 
   onResize: (exports) ->
     if @initBreakpoint != exports.currentBreakpoint
