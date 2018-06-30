@@ -27,7 +27,7 @@ body
   z-index: $zTop
   -webkit-overflow-scrolling: touch
 
-  +min-screen($small)
+  +min-screen($small + 1)
     &.lhs
       transform: translateX(calc(-100% + 20px))
 
@@ -117,12 +117,3 @@ body
 
   +min-screen($small + 1px)
     font-size: .875rem
-
-// Scrolling animation
-.no-touchevents
-  @for $i from 1 through 9
-    .y-push#{$i}
-      transform: translateY($i * 90px)
-
-    .m-push#{$i}
-      margin-top: $i * 300px

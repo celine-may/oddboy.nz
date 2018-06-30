@@ -59,10 +59,13 @@
   font-size: 0
 
   +min-screen($small + 1px)
-    margin-bottom: 100px
-
     .touchevents &[data-service="game-design"]
       margin-bottom: 150px
+
+  +max-screen($small)
+    &[data-service="digital-products"]
+      margin-bottom: -10px
+      padding-bottom: 20px
 
 // Higlights (vertical)
 .service-highlights
@@ -94,14 +97,11 @@
     top: 0
     width: 100%
 
-    .service[data-service="game-design"] & img
-      width: 513px
+    .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+      width: 360px
 
     .service[data-service="virtual-reality"] & img
-      width: 604px
-
-    .service[data-service="digital-products"] & img
-      width: 360px
+      width: 500px
 
   +min-screen($medium + 1px)
     position: relative
@@ -122,11 +122,11 @@
     +center('horizontal')
     top: 120px
 
-  .service[data-service="virtual-reality"] &
+  .service[data-service="virtual-reality"] &, .service[data-service="digital-products"] &
     +center('both')
 
-  .service[data-service="digital-products"] &
-    +center('both')
+  +max-screen($medium)
+    max-width: 320px
 
 // Description
 .service-description
@@ -158,7 +158,7 @@
   +min-screen($medium + 1px)
     +position(absolute, 20px)
     width: $column * 6
-    font-size: 5rem
+    font-size: 4.9rem
     letter-spacing: 2px
 
     .service.rhs &
@@ -230,3 +230,13 @@
 
       li:nth-child(even)
         width: calc(55% - 1px)
+
+// Scrolling animation
++min-screen($medium + 1)
+  .no-touchevents
+    @for $i from 1 through 9
+      .y-push#{$i}
+        transform: translateY($i * 90px)
+
+      .m-push#{$i}
+        margin-top: $i * 300px
