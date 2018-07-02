@@ -28,7 +28,7 @@
     </div>
 
     <div class="projects-wrapper">
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="jrump">
+      <a href="http://jrump.com/" target="_blank" class="project-card do-show-project-details" data-project="jrump">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -41,7 +41,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="wanderer">
+      <a href="http://wanderervr.com/" target="_blank" class="project-card do-show-project-details" data-project="wanderer">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -54,7 +54,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="catty-crush">
+      <a href="http://cattycrush.com/" target="_blank" class="project-card do-show-project-details" data-project="catty-crush">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -67,7 +67,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="kabashians">
+      <a href="http://kabashians.com/" target="_blank" class="project-card do-show-project-details" data-project="kabashians">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -80,7 +80,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="camp-hope-falls">
+      <a href="https://www.behance.net/gallery/35511205/Camp-Hope-Falls" target="_blank" class="project-card do-show-project-details" data-project="camp-hope-falls">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -93,7 +93,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="ar-book">
+      <a href="https://www.behance.net/gallery/53940305/Camp-Hope-Falls-AR" target="_blank" class="project-card do-show-project-details" data-project="ar-book">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -121,7 +121,7 @@
     </div>
 
     <div class="projects-wrapper">
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="orpheus-ar">
+      <a href="https://www.behance.net/gallery/63283291/Orpheus-AR" target="_blank" class="project-card do-show-project-details" data-project="orpheus-ar">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -147,7 +147,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="meili">
+      <a href="https://www.behance.net/gallery/61150371/Meili-AR-Beauty-App" target="_blank" class="project-card do-show-project-details" data-project="meili">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -160,7 +160,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="dan-murphys-ar">
+      <a href="https://www.behance.net/gallery/63467401/Dan-Murphys-Augmented-Reality" target="_blank" class="project-card do-show-project-details" data-project="dan-murphys-ar">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
@@ -173,7 +173,7 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="tradee">
+      <a href="https://www.behance.net/gallery/60630021/Tradee-App" target="_blank" class="project-card do-show-project-details" data-project="tradee">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
