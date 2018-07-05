@@ -186,7 +186,9 @@
         </div>
       </a>
 
-      <div class="project-card"></div>
+      <div class="project-card fake"></div>
+      <div class="project-card fake xlarge-only"></div>
+      <div class="project-card fake xlarge-only"></div>
     </div>
 
     <?php include('layouts/grid.php'); ?>
