@@ -11,12 +11,11 @@
     padding: $extGap
 
 .ui-header
-  position: relative
+  position: fixed
   +size(100%, $header)
   padding: 0 $extGapSmall
-
-  .main[data-view="home"]  &
-    opacity: 0
+  transform: translateY(-$header)
+  z-index: $zTop
 
 // Logo
 .logo
@@ -54,18 +53,17 @@
 
 // Back link
 .back-link
-  display: inline-block
-  +position(absolute, $extGap - 5px)
-  +size(43px, 23px)
-  overflow: hidden
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  +position(absolute, $extGap - 10px)
+  +size(82px, 19px)
+  font-size: 0
   pointer-events: auto
-  transition: width $transitionDuration $transitionFunction
-
-  .no-touchevents &:hover
-    width: 54px
+  text-align: left
 
   +max-screen($small)
-    top: 29px
+    top: 25px
     opacity: .6
 
   +min-screen($small + 1px)
@@ -79,17 +77,26 @@
       left: $extGap
 
 .shape-arrow
-  +position(absolute, 5px, 0)
-  +size(65px, 13px)
+  +size(47px, 14px)
+  transform: scaleX(-1)
+  transition: transform $transitionDuration $transitionFunction
 
-  .main[data-view="talk-to-us"] &
-    transform: rotate(180deg)
-    right: auto
-    left: 0
+  .no-touchevents .back-link:hover &
+    transform: scaleX(-1) translateX(6px)
 
-  +max-screen($small)
-    +position(absolute, 4px, auto, null, 0)
-    transform: rotate(180deg)
+  +min-screen($small + 1)
+    .main[data-view="what-we-do"] &
+      order: 2
+      transform: scaleX(1)
+
+    .no-touchevents .main[data-view="what-we-do"] .back-link:hover &
+      transform: scaleX(1) translateX(6px)
+
+.shape-home
+  +size(17px, 20px)
+
+  .main[data-view="what-we-do"] &
+    order: 1
 
 // Nav link
 .nav-link
@@ -146,29 +153,35 @@
     letter-spacing: 3px
 
 .nav-link-small
-  +center('horizontal')
+  +position(absolute, 33px)
+  +font($sansSerif, 1rem, 900, null, 1)
+  opacity: 0
   pointer-events: auto
+  text-transform: uppercase
+  transform: translateY(20px)
 
   &::before
     content: ""
-    +center('horizontal')
-    +size(1px, 24px)
+    +position(absolute, 5px)
+    +size(25px, 1px)
     background-color: $white
 
-  &.top
-    top: 64px
+  &.rhs
+    right: 0
+    padding-right: 47px
 
     &::before
-      top: -40px
+      right: 0
 
-  &.bottom
-    bottom: 64px
+  &.lhs
+    left: 0
+    padding-left: 47px
 
     &::before
-      bottom: -40px
+      left: 0
 
   .main[data-view="what-we-do"] &, .main[data-view="talk-to-us"] &
-    display: none
+    opacity: 0
 
 // Title
 .ui-title

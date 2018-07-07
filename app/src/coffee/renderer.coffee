@@ -67,6 +67,14 @@ class Renderer
       unless controller.initBuild
         controller.build exports
 
+  getCurrentBreakpoint: (exports) ->
+    if exports.isSmall
+      'small'
+    else if exports.isMedium
+      'medium'
+    else
+      'large'
+
   onUpdate: ->
     @webgl.onUpdate @exports
 
@@ -77,6 +85,7 @@ class Renderer
 
     exports.isSmall = windowWidth <= exports.smallBreakpoint
     exports.isMedium = exports.smallBreakpoint < windowWidth <= exports.mediumBreakpoint
+    exports.currentBreakpoint = @getCurrentBreakpoint(exports)
 
     @webgl.onResize exports
 

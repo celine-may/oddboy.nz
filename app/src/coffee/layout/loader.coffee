@@ -31,48 +31,69 @@ class Loader
       id: 'gameDesign'
       itemType: 'img'
       element: '.service[data-service="game-design"] .service-image'
-      src: "#{exports.cdnPath}assets/images/services/game-design.jpg"
+      src: "#{exports.cdnPath}assets/images/services/game-design.png"
     ,
       id: 'virtualReality'
       itemType: 'img'
       element: '.service[data-service="virtual-reality"] .service-image'
       src: "#{exports.cdnPath}assets/images/services/virtual-reality.png"
     ,
-      id: 'bftf'
-      itemType: 'bg'
-      element: '.work-bg[data-work="bftf"]'
-      src: "#{exports.cdnPath}assets/images/work/bftf.jpg"
-    ,
-      id: 'campHopeFalls'
-      itemType: 'bg'
-      element: '.work-bg[data-work="camp-hope-falls"]'
-      src: "#{exports.cdnPath}assets/images/work/camp-hope-falls.jpg"
-    ,
-      id: 'arbook'
-      itemType: 'bg'
-      element: '.work-bg[data-work="arbook"]'
-      src: "#{exports.cdnPath}assets/images/work/arbook.jpg"
-    ,
-      id: 'celine'
-      itemType: 'bg'
-      element: '.work-bg[data-work="celine"]'
-      src: "#{exports.cdnPath}assets/images/work/celine.jpg"
-    ,
       id: 'jrump'
       itemType: 'bg'
-      element: '.work-bg[data-work="jrump"]'
-      src: "#{exports.cdnPath}assets/images/work/jrump.jpg"
+      element: '.project-card[data-project="jrump"]'
+      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
     ,
       id: 'wanderer'
       itemType: 'bg'
-      element: '.work-bg[data-work="wanderer"]'
-      src: "#{exports.cdnPath}assets/images/work/wanderer.jpg"
+      element: '.project-card[data-project="wanderer"]'
+      src: "#{exports.cdnPath}assets/images/projects/wanderer.jpg"
+    ,
+      id: 'catty-crush'
+      itemType: 'bg'
+      element: '.project-card[data-project="catty-crush"]'
+      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
     ,
       id: 'kabashians'
       itemType: 'bg'
-      element: '.work-bg[data-work="kabashians"]'
-      src: "#{exports.cdnPath}assets/images/work/kabashians.jpg"
+      element: '.project-card[data-project="kabashians"]'
+      src: "#{exports.cdnPath}assets/images/projects/kabashians.jpg"
     ,
+      id: 'camp-hope-falls'
+      itemType: 'bg'
+      element: '.project-card[data-project="camp-hope-falls"]'
+      src: "#{exports.cdnPath}assets/images/projects/camp-hope-falls.jpg"
+    ,
+      id: 'ar-book'
+      itemType: 'bg'
+      element: '.project-card[data-project="ar-book"]'
+      src: "#{exports.cdnPath}assets/images/projects/ar-book.jpg"
+    ,
+      id: 'orpheus-ar'
+      itemType: 'bg'
+      element: '.project-card[data-project="orpheus-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
+    ,
+      id: 'rubberkid'
+      itemType: 'bg'
+      element: '.project-card[data-project="rubberkid"]'
+      src: "#{exports.cdnPath}assets/images/projects/rubberkid.jpg"
+    ,
+      id: 'meili'
+      itemType: 'bg'
+      element: '.project-card[data-project="meili"]'
+      src: "#{exports.cdnPath}assets/images/projects/meili.jpg"
+    ,
+      id: 'dan-murphys-ar'
+      itemType: 'bg'
+      element: '.project-card[data-project="dan-murphys-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/dan-murphys-ar.jpg"
+    ,
+      id: 'tradee'
+      itemType: 'bg'
+      element: '.project-card[data-project="tradee"]'
+      src: "#{exports.cdnPath}assets/images/projects/tradee.jpg"
+    ,
+
       id: 'oddboyCopy'
       itemType: 'object'
       src: "#{exports.path}assets/json/oddboy-copy.json"

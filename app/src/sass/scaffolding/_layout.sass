@@ -27,7 +27,7 @@ body
   z-index: $zTop
   -webkit-overflow-scrolling: touch
 
-  +min-screen($small)
+  +min-screen($small + 1)
     &.lhs
       transform: translateX(calc(-100% + 20px))
 
@@ -80,11 +80,40 @@ body
   position: relative
   z-index: $zTop
 
-// Scrolling animation
-.no-touchevents
-  @for $i from 1 through 9
-    .y-push#{$i}
-      transform: translateY($i * 90px)
+// Footer
+.footer
+  position: relative
+  padding: 40px $column 160px
+  font-size: 0
+  z-index: $zXTop
 
-    .m-push#{$i}
-      margin-top: $i * 300px
+.footer-cell
+  display: inline-block
+  width: calc(50% - 1px)
+  vertical-align: middle
+
+  &:last-child
+    text-align: right
+
+.footer-social
+  display: inline-block
+  margin-right: 20px
+  vertical-align: middle
+
+.shape-behance
+  +size(36px, 22px)
+
+  +min-screen($small + 1px)
+    +size(25px, 16px)
+
+.shape-facebook
+  +size(13px, 27px)
+
+  +min-screen($small + 1px)
+    +size(10px, 18px)
+
+.copyright
+  +font($sansSerif, 1.1875rem, 400)
+
+  +min-screen($small + 1px)
+    font-size: .875rem

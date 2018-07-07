@@ -1,8 +1,139 @@
 // HOME
 // -----------------
 
-.view[data-view="home"]
-  z-index: $zBase
+.main[data-view="home"] .view[data-view="home"]
+  background-color: transparent
+  z-index: $zTop + 1
 
+  .section
+    z-index: $zXTop
+
+.scroll-cta-wrapper
+  +position(absolute, null, null, 40px, 50%)
+  width: 80px
+  margin-left: -40px
+  +font($sansSerif, 1rem, 900, null, 1)
+  pointer-events: auto
+  text-align: center
+  text-transform: uppercase
+
+  .scroll-cta
+    margin-top: 8px
+
+  +max-screen($small)
+    position: fixed
+    bottom: $extGapSmall / 2
+
+// WebGL animation
 .webgl-frame
-  +position(absolute, 0, null, null, 0)
+  +position(fixed, 0, 0, null, 0)
+
+// Projects section
+.projects-container
+  min-height: 100vh
+  padding: $extGapSmall
+  text-align: center
+
+  +min-screen($small + 1px)
+    padding: $extGapSmall 115px 190px
+
+// Title
+.title-wrapper
+  margin: 150px 0 $extGapSmall
+  padding: 0 $extGapSmall / 2
+  text-align: left
+
+  +min-screen($small + 1)
+    display: flex
+    align-items: flex-end
+
+.title
+  flex-grow: 1
+
+.shape
+  margin: 8px 12px 16px 0
+
+.shape:last-child
+  margin-right: 0
+
+// Projects grid
+.projects-wrapper
+  position: relative
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  font-size: 0
+  z-index: 20
+
+// Project card
+.project-card
+  display: inline-block
+  position: relative
+  flex: 1 1 auto
+  min-width: 330px
+  max-width: 440px
+  margin: $extGapSmall / 2
+  background-size: cover
+  border-radius: 25px
+  box-shadow: 0 0 38px rgba($black, .18)
+  text-align: left
+
+  &.fake
+    box-shadow: none
+
+  .touchevents & .shape-arrow
+    transform: scaleX(1)
+
+  +max-screen(1340px)
+    &.fake.third
+      display: none!important
+
+  +max-screen(1710px)
+    &.fake.quarter
+      display: none!important
+
+  +max-screen(2080px)
+    &.fake.fifth
+      display: none!important
+
+.project-aspect-ratio
+  position: relative
+  height: 0
+  padding-top: 133%
+  overflow: hidden
+
+.project-overlay
+  +position(absolute, 0, 0)
+  +square(100%)
+  background: linear-gradient(to bottom, rgba($black, .25) 0%, rgba($black, 1) 75%, rgba($black, 1) 100%)
+  border-radius: 25px
+  opacity: .25
+
+.project-content
+  +position(absolute, null, null, 0, 0)
+  padding: $extGapSmall
+
+.project-title
+  font-size: 1.75rem
+
+.project-lead
+  margin-top: 8px
+
+.project-arrow
+  +position(absolute, $extGapSmall, $extGapSmall)
+
+// Project rollover animation
+.no-touchevents
+  .project-overlay
+    opacity: 0
+
+  .project-title
+    transform: translateY(40px)
+
+  .project-lead
+    opacity: 0
+    transform: translateY(60px)
+
+  .project-arrow
+    opacity: 0
+    transform: translateY(10px)
