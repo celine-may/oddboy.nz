@@ -105,6 +105,11 @@
           </svg>
         </div>
       </a>
+
+      <div class="project-card fake quarter"></div>
+      <div class="project-card fake quarter"></div>
+      <div class="project-card fake fifth"></div>
+      <div class="project-card fake fifth"></div>
     </div>
 
     <div class="title-wrapper">
@@ -186,9 +191,11 @@
         </div>
       </a>
 
-      <div class="project-card fake"></div>
-      <div class="project-card fake xlarge-only"></div>
-      <div class="project-card fake xlarge-only"></div>
+      <div class="project-card fake third"></div>
+      <div class="project-card fake quarter"></div>
+      <div class="project-card fake quarter"></div>
+      <!-- <div class="project-card fake fifth"></div>
+      <div class="project-card fake fifth"></div> -->
     </div>
 
     <?php include('layouts/grid.php'); ?>

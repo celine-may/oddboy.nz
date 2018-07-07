@@ -84,6 +84,18 @@
   .touchevents & .shape-arrow
     transform: scaleX(1)
 
+  +max-screen(1340px)
+    &.fake.third
+      display: none!important
+
+  +max-screen(1710px)
+    &.fake.quarter
+      display: none!important
+
+  +max-screen(2080px)
+    &.fake.fifth
+      display: none!important
+
 .project-aspect-ratio
   position: relative
   height: 0
