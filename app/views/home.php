@@ -194,8 +194,6 @@
       <div class="project-card fake third"></div>
       <div class="project-card fake quarter"></div>
       <div class="project-card fake quarter"></div>
-      <!-- <div class="project-card fake fifth"></div>
-      <div class="project-card fake fifth"></div> -->
     </div>
 
     <?php include('layouts/grid.php'); ?>
