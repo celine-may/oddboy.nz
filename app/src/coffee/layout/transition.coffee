@@ -209,13 +209,14 @@ class Transition
 
   setView: (exports, newView = null) ->
     unless newView?
-      uriArray = window.location.href.split('/')
-      newView = uriArray[uriArray.length-1]
+      pathname = window.location.pathname
 
-      if newView.split('?').length > 1
-        newView = newView.split('?')[0]
+      if pathname.substr(pathname.length - 1) == '/'
+        pathname = pathname.slice(0, -1)
 
-      if newView is '' or newView[0] == '?'
+      newView = pathname.split('/').pop()
+
+      unless newView == 'talk-to-us' || newView == 'what-we-do'
         newView = 'home'
 
     @view = exports.view = newView
