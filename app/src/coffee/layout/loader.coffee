@@ -177,6 +177,8 @@ class Loader
 
     @queue.on 'loadstart', (e) =>
       @onLoadStart e, exports
+    @queue.on 'progress', (e) =>
+      @onLoadProgress e, exports
     @queue.on 'fileload', (e) =>
       @onFileLoad e, exports
     @queue.on 'complete', (e) =>
@@ -187,33 +189,6 @@ class Loader
     @queue.loadManifest @manifest
 
   onLoadStart: (e, exports) ->
-    @startTime = Date.now()
-    @deviceAnimation exports
-    @letterAnimation exports
-
-  onFileLoad: (e, exports) ->
-    if e.item.itemType is 'bg'
-      $(e.item.element).css 'background-image', "url(#{e.item.src})"
-    else if e.item.itemType is 'img'
-      $(e.item.element).append $(e.result).addClass 'y-push2 do-anim-y'
-    else if e.item.itemType is 'svg'
-      $(e.item.element).prepend $(e.result).hide()
-
-  onLoadComplete: (e, exports) ->
-    endTime = Date.now()
-    currentDuration = endTime - @startTime
-    delta = @duration * 1000 - currentDuration
-    exports.RendererController.delayedBuild exports
-    setTimeout =>
-      if exports.view is 'home'
-        App.startMainLoop()
-      @loaderAnimation exports
-    , delta
-
-  onLoadError: (e, exports) ->
-    console.log e
-
-  deviceAnimation: (exports) ->
     deviceTL = new TimelineMax
       paused: true
     .fromTo @$device, 1.2,
@@ -224,10 +199,30 @@ class Loader
 
     deviceTL.yoyo(true).repeat(-1).play()
 
-  letterAnimation: (exports) ->
-    TweenLite.to @$letterBG, @duration,
+  onLoadProgress: (e, exports) ->
+    letterTL = new TimelineMax
+      paused: true
+    .to @$letterBG, 1,
       width: 60
       ease: Sine.easeOut
+
+    letterTL.progress(e.loaded)
+
+  onFileLoad: (e, exports) ->
+    if e.item.itemType is 'bg'
+      $(e.item.element).css 'background-image', "url(#{e.item.src})"
+    else if e.item.itemType is 'img'
+      $(e.item.element).append $(e.result).addClass 'y-push2 do-anim-y'
+    else if e.item.itemType is 'svg'
+      $(e.item.element).prepend $(e.result).hide()
+
+  onLoadComplete: (e, exports) ->
+    if exports.view is 'home'
+      App.startMainLoop()
+    @loaderAnimation exports
+
+  onLoadError: (e, exports) ->
+    console.log e
 
   loaderAnimation: (exports) ->
     loaderTL = new TimelineLite()
