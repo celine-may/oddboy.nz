@@ -1,7 +1,6 @@
 class Home
   constructor: ->
     @order = 10
-    @initBuild = false
 
     @initiated = false
 

@@ -55,17 +55,11 @@ class Renderer
       a.order - b.order
 
     for controller in controllers
-      if controller.initBuild
-        controller.build exports
+      controller.build exports
 
     @$window
       .on 'resize', @onResize.bind @
       .trigger 'resize'
-
-  delayedBuild: (exports) ->
-    for controller in @controllers
-      unless controller.initBuild
-        controller.build exports
 
   getCurrentBreakpoint: (exports) ->
     if exports.isSmall
