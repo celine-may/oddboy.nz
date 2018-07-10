@@ -98,7 +98,7 @@
           <div class="project-overlay"></div>
           <div class="project-content">
             <h2 class="title project-title">AR Book<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">AR Design</p>
+            <p class="lead project-lead project-anim">AR Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
             <use xlink:href="#shape-arrow"></use>
@@ -139,12 +139,12 @@
         </div>
       </a>
 
-      <a href="#" target="_blank" class="project-card do-show-project-details" data-project="rubberkid">
+      <a href="https://rubberkid.oddboy.nz/" target="_blank" class="project-card do-show-project-details" data-project="rubberkid">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
             <h2 class="title project-title">Rubberkid<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">VR Design + Development</p>
+            <p class="lead project-lead project-anim">Game Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
             <use xlink:href="#shape-arrow"></use>
@@ -191,6 +191,7 @@
         </div>
       </a>
 
+      <div class="project-card fake half"></div>
       <div class="project-card fake third"></div>
       <div class="project-card fake quarter"></div>
       <div class="project-card fake quarter"></div>
