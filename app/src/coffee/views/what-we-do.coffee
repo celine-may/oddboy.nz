@@ -32,7 +32,9 @@ class WhatWeDo
           @showComplement exports
           @$complement.addClass 'visible'
 
-    @onResize exports
+    setTimeout =>
+      @onResize exports
+    , 500
 
   showComplement: (exports) ->
     if exports.windowWidth <= exports.smallBreakpoint
