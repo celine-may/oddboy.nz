@@ -1,5 +1,6 @@
 .sass-cache
 _templates
+_previously-live
 node_modules
 
 *.sublime-project
