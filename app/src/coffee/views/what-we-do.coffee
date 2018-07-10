@@ -1,7 +1,6 @@
 class WhatWeDo
   constructor: ->
     @order = 11
-    @initBuild = false
 
   build: (exports) ->
     exports.WhatWeDoController = @

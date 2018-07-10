@@ -1,7 +1,6 @@
 class Transition
   constructor: ->
     @order = 0
-    @initBuild = true
 
   build: (exports) ->
     exports.TransitionController = @

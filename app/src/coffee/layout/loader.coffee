@@ -1,7 +1,6 @@
 class Loader
   constructor: ->
     @order = 1
-    @initBuild = true
 
   build: (exports) ->
     exports.LoaderController = @
@@ -222,7 +221,7 @@ class Loader
     @loaderAnimation exports
 
   onLoadError: (e, exports) ->
-    console.log e
+    console.log 'A loading error occured', e
 
   loaderAnimation: (exports) ->
     loaderTL = new TimelineLite()

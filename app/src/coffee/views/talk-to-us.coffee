@@ -1,7 +1,6 @@
 class TalkToUs
   constructor: ->
     @order = 12
-    @initBuild = false
 
   build: (exports) ->
     exports.TalkToUsController = @

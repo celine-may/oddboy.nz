@@ -1,7 +1,6 @@
 class Scroll
   constructor: ->
     @order = 3
-    @initBuild = false
 
   build: (exports) ->
     exports.ScrollController = @

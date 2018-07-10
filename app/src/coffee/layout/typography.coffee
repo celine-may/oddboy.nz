@@ -1,7 +1,6 @@
 class Typography
   constructor: ->
     @order = 2
-    @initBuild = false
     @initiated = false
 
   build: (exports) ->
