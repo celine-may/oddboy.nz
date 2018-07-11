@@ -32,7 +32,9 @@ class WhatWeDo
           @showComplement exports
           @$complement.addClass 'visible'
 
-    @onResize exports
+    setTimeout =>
+      @onResize exports
+    , 1500
 
   showComplement: (exports) ->
     if exports.windowWidth <= exports.smallBreakpoint
@@ -55,8 +57,6 @@ class WhatWeDo
     @showComplementTL.reverse() if @showComplementTL
 
   onResize: (exports) ->
-    unless @$setPaddingElement?
-      return
     for element in @$setPaddingElement
       $element = $(element)
       if exports.windowWidth > exports.mediumBreakpoint
