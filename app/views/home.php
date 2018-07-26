@@ -72,7 +72,7 @@
           <div class="project-overlay"></div>
           <div class="project-content">
             <h2 class="title project-title">Kabashians<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">Game Design</p>
+            <p class="lead project-lead project-anim">Game Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
             <use xlink:href="#shape-arrow"></use>
