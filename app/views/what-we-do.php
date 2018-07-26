@@ -4,14 +4,14 @@
 
     <div class="header-content">
       <h1 class="title do-repaint do-show-complement">
-        <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an experience design studio<span class="text-color primary">*</span>
+        <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an interactive studio<span class="text-color primary">*</span>
       </h1>
       <span class="title-separator bg-color accent do-complement-push"></span>
       <p class="title-complement copy">
         <span class="text-color primary">*</span>This is just another way of saying we love to get our hands dirty creating Games, VR + AR experiences, Apps and all manner of digital good stuff.
       </p>
       <p class="lead do-complement-push">
-        We are a collective of digital designers with a desire to collaborate with those who want to craft beautiful, memorable digital experiences.
+        Oddboy is an eclectic crew of designers, 3D artists, developers and technologists. We work with brands and agencies to produce award winning games and digital&nbsp;experiences.
       </p>
 
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">
@@ -40,25 +40,25 @@
           <div class="circle m-push1 do-anim-m"></div>
         </div>
         <div class="service-description do-set-padding">
-          <h2 class="service-title title y-push3 do-anim-y">GAME CREATION<span class="text-color accent">.</span></h2>
+          <h2 class="service-title title y-push3 do-anim-y">Game creation<span class="text-color accent">.</span></h2>
           <div class="service-icon y-push4 do-anim-y">
             <svg class="shape-gamepad">
               <use xlink:href="#shape-gamepad"></use>
             </svg>
           </div>
           <p class="service-lead lead y-push5 do-anim-y">
-            The fun of shooting someone in the face, without any of the consequences.
+            Preparing for the zombie apocalypse from the comfort of your couch.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Video games engage, teach and inspire us in ways that the real world cannot. Through emotionally driven stories and rewarding problem solving, we feel uniquley connected to games. Our passion is understanding this connection and using it to create beautifully immersive games. Or an FPS.
+            Gamers have spent countless hours saving princesses, dodging bullets, and dismembering Grecian monsters. The desire to play games is hard coded into our DNA. Video games engage, teach and inspire us in ways that the real world cannot. We feel uniquly connected to their emotionally driven stories and rewarding problem solving. Our passion is understanding these ideas and using them to create beautiful and engaging&nbsp;experiences.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">Console, PC &amp; Mac</li>
-            <li class="copy">Stategy &amp; Design</li>
+            <li class="copy">Strategy &amp; Design</li>
             <li class="copy">iOS &amp; Android</li>
-            <li class="copy">Asset Creation</li>
+            <li class="copy">Art &amp; Animation</li>
             <li class="copy">Web GL</li>
-            <li class="copy">Game Branding &amp; Marketing</li>
+            <li class="copy">Development</li>
           </ul>
         </div>
       </article>
@@ -80,8 +80,12 @@
             Sort of like the matrix, but less real. It’s&nbsp;still pretty real&nbsp;though.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            Virtual reality is an emerging medium like no other. With the potential to merge the familar with the surreal, the applications are limitless. As VR is in its infancy we are fluid and flexible to cater for a range of solutions.
+            Both Virtual and Augmented reality are emerging mediums like no other. The ability to merge the familiar with the surreal gives us the potential to create wild and unimagined experiences. These experiences can engage and captivate users in ways we never dreamed. Production pipelines mirror that of gaming giving us a great foundation when working in these&nbsp;mediums.
           </p>
+          <ul class="service-list y-push6 do-anim-y">
+            <li class="copy">Virtual Reality</li>
+            <li class="copy">Augmented Reality</li>
+          </ul>
         </div>
         <div class="service-image">
           <div class="circle m-push1 do-anim-m"></div>
@@ -108,7 +112,7 @@
             If it seems confusing or complex it’s because it is... But it shouldn’t&nbsp;be.
           </p>
           <p class="service-copy copy y-push6 do-anim-y">
-            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is becoming connected. Products and digital interfaces are becoming one in the same. We want to  craft intuitive solutions that make life that little easier and create moments of joy.
+            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is connected. Products and digital interfaces are now one in the same. We craft intuitive solutions that simplify tasks, enhance communication and even provide a little&nbsp;joy.
           </p>
           <ul class="service-list y-push6 do-anim-y">
             <li class="copy">App Design</li>
