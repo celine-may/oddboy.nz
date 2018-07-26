@@ -2,8 +2,8 @@
 
 include('config.php');
 
-$pageTitle = 'Oddboy. Interactive Studio | We make games and stuff';
-$pageDescription = 'Oddboy is an interactive studio with a focus on game design, digital products, augmented reality and virtual reality applications.';
+$pageTitle = 'Oddboy - Interactive Studio, Auckland, NZ. | Games, Virtual + Augmented Reality, Web';
+$pageDescription = 'Oddboy is an interactive studio specializing in games, virtual reality (VR), augmented reality (AR) and digital products.';
 
 ?><!DOCTYPE html>
 <html lang="en">
