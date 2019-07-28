@@ -37,20 +37,20 @@ class Loader
       element: '.service[data-service="virtual-reality"] .service-image'
       src: "#{exports.cdnPath}assets/images/services/virtual-reality.png"
     ,
-      id: 'jrump'
-      itemType: 'bg'
-      element: '.project-card[data-project="jrump"]'
-      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
-    ,
       id: 'wanderer'
       itemType: 'bg'
       element: '.project-card[data-project="wanderer"]'
       src: "#{exports.cdnPath}assets/images/projects/wanderer.jpg"
     ,
-      id: 'catty-crush'
+      id: 'millennialz'
       itemType: 'bg'
-      element: '.project-card[data-project="catty-crush"]'
-      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
+      element: '.project-card[data-project="millennialz"]'
+      src: "#{exports.cdnPath}assets/images/projects/millennialz.jpg"
+    ,
+      id: 'jrump'
+      itemType: 'bg'
+      element: '.project-card[data-project="jrump"]'
+      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
     ,
       id: 'kabashians'
       itemType: 'bg'
@@ -62,20 +62,25 @@ class Loader
       element: '.project-card[data-project="camp-hope-falls"]'
       src: "#{exports.cdnPath}assets/images/projects/camp-hope-falls.jpg"
     ,
-      id: 'ar-book'
+      id: 'catty-crush'
       itemType: 'bg'
-      element: '.project-card[data-project="ar-book"]'
-      src: "#{exports.cdnPath}assets/images/projects/ar-book.jpg"
+      element: '.project-card[data-project="catty-crush"]'
+      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
     ,
-      id: 'orpheus-ar'
+      id: 'ace-pace-wimbledon'
       itemType: 'bg'
-      element: '.project-card[data-project="orpheus-ar"]'
-      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
+      element: '.project-card[data-project="ace-pace-wimbledon"]'
+      src: "#{exports.cdnPath}assets/images/projects/ace-pace-wimbledon.jpg"
     ,
       id: 'rubberkid'
       itemType: 'bg'
       element: '.project-card[data-project="rubberkid"]'
       src: "#{exports.cdnPath}assets/images/projects/rubberkid.jpg"
+    ,
+      id: 'uber-eats-shark-bait'
+      itemType: 'bg'
+      element: '.project-card[data-project="uber-eats-shark-bait"]'
+      src: "#{exports.cdnPath}assets/images/projects/uber-eats-shark-bait.jpg"
     ,
       id: 'meili'
       itemType: 'bg'
@@ -87,10 +92,10 @@ class Loader
       element: '.project-card[data-project="dan-murphys-ar"]'
       src: "#{exports.cdnPath}assets/images/projects/dan-murphys-ar.jpg"
     ,
-      id: 'tradee'
+      id: 'orpheus-ar'
       itemType: 'bg'
-      element: '.project-card[data-project="tradee"]'
-      src: "#{exports.cdnPath}assets/images/projects/tradee.jpg"
+      element: '.project-card[data-project="orpheus-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
     ,
 
       id: 'oddboyCopy'

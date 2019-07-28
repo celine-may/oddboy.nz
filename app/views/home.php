@@ -28,19 +28,6 @@
     </div>
 
     <div class="projects-wrapper">
-      <a href="http://jrump.com/" target="_blank" class="project-card do-show-project-details" data-project="jrump">
-        <div class="project-aspect-ratio">
-          <div class="project-overlay"></div>
-          <div class="project-content">
-            <h2 class="title project-title do-anim-y">Jrump<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead do-anim-show-y">Game Design + Development</p>
-          </div>
-          <svg class="project-arrow shape-arrow do-anim-show-y">
-            <use xlink:href="#shape-arrow"></use>
-          </svg>
-        </div>
-      </a>
-
       <a href="http://wanderervr.com/" target="_blank" class="project-card do-show-project-details" data-project="wanderer">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
@@ -54,14 +41,27 @@
         </div>
       </a>
 
-      <a href="http://cattycrush.com/" target="_blank" class="project-card do-show-project-details" data-project="catty-crush">
+      <a href="https://www.imreallyinto.me/" target="_blank" class="project-card do-show-project-details" data-project="millennialz">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
-            <h2 class="title project-title">Catty Crush<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">AR Design + Development</p>
+            <h2 class="title project-title">Millennialz<span class="text-color accent">.</span></h2>
+            <p class="lead project-lead project-anim">Game Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
+            <use xlink:href="#shape-arrow"></use>
+          </svg>
+        </div>
+      </a>
+
+      <a href="http://jrump.com/" target="_blank" class="project-card do-show-project-details" data-project="jrump">
+        <div class="project-aspect-ratio">
+          <div class="project-overlay"></div>
+          <div class="project-content">
+            <h2 class="title project-title do-anim-y">Jrump<span class="text-color accent">.</span></h2>
+            <p class="lead project-lead do-anim-show-y">Game Design + Development</p>
+          </div>
+          <svg class="project-arrow shape-arrow do-anim-show-y">
             <use xlink:href="#shape-arrow"></use>
           </svg>
         </div>
@@ -93,11 +93,11 @@
         </div>
       </a>
 
-      <a href="https://www.behance.net/gallery/53940305/Camp-Hope-Falls-AR" target="_blank" class="project-card do-show-project-details" data-project="ar-book">
+      <a href="http://cattycrush.com/" target="_blank" class="project-card do-show-project-details" data-project="catty-crush">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
-            <h2 class="title project-title">AR Book<span class="text-color accent">.</span></h2>
+            <h2 class="title project-title">Catty Crush<span class="text-color accent">.</span></h2>
             <p class="lead project-lead project-anim">AR Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
@@ -126,12 +126,25 @@
     </div>
 
     <div class="projects-wrapper">
-      <a href="https://www.behance.net/gallery/63283291/Orpheus-AR" target="_blank" class="project-card do-show-project-details" data-project="orpheus-ar">
+      <div class="project-card do-show-project-details" data-project="ace-pace-wimbledon">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
-            <h2 class="title project-title">Orpheus AR<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">AR Design + Development</p>
+            <h2 class="title project-title">Ace Pace Wimbledon<span class="text-color accent">.</span></h2>
+            <p class="lead project-lead project-anim">Game Design + Development</p>
+          </div>
+          <svg class="project-arrow project-anim shape-arrow">
+            <use xlink:href="#shape-arrow"></use>
+          </svg>
+        </div>
+      </div>
+
+      <a href="https://rubberkid.oddboy.nz/" target="_blank" class="project-card do-show-project-details" data-project="rubberkid">
+        <div class="project-aspect-ratio">
+          <div class="project-overlay"></div>
+          <div class="project-content">
+            <h2 class="title project-title">Rubberkid<span class="text-color accent">.</span></h2>
+            <p class="lead project-lead project-anim">Game Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
             <use xlink:href="#shape-arrow"></use>
@@ -139,11 +152,11 @@
         </div>
       </a>
 
-      <a href="https://rubberkid.oddboy.nz/" target="_blank" class="project-card do-show-project-details" data-project="rubberkid">
+      <a href="https://ubereatssharkbait.co.nz/" target="_blank" class="project-card do-show-project-details" data-project="uber-eats-shark-bait">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
-            <h2 class="title project-title">Rubberkid<span class="text-color accent">.</span></h2>
+            <h2 class="title project-title">uber eats shark bait<span class="text-color accent">.</span></h2>
             <p class="lead project-lead project-anim">Game Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
@@ -178,12 +191,12 @@
         </div>
       </a>
 
-      <a href="https://www.behance.net/gallery/60630021/Tradee-App" target="_blank" class="project-card do-show-project-details" data-project="tradee">
+      <a href="https://www.behance.net/gallery/63283291/Orpheus-AR" target="_blank" class="project-card do-show-project-details" data-project="orpheus-ar">
         <div class="project-aspect-ratio">
           <div class="project-overlay"></div>
           <div class="project-content">
-            <h2 class="title project-title">tradee<span class="text-color accent">.</span></h2>
-            <p class="lead project-lead project-anim">UX Design + Animation</p>
+            <h2 class="title project-title">Orpheus AR<span class="text-color accent">.</span></h2>
+            <p class="lead project-lead project-anim">AR Design + Development</p>
           </div>
           <svg class="project-arrow project-anim shape-arrow">
             <use xlink:href="#shape-arrow"></use>
