@@ -2,15 +2,11 @@
   <div class="loader-panel left"></div>
   <div class="loader-panel right"></div>
 
-  <div class="loader-path">
-    <div class="loader-device"></div>
-  </div>
-
   <div class="loader-circle-wrapper">
     <div class="loader-circle">
-      <div class="loader-bg"></div>
-      <div class="loader-letter"></div>
-      <div class="loader-mask"></div>
     </div>
+    <svg class="shape-logo-head loader-logo">
+      <use xlink:href="#shape-logo-head"></use>
+    </svg>
   </div>
 </div>

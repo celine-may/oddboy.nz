@@ -8,6 +8,43 @@
   .section
     z-index: $zXTop
 
+// Hiring
+.hiring
+  position: relative
+  display: block
+  margin-top: 32px
+  text-align: center
+  z-index: $zXTop
+
+  .shape-logo-head
+    +size(48px, 58px)
+    fill: $white
+    vertical-align: bottom
+
+.speech-bubble
+  position: relative
+  display: inline-block
+  margin-left: 8px
+  padding: 15px 24px 12px
+  background-color: $accent
+  border-radius: 22px
+  +font($sansSerif, 1rem, 900, null, 1)
+  letter-spacing: 4px
+  text-transform: uppercase
+
+  &::before
+    content: ""
+    +position(absolute, null, null, 0, 0)
+    +triangle(20px, $accent, bottom)
+
+  .shape-arrow-hiring
+    +position(relative, 2px)
+    +size(30px, 14px)
+    transition: transform $transitionDuration $transitionFunction
+
+    .no-touchevents .hiring:hover &
+      transform: translateX(6px)
+
 .scroll-cta-wrapper
   +position(absolute, null, null, 40px, 50%)
   width: 80px

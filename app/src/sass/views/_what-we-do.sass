@@ -11,10 +11,6 @@
   .scroll-cta
     margin-top: $extGapSmall
 
-  +min-screen($small + 1px)
-    .header-content
-      padding-right: $column * 2
-
   +min-max-screen($xSmall + 1px, $medium)
     .section
       margin-top: -$extGap
@@ -25,6 +21,16 @@
 
     .scroll-cta:hover::before
       transform: scale(0)
+
++min-screen($medium + 1px)
+  .with-boy
+    position: relative
+    padding-left: 200px
+
+  .shape-logo-body
+    +position(absolute, null, null, 12px, 0)
+    +size(169px, 249px)
+    fill: $white
 
 .title-complement
   position: absolute
@@ -63,11 +69,6 @@
     .touchevents &[data-service="game-design"]
       margin-bottom: 150px
 
-  +max-screen($small)
-    &[data-service="digital-products"]
-      margin-bottom: -10px
-      padding-bottom: 20px
-
 // Higlights (vertical)
 .service-highlights
   +position(absolute, 40%, null, null, $column / -2)
@@ -90,7 +91,7 @@
     position: relative
     max-width: 100%
 
-  .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+  .service[data-service="game-design"] & img
     left: -40px
 
   +max-screen($medium)
@@ -98,7 +99,7 @@
     top: 0
     width: 100%
 
-    .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+    .service[data-service="game-design"] & img
       width: 360px
 
     .service[data-service="virtual-reality"] & img
@@ -123,7 +124,7 @@
     +center('horizontal')
     top: 120px
 
-  .service[data-service="virtual-reality"] &, .service[data-service="digital-products"] &
+  .service[data-service="virtual-reality"] &
     +center('both')
 
   +max-screen($medium)

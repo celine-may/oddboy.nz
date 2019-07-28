@@ -49,7 +49,7 @@ class WhatWeDo
       ease: Power2.easeOut
     .to @$complement, .2,
       opacity: 1
-      y: '+=35'
+      y: '+=40'
       ease: Back.easeOut.config(1)
     , '-=.1'
 

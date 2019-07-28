@@ -12,7 +12,7 @@ $pageDescription = 'Oddboy is an interactive studio specializing in games, virtu
 
   <title><?php echo $pageTitle; ?></title>
   <meta name="description" content="<?php echo $pageDescription; ?>">
-  <meta name="keywords" content="Virtual reality, digital, Augmented reality, design studio, AR, VR, New Zealand, Auckland, Jrump, gamification, game design, game development, Innovation, Kabashians, Storytelling, Interactive, VR, Applications, VR Training, VR experiential marketing, VR tradeshow exhibit, mobile VR, App development, VR strategy, AR strategy, 360 video, Motion capture, animation, production, VR Development, AR Development, VR Exhibition, AR app"/>
+  <meta name="keywords" content="Virtual reality, digital, Augmented reality, design studio, AR, VR, New Zealand, Auckland, Jrump, gamification, game design, game development, Innovation, Kabashians, Wanderer, Ace Pace Wimbledon, Uber Eats Shark Bait, Meili, Millennialz, Storytelling, Interactive, VR, Applications, VR Training, VR experiential marketing, VR tradeshow exhibit, mobile VR, App development, VR strategy, AR strategy, 360 video, Motion capture, animation, production, VR Development, AR Development, VR Exhibition, AR app"/>
 
   <meta property="og:site_name" content="Oddboy.nz">
   <meta property="og:type" content="Website">

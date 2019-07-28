@@ -22,11 +22,6 @@ class Loader
       element: '.view[data-view="what-we-do"] .header'
       src: "#{exports.cdnPath}assets/images/what-we-do/bg.jpg"
     ,
-      id: 'digitalProducts'
-      itemType: 'img'
-      element: '.service[data-service="digital-products"] .service-image'
-      src: "#{exports.cdnPath}assets/images/services/digital-products.png"
-    ,
       id: 'gameDesign'
       itemType: 'img'
       element: '.service[data-service="game-design"] .service-image'
@@ -37,20 +32,20 @@ class Loader
       element: '.service[data-service="virtual-reality"] .service-image'
       src: "#{exports.cdnPath}assets/images/services/virtual-reality.png"
     ,
-      id: 'jrump'
-      itemType: 'bg'
-      element: '.project-card[data-project="jrump"]'
-      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
-    ,
       id: 'wanderer'
       itemType: 'bg'
       element: '.project-card[data-project="wanderer"]'
       src: "#{exports.cdnPath}assets/images/projects/wanderer.jpg"
     ,
-      id: 'catty-crush'
+      id: 'millennialz'
       itemType: 'bg'
-      element: '.project-card[data-project="catty-crush"]'
-      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
+      element: '.project-card[data-project="millennialz"]'
+      src: "#{exports.cdnPath}assets/images/projects/millennialz.jpg"
+    ,
+      id: 'jrump'
+      itemType: 'bg'
+      element: '.project-card[data-project="jrump"]'
+      src: "#{exports.cdnPath}assets/images/projects/jrump.jpg"
     ,
       id: 'kabashians'
       itemType: 'bg'
@@ -62,20 +57,25 @@ class Loader
       element: '.project-card[data-project="camp-hope-falls"]'
       src: "#{exports.cdnPath}assets/images/projects/camp-hope-falls.jpg"
     ,
-      id: 'ar-book'
+      id: 'catty-crush'
       itemType: 'bg'
-      element: '.project-card[data-project="ar-book"]'
-      src: "#{exports.cdnPath}assets/images/projects/ar-book.jpg"
+      element: '.project-card[data-project="catty-crush"]'
+      src: "#{exports.cdnPath}assets/images/projects/catty-crush.jpg"
     ,
-      id: 'orpheus-ar'
+      id: 'ace-pace-wimbledon'
       itemType: 'bg'
-      element: '.project-card[data-project="orpheus-ar"]'
-      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
+      element: '.project-card[data-project="ace-pace-wimbledon"]'
+      src: "#{exports.cdnPath}assets/images/projects/ace-pace-wimbledon.jpg"
     ,
       id: 'rubberkid'
       itemType: 'bg'
       element: '.project-card[data-project="rubberkid"]'
       src: "#{exports.cdnPath}assets/images/projects/rubberkid.jpg"
+    ,
+      id: 'uber-eats-shark-bait'
+      itemType: 'bg'
+      element: '.project-card[data-project="uber-eats-shark-bait"]'
+      src: "#{exports.cdnPath}assets/images/projects/uber-eats-shark-bait.jpg"
     ,
       id: 'meili'
       itemType: 'bg'
@@ -87,10 +87,10 @@ class Loader
       element: '.project-card[data-project="dan-murphys-ar"]'
       src: "#{exports.cdnPath}assets/images/projects/dan-murphys-ar.jpg"
     ,
-      id: 'tradee'
+      id: 'orpheus-ar'
       itemType: 'bg'
-      element: '.project-card[data-project="tradee"]'
-      src: "#{exports.cdnPath}assets/images/projects/tradee.jpg"
+      element: '.project-card[data-project="orpheus-ar"]'
+      src: "#{exports.cdnPath}assets/images/projects/orpheus-ar.jpg"
     ,
 
       id: 'oddboyCopy'
@@ -156,18 +156,14 @@ class Loader
     # DOM Elements
     @$window = $(window)
     @$wrapper = $('.loader-wrapper')
-    @$path = $('.loader-path')
-    @$device = $('.loader-device')
-    @$letterBG = $('.loader-bg')
-    @$letter = $('.loader-letter')
-    @$mask = $('.loader-mask')
+    @$logo = $('.loader-logo')
     @$circle = $('.loader-circle')
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
     @queue = undefined
     @startTime = undefined
-    @duration = 4
+    @duration = 2000
 
     @loadAssets exports
 
@@ -176,8 +172,6 @@ class Loader
 
     @queue.on 'loadstart', (e) =>
       @onLoadStart e, exports
-    @queue.on 'progress', (e) =>
-      @onLoadProgress e, exports
     @queue.on 'fileload', (e) =>
       @onFileLoad e, exports
     @queue.on 'complete', (e) =>
@@ -188,56 +182,51 @@ class Loader
     @queue.loadManifest @manifest
 
   onLoadStart: (e, exports) ->
-    deviceTL = new TimelineMax
+    @startTime = Date.now()
+
+    circleTL = new TimelineMax
       paused: true
-    .fromTo @$device, 1.2,
-      y: exports.windowHeight * .15
+    .fromTo @$circle, 1.4,
+      opacity: 0
+      rotation: '0deg'
     ,
-      y: exports.windowHeight * .85
+      opacity: 1
+      rotation: '360deg'
       ease: Expo.easeInOut
 
-    deviceTL.yoyo(true).repeat(-1).play()
-
-  onLoadProgress: (e, exports) ->
-    letterTL = new TimelineMax
-      paused: true
-    .to @$letterBG, 1,
-      width: 60
-      ease: Sine.easeOut
-
-    letterTL.progress(e.loaded)
+    circleTL.yoyo(true).repeat(-1).play()
 
   onFileLoad: (e, exports) ->
     if e.item.itemType is 'bg'
       $(e.item.element).css 'background-image', "url(#{e.item.src})"
     else if e.item.itemType is 'img'
-      $(e.item.element).append $(e.result).addClass 'y-push2 do-anim-y'
+      $(e.item.element).append $(e.result).addClass 'do-anim-y'
     else if e.item.itemType is 'svg'
       $(e.item.element).prepend $(e.result).hide()
 
   onLoadComplete: (e, exports) ->
-    if exports.view is 'home'
-      App.startMainLoop()
-    @loaderAnimation exports
+    now = Date.now()
+    setTimeout =>
+      if exports.view is 'home'
+        App.startMainLoop()
+      @loaderAnimation exports
+    , @duration - (now - @startTime)
 
   onLoadError: (e, exports) ->
     console.log 'A loading error occured', e
 
   loaderAnimation: (exports) ->
     loaderTL = new TimelineLite()
-    .set @$letter,
-      opacity: 1
-    .set [ @$mask, @$letterBG ],
-      opacity: 0
-    .to @$letter, 1,
+    .to @$logo, 1,
       rotationY: 180
       ease: Back.easeOut.config(2.7)
     .to @$circle, .6,
+      opacity: 0
+      y: exports.windowHeight
+    .to @$logo, .6,
       y: exports.windowHeight
       ease: Power3.easeIn
-    .to @$path, .2,
-      opacity: 0
-    , '-=.2'
+    , '-=.9'
     .to @$panelLeft, .5,
       xPercent: -100
     .to @$panelRight, .5,
