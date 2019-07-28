@@ -29,14 +29,8 @@
   <section class="section projects-container bg-color secondary">
     <div class="title-wrapper">
       <h2 class="title">Oddboy<br/>projects<span class="text-color accent">.</span></h2>
-      <svg class="shape shape-gamepad">
-        <use xlink:href="#shape-gamepad"></use>
-      </svg>
-      <svg class="shape shape-vr-gear">
-        <use xlink:href="#shape-vr-gear"></use>
-      </svg>
-      <svg class="shape shape-atom">
-        <use xlink:href="#shape-atom"></use>
+      <svg class="shape shape-logo-head">
+        <use xlink:href="#shape-logo-head"></use>
       </svg>
     </div>
 
@@ -127,14 +121,8 @@
 
     <div class="title-wrapper">
       <h2 class="title">Projects<br/>for clients<span class="text-color accent">.</span></h2>
-      <svg class="shape shape-gamepad">
-        <use xlink:href="#shape-gamepad"></use>
-      </svg>
-      <svg class="shape shape-vr-gear">
-        <use xlink:href="#shape-vr-gear"></use>
-      </svg>
-      <svg class="shape shape-atom">
-        <use xlink:href="#shape-atom"></use>
+      <svg class="shape shape-logo-head">
+        <use xlink:href="#shape-logo-head"></use>
       </svg>
     </div>
 
