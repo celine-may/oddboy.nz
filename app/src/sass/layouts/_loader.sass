@@ -18,18 +18,7 @@
 
   &.right
     right: 0
-
-// Device
-.loader-path
-  +position(absolute, 0, null, null, 50%)
-  +size(1px, 100%)
-  background-color: $secondaryDark
-
-.loader-device
-  margin-left: -2px
-  +size(5px, 60px)
-  background-color: $secondaryDark
-  transform: translateY(15vh)
+    border-left: 1px solid $secondaryDark
 
 // Circle
 .loader-circle-wrapper
@@ -38,32 +27,22 @@
   text-align: center
   vertical-align: middle
 
+  .shape-logo-head
+    +size(131px, 160px)
+    +center(both)
+    fill: $white
+
 .loader-circle
   position: relative
   display: inline-block
-  +square(170px)
-  background-color: $secondaryLight
+  +square(308px)
   border-radius: 50%
-  box-shadow: 0 0 12px 1px rgba($black, .15)
-  color: $secondaryLight
-  overflow: hidden
-  perspective: 1000
+  background: linear-gradient(to right, $white 10%, rgba($white, 0) 72%)
 
-.loader-bg
-  display: inline-block
-  +position(absolute, 45px, null, null, 55px)
-  +size(0, 80px)
-  background-color: $white
-
-.loader-letter
-  +position(absolute, 56px, null, null, 61px)
-  +size(49px, 58px)
-  background: url(#{$imagePath}loader/letter.png) no-repeat center center
-  opacity: 0
-  transform-origin: center center
-  transform-style: preserve-3d
-
-.loader-mask
-  position: relative
-  +square(100%)
-  background: url(#{$imagePath}loader/mask.png) no-repeat center center
+  &:after
+    content: ''
+    +position(absolute, 0, 0, 0, 0)
+    +square(97%)
+    margin: auto
+    background: $secondary
+    border-radius: 50%

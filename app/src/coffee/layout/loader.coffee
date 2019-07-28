@@ -156,18 +156,14 @@ class Loader
     # DOM Elements
     @$window = $(window)
     @$wrapper = $('.loader-wrapper')
-    @$path = $('.loader-path')
-    @$device = $('.loader-device')
-    @$letterBG = $('.loader-bg')
-    @$letter = $('.loader-letter')
-    @$mask = $('.loader-mask')
+    @$logo = $('.loader-logo')
     @$circle = $('.loader-circle')
     @$panelLeft = $('.loader-panel.left')
     @$panelRight = $('.loader-panel.right')
 
     @queue = undefined
     @startTime = undefined
-    @duration = 4
+    @duration = 2000
 
     @loadAssets exports
 
@@ -176,8 +172,6 @@ class Loader
 
     @queue.on 'loadstart', (e) =>
       @onLoadStart e, exports
-    @queue.on 'progress', (e) =>
-      @onLoadProgress e, exports
     @queue.on 'fileload', (e) =>
       @onFileLoad e, exports
     @queue.on 'complete', (e) =>
@@ -188,24 +182,19 @@ class Loader
     @queue.loadManifest @manifest
 
   onLoadStart: (e, exports) ->
-    deviceTL = new TimelineMax
+    @startTime = Date.now()
+
+    circleTL = new TimelineMax
       paused: true
-    .fromTo @$device, 1.2,
-      y: exports.windowHeight * .15
+    .fromTo @$circle, 1.4,
+      opacity: 0
+      rotation: '0deg'
     ,
-      y: exports.windowHeight * .85
+      opacity: 1
+      rotation: '360deg'
       ease: Expo.easeInOut
 
-    deviceTL.yoyo(true).repeat(-1).play()
-
-  onLoadProgress: (e, exports) ->
-    letterTL = new TimelineMax
-      paused: true
-    .to @$letterBG, 1,
-      width: 60
-      ease: Sine.easeOut
-
-    letterTL.progress(e.loaded)
+    circleTL.yoyo(true).repeat(-1).play()
 
   onFileLoad: (e, exports) ->
     if e.item.itemType is 'bg'
@@ -216,28 +205,28 @@ class Loader
       $(e.item.element).prepend $(e.result).hide()
 
   onLoadComplete: (e, exports) ->
-    if exports.view is 'home'
-      App.startMainLoop()
-    @loaderAnimation exports
+    now = Date.now()
+    setTimeout =>
+      if exports.view is 'home'
+        App.startMainLoop()
+      @loaderAnimation exports
+    , @duration - (now - @startTime)
 
   onLoadError: (e, exports) ->
     console.log 'A loading error occured', e
 
   loaderAnimation: (exports) ->
     loaderTL = new TimelineLite()
-    .set @$letter,
-      opacity: 1
-    .set [ @$mask, @$letterBG ],
-      opacity: 0
-    .to @$letter, 1,
+    .to @$logo, 1,
       rotationY: 180
       ease: Back.easeOut.config(2.7)
     .to @$circle, .6,
+      opacity: 0
+      y: exports.windowHeight
+    .to @$logo, .6,
       y: exports.windowHeight
       ease: Power3.easeIn
-    .to @$path, .2,
-      opacity: 0
-    , '-=.2'
+    , '-=.9'
     .to @$panelLeft, .5,
       xPercent: -100
     .to @$panelRight, .5,
