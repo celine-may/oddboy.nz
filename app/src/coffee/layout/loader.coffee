@@ -22,11 +22,6 @@ class Loader
       element: '.view[data-view="what-we-do"] .header'
       src: "#{exports.cdnPath}assets/images/what-we-do/bg.jpg"
     ,
-      id: 'digitalProducts'
-      itemType: 'img'
-      element: '.service[data-service="digital-products"] .service-image'
-      src: "#{exports.cdnPath}assets/images/services/digital-products.png"
-    ,
       id: 'gameDesign'
       itemType: 'img'
       element: '.service[data-service="game-design"] .service-image'

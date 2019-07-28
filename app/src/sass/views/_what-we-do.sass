@@ -63,11 +63,6 @@
     .touchevents &[data-service="game-design"]
       margin-bottom: 150px
 
-  +max-screen($small)
-    &[data-service="digital-products"]
-      margin-bottom: -10px
-      padding-bottom: 20px
-
 // Higlights (vertical)
 .service-highlights
   +position(absolute, 40%, null, null, $column / -2)
@@ -90,7 +85,7 @@
     position: relative
     max-width: 100%
 
-  .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+  .service[data-service="game-design"] & img
     left: -40px
 
   +max-screen($medium)
@@ -98,7 +93,7 @@
     top: 0
     width: 100%
 
-    .service[data-service="game-design"] & img, .service[data-service="digital-products"] & img
+    .service[data-service="game-design"] & img
       width: 360px
 
     .service[data-service="virtual-reality"] & img
@@ -123,7 +118,7 @@
     +center('horizontal')
     top: 120px
 
-  .service[data-service="virtual-reality"] &, .service[data-service="digital-products"] &
+  .service[data-service="virtual-reality"] &
     +center('both')
 
   +max-screen($medium)

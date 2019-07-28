@@ -91,37 +91,6 @@
           <div class="circle m-push1 do-anim-m"></div>
         </div>
       </article>
-
-      <article class="service rhs" data-service="digital-products">
-        <p class="service-highlights large-only">
-          Intelligent
-          <span class="highlights-separator"></span>
-          Intuitive
-        </p>
-        <div class="service-image">
-          <div class="circle m-push1 do-anim-m"></div>
-        </div>
-        <div class="service-description do-set-padding">
-          <h2 class="service-title title y-push3 do-anim-y">Digital Products<span class="text-color accent">.</span></h2>
-          <div class="service-icon y-push4 do-anim-y">
-            <svg class="shape-atom">
-              <use xlink:href="#shape-atom"></use>
-            </svg>
-          </div>
-          <p class="service-lead lead y-push5 do-anim-y">
-            If it seems confusing or complex it’s because it is... But it shouldn’t&nbsp;be.
-          </p>
-          <p class="service-copy copy y-push6 do-anim-y">
-            The digital realm is everywhere, your phone, car, TV, even your fridge. Everything is connected. Products and digital interfaces are now one in the same. We craft intuitive solutions that simplify tasks, enhance communication and even provide a little&nbsp;joy.
-          </p>
-          <ul class="service-list y-push6 do-anim-y">
-            <li class="copy">App Design</li>
-            <li class="copy">Web Sites &amp; Services</li>
-            <li class="copy">App Development</li>
-            <li class="copy">Interactive Environment</li>
-          </ul>
-        </div>
-      </article>
     </div>
   </div>
 

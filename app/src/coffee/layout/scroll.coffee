@@ -63,21 +63,16 @@ class Scroll
     @$header = @$view.find '.header'
     @$gameDesign = @$view.find '.service[data-service="game-design"]'
     @$virtualReality = @$view.find '.service[data-service="virtual-reality"]'
-    @$digitalProducts = @$view.find '.service[data-service="digital-products"]'
 
     @$gameDesignYElements = @$gameDesign.find '.do-anim-y'
     @$gameDesignMElements = @$gameDesign.find '.do-anim-m'
     @$virtualRealityYElements = @$virtualReality.find '.do-anim-y'
     @$virtualRealityMElements = @$virtualReality.find '.do-anim-m'
-    @$digitalProductsYElements = @$digitalProducts.find '.do-anim-y'
-    @$digitalProductsMElements = @$digitalProducts.find '.do-anim-m'
 
     @gameDesignStart = @$gameDesign.offset().top - exports.windowHeight
     @gameDesignStop = @gameDesignStart + exports.windowHeight + @delta
     @virtualRealityStart = @$virtualReality.offset().top - exports.windowHeight
     @virtualRealityStop = @virtualRealityStart + exports.windowHeight + @delta
-    @digitalProductsStart = @$digitalProducts.offset().top - exports.windowHeight
-    @digitalProductsStop = @digitalProductsStart + exports.windowHeight + @delta
 
     @wwdHeaderTL = undefined
     @gameDesignTL = undefined
@@ -112,16 +107,6 @@ class Scroll
       y: 0
       ease: Power2.easeOut
     .to @$virtualRealityMElements, 1,
-      marginTop: 0
-      ease: Power2.easeOut
-    , '-=1'
-
-    @digitalProductsTL = new TimelineMax
-      paused: true
-    .to @$digitalProductsYElements, 1,
-      y: 0
-      ease: Power2.easeOut
-    .to @$digitalProductsMElements, 1,
       marginTop: 0
       ease: Power2.easeOut
     , '-=1'
@@ -182,7 +167,6 @@ class Scroll
     @scrollTween exports, 0, exports.windowHeight * 1.3, @wwdHeaderTL, scrollY
     @scrollTween exports, @gameDesignStart, @gameDesignStop, @gameDesignTL, scrollY
     @scrollTween exports, @virtualRealityStart, @virtualRealityStop, @virtualRealityTL, scrollY
-    @scrollTween exports, @digitalProductsStart, @digitalProductsStop, @digitalProductsTL, scrollY
 
     # Talk to us Timelines
     @scrollTween exports, 0, exports.windowHeight, @ttuHeaderTL, scrollY
