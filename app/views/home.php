@@ -1,4 +1,17 @@
 <section class="view" data-view="home">
+
+  <a href="#" class="hiring">
+    <svg class="shape-logo-head">
+      <use xlink:href="#shape-logo-head"></use>
+    </svg>
+    <div class="speech-bubble">
+      We're hiring
+      <svg class="shape-arrow-hiring">
+        <use xlink:href="#shape-arrow-small"></use>
+      </svg>
+    </div>
+  </a>
+
   <header class="header">
     <button class="scroll-cta-wrapper do-slide-up do-scroll-down" data-view="projects">
       projects
