@@ -3,15 +3,18 @@
     <?php include('layouts/grid.php'); ?>
 
     <div class="header-content">
-      <h1 class="title do-repaint do-show-complement">
-        <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an interactive studio<span class="text-color primary">*</span>
+      <h1 class="title with-boy do-repaint do-show-complement">
+        <svg class="shape-logo-body large-only">
+          <use xlink:href="#shape-logo-body"></use>
+        </svg>
+        <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an interactive games&nbsp;studio<span class="text-color primary">*</span>
       </h1>
       <span class="title-separator bg-color accent do-complement-push"></span>
       <p class="title-complement copy">
         <span class="text-color primary">*</span>This is just another way of saying we love to get our hands dirty creating Games, VR + AR experiences, Apps and all manner of digital good stuff.
       </p>
       <p class="lead do-complement-push">
-        Oddboy is an eclectic crew of designers, 3D artists, developers and technologists. We work with brands and agencies to produce award winning games and digital&nbsp;experiences.
+        Oddboy is an eclectic crew of designers, 3D artists, developers and technologists.<br>We craft award winning games and digital experiences.
       </p>
 
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">

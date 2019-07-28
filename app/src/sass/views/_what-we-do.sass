@@ -11,10 +11,6 @@
   .scroll-cta
     margin-top: $extGapSmall
 
-  +min-screen($small + 1px)
-    .header-content
-      padding-right: $column * 2
-
   +min-max-screen($xSmall + 1px, $medium)
     .section
       margin-top: -$extGap
@@ -25,6 +21,16 @@
 
     .scroll-cta:hover::before
       transform: scale(0)
+
++min-screen($medium + 1px)
+  .with-boy
+    position: relative
+    padding-left: 200px
+
+  .shape-logo-body
+    +position(absolute, null, null, 12px, 0)
+    +size(169px, 249px)
+    fill: $white
 
 .title-complement
   position: absolute
