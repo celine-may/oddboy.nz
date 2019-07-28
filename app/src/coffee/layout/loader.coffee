@@ -211,7 +211,7 @@ class Loader
     if e.item.itemType is 'bg'
       $(e.item.element).css 'background-image', "url(#{e.item.src})"
     else if e.item.itemType is 'img'
-      $(e.item.element).append $(e.result).addClass 'y-push2 do-anim-y'
+      $(e.item.element).append $(e.result).addClass 'do-anim-y'
     else if e.item.itemType is 'svg'
       $(e.item.element).prepend $(e.result).hide()
 
