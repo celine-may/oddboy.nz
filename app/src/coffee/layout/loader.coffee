@@ -7,6 +7,11 @@ class Loader
     exports.instances.push @
 
     commonManifest = [
+      id: 'svgDefs'
+      itemType: 'svg'
+      element: 'body'
+      src: "#{exports.path}assets/svgs/svg-defs.svg"
+    ,
       id: 'talkToUs'
       itemType: 'bg'
       element: '.contact-wrapper'
@@ -100,11 +105,6 @@ class Loader
       id: 'oddboyLogo'
       itemType: 'object'
       src: "#{exports.path}assets/json/oddboy-logo.json"
-    ,
-      id: 'svgDefs'
-      itemType: 'svg'
-      element: 'body'
-      src: "#{exports.path}assets/svgs/svg-defs.svg"
     ]
 
     desktopManifest = [
