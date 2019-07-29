@@ -1,6 +1,6 @@
 <section class="view" data-view="home">
 
-  <a href="#" class="hiring">
+  <button class="hiring do-show-view" data-view="talk-to-us">
     <svg class="shape-logo-head">
       <use xlink:href="#shape-logo-head"></use>
     </svg>
@@ -10,7 +10,7 @@
         <use xlink:href="#shape-arrow-small"></use>
       </svg>
     </div>
-  </a>
+  </button>
 
   <header class="header">
     <button class="scroll-cta-wrapper do-slide-up do-scroll-down" data-view="projects">
