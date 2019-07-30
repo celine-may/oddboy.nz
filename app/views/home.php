@@ -1,6 +1,6 @@
 <section class="view" data-view="home">
 
-  <button class="hiring do-show-view" data-view="talk-to-us">
+  <a href="https://www.wanderervr.com/wearehiring" target="_blank" class="hiring do-show-view">
     <svg class="shape-logo-head">
       <use xlink:href="#shape-logo-head"></use>
     </svg>
@@ -10,7 +10,7 @@
         <use xlink:href="#shape-arrow-small"></use>
       </svg>
     </div>
-  </button>
+  </a>
 
   <header class="header">
     <button class="scroll-cta-wrapper do-slide-up do-scroll-down" data-view="projects">
