@@ -1,6 +1,6 @@
 <section class="view" data-view="home">
 
-  <a href="#" class="hiring">
+  <a href="https://www.wanderervr.com/wearehiring" target="_blank" class="hiring do-show-view">
     <svg class="shape-logo-head">
       <use xlink:href="#shape-logo-head"></use>
     </svg>

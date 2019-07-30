@@ -22,15 +22,25 @@
     .scroll-cta:hover::before
       transform: scale(0)
 
-+min-screen($medium + 1px)
-  .with-boy
++min-screen($small + 1px)
+  .title.with-boy
     position: relative
-    padding-left: 200px
+    padding-left: 170px
+    font-size: 7vw
 
   .shape-logo-body
     +position(absolute, null, null, 12px, 0)
-    +size(169px, 249px)
+    +size(130px, 191px)
     fill: $white
+
++min-screen($medium + 1px)
+  .title.with-boy
+    max-width: 800px
+    padding-left: 200px
+    font-size: 5rem
+
+  .shape-logo-body
+    +size(169px, 249px)
 
 .title-complement
   position: absolute

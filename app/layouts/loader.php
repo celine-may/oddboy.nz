@@ -5,8 +5,10 @@
   <div class="loader-circle-wrapper">
     <div class="loader-circle">
     </div>
-    <svg class="shape-logo-head loader-logo">
-      <use xlink:href="#shape-logo-head"></use>
-    </svg>
+    <div class="loader-logo">
+      <svg class="shape-logo-head">
+        <use xlink:href="#shape-logo-head"></use>
+      </svg>
+    </div>
   </div>
 </div>
