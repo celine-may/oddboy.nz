@@ -4,7 +4,7 @@
 
     <div class="header-content">
       <h1 class="title with-boy do-repaint do-show-complement">
-        <svg class="shape-logo-body large-only">
+        <svg class="shape-logo-body small-hidden">
           <use xlink:href="#shape-logo-body"></use>
         </svg>
         <span class="text-color primary">Odd<span class="flipped">b</span>oy</span> is an interactive games&nbsp;studio<span class="text-color primary">*</span>
@@ -14,7 +14,7 @@
         <span class="text-color primary">*</span>This is just another way of saying we love to get our hands dirty creating Games, VR + AR experiences, Apps and all manner of digital good stuff.
       </p>
       <p class="lead do-complement-push">
-        Oddboy is an eclectic crew of designers, 3D artists, developers and technologists.<br>We craft award winning games and digital experiences.
+        Oddboy is an eclectic crew of designers, 3D artists, developers and technologists.<br>We craft award winning games and digital&nbps;experiences.
       </p>
 
       <button class="scroll-cta small-hidden do-scroll-down do-complement-push do-slide-up">
